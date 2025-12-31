@@ -30,10 +30,10 @@ export const ThemeCustomizer: React.FC = () => {
       >
         <div className="relative">
           {/* Animated background ring */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 animate-pulse opacity-75 blur-md group-hover:opacity-100 transition-opacity"></div>
+          <div className="absolute inset-0 rounded-full bg-primary-500 animate-pulse opacity-75 blur-md group-hover:opacity-100 transition-opacity"></div>
 
           {/* Main button */}
-          <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center">
+          <div className="relative w-14 h-14 rounded-full bg-primary-600 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center">
             <Settings className="w-6 h-6 animate-spin-slow" style={{ animationDuration: '8s' }} />
           </div>
         </div>
@@ -51,11 +51,8 @@ export const ThemeCustomizer: React.FC = () => {
 
       {/* Premium Panel */}
       <div className="fixed top-0 right-0 w-[380px] h-full bg-white dark:bg-neutral-900 shadow-2xl z-50 animate-slide-in-right overflow-hidden flex flex-col">
-        {/* Gradient Header */}
-        <div className="relative bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 p-6 text-white overflow-hidden">
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
+        {/* Clean Header */}
+        <div className="relative bg-primary-600 p-6 text-white">
 
           <div className="relative flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -98,14 +95,14 @@ export const ThemeCustomizer: React.FC = () => {
                       : "hover:scale-105"
                   )}
                 >
-                  <div className={cn(
-                    "absolute inset-0 rounded-xl bg-gradient-to-br opacity-100",
-                    preset.gradient
-                  )} />
+                  <div
+                    className="absolute inset-0 rounded-xl opacity-100"
+                    style={{ backgroundColor: preset.value }}
+                  />
                   {config.theming.primaryColor === preset.value && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-6 h-6 rounded-full bg-white shadow-lg flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-br from-primary-600 to-secondary-600"></div>
+                        <div className="w-2 h-2 rounded-full bg-neutral-900"></div>
                       </div>
                     </div>
                   )}

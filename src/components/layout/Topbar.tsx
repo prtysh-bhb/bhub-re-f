@@ -54,10 +54,10 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
           to={role === "admin" ? "/admin/dashboard" : "/agent/dashboard"}
           className="flex items-center gap-2"
         >
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center text-white font-bold shadow-md hover:shadow-lg transition-all">
+          <div className="w-9 h-9 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold shadow-sm hover:shadow-md transition-all">
             RE
           </div>
-          <span className="font-bold text-lg hidden sm:block bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+          <span className="font-bold text-lg hidden sm:block text-neutral-900 dark:text-neutral-100">
             Real Estate Pro
           </span>
         </Link>
