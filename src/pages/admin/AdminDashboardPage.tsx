@@ -478,64 +478,58 @@ const AdminDashboardPage = () => {
 
   return (
     <>
-      <div className="p-6 space-y-6 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 min-h-screen">
-        {/* Welcome Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-emerald-600 py-6 px-8 rounded-2xl shadow-2xl dark:shadow-black/30 border-0 text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10 dark:bg-black/20"></div>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
-          
-          <div className="relative z-10">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <h1 className="text-2xl font-bold">Welcome back, {userName}!</h1>
-                </div>
-                <p className="text-blue-100/90 text-lg">
-                  System overview and performance analytics for your {profile.role} dashboard
-                </p>
-              </div>
-              <div className="hidden md:flex items-center gap-3 px-4 py-3 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30 dark:border-white/20">
-                <Calendar className="text-white" size={20} />
-                <span className="font-semibold">
-                  {new Date().toLocaleDateString('en-US', { 
-                    weekday: 'long', 
-                    month: 'short', 
-                    day: 'numeric', 
-                    year: 'numeric' 
-                  })}
-                </span>
-              </div>
+      <div className="p-6 space-y-6 bg-neutral-50 dark:bg-neutral-950 min-h-screen">
+        {/* Welcome Header - Elegant & Professional */}
+        <div className="bg-white dark:bg-neutral-900 py-8 px-8 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                Welcome back, {userName}
+              </h1>
+              <p className="text-neutral-600 dark:text-neutral-400 text-base">
+                System overview and performance analytics
+              </p>
+            </div>
+            <div className="hidden md:flex items-center gap-3 px-4 py-3 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <Calendar className="text-neutral-500 dark:text-neutral-400" size={20} />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                {new Date().toLocaleDateString('en-US', {
+                  weekday: 'long',
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric'
+                })}
+              </span>
             </div>
           </div>
         </div>
 
-        {/* Overview Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Overview Statistics - Clean & Professional */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {overviewStats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <div 
-                key={stat.label} 
-                className={`bg-gradient-to-br ${stat.bgGradientLight} dark:bg-gradient-to-br ${stat.bgGradientDark} border ${stat.borderLight} dark:border ${stat.borderDark} rounded-2xl p-6 shadow-xl dark:shadow-black/30 hover:shadow-2xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-2`}
+              <div
+                key={stat.label}
+                className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-6 hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all duration-200"
               >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm font-semibold">{stat.label}</p>
-                    <p className="text-gray-900 dark:text-white text-3xl font-bold mt-2">{stat.value.toLocaleString()}</p>
-                    <div className="flex items-center space-x-2 mt-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <p className="text-neutral-600 dark:text-neutral-400 text-sm font-medium mb-2">{stat.label}</p>
+                    <p className="text-neutral-900 dark:text-neutral-100 text-2xl font-semibold">{stat.value.toLocaleString()}</p>
+                    <div className="flex items-center gap-1.5 mt-3">
                       {stat.changeType === 'up' ? (
-                        <ArrowUp className="w-4 h-4 text-emerald-500" />
+                        <ArrowUp className="w-3.5 h-3.5 text-success-600" />
                       ) : (
-                        <ArrowDown className="w-4 h-4 text-rose-500" />
+                        <ArrowDown className="w-3.5 h-3.5 text-error-600" />
                       )}
-                      <span className={`text-sm font-semibold ${stat.changeType === 'up' ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
+                      <span className={`text-xs font-medium ${stat.changeType === 'up' ? 'text-success-600' : 'text-error-600'}`}>
                         +{stat.change} this month
                       </span>
                     </div>
                   </div>
-                  <div className={`p-4 rounded-xl bg-gradient-to-br ${stat.gradient} text-white shadow-lg dark:shadow-black/30`}>
-                    <Icon className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                   </div>
                 </div>
               </div>
@@ -543,34 +537,32 @@ const AdminDashboardPage = () => {
           })}
         </div>
 
-        {/* Detailed Statistics Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Detailed Statistics Grid - Elegant Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* User Statistics */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
-                  <Users className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
+                  <Users className="w-5 h-5 text-primary-600 dark:text-primary-400" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">User Statistics</h3>
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">User Statistics</h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {userStats.map((stat) => {
                   const Icon = stat.icon;
                   return (
-                    <div 
-                      key={stat.label} 
-                      className={`bg-gradient-to-br ${stat.bgGradientLight} dark:bg-gradient-to-br ${stat.bgGradientDark} border border-gray-100 dark:border-gray-700/50 rounded-xl p-4 shadow-sm dark:shadow-black/20 hover:shadow-md dark:hover:shadow-black/30 transition-all duration-200`}
+                    <div
+                      key={stat.label}
+                      className="flex items-center justify-between py-3 px-4 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-100 dark:border-neutral-800 hover:border-primary-200 dark:hover:border-primary-900/30 transition-colors"
                     >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-4">
-                          <div className={`p-3 rounded-lg bg-gradient-to-br ${stat.gradient} text-white shadow-md dark:shadow-black/30`}>
-                            <Icon className="w-4 h-4" />
-                          </div>
-                          <span className="text-gray-700 dark:text-gray-300 text-sm font-semibold">{stat.label}</span>
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center">
+                          <Icon className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                         </div>
-                        <span className="text-gray-900 dark:text-white font-bold text-lg">{stat.value}</span>
+                        <span className="text-neutral-700 dark:text-neutral-300 text-sm font-medium">{stat.label}</span>
                       </div>
+                      <span className="text-neutral-900 dark:text-neutral-100 font-semibold">{stat.value}</span>
                     </div>
                   );
                 })}

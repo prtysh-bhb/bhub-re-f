@@ -44,6 +44,27 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// Helper to convert hex to RGB
+function hexToRgb(hex: string): string {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? `${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(result[3], 16)}`
+    : '99 102 241'; // fallback to default indigo
+}
+
+// Helper to lighten/darken color
+function adjustColor(rgb: string, percent: number): string {
+  const [r, g, b] = rgb.split(' ').map(Number);
+  const adjust = (val: number) => Math.max(0, Math.min(255, Math.round(val + (255 - val) * percent / 100)));
+  const darken = (val: number) => Math.max(0, Math.min(255, Math.round(val * (1 - percent / 100))));
+
+  if (percent > 0) {
+    return `${adjust(r)} ${adjust(g)} ${adjust(b)}`;
+  } else {
+    return `${darken(r)} ${darken(g)} ${darken(b)}`;
+  }
+}
+
 // Helper function to apply theme to DOM
 function applyThemeToDOM(config: ThemeConfig) {
   const root = document.documentElement;
@@ -58,6 +79,19 @@ function applyThemeToDOM(config: ThemeConfig) {
 
   // 2. Primary Color (CSS variable)
   root.style.setProperty('--color-primary-custom', config.theming.primaryColor);
+
+  // Convert primary color to RGB and create shades
+  const baseRgb = hexToRgb(config.theming.primaryColor);
+  root.style.setProperty('--color-primary-50', adjustColor(baseRgb, 95));
+  root.style.setProperty('--color-primary-100', adjustColor(baseRgb, 90));
+  root.style.setProperty('--color-primary-200', adjustColor(baseRgb, 75));
+  root.style.setProperty('--color-primary-300', adjustColor(baseRgb, 60));
+  root.style.setProperty('--color-primary-400', adjustColor(baseRgb, 40));
+  root.style.setProperty('--color-primary-500', baseRgb);
+  root.style.setProperty('--color-primary-600', adjustColor(baseRgb, -10));
+  root.style.setProperty('--color-primary-700', adjustColor(baseRgb, -25));
+  root.style.setProperty('--color-primary-800', adjustColor(baseRgb, -40));
+  root.style.setProperty('--color-primary-900', adjustColor(baseRgb, -60));
 
   // 3. Skin (bordered adds borders to cards)
   root.classList.toggle('skin-bordered', config.theming.skin === 'bordered');
