@@ -19,7 +19,7 @@ export interface ThemeConfig {
 // Default configuration
 const defaultThemeConfig: ThemeConfig = {
   theming: {
-    primaryColor: '#3b82f6',
+    primaryColor: '#6366f1', // Premium indigo
     themeMode: 'light',
     skin: 'default',
     semiDark: false,

@@ -43,9 +43,10 @@
 
 /* Semi-dark mode: Dark sidebar, light content */
 .semi-dark {
-  --sidebar-bg: #1e293b;
-  --sidebar-text: #f1f5f9;
-  --sidebar-hover: #334155;
+  --sidebar-bg: #171717;
+  --sidebar-text: #fafafa;
+  --sidebar-hover: #262626;
+  --sidebar-border: #404040;
 }
 
 /* Skin: Bordered - adds borders to cards */
@@ -215,6 +216,20 @@
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradientShift 3s ease infinite;
+}
+
+/* Slow spin for theme customizer button */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
 }
 
 /* Loading Skeleton */

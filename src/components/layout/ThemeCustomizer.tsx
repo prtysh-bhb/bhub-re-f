@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings, X } from 'lucide-react';
+import { Settings, X, Sun, Moon, Monitor, Palette, Layout, Maximize2, Eye, RotateCcw, Menu, Grid } from 'lucide-react';
 import { useThemeCustomizer } from '@/context/ThemeCustomizerContext';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -7,294 +7,337 @@ import { Button } from '@/components/ui/button';
 export const ThemeCustomizer: React.FC = () => {
   const { config, updateTheming, updateLayout, resetToDefaults, isCustomizerOpen, toggleCustomizer } = useThemeCustomizer();
 
-  // Preset colors for quick selection
-  const presetColors = [
-    '#3b82f6', // Blue
-    '#8b5cf6', // Purple
-    '#ec4899', // Pink
-    '#ef4444', // Red
-    '#f59e0b', // Amber
-    '#10b981', // Green
-    '#06b6d4', // Cyan
-    '#6366f1', // Indigo
+  // Premium color palette with sophisticated options
+  const colorPresets = [
+    { name: 'Indigo', value: '#6366f1', gradient: 'from-indigo-500 to-indigo-600' },
+    { name: 'Purple', value: '#a855f7', gradient: 'from-purple-500 to-purple-600' },
+    { name: 'Rose', value: '#f43f5e', gradient: 'from-rose-500 to-rose-600' },
+    { name: 'Blue', value: '#3b82f6', gradient: 'from-blue-500 to-blue-600' },
+    { name: 'Emerald', value: '#10b981', gradient: 'from-emerald-500 to-emerald-600' },
+    { name: 'Amber', value: '#f59e0b', gradient: 'from-amber-500 to-amber-600' },
+    { name: 'Cyan', value: '#06b6d4', gradient: 'from-cyan-500 to-cyan-600' },
+    { name: 'Pink', value: '#ec4899', gradient: 'from-pink-500 to-pink-600' },
   ];
 
-  const [showColorPicker, setShowColorPicker] = useState(false);
+  const [showCustomColor, setShowCustomColor] = useState(false);
 
   if (!isCustomizerOpen) {
     return (
       <button
         onClick={toggleCustomizer}
-        className="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-primary-600 text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center"
+        className="fixed bottom-6 right-6 z-50 group"
         aria-label="Open theme customizer"
       >
-        <Settings className="w-6 h-6" />
+        <div className="relative">
+          {/* Animated background ring */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 animate-pulse opacity-75 blur-md group-hover:opacity-100 transition-opacity"></div>
+
+          {/* Main button */}
+          <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center">
+            <Settings className="w-6 h-6 animate-spin-slow" style={{ animationDuration: '8s' }} />
+          </div>
+        </div>
       </button>
     );
   }
 
   return (
     <>
-      {/* Backdrop */}
+      {/* Enhanced Backdrop */}
       <div
-        className="fixed inset-0 bg-black/40 z-40 animate-fade-in"
+        className="fixed inset-0 bg-gradient-to-br from-black/50 to-black/30 backdrop-blur-sm z-40 animate-fade-in"
         onClick={toggleCustomizer}
       />
 
-      {/* Panel */}
-      <div className="fixed top-0 right-0 w-[360px] h-full bg-white dark:bg-neutral-900 shadow-2xl z-50 animate-slide-in-right overflow-y-auto">
-        {/* Header */}
-        <div className="sticky top-0 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 p-6 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Settings className="w-5 h-5 text-primary-600" />
-            <h2 className="text-lg font-semibold">Theme Customizer</h2>
+      {/* Premium Panel */}
+      <div className="fixed top-0 right-0 w-[380px] h-full bg-white dark:bg-neutral-900 shadow-2xl z-50 animate-slide-in-right overflow-hidden flex flex-col">
+        {/* Gradient Header */}
+        <div className="relative bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 p-6 text-white overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
+
+          <div className="relative flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <Palette className="w-5 h-5" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold">Theme Studio</h2>
+                <p className="text-white/80 text-sm">Customize your experience</p>
+              </div>
+            </div>
+            <button
+              onClick={toggleCustomizer}
+              className="w-9 h-9 rounded-lg bg-white/20 hover:bg-white/30 backdrop-blur-sm flex items-center justify-center transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
-          <button
-            onClick={toggleCustomizer}
-            className="w-8 h-8 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 flex items-center justify-center transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
         </div>
 
-        {/* Content */}
-        <div className="p-6 space-y-8">
-          {/* Theming Section */}
-          <section>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-4">
-              🎨 Theming
-            </h3>
+        {/* Scrollable Content */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-6">
 
-            <div className="space-y-4">
-              {/* Primary Color */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">Primary Color</label>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-12 h-12 rounded-lg border-2 border-neutral-300 dark:border-neutral-700 cursor-pointer relative"
-                    style={{ backgroundColor: config.theming.primaryColor }}
-                    onClick={() => setShowColorPicker(!showColorPicker)}
-                  >
-                    {showColorPicker && (
-                      <div className="absolute top-full left-0 mt-2 p-3 bg-white dark:bg-neutral-800 rounded-lg shadow-xl z-10 border border-neutral-200 dark:border-neutral-700">
-                        <div className="grid grid-cols-4 gap-2 mb-3">
-                          {presetColors.map((color) => (
-                            <button
-                              key={color}
-                              className="w-10 h-10 rounded-md border-2 border-transparent hover:border-neutral-400 transition-colors"
-                              style={{ backgroundColor: color }}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                updateTheming({ primaryColor: color });
-                                setShowColorPicker(false);
-                              }}
-                            />
-                          ))}
-                        </div>
-                        <input
-                          type="color"
-                          value={config.theming.primaryColor}
-                          onChange={(e) => updateTheming({ primaryColor: e.target.value })}
-                          className="w-full h-10 rounded-md cursor-pointer"
-                        />
-                      </div>
-                    )}
-                  </div>
-                  <input
-                    type="text"
-                    value={config.theming.primaryColor}
-                    onChange={(e) => updateTheming({ primaryColor: e.target.value })}
-                    placeholder="#3b82f6"
-                    className="flex-1 px-3 py-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm font-mono"
-                  />
-                </div>
-              </div>
+          {/* Primary Color Section */}
+          <section className="space-y-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300 uppercase tracking-wide">
+              <Palette className="w-4 h-4" />
+              <span>Primary Color</span>
+            </div>
 
-              {/* Theme Mode */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">Theme Mode</label>
-                <div className="space-y-2">
-                  {(['light', 'dark', 'system'] as const).map((mode) => (
-                    <label
-                      key={mode}
-                      className="flex items-center gap-3 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 p-2 rounded-md transition-colors"
-                    >
-                      <input
-                        type="radio"
-                        name="themeMode"
-                        value={mode}
-                        checked={config.theming.themeMode === mode}
-                        onChange={() => updateTheming({ themeMode: mode })}
-                        className="w-4 h-4 text-primary-600 focus:ring-primary-500"
-                      />
-                      <span className="text-sm capitalize">{mode}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Skin */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">Skin</label>
-                <div className="space-y-2">
-                  {(['default', 'bordered'] as const).map((skin) => (
-                    <label
-                      key={skin}
-                      className="flex items-center gap-3 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 p-2 rounded-md transition-colors"
-                    >
-                      <input
-                        type="radio"
-                        name="skin"
-                        value={skin}
-                        checked={config.theming.skin === skin}
-                        onChange={() => updateTheming({ skin })}
-                        className="w-4 h-4 text-primary-600 focus:ring-primary-500"
-                      />
-                      <span className="text-sm capitalize">{skin}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Semi-dark */}
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <label className="text-sm font-medium block">Semi-dark</label>
-                  <p className="text-xs text-neutral-500 mt-1">Dark sidebar with light content</p>
-                </div>
+            <div className="grid grid-cols-4 gap-3">
+              {colorPresets.map((preset) => (
                 <button
-                  type="button"
-                  role="switch"
-                  aria-checked={config.theming.semiDark}
-                  onClick={() => updateTheming({ semiDark: !config.theming.semiDark })}
+                  key={preset.value}
+                  onClick={() => updateTheming({ primaryColor: preset.value })}
                   className={cn(
-                    'relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
-                    config.theming.semiDark ? 'bg-primary-600' : 'bg-neutral-300 dark:bg-neutral-700'
+                    "group relative h-14 rounded-xl transition-all",
+                    config.theming.primaryColor === preset.value
+                      ? "ring-2 ring-offset-2 ring-primary-500 scale-105"
+                      : "hover:scale-105"
                   )}
                 >
-                  <span
-                    className={cn(
-                      'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
-                      config.theming.semiDark ? 'translate-x-6' : 'translate-x-1'
-                    )}
-                  />
+                  <div className={cn(
+                    "absolute inset-0 rounded-xl bg-gradient-to-br opacity-100",
+                    preset.gradient
+                  )} />
+                  {config.theming.primaryColor === preset.value && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-6 h-6 rounded-full bg-white shadow-lg flex items-center justify-center">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-br from-primary-600 to-secondary-600"></div>
+                      </div>
+                    </div>
+                  )}
+                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-xs text-neutral-600 dark:text-neutral-400 whitespace-nowrap">
+                      {preset.name}
+                    </span>
+                  </div>
                 </button>
+              ))}
+            </div>
+
+            {/* Custom Color Picker */}
+            <button
+              onClick={() => setShowCustomColor(!showCustomColor)}
+              className="w-full mt-6 p-3 rounded-lg border-2 border-dashed border-neutral-300 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors flex items-center justify-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-400"
+            >
+              <Palette className="w-4 h-4" />
+              Custom Color
+            </button>
+
+            {showCustomColor && (
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-800 rounded-lg space-y-3">
+                <input
+                  type="color"
+                  value={config.theming.primaryColor}
+                  onChange={(e) => updateTheming({ primaryColor: e.target.value })}
+                  className="w-full h-12 rounded-lg cursor-pointer border-2 border-neutral-200 dark:border-neutral-700"
+                />
+                <input
+                  type="text"
+                  value={config.theming.primaryColor}
+                  onChange={(e) => updateTheming({ primaryColor: e.target.value })}
+                  placeholder="#6366f1"
+                  className="w-full px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm font-mono"
+                />
               </div>
+            )}
+          </section>
+
+          {/* Theme Mode Section */}
+          <section className="space-y-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300 uppercase tracking-wide">
+              <Sun className="w-4 h-4" />
+              <span>Appearance</span>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { value: 'light', label: 'Light', icon: Sun },
+                { value: 'dark', label: 'Dark', icon: Moon },
+                { value: 'system', label: 'Auto', icon: Monitor },
+              ].map((mode) => {
+                const Icon = mode.icon;
+                return (
+                  <button
+                    key={mode.value}
+                    onClick={() => updateTheming({ themeMode: mode.value as any })}
+                    className={cn(
+                      "relative p-4 rounded-xl border-2 transition-all group",
+                      config.theming.themeMode === mode.value
+                        ? "border-primary-500 bg-primary-50 dark:bg-primary-900/20"
+                        : "border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-700"
+                    )}
+                  >
+                    <Icon className={cn(
+                      "w-6 h-6 mx-auto mb-2",
+                      config.theming.themeMode === mode.value
+                        ? "text-primary-600 dark:text-primary-400"
+                        : "text-neutral-400 dark:text-neutral-500"
+                    )} />
+                    <span className={cn(
+                      "text-xs font-medium block",
+                      config.theming.themeMode === mode.value
+                        ? "text-primary-700 dark:text-primary-300"
+                        : "text-neutral-600 dark:text-neutral-400"
+                    )}>
+                      {mode.label}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </section>
 
-          {/* Layout Section */}
-          <section>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-4">
-              📐 Layout Options
-            </h3>
+          {/* Layout Options */}
+          <section className="space-y-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300 uppercase tracking-wide">
+              <Layout className="w-4 h-4" />
+              <span>Layout</span>
+            </div>
 
-            <div className="space-y-4">
-              {/* Menu */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">Menu</label>
-                <div className="space-y-2">
-                  {[
-                    { value: false, label: 'Expanded' },
-                    { value: true, label: 'Collapsed' },
-                  ].map((option) => (
-                    <label
-                      key={option.label}
-                      className="flex items-center gap-3 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 p-2 rounded-md transition-colors"
-                    >
-                      <input
-                        type="radio"
-                        name="menuCollapsed"
-                        checked={config.layout.menuCollapsed === option.value}
-                        onChange={() => updateLayout({ menuCollapsed: option.value })}
-                        className="w-4 h-4 text-primary-600 focus:ring-primary-500"
-                      />
-                      <span className="text-sm">{option.label}</span>
-                    </label>
-                  ))}
+            <div className="space-y-3">
+              {/* Menu Style */}
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-800 rounded-xl space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Menu className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                      Menu Style
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => updateLayout({ menuCollapsed: !config.layout.menuCollapsed })}
+                    className={cn(
+                      "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
+                      config.layout.menuCollapsed
+                        ? "bg-primary-600"
+                        : "bg-neutral-300 dark:bg-neutral-600"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-sm",
+                        config.layout.menuCollapsed ? "translate-x-6" : "translate-x-1"
+                      )}
+                    />
+                  </button>
                 </div>
-              </div>
-
-              {/* Navbar */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">Navbar</label>
-                <div className="space-y-2">
-                  {(['sticky', 'static', 'hidden'] as const).map((type) => (
-                    <label
-                      key={type}
-                      className="flex items-center gap-3 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 p-2 rounded-md transition-colors"
-                    >
-                      <input
-                        type="radio"
-                        name="navbarType"
-                        value={type}
-                        checked={config.layout.navbarType === type}
-                        onChange={() => updateLayout({ navbarType: type })}
-                        className="w-4 h-4 text-primary-600 focus:ring-primary-500"
-                      />
-                      <span className="text-sm capitalize">{type}</span>
-                    </label>
-                  ))}
-                </div>
+                <p className="text-xs text-neutral-500 pl-6">
+                  {config.layout.menuCollapsed ? 'Collapsed' : 'Expanded'}
+                </p>
               </div>
 
               {/* Content Width */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">Content Width</label>
-                <div className="space-y-2">
-                  {(['compact', 'wide'] as const).map((width) => (
-                    <label
-                      key={width}
-                      className="flex items-center gap-3 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 p-2 rounded-md transition-colors"
-                    >
-                      <input
-                        type="radio"
-                        name="contentWidth"
-                        value={width}
-                        checked={config.layout.contentWidth === width}
-                        onChange={() => updateLayout({ contentWidth: width })}
-                        className="w-4 h-4 text-primary-600 focus:ring-primary-500"
-                      />
-                      <span className="text-sm capitalize">{width}</span>
-                    </label>
-                  ))}
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-800 rounded-xl space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Maximize2 className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                      Content Width
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => updateLayout({
+                      contentWidth: config.layout.contentWidth === 'compact' ? 'wide' : 'compact'
+                    })}
+                    className={cn(
+                      "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
+                      config.layout.contentWidth === 'wide'
+                        ? "bg-primary-600"
+                        : "bg-neutral-300 dark:bg-neutral-600"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-sm",
+                        config.layout.contentWidth === 'wide' ? "translate-x-6" : "translate-x-1"
+                      )}
+                    />
+                  </button>
                 </div>
+                <p className="text-xs text-neutral-500 pl-6">
+                  {config.layout.contentWidth === 'wide' ? 'Full Width' : 'Compact'}
+                </p>
               </div>
 
-              {/* Direction */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">Direction</label>
-                <div className="space-y-2">
-                  {[
-                    { value: 'ltr', label: 'LTR (en)' },
-                    { value: 'rtl', label: 'RTL (ar)' },
-                  ].map((option) => (
-                    <label
-                      key={option.value}
-                      className="flex items-center gap-3 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 p-2 rounded-md transition-colors"
-                    >
-                      <input
-                        type="radio"
-                        name="direction"
-                        value={option.value}
-                        checked={config.layout.direction === option.value}
-                        onChange={() => updateLayout({ direction: option.value as 'ltr' | 'rtl' })}
-                        className="w-4 h-4 text-primary-600 focus:ring-primary-500"
-                      />
-                      <span className="text-sm">{option.label}</span>
-                    </label>
-                  ))}
+              {/* Semi Dark */}
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-800 rounded-xl space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Eye className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                      Semi-Dark Mode
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => updateTheming({ semiDark: !config.theming.semiDark })}
+                    className={cn(
+                      "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
+                      config.theming.semiDark
+                        ? "bg-primary-600"
+                        : "bg-neutral-300 dark:bg-neutral-600"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-sm",
+                        config.theming.semiDark ? "translate-x-6" : "translate-x-1"
+                      )}
+                    />
+                  </button>
                 </div>
+                <p className="text-xs text-neutral-500 pl-6">
+                  Dark sidebar with light content
+                </p>
+              </div>
+
+              {/* Skin */}
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-800 rounded-xl space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Grid className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                      Border Style
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => updateTheming({
+                      skin: config.theming.skin === 'default' ? 'bordered' : 'default'
+                    })}
+                    className={cn(
+                      "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
+                      config.theming.skin === 'bordered'
+                        ? "bg-primary-600"
+                        : "bg-neutral-300 dark:bg-neutral-600"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-sm",
+                        config.theming.skin === 'bordered' ? "translate-x-6" : "translate-x-1"
+                      )}
+                    />
+                  </button>
+                </div>
+                <p className="text-xs text-neutral-500 pl-6">
+                  {config.theming.skin === 'bordered' ? 'Bordered cards' : 'Default style'}
+                </p>
               </div>
             </div>
           </section>
+        </div>
 
-          {/* Reset Button */}
+        {/* Footer Actions */}
+        <div className="border-t border-neutral-200 dark:border-neutral-800 p-4 bg-neutral-50 dark:bg-neutral-900">
           <Button
             onClick={resetToDefaults}
             variant="outline"
-            className="w-full"
+            className="w-full group"
           >
+            <RotateCcw className="w-4 h-4 mr-2 group-hover:rotate-180 transition-transform duration-500" />
             Reset to Defaults
           </Button>
         </div>

@@ -54,9 +54,11 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, href, badge, collapsed, 
           }
         }}
         className={cn(
-          "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors group relative",
-          "hover:bg-neutral-100 dark:hover:bg-neutral-800",
-          isActive && "bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400",
+          "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all group relative",
+          "hover:bg-primary-50 dark:hover:bg-primary-900/20",
+          isActive
+            ? "bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/10 text-primary-700 dark:text-primary-400 font-medium shadow-sm"
+            : "text-neutral-700 dark:text-neutral-300",
           collapsed && "justify-center"
         )}
       >
@@ -322,9 +324,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ role }) => {
     <aside
       className={cn(
         "fixed left-0 top-16 h-[calc(100vh-64px)] transition-all duration-300 z-30",
-        "bg-white dark:bg-neutral-900 border-r border-neutral-200 dark:border-neutral-800",
-        "overflow-y-auto scrollbar-thin",
-        config.theming.semiDark && "bg-neutral-900 text-neutral-100",
+        "bg-white dark:bg-neutral-900 border-r border-neutral-200/80 dark:border-neutral-800/80",
+        "overflow-y-auto custom-scrollbar",
+        config.theming.semiDark && "bg-neutral-900 text-neutral-100 border-neutral-800",
         collapsed ? "w-20" : "w-[260px]"
       )}
       style={{ width: `var(--sidebar-width)` }}
@@ -339,13 +341,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ role }) => {
       </nav>
 
       {/* Collapse Toggle */}
-      <div className="sticky bottom-0 bg-white dark:bg-neutral-900 p-3 border-t border-neutral-200 dark:border-neutral-800">
+      <div className="sticky bottom-0 bg-gradient-to-t from-white via-white dark:from-neutral-900 dark:via-neutral-900 to-transparent p-3 pt-6">
         <button
           onClick={() => updateLayout({ menuCollapsed: !collapsed })}
-          className="w-full h-10 flex items-center justify-center rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          className="w-full h-10 flex items-center justify-center rounded-lg bg-neutral-100/80 dark:bg-neutral-800/80 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 transition-all group"
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
-          {collapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
+          {collapsed ? (
+            <ChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+          ) : (
+            <ChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
+          )}
         </button>
       </div>
     </aside>

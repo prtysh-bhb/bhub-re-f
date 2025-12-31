@@ -34,8 +34,8 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
   return (
     <header
       className={cn(
-        "h-16 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800",
-        "flex items-center justify-between px-6 transition-all z-40",
+        "h-16 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md border-b border-neutral-200/80 dark:border-neutral-800/80",
+        "flex items-center justify-between px-6 transition-all z-40 shadow-sm",
         config.layout.navbarType === "sticky" && "sticky top-0"
       )}
     >
@@ -54,10 +54,12 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
           to={role === "admin" ? "/admin/dashboard" : "/agent/dashboard"}
           className="flex items-center gap-2"
         >
-          <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold">
+          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center text-white font-bold shadow-md hover:shadow-lg transition-all">
             RE
           </div>
-          <span className="font-semibold text-lg hidden sm:block">Real Estate Pro</span>
+          <span className="font-bold text-lg hidden sm:block bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+            Real Estate Pro
+          </span>
         </Link>
 
         {/* Global Search */}
@@ -66,7 +68,7 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
           <input
             type="search"
             placeholder="Search properties, agents, customers..."
-            className="w-full h-10 pl-10 pr-4 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm"
+            className="w-full h-10 pl-10 pr-4 rounded-lg border border-neutral-300/80 dark:border-neutral-700/80 bg-neutral-100/80 dark:bg-neutral-800/80 hover:border-primary-300 dark:hover:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 focus:bg-white dark:focus:bg-neutral-900 text-sm transition-all placeholder:text-neutral-500"
           />
         </div>
       </div>
