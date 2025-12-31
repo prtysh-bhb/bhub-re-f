@@ -97,12 +97,12 @@ const ViewLead = () => {
 
   if (loading)
     return (
-      
+    <>
         <div className="p-6 text-gray-500 flex items-center justify-center">
           <Loader2 className="animate-spin mr-2" /> Loading lead details...
         </div>
-      
-    );
+    </>
+  );
 
   // Build query params to prefill create appointment form
   const openCreateAppointment = () => {
@@ -120,7 +120,7 @@ const ViewLead = () => {
   };
 
   return (
-    
+    <>
       <div className="mx-auto space-y-8">
         <div className="flex items-center mb-2">
           <button
@@ -260,7 +260,7 @@ const ViewLead = () => {
           )}
         </div>
       </div>
-    
+    </>
   );
 };
 

@@ -236,29 +236,29 @@ const ViewProfilePage = () => {
 
   if (loading) {
     return (
-      
+    <>
         <div className="flex items-center justify-center h-[70vh]">
           <div className="text-center space-y-4">
             <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading profile...</p>
           </div>
         </div>
-      
-    );
+    </>
+  );
   }
 
   if (!user) {
     return (
-      
+    <>
         <div className="flex items-center justify-center h-[70vh]">
           <p className="text-gray-600">No profile data found.</p>
         </div>
-      
-    );
+    </>
+  );
   }
 
   return (
-    
+    <>
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -597,7 +597,7 @@ const ViewProfilePage = () => {
           </div>
         )}
       </div>
-    
+    </>
   );
 };
 

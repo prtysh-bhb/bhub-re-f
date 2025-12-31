@@ -120,7 +120,7 @@ const PropertyList = () => {
   };
 
   return (
-    
+    <>
       <div className="p-6 min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950">
         {/* ---------- Header ---------- */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
@@ -435,7 +435,7 @@ const PropertyList = () => {
           </div>
         )}
       </div>
-    
+    </>
   );
 };
 

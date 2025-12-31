@@ -124,7 +124,7 @@ const CustomerList = () => {
       : "bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400";
 
   return (
-    
+    <>
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -602,7 +602,7 @@ const CustomerList = () => {
           </div>
         )}
       </div>
-    
+    </>
   );
 };
 

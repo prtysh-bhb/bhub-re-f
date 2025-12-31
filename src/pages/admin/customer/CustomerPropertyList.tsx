@@ -37,7 +37,7 @@ const CustomerPropertyList = () => {
   );
 
   return (
-    
+    <>
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -176,7 +176,7 @@ const CustomerPropertyList = () => {
           </div>
         )}
       </div>
-    
+    </>
   );
 };
 

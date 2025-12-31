@@ -33,30 +33,30 @@ const AgentProfilePage = () => {
 
   if (loading)
     return (
-      
+    <>
         <div className="flex items-center justify-center py-20">
           <div className="text-center space-y-4">
             <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading profile...</p>
           </div>
         </div>
-      
-    );
+    </>
+  );
 
   if (error)
     return (
-      
+    <>
         <div className="flex items-center justify-center py-20">
           <div className="text-center space-y-3">
             <XCircle className="w-16 h-16 text-red-500 mx-auto" />
             <p className="text-red-500 font-medium">{error}</p>
           </div>
         </div>
-      
-    );
+    </>
+  );
 
   return (
-    
+    <>
       <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
         {/* Cover Banner with Gradient Overlay */}
         <div className="relative h-52 sm:h-60 md:h-72 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 overflow-hidden">
@@ -226,7 +226,7 @@ const AgentProfilePage = () => {
           </Tabs>
         </div>
       </div>
-    
+    </>
   );
 };
 

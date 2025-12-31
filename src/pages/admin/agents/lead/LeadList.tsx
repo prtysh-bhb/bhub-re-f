@@ -55,15 +55,15 @@ const LeadList = () => {
 
   if (loading)
     return (
-      
+    <>
         <div className="p-6 flex items-center justify-center text-gray-500">
           <Loader2 className="animate-spin mr-2" /> Loading leads...
         </div>
-      
-    );
+    </>
+  );
 
   return (
-    
+    <>
       <div className="min-h-screen transition-colors">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
@@ -159,7 +159,7 @@ const LeadList = () => {
           </div>
         )}
       </div>
-    
+    </>
   );
 };
 

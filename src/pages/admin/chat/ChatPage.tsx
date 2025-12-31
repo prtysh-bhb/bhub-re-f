@@ -291,7 +291,7 @@ const ChatPage = () => {
   const selectedConversation = conversations?.find((c) => c.id === selectedChat);
 
   return (
-    
+    <>
       <div className="h-[calc(100vh-8rem)] bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
         <div className="grid grid-cols-12 h-full">
           {/* LEFT: Conversations list */}
@@ -635,7 +635,7 @@ const ChatPage = () => {
           </div>
         </div>
       </div>
-    
+    </>
   );
 };
 

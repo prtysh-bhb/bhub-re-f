@@ -515,7 +515,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
   });
 
   return (
-    
+    <>
       <div className="min-h-screen">
         <div className="mx-auto py-6 px-4">
           {/* Header Section */}
@@ -1293,6 +1293,6 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
           )}
         </div>
       </div>
-    
+    </>
   );
 }

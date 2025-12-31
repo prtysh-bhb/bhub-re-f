@@ -402,7 +402,7 @@ const AIPriceEstimator = () => {
   };
 
   return (
-    
+    <>
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-emerald-600 rounded-2xl p-6 text-white">
@@ -1079,7 +1079,7 @@ const AIPriceEstimator = () => {
           </div>
         )}
       </div>
-    
+    </>
   );
 };
 

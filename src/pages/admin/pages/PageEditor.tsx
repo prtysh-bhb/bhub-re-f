@@ -118,19 +118,19 @@ const PageEditor = () => {
 
   if (loading) {
     return (
-      
+    <>
         <div className="flex items-center justify-center py-20">
           <div className="text-center space-y-4">
             <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading page...</p>
           </div>
         </div>
-      
-    );
+    </>
+  );
   }
 
   return (
-    
+    <>
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -428,7 +428,7 @@ const PageEditor = () => {
           </div>
         </div>
       </div>
-    
+    </>
   );
 };
 

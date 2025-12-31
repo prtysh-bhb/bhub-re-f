@@ -32,20 +32,20 @@ const CustomerProfilePage = () => {
 
   if (loading)
     return (
-      
+    <>
         <div className="text-center py-10 text-gray-500">Loading profile...</div>
-      
-    );
+    </>
+  );
 
   if (error)
     return (
-      
+    <>
         <div className="text-center text-red-500 py-10">{error}</div>
-      
-    );
+    </>
+  );
 
   return (
-    
+    <>
       <div className="bg-white dark:bg-[#1f2937] rounded-2xl shadow-md overflow-hidden">
         {/* Cover Banner */}
         <div className="relative h-48 sm:h-56 md:h-64 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-500 rounded-t-2xl overflow-hidden">
@@ -160,7 +160,7 @@ const CustomerProfilePage = () => {
           </Tabs>
         </div>
       </div>
-    
+    </>
   );
 };
 

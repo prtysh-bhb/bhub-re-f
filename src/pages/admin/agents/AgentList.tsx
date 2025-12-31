@@ -48,7 +48,7 @@ const AgentList = () => {
       : "bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400";
 
   return (
-    
+    <>
       {/* Make sure parent allows children to control height and scrolling */}
       <div className="space-y-6 min-h-0 pb-6">
         {/* Header */}
@@ -455,7 +455,7 @@ const AgentList = () => {
           </div>
         )}
       </div>
-    
+    </>
   );
 };
 

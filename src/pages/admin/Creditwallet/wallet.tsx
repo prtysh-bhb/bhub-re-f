@@ -294,7 +294,7 @@ const Wallet = () => {
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    
+    <>
       <div className="space-y-4 md:space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-4 md:p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -1213,7 +1213,7 @@ const Wallet = () => {
           </div>
         )}
       </div>
-    
+    </>
   );
 };
 

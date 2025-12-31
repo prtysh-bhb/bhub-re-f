@@ -265,24 +265,24 @@ const EditProperty = () => {
 
   if (loading)
     return (
-      
+    <>
         <div className="text-center py-10 text-gray-500 dark:text-gray-400">
           Loading property...
         </div>
-      
-    );
+    </>
+  );
 
   if (!formData)
     return (
-      
+    <>
         <div className="text-center py-10 text-red-500 dark:text-red-400">
           Property not found.
         </div>
-      
-    );
+    </>
+  );
 
   return (
-    
+    <>
       <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg dark:shadow-gray-800/10 transition-colors duration-200">
         <div className="flex items-center gap-3 mr-auto my-2">
           <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl shadow-md">
@@ -671,7 +671,7 @@ const EditProperty = () => {
           </div>
         </form>
       </div>
-    
+    </>
   );
 };
 

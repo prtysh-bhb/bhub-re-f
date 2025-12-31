@@ -141,27 +141,27 @@ const ViewProperty = () => {
 
   if (loading)
     return (
-      
+    <>
         <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
           <div className="text-center space-y-4">
             <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading property details...</p>
           </div>
         </div>
-      
-    );
+    </>
+  );
 
   if (!property)
     return (
-      
+    <>
         <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
           <div className="text-center dark:text-red-400 text-red-500 p-8 dark:bg-gray-800/50 bg-white rounded-2xl shadow-xl dark:border-gray-700/50 border">
             <Home className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">Property not found</p>
           </div>
         </div>
-      
-    );
+    </>
+  );
 
   const allImages =
     property.image_urls && property.image_urls.length > 0 ? property.image_urls : [];
@@ -193,7 +193,7 @@ const ViewProperty = () => {
   };
 
   return (
-    
+    <>
       <div className="max-w-7xl mx-auto p-6 space-y-8 min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30">
         {/* ---------- Back & Delete Buttons ---------- */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
@@ -536,7 +536,7 @@ const ViewProperty = () => {
           />
         )}
       </div>
-    
+    </>
   );
 };
 
