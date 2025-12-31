@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { 
   CreditCard,
@@ -78,32 +77,32 @@ const ShowSubscriptionPlan = () => {
 
   if (loading) {
     return (
-      <AdminLayout>
+      
         <div className="flex items-center justify-center min-h-96">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
             <p className="mt-4 text-gray-600">Loading subscription plan...</p>
           </div>
         </div>
-      </AdminLayout>
+      
     );
   }
 
   if (!plan) {
     return (
-      <AdminLayout>
+      
         <div className="flex items-center justify-center min-h-96">
           <div className="text-center text-gray-500">
             <CreditCard className="w-16 h-16 mx-auto mb-4 opacity-50" />
             <p className="text-lg">Subscription plan not found</p>
           </div>
         </div>
-      </AdminLayout>
+      
     );
   }
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6 p-6 bg-gradient-to-br from-slate-50 to-blue-50/30 min-h-screen">
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -381,7 +380,7 @@ const ShowSubscriptionPlan = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

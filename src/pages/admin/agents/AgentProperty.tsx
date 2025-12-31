@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Building2, Search, Eye, Edit, Trash2, Grid3x3, List, HousePlus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -62,7 +61,7 @@ const AgentProperty = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -232,7 +231,7 @@ const AgentProperty = () => {
           </div>
         )}
       </div>
-    </AdminLayout>
+    
   );
 };
 

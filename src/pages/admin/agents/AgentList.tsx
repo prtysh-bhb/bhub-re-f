@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, Eye, UserPlus, Grid3x3, List, Users, Shield, UserCheck, UserX } from "lucide-react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { getAgents, Agent } from "@/api/agent/agentList";
 import { Button } from "@/components/ui/button";
 
@@ -49,7 +48,7 @@ const AgentList = () => {
       : "bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400";
 
   return (
-    <AdminLayout>
+    
       {/* Make sure parent allows children to control height and scrolling */}
       <div className="space-y-6 min-h-0 pb-6">
         {/* Header */}
@@ -456,7 +455,7 @@ const AgentList = () => {
           </div>
         )}
       </div>
-    </AdminLayout>
+    
   );
 };
 

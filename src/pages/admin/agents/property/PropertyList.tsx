@@ -5,7 +5,6 @@ import { getAgentProperties, deleteProperty } from "@/api/agent/property";
 import type { Property } from "@/types/property";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { toast } from "sonner";
 import {
   Eye,
@@ -121,7 +120,7 @@ const PropertyList = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="p-6 min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950">
         {/* ---------- Header ---------- */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
@@ -436,7 +435,7 @@ const PropertyList = () => {
           </div>
         )}
       </div>
-    </AdminLayout>
+    
   );
 };
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { HousePlus, Search, Eye, Filter } from "lucide-react";
 
 const OrdersPage = () => {
@@ -67,7 +66,7 @@ const OrdersPage = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -186,7 +185,7 @@ const OrdersPage = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

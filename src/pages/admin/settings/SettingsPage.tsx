@@ -1,7 +1,6 @@
 /* eslint-disable no-case-declarations */
 // src/pages/admin/settings/SettingsPage.tsx
 import { useState, useEffect } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Settings, Save, RefreshCw, AlertCircle } from "lucide-react";
@@ -115,7 +114,7 @@ const SettingsPage = () => {
   const totalChangedCount = Object.keys(changedSettings).length;
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -366,7 +365,7 @@ const SettingsPage = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

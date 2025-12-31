@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { createProperty } from "@/api/agent/property";
 import { toast } from "sonner";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { useNavigate } from "react-router-dom";
 import { Attributes, propertyAttributes, PropertyFormData } from "@/api/customer/properties";
 import { validateImage } from "@/helpers/image_helper";
@@ -229,7 +228,7 @@ const AddProperty = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="p-6 min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950">
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
@@ -882,7 +881,7 @@ const AddProperty = () => {
           </form>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

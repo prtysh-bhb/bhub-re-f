@@ -34,7 +34,6 @@ import {
   ArrowUpDown,
 } from "lucide-react";
 import { toast } from "sonner";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import {
   getAIChatLeads,
   getAIChatLeadById,
@@ -311,7 +310,7 @@ const AIChatLeadsDashboard = () => {
   }, []);
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white">
@@ -962,7 +961,7 @@ const AIChatLeadsDashboard = () => {
           </div>
         </div>
       )}
-    </AdminLayout>
+    
   );
 };
 

@@ -41,7 +41,6 @@ import {
   AIPriceEstimate,
   PaginatedResponse,
 } from "@/api/agent/aipriceestimate";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 
 const AIPriceEstimator = () => {
   const [estimating, setEstimating] = useState(false);
@@ -403,7 +402,7 @@ const AIPriceEstimator = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-emerald-600 rounded-2xl p-6 text-white">
@@ -1080,7 +1079,7 @@ const AIPriceEstimator = () => {
           </div>
         )}
       </div>
-    </AdminLayout>
+    
   );
 };
 

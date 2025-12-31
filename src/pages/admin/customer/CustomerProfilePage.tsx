@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCustomerProfile, CustomerProfile } from "@/api/customer/customerProfile";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import CustomerDetailsTab from "@/pages/admin/customer/components/CustomerDetailsTab";
 import CustomerActivityLogsTab from "@/pages/admin/customer/components/CustomerActivityLogsTab";
@@ -33,20 +32,20 @@ const CustomerProfilePage = () => {
 
   if (loading)
     return (
-      <AdminLayout>
+      
         <div className="text-center py-10 text-gray-500">Loading profile...</div>
-      </AdminLayout>
+      
     );
 
   if (error)
     return (
-      <AdminLayout>
+      
         <div className="text-center text-red-500 py-10">{error}</div>
-      </AdminLayout>
+      
     );
 
   return (
-    <AdminLayout>
+    
       <div className="bg-white dark:bg-[#1f2937] rounded-2xl shadow-md overflow-hidden">
         {/* Cover Banner */}
         <div className="relative h-48 sm:h-56 md:h-64 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-500 rounded-t-2xl overflow-hidden">
@@ -161,7 +160,7 @@ const CustomerProfilePage = () => {
           </Tabs>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

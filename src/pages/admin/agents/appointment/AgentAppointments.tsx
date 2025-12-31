@@ -4,7 +4,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import moment from "moment-timezone";
 import { useLocation } from "react-router-dom";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { toast } from "sonner";
 import {
   fetchAgentCustomers,
@@ -516,7 +515,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
   });
 
   return (
-    <AdminLayout>
+    
       <div className="min-h-screen">
         <div className="mx-auto py-6 px-4">
           {/* Header Section */}
@@ -1294,6 +1293,6 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
           )}
         </div>
       </div>
-    </AdminLayout>
+    
   );
 }

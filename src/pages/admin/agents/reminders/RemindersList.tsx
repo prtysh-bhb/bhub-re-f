@@ -22,7 +22,6 @@ import {
   X,
   Eye
 } from "lucide-react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { toast } from "sonner";
 import Loader from "@/components/ui/Loader";
 import DeleteModal from "../components/DeleteModal";
@@ -225,7 +224,7 @@ const RemindersList = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -798,7 +797,7 @@ const RemindersList = () => {
           </div>
         )}
       </div>
-    </AdminLayout>
+    
   );
 };
 

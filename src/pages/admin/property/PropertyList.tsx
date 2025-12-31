@@ -20,7 +20,6 @@ import {
   Star,
 } from "lucide-react";
 import { toast } from "sonner";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 
 const PropertyList = () => {
   const [properties, setProperties] = useState<any[]>([]);
@@ -114,7 +113,7 @@ const PropertyList = () => {
   );
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -523,7 +522,7 @@ const PropertyList = () => {
           </div>
         )}
       </div>
-    </AdminLayout>
+    
   );
 };
 

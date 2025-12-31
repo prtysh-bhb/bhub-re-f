@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { MessageSquare, Search, Star, Eye, Trash2, Filter } from "lucide-react";
 
 const ReviewsPage = () => {
@@ -78,7 +77,7 @@ const ReviewsPage = () => {
   const averageRating = (reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length).toFixed(1);
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -198,7 +197,7 @@ const ReviewsPage = () => {
           ))}
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

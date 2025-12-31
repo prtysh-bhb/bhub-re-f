@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { getPropertyStats } from "@/api/admin/property";
 import { Card, CardContent } from "@/components/ui/card";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import {
   Loader2,
   Home,
@@ -30,24 +29,24 @@ const PropertyStats = () => {
 
   if (loading)
     return (
-      <AdminLayout>
+      
         <div className="flex justify-center items-center min-h-[70vh]">
           <div className="text-center space-y-4">
             <Loader2 className="w-16 h-16 text-blue-600 dark:text-emerald-400 animate-spin mx-auto" />
             <p className="text-gray-500 dark:text-gray-400">Loading statistics...</p>
           </div>
         </div>
-      </AdminLayout>
+      
     );
 
   if (!stats)
     return (
-      <AdminLayout>
+      
         <div className="flex flex-col justify-center items-center min-h-[70vh] text-gray-500 dark:text-gray-400">
           <Home className="w-16 h-16 mb-3 text-gray-400" />
           <p className="font-medium">No statistics available.</p>
         </div>
-      </AdminLayout>
+      
     );
 
   const statItems = [
@@ -124,7 +123,7 @@ const PropertyStats = () => {
   ];
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -237,7 +236,7 @@ const PropertyStats = () => {
           </CardContent>
         </Card>
       </div>
-    </AdminLayout>
+    
   );
 };
 

@@ -21,7 +21,6 @@ import {
   Star,
   ImageOff,
 } from "lucide-react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { toast } from "sonner";
 import {
   Blog,
@@ -404,7 +403,7 @@ const BlogsList = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -889,7 +888,7 @@ const BlogsList = () => {
           cancelText="Cancel"
         />
       </div>
-    </AdminLayout>
+    
   );
 };
 

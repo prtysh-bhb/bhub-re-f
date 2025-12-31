@@ -16,7 +16,6 @@ import {
   Globe,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { toast } from "sonner";
 import { Page } from "@/types/page";
 import { getPages, deletePage } from "@/api/admin/pages";
@@ -112,7 +111,7 @@ const PagesList = () => {
   });
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -487,7 +486,7 @@ const PagesList = () => {
           cancelText="Cancel"
         />
       </div>
-    </AdminLayout>
+    
   );
 };
 

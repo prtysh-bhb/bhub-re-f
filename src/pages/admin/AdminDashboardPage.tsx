@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import api from "@/api/axios";
 import { getProfile } from "@/api/admin/profileApi";
@@ -441,44 +440,44 @@ const AdminDashboardPage = () => {
 
   if (loading) {
     return (
-      <AdminLayout>
+      
         <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
           <Loader />
         </div>
-      </AdminLayout>
+      
     );
   }
 
   if (error) {
     return (
-      <AdminLayout>
+      
         <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
           <div className="text-center dark:text-rose-400 text-rose-500 p-8 dark:bg-gray-800/50 bg-white rounded-2xl shadow-xl dark:border-gray-700/50 border">
             <XCircle className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">{error}</p>
           </div>
         </div>
-      </AdminLayout>
+      
     );
   }
 
   if (!profile) {
     return (
-      <AdminLayout>
+      
         <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
           <div className="text-center dark:text-gray-300 text-gray-500 p-8 dark:bg-gray-800/50 bg-white rounded-2xl shadow-xl dark:border-gray-700/50 border">
             <Users className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">No profile data found.</p>
           </div>
         </div>
-      </AdminLayout>
+      
     );
   }
 
   const userName = profile.name || "Admin";
 
   return (
-    <AdminLayout>
+    
       <div className="p-6 space-y-6 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 min-h-screen">
         {/* Welcome Header */}
         <div className="bg-gradient-to-r from-blue-600 to-emerald-600 py-6 px-8 rounded-2xl shadow-2xl dark:shadow-black/30 border-0 text-white relative overflow-hidden">
@@ -915,7 +914,7 @@ const AdminDashboardPage = () => {
           </CardContent>
         </Card>
       </div>
-    </AdminLayout>
+    
   );
 };
 

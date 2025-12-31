@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { ArrowLeftRight, Search, Eye, FileDown, Filter } from "lucide-react";
 
 const AgentTransaction = () => {
@@ -61,7 +60,7 @@ const AgentTransaction = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -177,7 +176,7 @@ const AgentTransaction = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

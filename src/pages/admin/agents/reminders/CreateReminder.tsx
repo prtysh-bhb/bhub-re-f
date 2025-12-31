@@ -16,7 +16,6 @@ import {
   ArrowLeft,
   Save,
 } from "lucide-react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
@@ -253,19 +252,19 @@ const CreateReminder = () => {
 
   if (loading) {
     return (
-      <AdminLayout>
+      
         <div className="flex items-center justify-center min-h-96">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
             <p className="mt-4 text-gray-600 dark:text-gray-400">Loading reminder...</p>
           </div>
         </div>
-      </AdminLayout>
+      
     );
   }
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 dark:from-blue-700 dark:via-purple-700 dark:to-emerald-700 p-8 rounded-2xl shadow-2xl border-0 text-white relative overflow-hidden">
@@ -732,7 +731,7 @@ const CreateReminder = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 
   function getPriorityBadge(priority: string) {

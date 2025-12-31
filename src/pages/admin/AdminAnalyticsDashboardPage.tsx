@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { getAnalytics, type AnalyticsData } from "@/api/admin/analytics";
 import Loader from "@/components/ui/Loader";
@@ -67,16 +66,16 @@ const AdminAnalyticsDashboardPage = () => {
 
   if (loading || !analytics) {
     return (
-      <AdminLayout>
+      
         <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
           <Loader />
         </div>
-      </AdminLayout>
+      
     );
   }
 
   return (
-    <AdminLayout>
+    
       <div className="p-6 space-y-6 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 min-h-screen">
         {/* Welcome Header */}
         <div className="bg-gradient-to-r from-blue-600 to-emerald-600 py-6 px-8 rounded-2xl shadow-2xl dark:shadow-black/30 border-0 text-white relative overflow-hidden">
@@ -744,7 +743,7 @@ const AdminAnalyticsDashboardPage = () => {
           </CardContent>
         </Card>
       </div>
-    </AdminLayout>
+    
   );
 };
 

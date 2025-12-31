@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { CreditCard, DollarSign, Calendar, Zap, Star, X, Plus } from "lucide-react";
 import { toast } from "sonner";
@@ -281,7 +280,7 @@ const AddSubscriptionPlan = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -671,7 +670,7 @@ const AddSubscriptionPlan = () => {
           </form>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

@@ -8,7 +8,6 @@ import {
   addInquiryNote,
   getInquiryHistory,
 } from "@/api/agent/inquiry";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { toast } from "sonner";
 import {
   Loader2,
@@ -98,11 +97,11 @@ const ViewLead = () => {
 
   if (loading)
     return (
-      <AdminLayout>
+      
         <div className="p-6 text-gray-500 flex items-center justify-center">
           <Loader2 className="animate-spin mr-2" /> Loading lead details...
         </div>
-      </AdminLayout>
+      
     );
 
   // Build query params to prefill create appointment form
@@ -121,7 +120,7 @@ const ViewLead = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="mx-auto space-y-8">
         <div className="flex items-center mb-2">
           <button
@@ -261,7 +260,7 @@ const ViewLead = () => {
           )}
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

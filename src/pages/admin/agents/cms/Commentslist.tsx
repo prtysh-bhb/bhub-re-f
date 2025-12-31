@@ -19,7 +19,6 @@ import {
   ExternalLink,
   Loader2,
 } from "lucide-react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { toast } from "sonner";
 import { BlogComment, Paginated, AgentBlog } from "@/api/agent/cms";
 import { getAgentBlogs, getAgentBlogComments, deleteAgentBlog } from "@/api/agent/cms";
@@ -277,19 +276,19 @@ const AgentCommentsList = () => {
 
   if (loadingBlogs) {
     return (
-      <AdminLayout>
+      
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-4">
             <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500">Loading blogs...</p>
           </div>
         </div>
-      </AdminLayout>
+      
     );
   }
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -860,7 +859,7 @@ const AgentCommentsList = () => {
           </div>
         )}
       </div>
-      </AdminLayout>
+      
   );
 };
 

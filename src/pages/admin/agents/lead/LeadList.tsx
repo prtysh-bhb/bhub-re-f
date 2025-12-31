@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { getAgentInquiries } from "@/api/agent/inquiry";
 import { useNavigate } from "react-router-dom";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import {
   Loader2,
   User,
@@ -56,15 +55,15 @@ const LeadList = () => {
 
   if (loading)
     return (
-      <AdminLayout>
+      
         <div className="p-6 flex items-center justify-center text-gray-500">
           <Loader2 className="animate-spin mr-2" /> Loading leads...
         </div>
-      </AdminLayout>
+      
     );
 
   return (
-    <AdminLayout>
+    
       <div className="min-h-screen transition-colors">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
@@ -160,7 +159,7 @@ const LeadList = () => {
           </div>
         )}
       </div>
-    </AdminLayout>
+    
   );
 };
 

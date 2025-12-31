@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { UserPlus, Mail, Phone, MapPin, User } from "lucide-react";
 import { toast } from "sonner";
@@ -41,7 +40,7 @@ const AddAgent = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -243,7 +242,7 @@ const AddAgent = () => {
           </form>
         </div>
       </div>
-    </AdminLayout>
+    
   );
 };
 

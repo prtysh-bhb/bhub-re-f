@@ -18,7 +18,6 @@ import {
   Calendar,
   Newspaper
 } from "lucide-react";
-import AdminLayout from "@/components/layout/admin/AdminLayout";
 import { toast } from "sonner";
 import { News, NewsFormData, createNews, deleteNews, getNews, updateNews, updateNewsStatus } from "@/api/admin/cms";
 import { validateImage } from "@/helpers/image_helper";
@@ -312,7 +311,7 @@ const NewsList = () => {
   };
 
   return (
-    <AdminLayout>
+    
       <div className="space-y-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -783,7 +782,7 @@ const NewsList = () => {
           cancelText="Cancel"
         />
       </div>
-    </AdminLayout>
+    
   );
 };
 
