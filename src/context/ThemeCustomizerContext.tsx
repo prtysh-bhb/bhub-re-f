@@ -69,12 +69,6 @@ function adjustColor(rgb: string, percent: number): string {
 function applyThemeToDOM(config: ThemeConfig) {
   const root = document.documentElement;
 
-  // Debug logging
-  console.log('🎨 Applying theme to DOM:', {
-    primaryColor: config.theming.primaryColor,
-    themeMode: config.theming.themeMode
-  });
-
   // 1. Theme Mode (light/dark)
   if (config.theming.themeMode === 'system') {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -88,10 +82,6 @@ function applyThemeToDOM(config: ThemeConfig) {
 
   // Convert primary color to RGB and create shades
   const baseRgb = hexToRgb(config.theming.primaryColor);
-
-  console.log('🎨 Base RGB:', baseRgb);
-  console.log('🎨 Setting CSS variables for primary color...');
-
   root.style.setProperty('--color-primary-50', adjustColor(baseRgb, 95));
   root.style.setProperty('--color-primary-100', adjustColor(baseRgb, 90));
   root.style.setProperty('--color-primary-200', adjustColor(baseRgb, 75));
@@ -102,8 +92,6 @@ function applyThemeToDOM(config: ThemeConfig) {
   root.style.setProperty('--color-primary-700', adjustColor(baseRgb, -25));
   root.style.setProperty('--color-primary-800', adjustColor(baseRgb, -40));
   root.style.setProperty('--color-primary-900', adjustColor(baseRgb, -60));
-
-  console.log('✅ CSS variables set successfully');
 
   // 3. Skin (bordered adds borders to cards)
   root.classList.toggle('skin-bordered', config.theming.skin === 'bordered');
@@ -146,7 +134,6 @@ export const ThemeCustomizerProvider: React.FC<{ children: React.ReactNode }> = 
   }, [config]);
 
   const updateTheming = (theming: Partial<ThemeConfig['theming']>) => {
-    console.log('🔄 Updating theming:', theming);
     setConfig(prev => ({
       ...prev,
       theming: { ...prev.theming, ...theming },
