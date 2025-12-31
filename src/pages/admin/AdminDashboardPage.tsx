@@ -200,15 +200,15 @@ const AdminDashboardPage = () => {
 
   const getRoleBadge = (role: string) => {
     const roleConfig: { [key: string]: { color: string; bgColor: string } } = {
-      admin: { color: 'text-primary-700 dark:text-primary-300', bgColor: 'bg-primary-100 dark:bg-primary-900/30' },
-      agent: { color: 'text-info-700 dark:text-info-300', bgColor: 'bg-info-100 dark:bg-info-900/30' },
-      customer: { color: 'text-success-700 dark:text-success-300', bgColor: 'bg-success-100 dark:bg-success-900/30' },
+      admin: { color: 'text-primary-700 dark:text-primary-300', bgColor: 'bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20' },
+      agent: { color: 'text-primary-600 dark:text-primary-400', bgColor: 'bg-gradient-to-r from-primary-50 to-primary-100/50 dark:from-primary-900/20 dark:to-primary-900/10' },
+      customer: { color: 'text-primary-600 dark:text-primary-400', bgColor: 'bg-gradient-to-r from-primary-100/80 to-primary-50/50 dark:from-primary-900/25 dark:to-primary-900/15' },
     };
 
     const config = roleConfig[role] || { color: 'text-neutral-700 dark:text-neutral-300', bgColor: 'bg-neutral-100 dark:bg-neutral-800/50' };
 
     return (
-      <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${config.bgColor} ${config.color} border border-neutral-200 dark:border-neutral-700/50`}>
+      <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${config.bgColor} ${config.color} border border-primary-200/60 dark:border-primary-800/40 shadow-sm`}>
         {role.toUpperCase()}
       </span>
     );
@@ -216,19 +216,19 @@ const AdminDashboardPage = () => {
 
   const getStatusBadge = (status: string) => {
     const statusConfig: { [key: string]: { color: string; bgColor: string } } = {
-      published: { color: 'text-success-700 dark:text-success-300', bgColor: 'bg-success-100 dark:bg-success-900/30' },
-      draft: { color: 'text-warning-700 dark:text-warning-300', bgColor: 'bg-warning-100 dark:bg-warning-900/30' },
-      sold: { color: 'text-primary-700 dark:text-primary-300', bgColor: 'bg-primary-100 dark:bg-primary-900/30' },
-      rented: { color: 'text-info-700 dark:text-info-300', bgColor: 'bg-info-100 dark:bg-info-900/30' },
-      pending: { color: 'text-warning-700 dark:text-warning-300', bgColor: 'bg-warning-100 dark:bg-warning-900/30' },
-      approved: { color: 'text-success-700 dark:text-success-300', bgColor: 'bg-success-100 dark:bg-success-900/30' },
-      rejected: { color: 'text-error-700 dark:text-error-300', bgColor: 'bg-error-100 dark:bg-error-900/30' },
+      published: { color: 'text-primary-700 dark:text-primary-300', bgColor: 'bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20' },
+      draft: { color: 'text-neutral-600 dark:text-neutral-400', bgColor: 'bg-gradient-to-r from-neutral-100 to-neutral-50 dark:from-neutral-800/30 dark:to-neutral-800/20' },
+      sold: { color: 'text-primary-700 dark:text-primary-300', bgColor: 'bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20' },
+      rented: { color: 'text-primary-600 dark:text-primary-400', bgColor: 'bg-gradient-to-r from-primary-50 to-primary-100/50 dark:from-primary-900/20 dark:to-primary-900/10' },
+      pending: { color: 'text-neutral-600 dark:text-neutral-400', bgColor: 'bg-gradient-to-r from-neutral-100 to-neutral-50 dark:from-neutral-800/30 dark:to-neutral-800/20' },
+      approved: { color: 'text-primary-700 dark:text-primary-300', bgColor: 'bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20' },
+      rejected: { color: 'text-error-700 dark:text-error-300', bgColor: 'bg-gradient-to-r from-error-100 to-error-50 dark:from-error-900/30 dark:to-error-900/20' },
     };
 
     const config = statusConfig[status] || { color: 'text-neutral-700 dark:text-neutral-300', bgColor: 'bg-neutral-100 dark:bg-neutral-800/50' };
 
     return (
-      <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${config.bgColor} ${config.color} border border-neutral-200 dark:border-neutral-700/50`}>
+      <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${config.bgColor} ${config.color} border border-primary-200/60 dark:border-primary-800/40 shadow-sm`}>
         {status.replace('_', ' ').toUpperCase()}
       </span>
     );
@@ -322,13 +322,13 @@ const AdminDashboardPage = () => {
                   <div className="flex-1">
                     <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-3">{stat.label}</p>
                     <p className="text-neutral-900 dark:text-neutral-100 text-3xl font-bold mb-3">{stat.value.toLocaleString()}</p>
-                    <div className="flex items-center gap-1.5 px-2.5 py-1 bg-success-50 dark:bg-success-900/20 rounded-full w-fit">
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 bg-primary-50 dark:bg-primary-900/20 rounded-full w-fit">
                       {stat.changeType === 'up' ? (
-                        <ArrowUp className="w-3.5 h-3.5 text-success-600 dark:text-success-400" />
+                        <ArrowUp className="w-3.5 h-3.5 text-primary-600 dark:text-primary-400" />
                       ) : (
-                        <ArrowDown className="w-3.5 h-3.5 text-error-600 dark:text-error-400" />
+                        <ArrowDown className="w-3.5 h-3.5 text-primary-600 dark:text-primary-400" />
                       )}
-                      <span className={`text-xs font-bold ${stat.changeType === 'up' ? 'text-success-600 dark:text-success-400' : 'text-error-600 dark:text-error-400'}`}>
+                      <span className="text-xs font-bold text-primary-600 dark:text-primary-400">
                         +{stat.change}
                       </span>
                       <span className="text-xs text-neutral-600 dark:text-neutral-400">this month</span>
@@ -536,7 +536,7 @@ const AdminDashboardPage = () => {
                   </div>
                   <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Pending Approvals</h3>
                 </div>
-                <span className="bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-300 px-3 py-1.5 rounded-full text-sm font-bold border border-neutral-200 dark:border-neutral-700">
+                <span className="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white px-3 py-1.5 rounded-full text-sm font-bold shadow-md shadow-primary-500/30">
                   {pendingApprovals.length}
                 </span>
               </div>
@@ -548,8 +548,8 @@ const AdminDashboardPage = () => {
                   >
                     <h4 className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm mb-3 line-clamp-2">{property.title}</h4>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-warning-600 dark:text-warning-400 font-bold">{formatAmount(property.price)}</span>
-                      <span className="dark:text-gray-300 text-gray-700 font-medium">{property.agent.name}</span>
+                      <span className="text-primary-600 dark:text-primary-400 font-bold">{formatAmount(property.price)}</span>
+                      <span className="text-neutral-700 dark:text-neutral-300 font-medium">{property.agent.name}</span>
                     </div>
                   </div>
                 ))}
@@ -584,16 +584,16 @@ const AdminDashboardPage = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                          index === 0 ? 'bg-warning-500 text-white' :
-                          index === 1 ? 'bg-neutral-400 text-white' :
-                          index === 2 ? 'bg-warning-600 text-white' :
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-transform group-hover:scale-110 duration-200 ${
+                          index === 0 ? 'bg-gradient-to-br from-primary-400 to-primary-500 text-white shadow-primary-500/30' :
+                          index === 1 ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-primary-600/30' :
+                          index === 2 ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-primary-700/30' :
                           'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
                         }`}>
                           {index < 3 ? (
-                            <Award className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                            <Award className="w-5 h-5" />
                           ) : (
-                            <span className="text-sm font-bold text-white">{index + 1}</span>
+                            <span className="text-sm font-bold">{index + 1}</span>
                           )}
                         </div>
                         <div>
@@ -629,16 +629,16 @@ const AdminDashboardPage = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                          index === 0 ? 'bg-warning-500 text-white' :
-                          index === 1 ? 'bg-neutral-400 text-white' :
-                          index === 2 ? 'bg-warning-600 text-white' :
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-transform group-hover:scale-110 duration-200 ${
+                          index === 0 ? 'bg-gradient-to-br from-primary-400 to-primary-500 text-white shadow-primary-500/30' :
+                          index === 1 ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-primary-600/30' :
+                          index === 2 ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-primary-700/30' :
                           'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
                         }`}>
                           {index < 3 ? (
-                            <Star className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                            <Star className="w-5 h-5" />
                           ) : (
-                            <span className="text-sm font-bold text-white">{index + 1}</span>
+                            <span className="text-sm font-bold">{index + 1}</span>
                           )}
                         </div>
                         <div>
@@ -669,32 +669,30 @@ const AdminDashboardPage = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {propertiesByType.map((type, index) => {
-                const colors = [
-                  'dark:from-blue-600 dark:to-cyan-600 from-blue-500 to-cyan-500', 
-                  'dark:from-emerald-600 dark:to-green-600 from-emerald-500 to-green-500', 
-                  'dark:from-rose-600 dark:to-pink-600 from-rose-500 to-pink-500',
-                  'dark:from-violet-600 dark:to-purple-600 from-violet-500 to-purple-500', 
-                  'dark:from-orange-600 dark:to-amber-600 from-orange-500 to-amber-500', 
-                  'dark:from-teal-600 dark:to-cyan-600 from-teal-500 to-cyan-500'
+                // Different primary color shades for visual variety while staying on brand
+                const shades = [
+                  'from-primary-400 to-primary-500',
+                  'from-primary-500 to-primary-600',
+                  'from-primary-600 to-primary-700',
+                  'from-primary-500 to-primary-600',
+                  'from-primary-400 to-primary-500',
+                  'from-primary-600 to-primary-700'
                 ];
-                const bgColorsLight = [
-                  'from-blue-50 to-cyan-50', 'from-emerald-50 to-green-50', 'from-rose-50 to-pink-50',
-                  'from-violet-50 to-purple-50', 'from-orange-50 to-amber-50', 'from-teal-50 to-cyan-50'
-                ];
-                const bgColorsDark = [
-                  'dark:from-gray-800/70 dark:to-gray-800/50', 'dark:from-gray-800/70 dark:to-gray-800/50', 'dark:from-gray-800/70 dark:to-gray-800/50',
-                  'dark:from-gray-800/70 dark:to-gray-800/50', 'dark:from-gray-800/70 dark:to-gray-800/50', 'dark:from-gray-800/70 dark:to-gray-800/50'
-                ];
-                
+
                 return (
-                  <div 
-                    key={type.type} 
-                    className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5 text-center hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all"
+                  <div
+                    key={type.type}
+                    className="group relative bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 rounded-xl p-6 text-center hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300 overflow-hidden"
                   >
-                    <div className="text-3xl font-bold mb-2 text-primary-600 dark:text-primary-400">
-                      {type.count}
+                    {/* Background gradient overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-primary-100/20 dark:from-primary-950/0 dark:to-primary-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div className="relative">
+                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${shades[index % shades.length]} shadow-lg shadow-primary-500/20 mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                        <span className="text-2xl font-bold text-white">{type.count}</span>
+                      </div>
+                      <div className="text-neutral-700 dark:text-neutral-300 text-sm font-bold capitalize">{type.type || 'Unknown'}</div>
                     </div>
-                    <div className="text-neutral-600 dark:text-neutral-300 text-sm font-semibold capitalize">{type.type || 'Unknown'}</div>
                   </div>
                 );
               })}
