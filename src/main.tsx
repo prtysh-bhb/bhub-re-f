@@ -9,14 +9,17 @@ import "@fontsource/montserrat/800.css"; // extra bold
 import "./index.css"; // your global CSS file
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import { ThemeCustomizerProvider } from "./context/ThemeCustomizerContext";
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <AuthProvider>
-      <App />
-      </AuthProvider>
-    </ThemeProvider>
+    <ThemeCustomizerProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </ThemeProvider>
+    </ThemeCustomizerProvider>
   </React.StrictMode>
 );
