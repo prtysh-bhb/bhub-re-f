@@ -274,21 +274,27 @@ const AdminDashboardPage = () => {
 
   return (
     <>
-      <div className="p-6 space-y-6 bg-neutral-100/50 dark:bg-neutral-950 min-h-screen">
+      <div className="p-6 space-y-6 bg-gradient-to-br from-neutral-50 via-neutral-100/30 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950 min-h-screen">
         {/* Welcome Header - Elegant & Professional */}
-        <div className="bg-white dark:bg-neutral-900 py-8 px-8 rounded-xl border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
-          <div className="flex items-center justify-between">
+        <div className="relative bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 py-10 px-8 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden">
+          {/* Decorative gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent opacity-50"></div>
+
+          <div className="relative flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
-                Welcome back, {userName}
-              </h1>
-              <p className="text-neutral-600 dark:text-neutral-400 text-base">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-1.5 h-8 bg-gradient-to-b from-primary-600 to-primary-400 rounded-full"></div>
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-neutral-100 dark:to-neutral-300 bg-clip-text text-transparent">
+                  Welcome back, {userName}
+                </h1>
+              </div>
+              <p className="text-neutral-600 dark:text-neutral-400 text-base ml-5">
                 System overview and performance analytics
               </p>
             </div>
-            <div className="hidden md:flex items-center gap-3 px-4 py-3 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700">
-              <Calendar className="text-neutral-500 dark:text-neutral-400" size={20} />
-              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            <div className="hidden md:flex items-center gap-3 px-5 py-3.5 bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-xl border border-neutral-200/60 dark:border-neutral-700/60 shadow-sm">
+              <Calendar className="text-primary-600 dark:text-primary-400" size={20} />
+              <span className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
                 {new Date().toLocaleDateString('en-US', {
                   weekday: 'long',
                   month: 'short',
@@ -300,32 +306,36 @@ const AdminDashboardPage = () => {
           </div>
         </div>
 
-        {/* Overview Statistics - Clean & Professional */}
+        {/* Overview Statistics - Elegant Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {overviewStats.map((stat) => {
             const Icon = stat.icon;
             return (
               <div
                 key={stat.label}
-                className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-800 hover:-translate-y-0.5 transition-all duration-200"
+                className="group relative bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 border border-neutral-200/60 dark:border-neutral-800/60 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300"
               >
-                <div className="flex items-start justify-between">
+                {/* Background gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 via-primary-50/0 to-primary-100/20 dark:from-primary-950/0 dark:via-primary-950/0 dark:to-primary-900/10 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
+
+                <div className="relative flex items-start justify-between">
                   <div className="flex-1">
-                    <p className="text-neutral-600 dark:text-neutral-400 text-sm font-medium mb-2">{stat.label}</p>
-                    <p className="text-neutral-900 dark:text-neutral-100 text-2xl font-semibold">{stat.value.toLocaleString()}</p>
-                    <div className="flex items-center gap-1.5 mt-3">
+                    <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-3">{stat.label}</p>
+                    <p className="text-neutral-900 dark:text-neutral-100 text-3xl font-bold mb-3">{stat.value.toLocaleString()}</p>
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 bg-success-50 dark:bg-success-900/20 rounded-full w-fit">
                       {stat.changeType === 'up' ? (
-                        <ArrowUp className="w-3.5 h-3.5 text-success-600" />
+                        <ArrowUp className="w-3.5 h-3.5 text-success-600 dark:text-success-400" />
                       ) : (
-                        <ArrowDown className="w-3.5 h-3.5 text-error-600" />
+                        <ArrowDown className="w-3.5 h-3.5 text-error-600 dark:text-error-400" />
                       )}
-                      <span className={`text-xs font-medium ${stat.changeType === 'up' ? 'text-success-600' : 'text-error-600'}`}>
-                        +{stat.change} this month
+                      <span className={`text-xs font-bold ${stat.changeType === 'up' ? 'text-success-600 dark:text-success-400' : 'text-error-600 dark:text-error-400'}`}>
+                        +{stat.change}
                       </span>
+                      <span className="text-xs text-neutral-600 dark:text-neutral-400">this month</span>
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-lg shadow-primary-500/30 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
                 </div>
               </div>
@@ -334,31 +344,31 @@ const AdminDashboardPage = () => {
         </div>
 
         {/* Detailed Statistics Grid - Elegant Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* User Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">User Statistics</h3>
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">User Statistics</h3>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 {userStats.map((stat) => {
                   const Icon = stat.icon;
                   return (
                     <div
                       key={stat.label}
-                      className="flex items-center justify-between py-3 px-4 bg-neutral-50/80 dark:bg-neutral-800/50 rounded-lg border border-neutral-200/60 dark:border-neutral-700/50 hover:bg-white dark:hover:bg-neutral-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-sm transition-all"
+                      className="group flex items-center justify-between py-3.5 px-4 bg-gradient-to-r from-neutral-50 to-neutral-50/50 dark:from-neutral-800/40 dark:to-neutral-800/20 rounded-xl border border-neutral-200/60 dark:border-neutral-700/50 hover:from-primary-50/50 hover:to-primary-50/20 dark:hover:from-primary-900/20 dark:hover:to-primary-900/10 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-md hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 transition-all duration-200"
                     >
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center">
-                          <Icon className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-800/20 border border-primary-200/60 dark:border-primary-800/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                          <Icon className="w-5 h-5 text-primary-600 dark:text-primary-400" />
                         </div>
-                        <span className="text-neutral-700 dark:text-neutral-300 text-sm font-medium">{stat.label}</span>
+                        <span className="text-neutral-700 dark:text-neutral-300 text-sm font-semibold">{stat.label}</span>
                       </div>
-                      <span className="text-neutral-900 dark:text-neutral-100 font-semibold">{stat.value}</span>
+                      <span className="text-neutral-900 dark:text-neutral-100 font-bold text-lg">{stat.value}</span>
                     </div>
                   );
                 })}
@@ -367,29 +377,29 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Property Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                  <Building2 className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Building2 className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">Property Statistics</h3>
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Property Statistics</h3>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 {propertyStats.map((stat) => {
                   const Icon = stat.icon;
                   return (
                     <div
                       key={stat.label}
-                      className="flex items-center justify-between py-3 px-4 bg-neutral-50/80 dark:bg-neutral-800/50 rounded-lg border border-neutral-200/60 dark:border-neutral-700/50 hover:bg-white dark:hover:bg-neutral-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-sm transition-all"
+                      className="group flex items-center justify-between py-3.5 px-4 bg-gradient-to-r from-neutral-50 to-neutral-50/50 dark:from-neutral-800/40 dark:to-neutral-800/20 rounded-xl border border-neutral-200/60 dark:border-neutral-700/50 hover:from-primary-50/50 hover:to-primary-50/20 dark:hover:from-primary-900/20 dark:hover:to-primary-900/10 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-md hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 transition-all duration-200"
                     >
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center">
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-800/20 border border-primary-200/60 dark:border-primary-800/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
                           <Icon className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                         </div>
-                        <span className="text-neutral-700 dark:text-neutral-300 text-sm font-medium">{stat.label}</span>
+                        <span className="text-neutral-700 dark:text-neutral-300 text-sm font-semibold">{stat.label}</span>
                       </div>
-                      <span className="text-neutral-900 dark:text-neutral-100 font-semibold">{stat.value}</span>
+                      <span className="text-neutral-900 dark:text-neutral-100 font-bold text-lg">{stat.value}</span>
                     </div>
                   );
                 })}
@@ -398,29 +408,29 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Inquiry Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <MessageCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">Inquiry Statistics</h3>
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Inquiry Statistics</h3>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 {inquiryStats.map((stat) => {
                   const Icon = stat.icon;
                   return (
                     <div
                       key={stat.label}
-                      className="flex items-center justify-between py-3 px-4 bg-neutral-50/80 dark:bg-neutral-800/50 rounded-lg border border-neutral-200/60 dark:border-neutral-700/50 hover:bg-white dark:hover:bg-neutral-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-sm transition-all"
+                      className="group flex items-center justify-between py-3.5 px-4 bg-gradient-to-r from-neutral-50 to-neutral-50/50 dark:from-neutral-800/40 dark:to-neutral-800/20 rounded-xl border border-neutral-200/60 dark:border-neutral-700/50 hover:from-primary-50/50 hover:to-primary-50/20 dark:hover:from-primary-900/20 dark:hover:to-primary-900/10 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-md hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 transition-all duration-200"
                     >
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center">
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-800/20 border border-primary-200/60 dark:border-primary-800/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
                           <Icon className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                         </div>
-                        <span className="text-neutral-700 dark:text-neutral-300 text-sm font-medium">{stat.label}</span>
+                        <span className="text-neutral-700 dark:text-neutral-300 text-sm font-semibold">{stat.label}</span>
                       </div>
-                      <span className="text-neutral-900 dark:text-neutral-100 font-semibold">{stat.value}</span>
+                      <span className="text-neutral-900 dark:text-neutral-100 font-bold text-lg">{stat.value}</span>
                     </div>
                   );
                 })}
@@ -432,29 +442,29 @@ const AdminDashboardPage = () => {
         {/* Recent Activity & Pending Approvals */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Users */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                    <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">Recent Users</h3>
+                  <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Recent Users</h3>
                 </div>
               </div>
               <div className="space-y-4">
                 {recentUsers.map((user) => (
                   <div 
                     key={user.id} 
-                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
-                          <Users className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                        <div className="w-11 h-11 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-full flex items-center justify-center shadow-md shadow-primary-500/20 group-hover:scale-110 transition-transform duration-200">
+                          <Users className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                          <p className="text-neutral-900 dark:text-neutral-100 text-sm font-semibold">{user.name}</p>
+                          <p className="text-neutral-900 dark:text-neutral-100 text-sm font-bold">{user.name}</p>
                           <p className="text-neutral-600 dark:text-neutral-400 text-xs">{user.email}</p>
                         </div>
                       </div>
@@ -466,7 +476,7 @@ const AdminDashboardPage = () => {
                   </div>
                 ))}
                 {recentUsers.length === 0 && (
-                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50/50 dark:bg-neutral-800/30 rounded-lg border border-dashed border-neutral-300/60 dark:border-neutral-700">
+                  <div className="text-center py-10 text-neutral-500 dark:text-neutral-400 bg-gradient-to-br from-neutral-50 to-neutral-100/50 dark:from-neutral-800/30 dark:to-neutral-800/10 rounded-xl border-2 border-dashed border-neutral-300/60 dark:border-neutral-700">
                     <Users className="w-12 h-12 mx-auto mb-3 opacity-50 text-primary-400 dark:text-primary-400" />
                     <p className="font-semibold">No recent users</p>
                   </div>
@@ -476,21 +486,21 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Recent Properties */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                    <Rocket className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                    <Rocket className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">Recent Properties</h3>
+                  <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Recent Properties</h3>
                 </div>
               </div>
               <div className="space-y-4">
                 {recentProperties.map((property) => (
                   <div 
                     key={property.id} 
-                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <h4 className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm line-clamp-2 flex-1 pr-4">{property.title}</h4>
@@ -507,7 +517,7 @@ const AdminDashboardPage = () => {
                   </div>
                 ))}
                 {recentProperties.length === 0 && (
-                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50/50 dark:bg-neutral-800/30 rounded-lg border border-dashed border-neutral-300/60 dark:border-neutral-700">
+                  <div className="text-center py-10 text-neutral-500 dark:text-neutral-400 bg-gradient-to-br from-neutral-50 to-neutral-100/50 dark:from-neutral-800/30 dark:to-neutral-800/10 rounded-xl border-2 border-dashed border-neutral-300/60 dark:border-neutral-700">
                     <Building2 className="w-12 h-12 mx-auto mb-3 opacity-50 text-success-400 dark:text-success-400" />
                     <p className="font-semibold">No recent properties</p>
                   </div>
@@ -517,14 +527,14 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Pending Approvals */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                    <Clock4 className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                    <Clock4 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">Pending Approvals</h3>
+                  <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Pending Approvals</h3>
                 </div>
                 <span className="bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-300 px-3 py-1.5 rounded-full text-sm font-bold border border-neutral-200 dark:border-neutral-700">
                   {pendingApprovals.length}
@@ -534,7 +544,7 @@ const AdminDashboardPage = () => {
                 {pendingApprovals.map((property) => (
                   <div 
                     key={property.id} 
-                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <h4 className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm mb-3 line-clamp-2">{property.title}</h4>
                     <div className="flex items-center justify-between text-sm">
@@ -544,7 +554,7 @@ const AdminDashboardPage = () => {
                   </div>
                 ))}
                 {pendingApprovals.length === 0 && (
-                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50/50 dark:bg-neutral-800/30 rounded-lg border border-dashed border-neutral-300/60 dark:border-neutral-700">
+                  <div className="text-center py-10 text-neutral-500 dark:text-neutral-400 bg-gradient-to-br from-neutral-50 to-neutral-100/50 dark:from-neutral-800/30 dark:to-neutral-800/10 rounded-xl border-2 border-dashed border-neutral-300/60 dark:border-neutral-700">
                     <CheckCircle2 className="w-12 h-12 mx-auto mb-3 opacity-50 text-success-400 dark:text-success-400" />
                     <p className="font-semibold">No pending approvals</p>
                     <p className="text-sm mt-1">All caught up! 🎉</p>
@@ -558,19 +568,19 @@ const AdminDashboardPage = () => {
         {/* Top Performers */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Top Agents by Properties */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <TrendingUp className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">Top Agents (Properties)</h3>
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Top Agents (Properties)</h3>
               </div>
               <div className="space-y-4">
                 {topAgentsByProperties.map((agent, index) => (
                   <div 
                     key={agent.id} 
-                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
@@ -587,7 +597,7 @@ const AdminDashboardPage = () => {
                           )}
                         </div>
                         <div>
-                          <p className="text-neutral-900 dark:text-neutral-100 text-sm font-semibold">{agent.name}</p>
+                          <p className="text-neutral-900 dark:text-neutral-100 text-sm font-bold">{agent.name}</p>
                           <p className="text-neutral-600 dark:text-neutral-400 text-xs">{agent.email}</p>
                         </div>
                       </div>
@@ -603,19 +613,19 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Top Agents by Inquiries */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <BarChart3 className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">Top Agents (Inquiries)</h3>
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Top Agents (Inquiries)</h3>
               </div>
               <div className="space-y-4">
                 {topAgentsByInquiries.map((agent, index) => (
                   <div 
                     key={agent.id} 
-                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
@@ -632,7 +642,7 @@ const AdminDashboardPage = () => {
                           )}
                         </div>
                         <div>
-                          <p className="text-neutral-900 dark:text-neutral-100 text-sm font-semibold">{agent.name}</p>
+                          <p className="text-neutral-900 dark:text-neutral-100 text-sm font-bold">{agent.name}</p>
                           <p className="text-neutral-600 dark:text-neutral-400 text-xs">{agent.email}</p>
                         </div>
                       </div>
@@ -649,13 +659,13 @@ const AdminDashboardPage = () => {
         </div>
 
         {/* Property Types Distribution */}
-        <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
+        <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
-                <Home className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                <Home className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-semibold">Properties by Type</h3>
+              <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Properties by Type</h3>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {propertiesByType.map((type, index) => {

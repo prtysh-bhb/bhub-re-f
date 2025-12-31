@@ -54,11 +54,11 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, href, badge, collapsed, 
           }
         }}
         className={cn(
-          "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all group relative",
+          "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group relative",
           isActive
-            ? "bg-primary-600 text-white font-semibold shadow-md hover:bg-primary-700"
-            : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-primary-600 dark:hover:text-primary-400",
-          collapsed && "justify-center"
+            ? "bg-primary-50/80 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-semibold shadow-sm border-l-4 border-primary-600 dark:border-primary-400 pl-2.5"
+            : "text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 hover:text-primary-600 dark:hover:text-primary-400 hover:pl-2 border-l-4 border-transparent",
+          collapsed && "justify-center border-l-0"
         )}
       >
         {/* Icon */}
