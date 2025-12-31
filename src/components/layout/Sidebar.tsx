@@ -55,10 +55,9 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, href, badge, collapsed, 
         }}
         className={cn(
           "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all group relative",
-          "hover:bg-primary-50 dark:hover:bg-primary-900/20",
           isActive
-            ? "bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 font-medium shadow-sm"
-            : "text-neutral-700 dark:text-neutral-300",
+            ? "bg-primary-600 text-white font-semibold shadow-md hover:bg-primary-700"
+            : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-primary-600 dark:hover:text-primary-400",
           collapsed && "justify-center"
         )}
       >

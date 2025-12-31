@@ -237,7 +237,7 @@ const AdminDashboardPage = () => {
   if (loading) {
     return (
     <>
-        <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center">
+        <div className="min-h-screen bg-neutral-100/50 dark:bg-neutral-950 flex items-center justify-center">
           <Loader />
         </div>
     </>
@@ -247,7 +247,7 @@ const AdminDashboardPage = () => {
   if (error) {
     return (
     <>
-        <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center">
+        <div className="min-h-screen bg-neutral-100/50 dark:bg-neutral-950 flex items-center justify-center">
           <div className="text-center text-error-600 dark:text-error-400 p-8 bg-white dark:bg-neutral-900 rounded-2xl shadow-xl border border-neutral-200 dark:border-neutral-800">
             <XCircle className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">{error}</p>
@@ -260,7 +260,7 @@ const AdminDashboardPage = () => {
   if (!profile) {
     return (
     <>
-        <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center">
+        <div className="min-h-screen bg-neutral-100/50 dark:bg-neutral-950 flex items-center justify-center">
           <div className="text-center text-neutral-500 dark:text-neutral-400 p-8 bg-white dark:bg-neutral-900 rounded-2xl shadow-xl border border-neutral-200 dark:border-neutral-800">
             <Users className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">No profile data found.</p>
@@ -274,9 +274,9 @@ const AdminDashboardPage = () => {
 
   return (
     <>
-      <div className="p-6 space-y-6 bg-neutral-50 dark:bg-neutral-950 min-h-screen">
+      <div className="p-6 space-y-6 bg-neutral-100/50 dark:bg-neutral-950 min-h-screen">
         {/* Welcome Header - Elegant & Professional */}
-        <div className="bg-white dark:bg-neutral-900 py-8 px-8 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 py-8 px-8 rounded-xl border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
@@ -307,7 +307,7 @@ const AdminDashboardPage = () => {
             return (
               <div
                 key={stat.label}
-                className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-6 hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all duration-200"
+                className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-800 hover:-translate-y-0.5 transition-all duration-200"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
@@ -336,7 +336,7 @@ const AdminDashboardPage = () => {
         {/* Detailed Statistics Grid - Elegant Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* User Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
@@ -350,7 +350,7 @@ const AdminDashboardPage = () => {
                   return (
                     <div
                       key={stat.label}
-                      className="flex items-center justify-between py-3 px-4 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-100 dark:border-neutral-800 hover:border-primary-200 dark:hover:border-primary-900/30 transition-colors"
+                      className="flex items-center justify-between py-3 px-4 bg-neutral-50/80 dark:bg-neutral-800/50 rounded-lg border border-neutral-200/60 dark:border-neutral-700/50 hover:bg-white dark:hover:bg-neutral-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-sm transition-all"
                     >
                       <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center">
@@ -367,7 +367,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Property Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
@@ -381,7 +381,7 @@ const AdminDashboardPage = () => {
                   return (
                     <div
                       key={stat.label}
-                      className="flex items-center justify-between py-3 px-4 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-100 dark:border-neutral-800 hover:border-primary-200 dark:hover:border-primary-900/30 transition-colors"
+                      className="flex items-center justify-between py-3 px-4 bg-neutral-50/80 dark:bg-neutral-800/50 rounded-lg border border-neutral-200/60 dark:border-neutral-700/50 hover:bg-white dark:hover:bg-neutral-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-sm transition-all"
                     >
                       <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center">
@@ -398,7 +398,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Inquiry Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
@@ -412,7 +412,7 @@ const AdminDashboardPage = () => {
                   return (
                     <div
                       key={stat.label}
-                      className="flex items-center justify-between py-3 px-4 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-100 dark:border-neutral-800 hover:border-primary-200 dark:hover:border-primary-900/30 transition-colors"
+                      className="flex items-center justify-between py-3 px-4 bg-neutral-50/80 dark:bg-neutral-800/50 rounded-lg border border-neutral-200/60 dark:border-neutral-700/50 hover:bg-white dark:hover:bg-neutral-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-sm transition-all"
                     >
                       <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center">
@@ -432,7 +432,7 @@ const AdminDashboardPage = () => {
         {/* Recent Activity & Pending Approvals */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Users */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -446,7 +446,7 @@ const AdminDashboardPage = () => {
                 {recentUsers.map((user) => (
                   <div 
                     key={user.id} 
-                    className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all"
+                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
@@ -466,7 +466,7 @@ const AdminDashboardPage = () => {
                   </div>
                 ))}
                 {recentUsers.length === 0 && (
-                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-dashed border-neutral-200 dark:border-neutral-700">
+                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50/50 dark:bg-neutral-800/30 rounded-lg border border-dashed border-neutral-300/60 dark:border-neutral-700">
                     <Users className="w-12 h-12 mx-auto mb-3 opacity-50 text-primary-400 dark:text-primary-400" />
                     <p className="font-semibold">No recent users</p>
                   </div>
@@ -476,7 +476,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Recent Properties */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -490,7 +490,7 @@ const AdminDashboardPage = () => {
                 {recentProperties.map((property) => (
                   <div 
                     key={property.id} 
-                    className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all"
+                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <h4 className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm line-clamp-2 flex-1 pr-4">{property.title}</h4>
@@ -507,7 +507,7 @@ const AdminDashboardPage = () => {
                   </div>
                 ))}
                 {recentProperties.length === 0 && (
-                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-dashed border-neutral-200 dark:border-neutral-700">
+                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50/50 dark:bg-neutral-800/30 rounded-lg border border-dashed border-neutral-300/60 dark:border-neutral-700">
                     <Building2 className="w-12 h-12 mx-auto mb-3 opacity-50 text-success-400 dark:text-success-400" />
                     <p className="font-semibold">No recent properties</p>
                   </div>
@@ -517,7 +517,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Pending Approvals */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -534,7 +534,7 @@ const AdminDashboardPage = () => {
                 {pendingApprovals.map((property) => (
                   <div 
                     key={property.id} 
-                    className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all"
+                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
                   >
                     <h4 className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm mb-3 line-clamp-2">{property.title}</h4>
                     <div className="flex items-center justify-between text-sm">
@@ -544,7 +544,7 @@ const AdminDashboardPage = () => {
                   </div>
                 ))}
                 {pendingApprovals.length === 0 && (
-                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-dashed border-neutral-200 dark:border-neutral-700">
+                  <div className="text-center py-8 text-neutral-500 dark:text-neutral-400 bg-neutral-50/50 dark:bg-neutral-800/30 rounded-lg border border-dashed border-neutral-300/60 dark:border-neutral-700">
                     <CheckCircle2 className="w-12 h-12 mx-auto mb-3 opacity-50 text-success-400 dark:text-success-400" />
                     <p className="font-semibold">No pending approvals</p>
                     <p className="text-sm mt-1">All caught up! 🎉</p>
@@ -558,7 +558,7 @@ const AdminDashboardPage = () => {
         {/* Top Performers */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Top Agents by Properties */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
@@ -570,7 +570,7 @@ const AdminDashboardPage = () => {
                 {topAgentsByProperties.map((agent, index) => (
                   <div 
                     key={agent.id} 
-                    className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all"
+                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
@@ -603,7 +603,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Top Agents by Inquiries */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
@@ -615,7 +615,7 @@ const AdminDashboardPage = () => {
                 {topAgentsByInquiries.map((agent, index) => (
                   <div 
                     key={agent.id} 
-                    className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all"
+                    className="bg-neutral-50/50 dark:bg-neutral-800/30 border border-neutral-200/60 dark:border-neutral-700/50 rounded-lg p-4 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm transition-all"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
@@ -649,7 +649,7 @@ const AdminDashboardPage = () => {
         </div>
 
         {/* Property Types Distribution */}
-        <Card className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+        <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
