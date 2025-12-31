@@ -83,6 +83,28 @@ export const ThemeCustomizer: React.FC = () => {
               <span>Primary Color</span>
             </div>
 
+            {/* Large Color Preview */}
+            <div className="p-6 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900 space-y-3">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-24 h-24 rounded-2xl shadow-xl transition-all duration-300"
+                     style={{ backgroundColor: config.theming.primaryColor }}>
+                  <div className="text-white font-bold text-sm">LIVE</div>
+                </div>
+                <p className="mt-3 text-xs font-mono text-neutral-600 dark:text-neutral-400">
+                  {config.theming.primaryColor.toUpperCase()}
+                </p>
+              </div>
+
+              {/* Dynamic color samples */}
+              <div className="grid grid-cols-5 gap-2">
+                <div className="h-8 rounded-lg bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800"></div>
+                <div className="h-8 rounded-lg bg-primary-300 dark:bg-primary-700 border border-primary-400 dark:border-primary-600"></div>
+                <div className="h-8 rounded-lg bg-primary-500 dark:bg-primary-500 border border-primary-600 dark:border-primary-400"></div>
+                <div className="h-8 rounded-lg bg-primary-700 dark:bg-primary-300 border border-primary-800 dark:border-primary-200"></div>
+                <div className="h-8 rounded-lg bg-primary-900 dark:bg-primary-100 border border-primary-950 dark:border-primary-50"></div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-4 gap-3">
               {colorPresets.map((preset) => (
                 <button
