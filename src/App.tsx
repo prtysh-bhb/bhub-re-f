@@ -10,6 +10,10 @@ import TwoFactorPage from "@/pages/auth/TwoFactorPage";
 import TwoFactorSetup from "@/pages/auth/TwoFactorSetupPage";
 import SocialCallback from "@/pages/auth/SocialCallback";
 
+// Layouts
+import { AdminLayout } from "@/components/layout/AdminLayout";
+import { AgentLayout } from "@/components/layout/AgentLayout";
+
 // Dashboards
 import DashboardPage from "@/pages/dashboard/DashboardPage";
 import AdminDashboardPage from "@/pages/admin/AdminDashboardPage";
@@ -201,506 +205,125 @@ function App() {
             {/* Customer Protected Route */}
           </Route>
 
-          {/* ---------------- ADMIN DASHBOARD ---------------- */}
+          {/* ---------------- ADMIN ROUTES WITH LAYOUT ---------------- */}
           <Route
-            path="/admin/dashboard"
+            path="/admin"
             element={
               <ProtectedRoute allowedRoles={["admin"]}>
-                <AdminDashboardPage />
+                <AdminLayout />
               </ProtectedRoute>
             }
-          />
-          <Route
-            path="/admin/analytics"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AdminAnalyticsDashboardPage />
-              </ProtectedRoute>
-            }
-          />
+          >
+            {/* Dashboard */}
+            <Route path="dashboard" element={<AdminDashboardPage />} />
+            <Route path="analytics" element={<AdminAnalyticsDashboardPage />} />
 
-          {/* ---------------- AGENT DASHBOARD ---------------- */}
-          <Route
-            path="/agent/dashboard"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <AgentDashboardPage />
-              </ProtectedRoute>
-            }
-          />
+            {/* Profile */}
+            <Route path="profile" element={<ViewProfilePage />} />
+            <Route path="profile/edit" element={<AdminProfilePage />} />
 
-          {/* ---------------- AGENT SUBSCRIPTION ---------------- */}
-          <Route
-            path="/agent/subscription-plans"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <SubscriptionPlans />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/subscription-plan/checkout/:planId"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <SubscriptionCheckout />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/my-subscriptions"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <MySubscriptions />
-              </ProtectedRoute>
-            }
-          />
+            {/* Agents */}
+            <Route path="agents" element={<AgentList />} />
+            <Route path="agents/new" element={<AddAgent />} />
+            <Route path="agents/:id" element={<AgentProfilePage />} />
+            <Route path="agents/:id/properties" element={<AgentProperty />} />
+            <Route path="agents/:id/properties/new" element={<AddProperties />} />
 
-          {/* ---------------- ADMIN PROFILE ROUTES ---------------- */}
-          <Route
-            path="/admin/profile"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <ViewProfilePage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/profile/edit"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AdminProfilePage />
-              </ProtectedRoute>
-            }
-          />
+            {/* Customers */}
+            <Route path="customers" element={<CustomerList />} />
+            <Route path="customers/new" element={<AddCustomer />} />
+            <Route path="customers/:id" element={<CustomerProfilePage />} />
+            <Route path="customers/:id/properties" element={<CustomerPropertyList />} />
+            <Route path="customers/:id/transactions" element={<CustomerTransaction />} />
 
-          {/* ---------------- AGENT PROFILE ROUTES ---------------- */}
+            {/* Subscriptions */}
+            <Route path="subscriptions" element={<SubscriptionPlanList />} />
+            <Route path="subscriptions/new" element={<AddSubscriptionPlan />} />
+            <Route path="subscriptions/:id" element={<ShowSubscriptionPlan />} />
+            <Route path="subscriptions/:id/edit" element={<EditSubscriptionPlan />} />
+
+            {/* Credit & Wallet */}
+            <Route path="credit" element={<Credit />} />
+            <Route path="wallet" element={<Wallet />} />
+
+            {/* Properties */}
+            <Route path="properties" element={<PropertyListAdmin />} />
+            <Route path="properties/stats" element={<PropertyStatsAdmin />} />
+
+            {/* CMS */}
+            <Route path="cms/faqs" element={<FAQList />} />
+            <Route path="cms/blog-categories" element={<BlogCategories />} />
+            <Route path="cms/blogs" element={<BlogList />} />
+            <Route path="cms/news" element={<NewsList />} />
+
+            {/* Pages */}
+            <Route path="pages" element={<PagesList />} />
+            <Route path="pages/create" element={<PageEditor />} />
+            <Route path="pages/edit/:id" element={<PageEditor />} />
+
+            {/* Transactions */}
+            <Route path="transactions/agents" element={<AgentTransaction />} />
+            <Route path="transactions/customers" element={<CustomerTransaction />} />
+            <Route path="aichatleads" element={<AIChatLeadsDashboard />} />
+
+            {/* Orders, Inbox, Chat, Reviews, Settings */}
+            <Route path="orders" element={<OrdersPage />} />
+            <Route path="inbox" element={<InboxPage />} />
+            <Route path="chat" element={<ChatPage />} />
+            <Route path="reviews" element={<ReviewsPage />} />
+            <Route path="settings" element={<SettingsPage />} />
+          </Route>
+
+          {/* ---------------- AGENT ROUTES WITH LAYOUT ---------------- */}
           <Route
-            path="/agent/profile"
+            path="/agent"
             element={
               <ProtectedRoute allowedRoles={["agent", "admin"]}>
-                <AgentViewProfilePage />
+                <AgentLayout />
               </ProtectedRoute>
             }
-          />
-          <Route
-            path="/agent/profile/edit"
-            element={
-              <ProtectedRoute allowedRoles={["agent", "admin"]}>
-                <AgenteditProfilePage />
-              </ProtectedRoute>
-            }
-          />
+          >
+            {/* Dashboard */}
+            <Route path="dashboard" element={<AgentDashboardPage />} />
 
-          {/* ---------------- AGENT LEADS ---------------- */}
-          <Route
-            path="/agent/leads"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <LeadList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/leads/:id"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <ViewLead />
-              </ProtectedRoute>
-            }
-          />
-          {/* ---------------- AGENT Price estimate ---------------- */}
-          <Route
-            path="/agent/ai-price-estimate"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <Aipriceestimate />
-              </ProtectedRoute>
-            }
-          />
+            {/* Profile */}
+            <Route path="profile" element={<AgentViewProfilePage />} />
+            <Route path="profile/edit" element={<AgenteditProfilePage />} />
 
-          {/* ---------------- AGENT REMINDERS ---------------- */}
-          <Route
-            path="/agent/reminders"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <RemindersList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/reminders/:id"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <ShowReminder />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/reminders/new"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <CreateReminder />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/reminders/:id/edit"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <EditReminder />
-              </ProtectedRoute>
-            }
-          />
+            {/* Properties */}
+            <Route path="properties" element={<PropertyList />} />
+            <Route path="properties/new" element={<AddProperty />} />
+            <Route path="properties/:id" element={<ViewProperty />} />
+            <Route path="properties/:id/edit" element={<EditProperty />} />
 
-          {/* ---------------- AGENT MANAGEMENT ---------------- */}
-          <Route
-            path="/admin/agents"
-            element={
-              <ProtectedRoute allowedRoles={["admin", "agent"]}>
-                <AgentList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/agents/new"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AddAgent />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/agents/:id"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AgentProfilePage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/agents/:id/properties"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AgentProperty />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/agents/:id/properties/new"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AddProperties />
-              </ProtectedRoute>
-            }
-          />
+            {/* Leads */}
+            <Route path="leads" element={<LeadList />} />
+            <Route path="leads/:id" element={<ViewLead />} />
 
-          {/* ---------------- CUSTOMER MANAGEMENT ---------------- */}
-          <Route
-            path="/admin/customers"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <CustomerList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/customers/new"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AddCustomer />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/customers/:id"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <CustomerProfilePage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/customers/:id/properties"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <CustomerPropertyList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/customers/:id/transactions"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <CustomerTransaction />
-              </ProtectedRoute>
-            }
-          />
+            {/* AI Tools */}
+            <Route path="ai-price-estimate" element={<Aipriceestimate />} />
 
-          {/* ---------------- SUBSCRIPTIONS MANAGEMENT ---------------- */}
-          <Route
-            path="/admin/subscriptions"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <SubscriptionPlanList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/subscriptions/new"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AddSubscriptionPlan />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/subscriptions/:id"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <ShowSubscriptionPlan />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/subscriptions/:id/edit"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <EditSubscriptionPlan />
-              </ProtectedRoute>
-            }
-          />
+            {/* Reminders */}
+            <Route path="reminders" element={<RemindersList />} />
+            <Route path="reminders/:id" element={<ShowReminder />} />
+            <Route path="reminders/new" element={<CreateReminder />} />
+            <Route path="reminders/:id/edit" element={<EditReminder />} />
 
-          {/* credit package */}
-          <Route
-            path="/admin/credit"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <Credit />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/wallet"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <Wallet />
-              </ProtectedRoute>
-            }
-          />
+            {/* Appointments */}
+            <Route path="appointments" element={<AgentAppointments />} />
 
-          {/* ---------------- PROPERTIES (AGENT) ---------------- */}
-          <Route
-            path="/agent/properties"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <PropertyList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/properties/new"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <AddProperty />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/properties/:id"
-            element={
-              <ProtectedRoute allowedRoles={["agent", "admin"]}>
-                <ViewProperty />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/properties/:id/edit"
-            element={
-              <ProtectedRoute allowedRoles={["agent", "admin"]}>
-                <EditProperty />
-              </ProtectedRoute>
-            }
-          />
+            {/* Chat */}
+            <Route path="chat" element={<ChatPage />} />
 
-          {/* ---------------- PROPERTIES (ADMIN) ---------------- */}
-          <Route
-            path="/admin/properties"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <PropertyListAdmin />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/properties/stats"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <PropertyStatsAdmin />
-              </ProtectedRoute>
-            }
-          />
+            {/* Blogs */}
+            <Route path="blogs" element={<AgentBlogList />} />
+            <Route path="comments" element={<AgentcommentList />} />
 
-          {/* ---------------- CMS (ADMIN) ---------------- */}
-          <Route
-            path="/admin/cms/faqs"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <FAQList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/cms/blog-categories"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <BlogCategories />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/cms/blogs"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <BlogList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/cms/news"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <NewsList />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* PAGES (ADMIN) */}
-          <Route
-            path="/admin/pages"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <PagesList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/pages/create"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <PageEditor />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/pages/edit/:id"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <PageEditor />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* ---------------- TRANSACTIONS ---------------- */}
-          <Route
-            path="/admin/transactions/agents"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AgentTransaction />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/transactions/customers"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <CustomerTransaction />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/aichatleads"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <AIChatLeadsDashboard />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* ---------------- ORDERS, INBOX, CHAT, REVIEWS, SETTINGS ---------------- */}
-          <Route
-            path="/admin/orders"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <OrdersPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/inbox"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <InboxPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/chat"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <ChatPage />
-              </ProtectedRoute>
-            }
-          />
-          {/* ---------------- AGENT CHAT ---------------- */}
-          <Route
-            path="/agent/chat"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <ChatPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/blogs"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <AgentBlogList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/agent/comments"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <AgentcommentList />
-              </ProtectedRoute>
-            }
-          />
-          {/* ---------------- Appointment ---------------- */}
-          <Route
-            path="/agent/appointments"
-            element={
-              <ProtectedRoute allowedRoles={["agent"]}>
-                <AgentAppointments />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/reviews"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <ReviewsPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/settings"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <SettingsPage />
-              </ProtectedRoute>
-            }
-          />
+            {/* Subscriptions */}
+            <Route path="subscription-plans" element={<SubscriptionPlans />} />
+            <Route path="subscription-plan/checkout/:planId" element={<SubscriptionCheckout />} />
+            <Route path="my-subscriptions" element={<MySubscriptions />} />
+          </Route>
 
           {/* ---------------- PUBLIC PROPERTY VIEW ---------------- */}
           <Route path="/property/:id" element={<SingleProperty />} />
