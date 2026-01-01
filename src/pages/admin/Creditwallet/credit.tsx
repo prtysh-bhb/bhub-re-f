@@ -282,7 +282,7 @@ const Credit = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
@@ -307,7 +307,7 @@ const Credit = () => {
                   placeholder="Search packages..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
 
@@ -315,7 +315,7 @@ const Credit = () => {
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="px-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="all">All Status</option>
                 <option value="active">Active Only</option>
@@ -425,7 +425,7 @@ const Credit = () => {
         {!loading && !error && (
           <>
             {filteredPackages.length === 0 ? (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-12 text-center">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 p-12 text-center">
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg shadow-primary-500/30">
                     <Package className="text-white w-10 h-10" />
@@ -456,10 +456,10 @@ const Credit = () => {
                 {filteredPackages.map((pkg) => (
                   <div
                     key={pkg.id}
-                    className={`bg-white dark:bg-gray-900 rounded-xl border shadow-sm hover:shadow-lg transition-all overflow-hidden group ${
+                    className={`bg-white dark:bg-neutral-900 rounded-xl border shadow-sm hover:shadow-lg transition-all overflow-hidden group ${
                       pkg.status === "active"
                         ? "border-primary-200 dark:border-primary-800 hover:border-primary-300 dark:hover:border-primary-700"
-                        : "border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700"
+                        : "border-gray-200 dark:border-neutral-800 hover:border-gray-300 dark:hover:border-gray-700"
                     }`}
                   >
                     {/* Package Header */}
@@ -535,7 +535,7 @@ const Credit = () => {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-neutral-800">
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => openEditModal(pkg)}
@@ -607,7 +607,7 @@ const Credit = () => {
         {/* Delete Confirmation Modal */}
         {showDeleteModal && selectedPackage && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-neutral-700">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg">
@@ -621,7 +621,7 @@ const Credit = () => {
                   Are you sure you want to delete <strong>{selectedPackage.name}</strong>? This
                   action cannot be undone.
                 </p>
-                <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-6">
+                <div className="bg-gray-50 dark:bg-neutral-900 p-4 rounded-lg mb-6">
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="text-gray-500 dark:text-gray-400">Price:</span>
@@ -653,7 +653,7 @@ const Credit = () => {
                       setShowDeleteModal(false);
                       setSelectedPackage(null);
                     }}
-                    className="px-4 py-2 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    className="px-4 py-2 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                   >
                     Cancel
                   </button>
@@ -701,8 +701,8 @@ const PackageModal = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
+      <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-neutral-700 max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-neutral-700 sticky top-0 bg-white dark:bg-neutral-800 z-10">
           <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
             <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-lg shadow-primary-500/30">
               <Coins className="text-white" size={20} />
@@ -711,7 +711,7 @@ const PackageModal = ({
           </h4>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+            className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
             disabled={submitting}
           >
             <X size={20} />
@@ -752,7 +752,7 @@ const PackageModal = ({
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <DollarSign className="text-gray-400 w-5 h-5" />
+                    <DollarSign className="text-gray-400 dark:text-gray-500 w-5 h-5" />
                   </div>
                   <input
                     type="number"
@@ -782,7 +782,7 @@ const PackageModal = ({
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Coins className="text-gray-400 w-5 h-5" />
+                    <Coins className="text-gray-400 dark:text-gray-500 w-5 h-5" />
                   </div>
                   <input
                     type="number"
@@ -857,7 +857,7 @@ const PackageModal = ({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row justify-end gap-3 mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex flex-col sm:flex-row justify-end gap-3 mt-8 pt-6 border-t border-gray-200 dark:border-neutral-700">
             <button
               type="button"
               onClick={() => setIsOpen(false)}

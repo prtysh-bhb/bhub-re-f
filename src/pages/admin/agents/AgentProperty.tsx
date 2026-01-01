@@ -56,7 +56,7 @@ const AgentProperty = () => {
       case "pending_approval":
         return "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400";
       default:
-        return "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400";
+        return "bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-gray-400";
     }
   };
 
@@ -64,7 +64,7 @@ const AgentProperty = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-2xl">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-2xl">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg">
@@ -81,8 +81,8 @@ const AgentProperty = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search properties..."
@@ -92,7 +92,7 @@ const AgentProperty = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -132,7 +132,7 @@ const AgentProperty = () => {
             {filteredProperties.map((property) => (
               <div
                 key={property.id}
-                className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-xl dark:hover:shadow-2xl hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
+                className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 overflow-hidden hover:shadow-xl dark:hover:shadow-2xl hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -157,7 +157,7 @@ const AgentProperty = () => {
                     <span>{property.bathrooms} Baths</span>
                     <span>{property.area}</span>
                   </div>
-                  <div className="flex gap-2 pt-3 border-t border-gray-100 dark:border-gray-700">
+                  <div className="flex gap-2 pt-3 border-t border-gray-100 dark:border-neutral-700">
                     <button className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all text-sm">
                       <Eye size={16} />
                       View
@@ -178,7 +178,7 @@ const AgentProperty = () => {
 
         {/* Table View */}
         {viewMode === "table" && (
-          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-2xl overflow-hidden">
+          <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-2xl overflow-hidden">
             <table className="min-w-full">
               <thead className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700">
                 <tr>
@@ -194,8 +194,8 @@ const AgentProperty = () => {
                 {filteredProperties.map((property, index) => (
                   <tr
                     key={property.id}
-                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
-                      index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                    className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
+                      index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                     }`}
                   >
                     <td className="py-4 px-6">

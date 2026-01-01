@@ -114,7 +114,7 @@ const PagesList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary-600 rounded-xl shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]">
@@ -130,8 +130,8 @@ const PagesList = () => {
 
             <div className="flex items-center gap-2 flex-wrap">
               {/* Search */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search pages..."
@@ -142,8 +142,8 @@ const PagesList = () => {
               </div>
 
               {/* Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
@@ -156,7 +156,7 @@ const PagesList = () => {
               </div>
 
               {/* View Toggle */}
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -225,7 +225,7 @@ const PagesList = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-900/20 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div className="bg-gray-50 dark:bg-neutral-900/20 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Drafts</p>
@@ -260,8 +260,8 @@ const PagesList = () => {
                 {filteredPages.length === 0 ? (
                   <div className="col-span-full text-center py-12">
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                        <Search className="text-gray-400" size={24} />
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                        <Search className="text-gray-400 dark:text-gray-500" size={24} />
                       </div>
                       <p className="font-medium text-gray-500 dark:text-gray-400">No pages found</p>
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
@@ -280,7 +280,7 @@ const PagesList = () => {
                   filteredPages.map((page) => (
                     <div
                       key={page.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.15)] hover:border-primary-200 dark:hover:border-primary-800 transition-all group overflow-hidden"
+                      className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm hover:shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.15)] hover:border-primary-200 dark:hover:border-primary-800 transition-all group overflow-hidden"
                     >
                       <div className="p-6">
                         <div className="flex justify-between items-start mb-4">
@@ -296,7 +296,7 @@ const PagesList = () => {
                           {getStatusBadge(page.status)}
                         </div>
 
-                        <div className="space-y-2 mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
+                        <div className="space-y-2 mb-4 pb-4 border-b border-gray-100 dark:border-neutral-800">
                           <div className="flex items-center justify-between text-sm">
                             <span className="text-gray-500 dark:text-gray-400">In Footer:</span>
                             <span
@@ -364,11 +364,11 @@ const PagesList = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
-                      <tr className="bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
+                      <tr className="bg-gray-50 dark:bg-neutral-800 text-gray-700 dark:text-gray-200">
                         <th className="py-4 px-6 text-left font-semibold">Title</th>
                         <th className="py-4 px-6 text-left font-semibold">Slug</th>
                         <th className="py-4 px-6 text-center font-semibold">Status</th>
@@ -378,7 +378,7 @@ const PagesList = () => {
                         <th className="py-4 px-6 text-center font-semibold">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {filteredPages.length === 0 ? (
                         <tr>
                           <td
@@ -386,8 +386,8 @@ const PagesList = () => {
                             className="py-12 text-center text-gray-500 dark:text-gray-400"
                           >
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Search className="text-gray-400" size={24} />
+                              <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Search className="text-gray-400 dark:text-gray-500" size={24} />
                               </div>
                               <p className="font-medium">No pages found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -398,10 +398,10 @@ const PagesList = () => {
                         filteredPages.map((page, index) => (
                           <tr
                             key={page.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
+                            className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
                               index % 2 === 0
-                                ? "bg-white dark:bg-gray-900"
-                                : "bg-gray-50/50 dark:bg-gray-800/50"
+                                ? "bg-white dark:bg-neutral-900"
+                                : "bg-gray-50/50 dark:bg-neutral-800/50"
                             }`}
                           >
                             <td className="py-4 px-6">

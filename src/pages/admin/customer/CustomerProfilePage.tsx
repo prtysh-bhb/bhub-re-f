@@ -122,7 +122,7 @@ const CustomerProfilePage = () => {
         {/* Tabs Section */}
         <div className="mt-8 px-4 sm:px-8 md:px-10 pb-8">
           <Tabs defaultValue="details" className="w-full">
-            <TabsList className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-6 border-b border-gray-200 dark:border-gray-700 mb-6">
+            <TabsList className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-6 border-b border-gray-200 dark:border-neutral-700 mb-6">
               <TabsTrigger
                 value="details"
                 className="pb-2 text-gray-700 dark:text-gray-200 font-medium border-b-2 border-transparent data-[state=active]:border-primary-500 data-[state=active]:text-primary-600 dark:data-[state=active]:text-primary-400 text-sm sm:text-base"

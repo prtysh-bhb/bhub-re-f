@@ -43,14 +43,14 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
 
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 cursor-pointer"
+            className="text-gray-400 dark:text-gray-500 hover:text-gray-600 cursor-pointer"
           >
             <X size={20} />
           </button>
         </div>
 
         {/* Message */}
-        <p className="text-gray-600 text-sm mb-4">{message}</p>
+        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{message}</p>
 
         {/* Buttons */}
         <div className="flex justify-end gap-2">

@@ -52,7 +52,7 @@ const CustomerTransaction = () => {
       case "failed":
         return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400";
       default:
-        return "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400";
+        return "bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-gray-400";
     }
   };
 
@@ -60,7 +60,7 @@ const CustomerTransaction = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-black/30">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary-600 dark:bg-primary-700 rounded-xl shadow-md">
@@ -77,8 +77,8 @@ const CustomerTransaction = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search transactions..."
@@ -88,8 +88,8 @@ const CustomerTransaction = () => {
                 />
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
@@ -111,10 +111,10 @@ const CustomerTransaction = () => {
         </div>
 
         {/* Transactions Table */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30 overflow-hidden">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-black/30 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="min-w-full">
-              <thead className="bg-gray-50 dark:bg-gray-800">
+              <thead className="bg-gray-50 dark:bg-neutral-800">
                 <tr>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">ID</th>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">Customer</th>
@@ -130,8 +130,8 @@ const CustomerTransaction = () => {
                 {filteredTransactions.map((transaction, index) => (
                   <tr
                     key={transaction.id}
-                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
-                      index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                    className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
+                      index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                     }`}
                   >
                     <td className="py-4 px-6 font-mono text-sm text-gray-600 dark:text-gray-400">#{transaction.id}</td>

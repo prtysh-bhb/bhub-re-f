@@ -61,7 +61,7 @@ const OrdersPage = () => {
       case "cancelled":
         return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400";
       default:
-        return "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400";
+        return "bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-gray-400";
     }
   };
 
@@ -69,7 +69,7 @@ const OrdersPage = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary-500 rounded-xl shadow-lg shadow-primary-500/30">
@@ -86,8 +86,8 @@ const OrdersPage = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-500 hover:shadow-md transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-500 hover:shadow-md transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search orders..."
@@ -97,8 +97,8 @@ const OrdersPage = () => {
                 />
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
@@ -115,7 +115,7 @@ const OrdersPage = () => {
         </div>
 
         {/* Orders Table */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
           <div className="overflow-x-auto">
             <table className="min-w-full">
               <thead className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700">
@@ -134,8 +134,8 @@ const OrdersPage = () => {
                 {filteredOrders.map((order, index) => (
                   <tr
                     key={order.id}
-                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
-                      index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                    className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
+                      index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                     }`}
                   >
                     <td className="py-4 px-6 font-mono text-sm text-gray-600 dark:text-gray-400">#{order.id.toString().padStart(4, '0')}</td>
@@ -167,19 +167,19 @@ const OrdersPage = () => {
 
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-primary-200 dark:border-primary-900/30 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-primary-200 dark:border-primary-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Total Orders</p>
             <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">{orders.length}</p>
           </div>
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-primary-200 dark:border-primary-900/30 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-primary-200 dark:border-primary-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Confirmed</p>
             <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">{orders.filter(o => o.status === "confirmed").length}</p>
           </div>
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-amber-200 dark:border-amber-900/30 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-amber-200 dark:border-amber-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Pending</p>
             <p className="text-3xl font-bold text-amber-600 dark:text-amber-400">{orders.filter(o => o.status === "pending").length}</p>
           </div>
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-red-200 dark:border-red-900/30 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-red-200 dark:border-red-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Cancelled</p>
             <p className="text-3xl font-bold text-red-600 dark:text-red-400">{orders.filter(o => o.status === "cancelled").length}</p>
           </div>

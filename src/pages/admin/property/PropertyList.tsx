@@ -100,7 +100,7 @@ const PropertyList = () => {
       case "rejected":
         return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-300 dark:border-red-700 shadow-sm shadow-red-100 dark:shadow-red-900/20";
       default:
-        return "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-600";
+        return "bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-gray-300 border-gray-300 dark:border-gray-600";
     }
   };
 
@@ -116,7 +116,7 @@ const PropertyList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-primary-500/5 dark:shadow-primary-500/10">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg shadow-primary-500/5 dark:shadow-primary-500/10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3 mr-auto">
               <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30 dark:shadow-primary-500/40">
@@ -134,8 +134,8 @@ const PropertyList = () => {
 
             <div className="flex items-center gap-2 flex-wrap">
               {/* Search */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all duration-300">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all duration-300">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search properties..."
@@ -147,7 +147,7 @@ const PropertyList = () => {
 
               {/* Filter Dropdown */}
               <select
-                className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2 rounded-lg text-sm shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all duration-300 text-gray-900 dark:text-white"
+                className="border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-4 py-2 rounded-lg text-sm shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all duration-300 text-gray-900 dark:text-white"
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
               >
@@ -158,7 +158,7 @@ const PropertyList = () => {
               </select>
 
               {/* View Toggle */}
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-lg transition-all duration-300 ${
@@ -193,10 +193,10 @@ const PropertyList = () => {
             </div>
           </div>
         ) : filteredProperties.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 bg-white dark:bg-gray-900 border border-dashed border-gray-300 dark:border-gray-700 rounded-xl">
+          <div className="flex flex-col items-center justify-center py-20 bg-white dark:bg-neutral-900 border border-dashed border-gray-300 dark:border-neutral-700 rounded-xl">
             <Home className="w-16 h-16 text-gray-400 mb-3" />
             <p className="text-gray-600 dark:text-gray-300 font-medium">No properties found.</p>
-            <p className="text-gray-400 text-sm mt-1">Try changing the filter or search query.</p>
+            <p className="text-gray-400 dark:text-gray-500 text-sm mt-1">Try changing the filter or search query.</p>
           </div>
         ) : (
           <>
@@ -212,10 +212,10 @@ const PropertyList = () => {
                   return (
                     <div
                       key={p.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-500/20 transition-all duration-500 group overflow-hidden hover:border-primary-200 dark:hover:border-primary-800"
+                      className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-500/20 transition-all duration-500 group overflow-hidden hover:border-primary-200 dark:hover:border-primary-800"
                     >
                       {/* Image */}
-                      <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-800">
+                      <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-neutral-800">
                         {p.primary_image_url || p.image_urls?.[0] ? (
                           <img
                             src={p.primary_image_url || p.image_urls?.[0]}
@@ -246,7 +246,7 @@ const PropertyList = () => {
 
                         {/* Price Tag */}
                         <div className="absolute bottom-3 left-3 right-3">
-                          <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg">
+                          <div className="bg-white/95 dark:bg-neutral-800/95 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg">
                             <p className="text-xl font-bold text-gray-900 dark:text-white">
                               ${p.price?.toLocaleString()}
                             </p>
@@ -268,7 +268,7 @@ const PropertyList = () => {
                         </div>
 
                         {/* Features */}
-                        <div className="grid grid-cols-3 gap-3 mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
+                        <div className="grid grid-cols-3 gap-3 mb-4 pb-4 border-b border-gray-100 dark:border-neutral-800">
                           <div className="flex flex-col items-center">
                             <div className="w-8 h-8 bg-primary-50 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mb-1 shadow-sm shadow-primary-100 dark:shadow-primary-900/20">
                               <Bed className="w-4 h-4 text-primary-600 dark:text-primary-400" />
@@ -338,10 +338,10 @@ const PropertyList = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 shadow-sm rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-xl border border-gray-200 dark:border-neutral-800 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full">
-                    <thead className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                    <thead className="bg-gray-50 dark:bg-neutral-800 border-b border-gray-200 dark:border-neutral-700">
                       <tr>
                         <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                           Property
@@ -378,7 +378,7 @@ const PropertyList = () => {
                           >
                             <td className="px-6 py-4">
                               <div className="flex items-center gap-3">
-                                <div className="w-16 h-16 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 flex-shrink-0">
+                                <div className="w-16 h-16 rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800 flex-shrink-0">
                                   {p.primary_image_url || p.image_urls?.[0] ? (
                                     <img
                                       src={p.primary_image_url || p.image_urls?.[0]}
@@ -415,7 +415,7 @@ const PropertyList = () => {
                             </td>
                             <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
                               <div className="flex items-center gap-1">
-                                <MapPin size={14} className="text-gray-400" />
+                                <MapPin size={14} className="text-gray-400 dark:text-gray-500" />
                                 {p.city}
                               </div>
                             </td>
@@ -477,7 +477,7 @@ const PropertyList = () => {
         {/* ✅ Popup Modal for Rejection */}
         {showRejectPopup && (
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-in fade-in duration-300">
-            <div className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-gray-800 animate-in zoom-in-95 duration-300">
+            <div className="bg-white dark:bg-neutral-900 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-neutral-800 animate-in zoom-in-95 duration-300">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-900 dark:text-white">
                   <AlertTriangle className="text-red-600" size={20} />
@@ -485,7 +485,7 @@ const PropertyList = () => {
                 </h4>
                 <button
                   onClick={() => setShowRejectPopup(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   <X size={20} />
                 </button>
@@ -499,7 +499,7 @@ const PropertyList = () => {
                 value={rejectReason}
                 onChange={(e) => setRejectReason(e.target.value)}
                 rows={4}
-                className="w-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-3 text-sm mb-4 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-gray-900 dark:text-white placeholder-gray-500"
+                className="w-full border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg p-3 text-sm mb-4 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-gray-900 dark:text-white placeholder-gray-500"
                 placeholder="Enter rejection reason..."
               ></textarea>
 

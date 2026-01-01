@@ -292,16 +292,16 @@ const ChatPage = () => {
 
   return (
     <>
-      <div className="h-[calc(100vh-8rem)] bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
+      <div className="h-[calc(100vh-8rem)] bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
         <div className="grid grid-cols-12 h-full">
           {/* LEFT: Conversations list */}
           <div
-            className={`col-span-12 md:col-span-4 border-r border-gray-200 dark:border-gray-800 flex flex-col min-h-0 ${
+            className={`col-span-12 md:col-span-4 border-r border-gray-200 dark:border-neutral-800 flex flex-col min-h-0 ${
               isMobile ? (mobileChatOpen ? "hidden" : "block") : "block"
             }`}
           >
             {/* Header */}
-            <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+            <div className="p-4 border-b border-gray-200 dark:border-neutral-800">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-primary-600 rounded-lg shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]">
                   <MessageCircle className="text-white" size={20} />
@@ -310,8 +310,8 @@ const ChatPage = () => {
                   Messages
                 </h2>
               </div>
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-gray-50 dark:bg-gray-800 hover:border-primary-400 dark:hover:border-primary-600 transition-colors">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-gray-50 dark:bg-neutral-800 hover:border-primary-400 dark:hover:border-primary-600 transition-colors">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search conversations..."
@@ -329,7 +329,7 @@ const ChatPage = () => {
                 <div
                   key={conversation.id}
                   onClick={() => handleSelectConversation(conversation.id)}
-                  className={`p-4 border-b border-gray-100 dark:border-gray-800 cursor-pointer transition-all ${
+                  className={`p-4 border-b border-gray-100 dark:border-neutral-800 cursor-pointer transition-all ${
                     selectedChat === conversation.id
                       ? "bg-primary-50 dark:bg-primary-950/20 border-l-4 border-l-primary-600"
                       : "hover:bg-gray-50 dark:hover:bg-gray-800"
@@ -370,7 +370,7 @@ const ChatPage = () => {
             {selectedChat ? (
               <>
                 {/* Header with back button on mobile */}
-                <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
+                <div className="p-4 border-b border-gray-200 dark:border-neutral-800 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     {isMobile && (
                       <button
@@ -400,7 +400,7 @@ const ChatPage = () => {
                 {/* Scrollable Messages */}
                 <div
                   ref={chatScrollRef}
-                  className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-800/30 min-h-0"
+                  className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-neutral-800/30 min-h-0"
                   style={{ WebkitOverflowScrolling: "touch" }}
                 >
                   {messagesByConversation?.map((message) => (
@@ -410,7 +410,7 @@ const ChatPage = () => {
                           className={`p-3 rounded-lg ${
                             message.sender_id == user.id
                               ? "bg-primary-600 text-white shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]"
-                              : "bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 shadow-sm"
+                              : "bg-white dark:bg-neutral-900 text-gray-900 dark:text-white border border-gray-200 dark:border-neutral-700 shadow-sm"
                           }`}
                           style={{ maxWidth: "100%", maxHeight: "35rem", overflow: "auto" }}
                         >
@@ -534,7 +534,7 @@ const ChatPage = () => {
                   {isTyping && (
                     <div className="flex justify-start">
                       <div className="max-w-[60%]">
-                        <div className="p-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
+                        <div className="p-3 rounded-lg bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700">
                           <p className="text-sm text-gray-500 dark:text-gray-400">
                             {selectedConversation?.name || "Agent"} is typing...
                           </p>
@@ -546,8 +546,8 @@ const ChatPage = () => {
 
                 {/* File Preview */}
                 {selectedFile && (
-                  <div className="px-4 py-2 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
+                  <div className="px-4 py-2 border-t border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800">
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-neutral-900 rounded-lg border border-gray-200 dark:border-neutral-700 shadow-sm">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
                           {getFileIcon(fileType)}
@@ -583,7 +583,7 @@ const ChatPage = () => {
                 )}
 
                 {/* Input Area */}
-                <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+                <div className="p-4 border-t border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
                   <div className="flex items-center gap-2">
                     {/* File Upload Button */}
                     <input
@@ -608,7 +608,7 @@ const ChatPage = () => {
                       onKeyPress={handleKeyPress}
                       placeholder="Type a message..."
                       disabled={isSending}
-                      className="flex-1 px-4 py-2 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 text-gray-900 dark:text-white outline-none disabled:opacity-50"
+                      className="flex-1 px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 text-gray-900 dark:text-white outline-none disabled:opacity-50"
                     />
                     <button
                       onClick={handleSendMessage}

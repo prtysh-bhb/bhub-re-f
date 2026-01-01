@@ -255,7 +255,7 @@ const AddProperty = () => {
         </div>
 
         {/* Form Container */}
-        <div className="dark:bg-gray-800/50 bg-white rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-xl p-6 md:p-8">
+        <div className="dark:bg-neutral-800/50 bg-white rounded-2xl border border-gray-200 dark:border-neutral-700/50 shadow-xl p-6 md:p-8">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* ---------- Property Info Section ---------- */}
             <div className="space-y-6">
@@ -287,7 +287,7 @@ const AddProperty = () => {
                       }
                       maxLength={100}
                       placeholder="Beautiful Family House"
-                      className={`dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 ${
+                      className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 ${
                         errors.title ? "border-red-500 dark:border-red-500" : ""
                       }`}
                     />
@@ -316,15 +316,15 @@ const AddProperty = () => {
                       name="property_type"
                       value={formData.property_type}
                       onChange={handleChange}
-                      className={`w-full border p-2.5 rounded-xl dark:bg-gray-800 dark:border-gray-600 dark:text-white cursor-pointer ${
+                      className={`w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-gray-600 dark:text-white cursor-pointer ${
                         errors.property_type ? "border-red-500 dark:border-red-500" : ""
                       }`}
                     >
-                      <option value="" className="dark:bg-gray-800">
+                      <option value="" className="dark:bg-neutral-800">
                         Select Property Type
                       </option>
                       {propertyTypes?.map((type) => (
-                        <option key={type.key} value={type.key} className="dark:bg-gray-800">
+                        <option key={type.key} value={type.key} className="dark:bg-neutral-800">
                           {type.label}
                         </option>
                       ))}
@@ -360,7 +360,7 @@ const AddProperty = () => {
                         handleKeyPress(e, /[0-9]/, false)
                       }
                       placeholder="150000"
-                      className={`pl-8 dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+                      className={`pl-8 dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
                         errors.price ? "border-red-500 dark:border-red-500" : ""
                       }`}
                     />
@@ -391,7 +391,7 @@ const AddProperty = () => {
                       handleKeyPress(e, /[0-9]/, false)
                     }
                     placeholder="1200"
-                    className={`dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+                    className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
                       errors.area ? "border-red-500 dark:border-red-500" : ""
                     }`}
                   />
@@ -421,7 +421,7 @@ const AddProperty = () => {
                       handleKeyPress(e, /[0-9]/, false)
                     }
                     placeholder="3"
-                    className={`dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+                    className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
                       errors.bedrooms ? "border-red-500 dark:border-red-500" : ""
                     }`}
                   />
@@ -451,7 +451,7 @@ const AddProperty = () => {
                       handleKeyPress(e, /[0-9]/, false)
                     }
                     placeholder="2"
-                    className={`dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+                    className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
                       errors.bathrooms ? "border-red-500 dark:border-red-500" : ""
                     }`}
                   />
@@ -480,7 +480,7 @@ const AddProperty = () => {
                     handleKeyPress(e, /[a-z0-9 .,!?'"()-]/, true)
                   }
                   placeholder="Describe the property features, neighborhood, and unique selling points..."
-                  className={`w-full border rounded-xl p-4 h-32 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 resize-none ${
+                  className={`w-full border rounded-xl p-4 h-32 dark:bg-neutral-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 resize-none ${
                     errors.description ? "border-red-500 dark:border-red-500" : ""
                   }`}
                 />
@@ -510,10 +510,10 @@ const AddProperty = () => {
               <div
                 className="
     grid grid-cols-2 lg:grid-cols-7 gap-4
-    bg-white/90 dark:bg-gray-900/70
+    bg-white/90 dark:bg-neutral-900/70
     backdrop-blur-sm
     p-5 rounded-xl
-    border border-gray-200 dark:border-gray-800
+    border border-gray-200 dark:border-neutral-800
     shadow-sm dark:shadow-lg
   "
               >
@@ -542,7 +542,7 @@ const AddProperty = () => {
                 rounded-md
                 border-2
                 border-gray-300 dark:border-gray-600
-                bg-white dark:bg-gray-800
+                bg-white dark:bg-neutral-800
                 transition-all
                 duration-200
                 cursor-pointer
@@ -779,7 +779,7 @@ const AddProperty = () => {
                       onChange={handleChange}
                       maxLength={field.maxLength}
                       placeholder={`Enter ${field.label.toLowerCase()}`}
-                      className={`dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+                      className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
                         errors[field.name] ? "border-red-500 dark:border-red-500" : ""
                       }`}
                     />
@@ -812,12 +812,12 @@ const AddProperty = () => {
                     name="status"
                     value={formData.status}
                     onChange={handleChange}
-                    className="w-full border p-2.5 rounded-xl dark:bg-gray-800 dark:border-gray-600 dark:text-white cursor-pointer"
+                    className="w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-gray-600 dark:text-white cursor-pointer"
                   >
-                    <option value="draft" className="dark:bg-gray-800">
+                    <option value="draft" className="dark:bg-neutral-800">
                       Draft
                     </option>
-                    <option value="published" className="dark:bg-gray-800">
+                    <option value="published" className="dark:bg-neutral-800">
                       Published
                     </option>
                   </select>
@@ -833,14 +833,14 @@ const AddProperty = () => {
                     name="type"
                     value={formData.type}
                     onChange={handleChange}
-                    className={`w-full border p-2.5 rounded-xl dark:bg-gray-800 dark:border-gray-600 dark:text-white cursor-pointer ${
+                    className={`w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-gray-600 dark:text-white cursor-pointer ${
                       errors.type ? "border-red-500 dark:border-red-500" : ""
                     }`}
                   >
-                    <option value="sale" className="dark:bg-gray-800">
+                    <option value="sale" className="dark:bg-neutral-800">
                       For Sale
                     </option>
-                    <option value="rent" className="dark:bg-gray-800">
+                    <option value="rent" className="dark:bg-neutral-800">
                       For Rent
                     </option>
                   </select>
@@ -855,7 +855,7 @@ const AddProperty = () => {
             </div>
 
             {/* ---------- Submit ---------- */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t dark:border-gray-700 border-gray-200">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t dark:border-neutral-700 border-gray-200">
               <button
                 type="button"
                 onClick={() => navigate("/agent/properties")}

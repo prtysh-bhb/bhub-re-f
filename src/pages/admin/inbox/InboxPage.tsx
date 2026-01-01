@@ -59,7 +59,7 @@ const InboxPage = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary-500 rounded-xl shadow-lg shadow-primary-500/30">
@@ -76,8 +76,8 @@ const InboxPage = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-500 hover:shadow-md transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-500 hover:shadow-md transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search messages..."
@@ -97,7 +97,7 @@ const InboxPage = () => {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               selectedFilter === "all"
                 ? "bg-primary-500 text-white shadow-lg shadow-primary-500/20"
-                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-primary-500 hover:shadow-md"
+                : "bg-white dark:bg-neutral-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-neutral-800 hover:border-primary-500 hover:shadow-md"
             }`}
           >
             All Messages
@@ -107,7 +107,7 @@ const InboxPage = () => {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               selectedFilter === "unread"
                 ? "bg-primary-500 text-white shadow-lg shadow-primary-500/20"
-                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-primary-500 hover:shadow-md"
+                : "bg-white dark:bg-neutral-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-neutral-800 hover:border-primary-500 hover:shadow-md"
             }`}
           >
             Unread
@@ -117,7 +117,7 @@ const InboxPage = () => {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               selectedFilter === "starred"
                 ? "bg-primary-500 text-white shadow-lg shadow-primary-500/20"
-                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-primary-500 hover:shadow-md"
+                : "bg-white dark:bg-neutral-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-neutral-800 hover:border-primary-500 hover:shadow-md"
             }`}
           >
             Starred
@@ -125,7 +125,7 @@ const InboxPage = () => {
         </div>
 
         {/* Messages List */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
           <div className="divide-y divide-gray-100 dark:divide-gray-800">
             {filteredMessages.map((message) => (
               <div
@@ -137,7 +137,7 @@ const InboxPage = () => {
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     {message.read ? (
-                      <Mail className="text-gray-400" size={20} />
+                      <Mail className="text-gray-400 dark:text-gray-500" size={20} />
                     ) : (
                       <MailOpen className="text-primary-600 dark:text-primary-400" size={20} />
                     )}

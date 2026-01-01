@@ -81,13 +81,13 @@ const PropertyList = () => {
       case "published":
         return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400 border-primary-200 dark:border-primary-800";
       case "draft":
-        return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-gray-700";
+        return "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-neutral-700";
       case "sold":
         return "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800";
       case "rented":
         return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400 border-primary-200 dark:border-primary-800";
       default:
-        return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-gray-700";
+        return "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-neutral-700";
     }
   };
 
@@ -150,7 +150,7 @@ const PropertyList = () => {
         {/* Stats Summary */}
         {properties.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
+            <div className="bg-white dark:bg-neutral-800/50 p-4 rounded-xl border border-gray-200 dark:border-neutral-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Properties</p>
@@ -161,7 +161,7 @@ const PropertyList = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
+            <div className="bg-white dark:bg-neutral-800/50 p-4 rounded-xl border border-gray-200 dark:border-neutral-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Published</p>
@@ -174,7 +174,7 @@ const PropertyList = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
+            <div className="bg-white dark:bg-neutral-800/50 p-4 rounded-xl border border-gray-200 dark:border-neutral-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Pending</p>
@@ -187,7 +187,7 @@ const PropertyList = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
+            <div className="bg-white dark:bg-neutral-800/50 p-4 rounded-xl border border-gray-200 dark:border-neutral-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Featured</p>
@@ -212,7 +212,7 @@ const PropertyList = () => {
             </div>
           </div>
         ) : properties.length === 0 ? (
-          <div className="text-center py-16 dark:bg-gray-800/50 bg-white rounded-xl border-2 border-dashed dark:border-gray-700 border-gray-200 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)]">
+          <div className="text-center py-16 dark:bg-neutral-800/50 bg-white rounded-xl border-2 border-dashed dark:border-neutral-700 border-gray-200 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)]">
             <div className="w-20 h-20 bg-[var(--color-primary-500)]/10 dark:bg-[var(--color-primary-500)]/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-[var(--color-primary-200)] dark:border-[var(--color-primary-800)]/30">
               <Home className="w-8 h-8 text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]" />
             </div>
@@ -236,7 +236,7 @@ const PropertyList = () => {
               return (
                 <div
                   key={property.id}
-                  className="group dark:bg-gray-800/50 bg-white rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 border dark:border-gray-700/50 border-gray-100 overflow-hidden hover:-translate-y-1"
+                  className="group dark:bg-neutral-800/50 bg-white rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 border dark:border-neutral-700/50 border-gray-100 overflow-hidden hover:-translate-y-1"
                 >
                   {/* Property Image Section */}
                   {property.image_urls?.[0] ? (
@@ -259,7 +259,7 @@ const PropertyList = () => {
                       </div>
                     </div>
                   ) : (
-                    <div className="h-48 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+                    <div className="h-48 flex items-center justify-center bg-gray-100 dark:bg-neutral-800">
                       <Home className="w-16 h-16 text-gray-300 dark:text-gray-600" />
                     </div>
                   )}
@@ -319,7 +319,7 @@ const PropertyList = () => {
                         </div>
 
                         {property.bedrooms && property.bathrooms && (
-                          <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 pt-2 border-t dark:border-gray-700 border-gray-100">
+                          <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 pt-2 border-t dark:border-neutral-700 border-gray-100">
                             <span className="flex items-center gap-1">
                               <Home className="w-3 h-3" />
                               {property.bedrooms} bed
@@ -340,7 +340,7 @@ const PropertyList = () => {
                     </div>
 
                     {/* ---------- Actions ---------- */}
-                    <div className="flex justify-between items-center mt-6 pt-4 border-t dark:border-gray-700 border-gray-100">
+                    <div className="flex justify-between items-center mt-6 pt-4 border-t dark:border-neutral-700 border-gray-100">
                       <Button
                         variant="outline"
                         size="sm"
@@ -383,7 +383,7 @@ const PropertyList = () => {
         {/* Delete Confirmation Popup */}
         {showConfirm && (
           <div className="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="dark:bg-gray-800 bg-white rounded-2xl shadow-2xl dark:shadow-black/40 p-6 w-full max-w-md animate-fadeIn border dark:border-gray-700/50 border-gray-200">
+            <div className="dark:bg-neutral-800 bg-white rounded-2xl shadow-2xl dark:shadow-black/40 p-6 w-full max-w-md animate-fadeIn border dark:border-neutral-700/50 border-gray-200">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-gradient-to-br from-red-500 to-rose-500 rounded-lg">
@@ -395,7 +395,7 @@ const PropertyList = () => {
                 </div>
                 <button
                   onClick={() => setShowConfirm(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                 >
                   <X size={20} />
                 </button>

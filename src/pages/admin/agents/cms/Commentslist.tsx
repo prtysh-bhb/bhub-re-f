@@ -280,7 +280,7 @@ const AgentCommentsList = () => {
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-4">
             <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
-            <p className="text-gray-500">Loading blogs...</p>
+            <p className="text-gray-500 dark:text-gray-400">Loading blogs...</p>
           </div>
         </div>
     </>
@@ -291,7 +291,7 @@ const AgentCommentsList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-gradient-to-br from-primary to-primary-600 rounded-xl shadow-md">
@@ -314,7 +314,7 @@ const AgentCommentsList = () => {
                   loadBlogs();
                   if (selectedBlog) loadComments();
                 }}
-                className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
+                className="px-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
               >
                 <RefreshCw className="w-4 h-4" />
                 Refresh
@@ -335,7 +335,7 @@ const AgentCommentsList = () => {
                   className={`p-4 rounded-xl border transition-all ${
                     selectedBlog?.id === blog.id
                       ? "border-primary bg-primary/10 dark:bg-primary/20"
-                      : "border-gray-200 dark:border-gray-800 hover:border-primary/30 dark:hover:border-primary/40"
+                      : "border-gray-200 dark:border-neutral-800 hover:border-primary/30 dark:hover:border-primary/40"
                   }`}
                 >
                   <div className="flex items-start gap-3">
@@ -351,10 +351,10 @@ const AgentCommentsList = () => {
                         {blog.title}
                       </h3>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">
+                        <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-gray-400 rounded">
                           {blog.approved_comments_count || 0} comments
                         </span>
-                        <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">
+                        <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-gray-400 rounded">
                           {blog.views_count || 0} views
                         </span>
                       </div>
@@ -431,7 +431,7 @@ const AgentCommentsList = () => {
         {selectedBlog ? (
           <>
             {/* Search and Filter Bar */}
-            <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800">
+            <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full">
                   {/* Search */}
@@ -442,7 +442,7 @@ const AgentCommentsList = () => {
                       placeholder="Search comments..."
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                   </div>
 
@@ -450,7 +450,7 @@ const AgentCommentsList = () => {
                   <select
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
-                    className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="px-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
                   >
                     <option value="all">All Comments</option>
                     <option value="approved">Approved Only</option>
@@ -483,7 +483,7 @@ const AgentCommentsList = () => {
                     </button>
                     <button
                       onClick={() => setSelectedComments([])}
-                      className="px-4 py-2 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm font-medium"
+                      className="px-4 py-2 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm font-medium"
                     >
                       Clear
                     </button>
@@ -497,7 +497,7 @@ const AgentCommentsList = () => {
               <div className="flex items-center justify-center py-20">
                 <div className="text-center space-y-4">
                   <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
-                  <p className="text-gray-500">Loading comments...</p>
+                  <p className="text-gray-500 dark:text-gray-400">Loading comments...</p>
                 </div>
               </div>
             )}
@@ -524,7 +524,7 @@ const AgentCommentsList = () => {
             {!loadingComments && !error && (
               <>
                 {/* Desktop Table */}
-                <div className="hidden lg:block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                <div className="hidden lg:block bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
                   <div className="overflow-x-auto">
                     <table className="min-w-full w-full border-collapse text-sm">
                       <thead>
@@ -543,13 +543,13 @@ const AgentCommentsList = () => {
                           <th className="py-4 px-6 text-left font-semibold">Actions</th>
                         </tr>
                       </thead>
-                      <tbody className="bg-white dark:bg-gray-900">
+                      <tbody className="bg-white dark:bg-neutral-900">
                         {filteredComments.length === 0 ? (
                           <tr>
                             <td colSpan={5} className="py-12 text-center text-gray-500 dark:text-gray-400">
                               <div className="flex flex-col items-center gap-3">
-                                <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                  <Search className="text-gray-400" size={24} />
+                                <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                  <Search className="text-gray-400 dark:text-gray-500" size={24} />
                                 </div>
                                 <p className="font-medium">No comments found</p>
                                 <p className="text-sm">Try adjusting your search or filter criteria</p>
@@ -560,8 +560,8 @@ const AgentCommentsList = () => {
                           filteredComments.map((comment, index) => (
                             <tr
                               key={comment.id}
-                              className={`border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors ${
-                                index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                              className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors ${
+                                index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                               }`}
                             >
                               <td className="py-4 px-6">
@@ -590,7 +590,7 @@ const AgentCommentsList = () => {
                                       <p className="font-semibold text-gray-900 dark:text-white">
                                         {comment.user?.name || "Anonymous"}
                                       </p>
-                                      <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">
+                                      <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-gray-400 rounded">
                                         User #{comment.user_id}
                                       </span>
                                     </div>
@@ -651,10 +651,10 @@ const AgentCommentsList = () => {
                 {/* Mobile Cards */}
                 <div className="lg:hidden space-y-4">
                   {filteredComments.length === 0 ? (
-                    <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8 text-center">
+                    <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 p-8 text-center">
                       <div className="flex flex-col items-center gap-3">
-                        <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                          <Search className="text-gray-400" size={24} />
+                        <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                          <Search className="text-gray-400 dark:text-gray-500" size={24} />
                         </div>
                         <p className="font-medium text-gray-900 dark:text-white">No comments found</p>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -666,7 +666,7 @@ const AgentCommentsList = () => {
                     filteredComments.map((comment) => (
                       <div
                         key={comment.id}
-                        className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 shadow-sm"
+                        className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 p-4 shadow-sm"
                       >
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex items-center gap-3">
@@ -705,7 +705,7 @@ const AgentCommentsList = () => {
                           </p>
                         </div>
 
-                        <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-neutral-800">
                           <div className="flex flex-wrap gap-2">
                             {!comment.is_approved ? (
                               <button
@@ -743,7 +743,7 @@ const AgentCommentsList = () => {
 
                 {/* Pagination */}
                 {filteredComments.length > 0 && totalPages > 1 && (
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800">
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         Showing {(currentPage - 1) * perPage + 1} to {Math.min(currentPage * perPage, totalComments)} of {totalComments} comments
@@ -753,7 +753,7 @@ const AgentCommentsList = () => {
                       <button
                         onClick={() => handlePageChange(currentPage - 1)}
                         disabled={currentPage === 1}
-                        className="p-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="p-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                       >
                         <ChevronLeft className="w-4 h-4" />
                       </button>
@@ -777,7 +777,7 @@ const AgentCommentsList = () => {
                               className={`px-3 py-1 rounded-lg text-sm font-medium ${
                                 currentPage === pageNumber
                                   ? "bg-primary text-white"
-                                  : "border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
+                                  : "border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                               }`}
                             >
                               {pageNumber}
@@ -788,7 +788,7 @@ const AgentCommentsList = () => {
                       <button
                         onClick={() => handlePageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                        className="p-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="p-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                       >
                         <ChevronRight className="w-4 h-4" />
                       </button>
@@ -800,9 +800,9 @@ const AgentCommentsList = () => {
           </>
         ) : (
           /* No Blog Selected */
-          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8 text-center">
+          <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 p-8 text-center">
             <div className="flex flex-col items-center gap-3">
-              <MessageSquare className="text-gray-400 w-12 h-12" />
+              <MessageSquare className="text-gray-400 dark:text-gray-500 w-12 h-12" />
               <p className="font-medium text-gray-900 dark:text-white">Select a Blog Post</p>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Please select a blog post from the list above to view and manage its comments
@@ -814,7 +814,7 @@ const AgentCommentsList = () => {
         {/* Delete Confirmation Modal */}
         {showDeleteModal && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-neutral-700">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg">
@@ -828,7 +828,7 @@ const AgentCommentsList = () => {
                   Are you sure you want to delete this comment? This action cannot be undone.
                 </p>
                 {commentToDelete && (
-                  <div className="bg-gray-50 dark:bg-gray-900 p-3 rounded-lg mb-4">
+                  <div className="bg-gray-50 dark:bg-neutral-900 p-3 rounded-lg mb-4">
                     <p className="text-sm text-gray-700 dark:text-gray-300 italic">
                       "{truncateText(commentToDelete.comment, 100)}"
                     </p>
@@ -843,7 +843,7 @@ const AgentCommentsList = () => {
                       setShowDeleteModal(false);
                       setCommentToDelete(null);
                     }}
-                    className="px-4 py-2 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    className="px-4 py-2 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                   >
                     Cancel
                   </button>

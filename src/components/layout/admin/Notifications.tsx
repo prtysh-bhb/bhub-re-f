@@ -65,7 +65,7 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
       case 'property_rejected':
         return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400';
       default:
-        return 'bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400';
+        return 'bg-gray-100 text-gray-700 dark:bg-neutral-900/30 dark:text-gray-400';
     }
   };
 
@@ -191,9 +191,9 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
 
       {/* Notification Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-96 bg-white dark:bg-gray-800 shadow-xl rounded-xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden">
+        <div className="absolute right-0 mt-2 w-96 bg-white dark:bg-neutral-800 shadow-xl rounded-xl border border-gray-200 dark:border-neutral-700 z-50 overflow-hidden">
           {/* Header */}
-          <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-950/30 dark:to-primary-900/30">
+          <div className="px-4 py-3 border-b border-gray-200 dark:border-neutral-700 bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-950/30 dark:to-primary-900/30">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white text-sm">Notifications</h3>
@@ -227,8 +227,8 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
               notifications.map((notification) => (
                 <div
                   key={notification.id}
-                  className={`px-4 py-3 border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group ${
-                    !notification.read_at ? "bg-gray-50 dark:bg-gray-800/30" : ""
+                  className={`px-4 py-3 border-b border-gray-100 dark:border-neutral-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group ${
+                    !notification.read_at ? "bg-gray-50 dark:bg-neutral-800/30" : ""
                   }`}
                 >
                   <div className="flex items-start gap-3">
@@ -285,7 +285,7 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
           </div>
 
           {/* Footer */}
-          <div className="px-4 py-2.5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 flex justify-between items-center">
+          <div className="px-4 py-2.5 border-t border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800/50 flex justify-between items-center">
             
             <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
               <span>Total: {notifications.length}</span>

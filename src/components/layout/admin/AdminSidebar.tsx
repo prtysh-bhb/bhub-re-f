@@ -409,7 +409,7 @@ const menuItems =
             <div className="grid gap-1">
               <button
                 onClick={() => onCollapseChange?.(!collapsed)}
-                className="text-gray-400 hover:text-primary-400 transition-all cursor-pointer p-2 rounded-lg hover:bg-white/10 backdrop-blur-sm"
+                className="text-gray-400 dark:text-gray-500 hover:text-primary-400 transition-all cursor-pointer p-2 rounded-lg hover:bg-white/10 backdrop-blur-sm"
               >
                 <Menu size={18} />
               </button>
@@ -443,7 +443,7 @@ const menuItems =
                       (openDropdown === item.name ? (
                         <ChevronDown size={16} className="text-primary-400" />
                       ) : (
-                        <ChevronRight size={16} className="text-gray-500" />
+                        <ChevronRight size={16} className="text-gray-500 dark:text-gray-400" />
                       ))}
                   </button>
 

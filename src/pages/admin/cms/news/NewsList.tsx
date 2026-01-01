@@ -314,7 +314,7 @@ const NewsList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary rounded-xl shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.2)]">
@@ -331,8 +331,8 @@ const NewsList = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary/50 transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary/50 transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search News..."
@@ -342,7 +342,7 @@ const NewsList = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -367,8 +367,8 @@ const NewsList = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary/50 transition-all">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary/50 transition-all">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
@@ -452,7 +452,7 @@ const NewsList = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -463,7 +463,7 @@ const NewsList = () => {
                         <th className="py-4 px-6 text-center font-semibold">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {news.length === 0 ? (
                         <tr>
                           <td
@@ -471,8 +471,8 @@ const NewsList = () => {
                             className="py-12 text-center text-gray-500 dark:text-gray-400"
                           >
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Search className="text-gray-400" size={24} />
+                              <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Search className="text-gray-400 dark:text-gray-500" size={24} />
                               </div>
                               <p className="font-medium">No news found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -491,8 +491,8 @@ const NewsList = () => {
                           <>
                             <tr
                               key={news.id}
-                              className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all group cursor-pointer ${
-                                index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                              className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all group cursor-pointer ${
+                                index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                               }`}
                               onClick={() => toggleNews(news.id)}
                             >
@@ -517,7 +517,7 @@ const NewsList = () => {
                               </td>
                               <td className="py-4 px-6 text-gray-600 dark:text-gray-400 whitespace-nowrap">
                                 <div className="flex items-center gap-2">
-                                  <Calendar size={14} className="text-gray-400" />
+                                  <Calendar size={14} className="text-gray-400 dark:text-gray-500" />
                                   {formatDate(news.created_at)}
                                 </div>
                               </td>
@@ -570,10 +570,10 @@ const NewsList = () => {
                               </td>
                             </tr>
                             {expandedNews === news.id && (
-                              <tr className="bg-primary/5 dark:bg-primary/10 border-b border-gray-100 dark:border-gray-800">
+                              <tr className="bg-primary/5 dark:bg-primary/10 border-b border-gray-100 dark:border-neutral-800">
                                 <td colSpan={5} className="px-6 py-4">
                                   <div className="pl-20 pr-4">
-                                    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                                    <div className="bg-white dark:bg-neutral-800 p-4 rounded-lg border border-gray-200 dark:border-neutral-700">
                                       <div className="flex gap-4">
                                         <div className="w-32 h-24 rounded-lg overflow-hidden flex-shrink-0">
                                           <img 
@@ -585,13 +585,13 @@ const NewsList = () => {
                                         <div className="flex-1">
                                           <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">content:</h4>
                                           <p className="text-gray-600 dark:text-gray-400">{news.content}</p>
-                                          <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                          <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-neutral-700">
                                             <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                                               <span>Updated: {formatDate(news.updated_at)}</span>
                                             </div>
                                             <button
                                               onClick={() => setExpandedNews(null)}
-                                              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                                              className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                                             >
                                               <ChevronUp size={16} />
                                             </button>
@@ -618,8 +618,8 @@ const NewsList = () => {
                 {news.length === 0 ? (
                   <div className="col-span-full text-center py-12">
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                        <Search className="text-gray-400" size={24} />
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                        <Search className="text-gray-400 dark:text-gray-500" size={24} />
                       </div>
                       <p className="font-medium text-gray-500 dark:text-gray-400">No news found</p>
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
@@ -636,7 +636,7 @@ const NewsList = () => {
                   news.map((news) => (
                     <div
                       key={news.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_16px_rgba(0,0,0,0.4)] hover:border-primary/30 dark:hover:border-primary/50 transition-all group overflow-hidden"
+                      className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_16px_rgba(0,0,0,0.4)] hover:border-primary/30 dark:hover:border-primary/50 transition-all group overflow-hidden"
                     >
                       {/* News Image */}
                       <div className="relative h-48 overflow-hidden">
@@ -660,7 +660,7 @@ const NewsList = () => {
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2 flex-1">
                             {news.title}
                           </h3>
-                          <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 ml-2">
+                          <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 ml-2">
                             {expandedNews === news.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                           </button>
                         </div>
@@ -673,7 +673,7 @@ const NewsList = () => {
                         </div>
 
                         {expandedNews === news.id ? (
-                          <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                          <div className="mt-4 pt-4 border-t border-gray-100 dark:border-neutral-700">
                             <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-2">content:</h4>
                             <p className="text-gray-600 dark:text-gray-400 mb-4">{news.content}</p>
                             <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
@@ -690,7 +690,7 @@ const NewsList = () => {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex gap-2 p-4 border-t border-gray-100 dark:border-gray-700 items-center justify-between">
+                      <div className="flex gap-2 p-4 border-t border-gray-100 dark:border-neutral-700 items-center justify-between">
                         <button
                           onClick={() => openEditModal(news)}
                           className="flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary/10 dark:hover:bg-primary/20 text-primary transition-all font-medium text-sm cursor-pointer"
@@ -815,8 +815,8 @@ const NewsList = () => {
 
     return (
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
-          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
+        <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200 dark:border-neutral-700 max-h-[90vh] overflow-y-auto">
+          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-neutral-700 sticky top-0 bg-white dark:bg-neutral-800 z-10">
             <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
               <div className="p-2 bg-primary rounded-lg shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.2)]">
                 <Newspaper className="text-white" size={20} />
@@ -825,7 +825,7 @@ const NewsList = () => {
             </h4>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+              className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
               disabled={submitting}
             >
               <X size={20} />
@@ -893,7 +893,7 @@ const NewsList = () => {
                   {/* Image Preview */}
                   {imagePreview && (
                     <div className="mb-4">
-                      <div className="relative w-full h-48 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                      <div className="relative w-full h-48 rounded-lg overflow-hidden border border-gray-200 dark:border-neutral-700">
                         <img 
                           src={imagePreview} 
                           alt="Preview" 
@@ -928,7 +928,7 @@ const NewsList = () => {
                         htmlFor="image-upload" 
                         className="cursor-pointer flex flex-col items-center"
                       >
-                        <ImageIcon className="text-gray-400 mb-2" size={24} />
+                        <ImageIcon className="text-gray-400 dark:text-gray-500 mb-2" size={24} />
                         <span className="text-sm text-gray-600 dark:text-gray-400">
                           Click to upload or drag and drop
                         </span>
@@ -966,7 +966,7 @@ const NewsList = () => {
             </div>
 
             {/* Form Actions */}
-            <div className="flex justify-end gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex justify-end gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-neutral-700">
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}

@@ -43,7 +43,7 @@ const AddAgent = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-primary rounded-xl shadow-lg shadow-primary/20">
               <UserPlus className="text-white" size={24} />
@@ -60,7 +60,7 @@ const AddAgent = () => {
         </div>
 
         {/* Form */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
             <div>
@@ -79,7 +79,7 @@ const AddAgent = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white transition-all"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -96,7 +96,7 @@ const AddAgent = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
+                      className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -114,7 +114,7 @@ const AddAgent = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
+                      className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -129,7 +129,7 @@ const AddAgent = () => {
                     name="yearsOfExperience"
                     value={formData.yearsOfExperience}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
                     placeholder="5"
                   />
                 </div>
@@ -152,7 +152,7 @@ const AddAgent = () => {
                     name="address"
                     value={formData.address}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
                     placeholder="123 Main Street"
                   />
                 </div>
@@ -166,7 +166,7 @@ const AddAgent = () => {
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
                     placeholder="New York"
                   />
                 </div>
@@ -180,7 +180,7 @@ const AddAgent = () => {
                     name="state"
                     value={formData.state}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
                     placeholder="NY"
                   />
                 </div>
@@ -193,7 +193,7 @@ const AddAgent = () => {
                     name="specialization"
                     value={formData.specialization}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
                   >
                     <option value="">Select Specialization</option>
                     <option value="residential">Residential Properties</option>
@@ -212,7 +212,7 @@ const AddAgent = () => {
                     value={formData.bio}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-gray-900 dark:text-white"
                     placeholder="Enter agent biography..."
                   />
                 </div>
@@ -220,7 +220,7 @@ const AddAgent = () => {
             </div>
 
             {/* Submit Buttons */}
-            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
+            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-neutral-800">
               <Button
                 type="submit"
                 className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"

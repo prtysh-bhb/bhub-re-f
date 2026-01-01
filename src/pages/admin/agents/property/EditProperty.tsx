@@ -283,7 +283,7 @@ const EditProperty = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl transition-colors duration-200">
+      <div className="bg-white dark:bg-neutral-900 p-8 rounded-2xl shadow-xl transition-colors duration-200">
         <div className="flex items-center gap-3 mr-auto my-2">
           <div className="p-3 bg-primary rounded-xl shadow-md">
             <HousePlus className="text-white" size={24} />
@@ -295,7 +295,7 @@ const EditProperty = () => {
 
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* Property Info */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl transition-colors duration-200">
+          <div className="bg-gray-50 dark:bg-neutral-800/50 p-6 rounded-xl transition-colors duration-200">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">
               Property Information
             </h2>
@@ -410,7 +410,7 @@ const EditProperty = () => {
           </div>
 
           {/* Amenities */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl transition-colors duration-200">
+          <div className="bg-gray-50 dark:bg-neutral-800/50 p-6 rounded-xl transition-colors duration-200">
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
               Amenities
             </h3>
@@ -434,7 +434,7 @@ const EditProperty = () => {
           </div>
 
           {/* Existing + New Images */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl transition-colors duration-200">
+          <div className="bg-gray-50 dark:bg-neutral-800/50 p-6 rounded-xl transition-colors duration-200">
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
               Existing Images
             </h3>
@@ -453,7 +453,7 @@ const EditProperty = () => {
                     <button
                       type="button"
                       onClick={() => handleRemoveExistingImage(i)}
-                      className="absolute top-2 right-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full px-3 py-1.5 text-xs shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                      className="absolute top-2 right-2 bg-white dark:bg-neutral-800 border border-gray-300 dark:border-gray-600 rounded-full px-3 py-1.5 text-xs shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                     >
                       {removeImages.includes(i) ? "Undo" : "Remove"}
                     </button>
@@ -467,7 +467,7 @@ const EditProperty = () => {
             </div>
           </div>
 
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl transition-colors duration-200">
+          <div className="bg-gray-50 dark:bg-neutral-800/50 p-6 rounded-xl transition-colors duration-200">
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
               Add New Images
             </h3>
@@ -490,7 +490,7 @@ const EditProperty = () => {
                     <button
                       type="button"
                       onClick={() => handleRemoveNewImage(i)}
-                      className="absolute top-2 right-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full px-3 py-1.5 text-xs shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                      className="absolute top-2 right-2 bg-white dark:bg-neutral-800 border border-gray-300 dark:border-gray-600 rounded-full px-3 py-1.5 text-xs shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                     >
                       Remove
                     </button>
@@ -501,7 +501,7 @@ const EditProperty = () => {
           </div>
 
           {/* Video */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl transition-colors duration-200">
+          <div className="bg-gray-50 dark:bg-neutral-800/50 p-6 rounded-xl transition-colors duration-200">
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
               Add Property Video
             </h3>
@@ -525,7 +525,7 @@ const EditProperty = () => {
           </div>
 
           {/* Location Section */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl transition-colors duration-200">
+          <div className="bg-gray-50 dark:bg-neutral-800/50 p-6 rounded-xl transition-colors duration-200">
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
               Location Details
             </h3>
@@ -631,7 +631,7 @@ const EditProperty = () => {
           </div>
 
           {/* Status + Type */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl transition-colors duration-200">
+          <div className="bg-gray-50 dark:bg-neutral-800/50 p-6 rounded-xl transition-colors duration-200">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-6">
               Status
             </h3>

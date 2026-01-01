@@ -65,40 +65,23 @@
 /* ============================================
    SKIN: BORDERED vs SHADOWED CONTAINERS
    Toggle between bordered cards and shadowed cards
+   Only applies to main content cards, not global elements
    ============================================ */
 
-/* Default (shadowed): Cards have shadows, no borders */
-body:not(.skin-bordered) .bg-white,
-body:not(.skin-bordered) .dark\:bg-neutral-900,
-body:not(.skin-bordered) .dark\:bg-gray-900 {
-  border: 1px solid transparent;
+/* Default Mode: Cards have shadows with transparent borders */
+body:not(.skin-bordered) [data-card] {
+  border-color: transparent !important;
 }
 
-/* Bordered Mode: Replace shadows with borders */
-.skin-bordered .bg-white,
-.skin-bordered .bg-neutral-50,
-.skin-bordered [class*="bg-white"],
-.skin-bordered [class*="rounded-"] {
-  border: 2px solid rgb(var(--color-primary-200)) !important;
+/* Bordered Mode: Replace shadows with 1px primary borders (only on cards) */
+.skin-bordered [data-card] {
+  border: 1px solid rgb(var(--color-primary-200)) !important;
   box-shadow: none !important;
 }
 
-.dark.skin-bordered .dark\:bg-neutral-900,
-.dark.skin-bordered .dark\:bg-gray-900,
-.dark.skin-bordered [class*="dark:bg-neutral-900"],
-.dark.skin-bordered [class*="dark:bg-gray-900"] {
-  border: 2px solid rgb(var(--color-primary-800)) !important;
+.dark.skin-bordered [data-card] {
+  border: 1px solid rgb(var(--color-primary-800)) !important;
   box-shadow: none !important;
-}
-
-/* Remove shadows in bordered mode */
-.skin-bordered [class*="shadow-"] {
-  box-shadow: none !important;
-}
-
-/* Keep shadow utilities working in default mode */
-body:not(.skin-bordered) [class*="shadow-"] {
-  box-shadow: var(--tw-shadow);
 }
 
 @layer base {

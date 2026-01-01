@@ -283,7 +283,7 @@ const AddSubscriptionPlan = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-primary rounded-xl shadow-md">
               <CreditCard className="text-white" size={24} />
@@ -300,7 +300,7 @@ const AddSubscriptionPlan = () => {
         </div>
 
         {/* Form */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Basic Information */}
             <div>
@@ -323,8 +323,8 @@ const AddSubscriptionPlan = () => {
                     className={`w-full px-4 py-2 border ${
                       errors.name
                         ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                    } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white transition-all`}
+                        : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                    } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white transition-all`}
                     placeholder="Basic Plan"
                   />
                   {errors.name && (
@@ -347,8 +347,8 @@ const AddSubscriptionPlan = () => {
                     className={`w-full px-4 py-2 border ${
                       errors.slug
                         ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                    } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                        : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                    } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="basic-plan"
                   />
                   {errors.slug && (
@@ -375,8 +375,8 @@ const AddSubscriptionPlan = () => {
                     className={`w-full px-4 py-2 border ${
                       errors.description
                         ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                    } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                        : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                    } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="Describe the plan features and benefits..."
                   />
                   {errors.description && (
@@ -414,8 +414,8 @@ const AddSubscriptionPlan = () => {
                       className={`w-full pl-10 pr-4 py-2 border ${
                         errors.price
                           ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                      } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                          : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                      } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                       placeholder="29.99"
                     />
                   </div>
@@ -441,8 +441,8 @@ const AddSubscriptionPlan = () => {
                       className={`w-full pl-10 pr-4 py-2 border ${
                         errors.duration_days
                           ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                      } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                          : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                      } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                       placeholder="30"
                     />
                   </div>
@@ -465,8 +465,8 @@ const AddSubscriptionPlan = () => {
                     className={`w-full px-4 py-2 border ${
                       errors.sort_order
                         ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                    } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                        : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                    } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="1"
                   />
                   {errors.sort_order && (
@@ -514,8 +514,8 @@ const AddSubscriptionPlan = () => {
                     className={`w-full px-4 py-2 border ${
                       errors.property_limit
                         ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                    } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                        : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                    } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="10"
                   />
                   {errors.property_limit && (
@@ -538,8 +538,8 @@ const AddSubscriptionPlan = () => {
                     className={`w-full px-4 py-2 border ${
                       errors.featured_limit
                         ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                    } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                        : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                    } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="5"
                   />
                   {errors.featured_limit && (
@@ -562,8 +562,8 @@ const AddSubscriptionPlan = () => {
                     className={`w-full px-4 py-2 border ${
                       errors.image_limit
                         ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                    } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                        : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                    } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="20"
                   />
                   {errors.image_limit && (
@@ -621,8 +621,8 @@ const AddSubscriptionPlan = () => {
                       className={`flex-1 px-4 py-2 border ${
                         errors.features && index === 0
                           ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
-                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
-                      } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
+                          : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                      } bg-white dark:bg-neutral-800 rounded-lg text-gray-900 dark:text-white`}
                       placeholder="Enter feature description (e.g., '10 Property Listings')"
                     />
                     <button
@@ -650,7 +650,7 @@ const AddSubscriptionPlan = () => {
             </div>
 
             {/* Submit Buttons */}
-            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
+            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-neutral-800">
               <Button
                 type="submit"
                 className="bg-primary hover:bg-primary/90 text-white shadow-md hover:shadow-lg transition-all"

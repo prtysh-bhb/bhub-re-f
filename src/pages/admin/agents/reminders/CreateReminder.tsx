@@ -208,7 +208,7 @@ const CreateReminder = () => {
 
   const getPriorityConfig = (priority: string) => {
     const priorityConfig = {
-      low: { color: 'text-gray-600 bg-gray-100', darkColor: 'dark:text-gray-300 dark:bg-gray-800', icon: Bell },
+      low: { color: 'text-gray-600 bg-gray-100', darkColor: 'dark:text-gray-300 dark:bg-neutral-800', icon: Bell },
       medium: { color: 'text-primary-600 bg-primary-100', darkColor: 'dark:text-primary-400 dark:bg-primary-900/30', icon: Clock },
       high: { color: 'text-amber-600 bg-amber-100', darkColor: 'dark:text-amber-400 dark:bg-amber-900/30', icon: AlertTriangle },
       urgent: { color: 'text-red-600 bg-red-100', darkColor: 'dark:text-red-400 dark:bg-red-900/30', icon: Zap }
@@ -267,7 +267,7 @@ const CreateReminder = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary rounded-xl shadow-lg shadow-primary/20">
@@ -294,7 +294,7 @@ const CreateReminder = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Form */}
           <div className="lg:col-span-2">
-            <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+            <Card className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Basic Information */}
@@ -315,10 +315,10 @@ const CreateReminder = () => {
                         type="text"
                         value={formData.title}
                         onChange={(e) => handleChange('title', e.target.value)}
-                        className={`w-full px-4 py-2.5 bg-white dark:bg-gray-800 border ${
+                        className={`w-full px-4 py-2.5 bg-white dark:bg-neutral-800 border ${
                           errors.title
                             ? 'border-red-500 focus:ring-red-500'
-                            : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                            : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
                         } rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-all`}
                         placeholder="Enter reminder title..."
                         maxLength={100}
@@ -341,10 +341,10 @@ const CreateReminder = () => {
                         value={formData?.description ?? ''}
                         onChange={(e) => handleChange('description', e.target.value)}
                         rows={4}
-                        className={`w-full px-4 py-2.5 bg-white dark:bg-gray-800 border ${
+                        className={`w-full px-4 py-2.5 bg-white dark:bg-neutral-800 border ${
                           errors.description
                             ? 'border-red-500 focus:ring-red-500'
-                            : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                            : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
                         } rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 resize-none transition-all`}
                         placeholder="Add detailed description about the reminder..."
                         maxLength={1000}
@@ -380,7 +380,7 @@ const CreateReminder = () => {
                                 className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all ${
                                   formData.type === type.value
                                     ? `${config.borderColor} ${config.darkBorderColor} bg-gradient-to-r ${config.bgColor} ${config.darkBgColor} shadow-md dark:shadow-lg`
-                                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                    : 'border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'
                                 }`}
                               >
                                 <input
@@ -430,7 +430,7 @@ const CreateReminder = () => {
                                 className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all ${
                                   formData.priority === priority.value
                                     ? 'border-primary-200 dark:border-primary-800/50 bg-primary-50 dark:bg-primary-900/30 shadow-md dark:shadow-lg'
-                                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                    : 'border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'
                                 }`}
                               >
                                 <input
@@ -472,10 +472,10 @@ const CreateReminder = () => {
                           value={formData.remind_at}
                           onChange={(e) => handleChange('remind_at', e.target.value)}
                           min={getMinDateTime()}
-                          className={`w-full pl-10 pr-4 py-2.5 bg-white dark:bg-gray-800 border ${
+                          className={`w-full pl-10 pr-4 py-2.5 bg-white dark:bg-neutral-800 border ${
                             errors.remind_at
                               ? 'border-red-500 focus:ring-red-500'
-                              : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                              : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
                           } rounded-lg text-gray-900 dark:text-white transition-all`}
                         />
                       </div>
@@ -596,10 +596,10 @@ const CreateReminder = () => {
                         value={formData?.notes ?? ""}
                         onChange={(e) => handleChange('notes', e.target.value)}
                         rows={3}
-                        className={`w-full px-4 py-2.5 bg-white dark:bg-gray-800 border ${
+                        className={`w-full px-4 py-2.5 bg-white dark:bg-neutral-800 border ${
                           errors.notes
                             ? 'border-red-500 focus:ring-red-500'
-                            : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
+                            : 'border-gray-200 dark:border-neutral-700 focus:ring-2 focus:ring-primary focus:border-primary'
                         } rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 resize-none transition-all`}
                         placeholder="Add any additional notes or context..."
                         maxLength={500}
@@ -615,7 +615,7 @@ const CreateReminder = () => {
                   </div>
 
                   {/* Submit Button */}
-                  <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
+                  <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-neutral-800">
                     <Button
                       type="submit"
                       disabled={loading}
@@ -651,7 +651,7 @@ const CreateReminder = () => {
           {/* Sidebar - Preview & Help */}
           <div className="space-y-6">
             {/* Preview Card */}
-            <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+            <Card className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Bell className="w-5 h-5 text-primary" />
@@ -662,7 +662,7 @@ const CreateReminder = () => {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">Type:</span>
-                      <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 capitalize">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-300 capitalize">
                         {formData.type.replace('_', ' ')}
                       </span>
                     </div>
@@ -684,7 +684,7 @@ const CreateReminder = () => {
                     {formData.description && (
                       <div>
                         <span className="text-sm font-semibold text-gray-900 dark:text-gray-100 block mb-1">Preview:</span>
-                        <p className="text-sm text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-200 dark:border-gray-700">
+                        <p className="text-sm text-gray-600 dark:text-gray-300 bg-white dark:bg-neutral-800 p-3 rounded-lg border border-gray-200 dark:border-neutral-700">
                           {formData.description}
                         </p>
                       </div>
@@ -699,7 +699,7 @@ const CreateReminder = () => {
             </Card>
 
             {/* Help Card */}
-            <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+            <Card className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-primary" />
@@ -735,7 +735,7 @@ const CreateReminder = () => {
     const priorityConfig = {
       low: { 
         color: 'bg-gray-100 text-gray-700', 
-        darkColor: 'dark:bg-gray-800 dark:text-gray-300', 
+        darkColor: 'dark:bg-neutral-800 dark:text-gray-300', 
         icon: Bell 
       },
       medium: { 

@@ -52,7 +52,7 @@ const AgentList = () => {
       {/* Make sure parent allows children to control height and scrolling */}
       <div className="space-y-6 min-h-0 pb-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
+        <div className="bg-white dark:bg-neutral-900 p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3 min-w-0">
               <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
@@ -69,8 +69,8 @@ const AgentList = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all w-full sm:w-auto">
-                <Search size={16} className="text-gray-400 mr-2 flex-shrink-0" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all w-full sm:w-auto">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2 flex-shrink-0" />
                 <input
                   type="text"
                   placeholder="Search agents..."
@@ -89,7 +89,7 @@ const AgentList = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -196,7 +196,7 @@ const AgentList = () => {
           <>
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden min-h-0">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden min-h-0">
                 {/* ensure table container can scroll horizontally on small screens */}
                 <div className="overflow-x-auto w-full">
                   <table className="min-w-full w-full border-collapse text-sm">
@@ -216,7 +216,7 @@ const AgentList = () => {
                         <th className="py-4 px-4 sm:px-6 text-center font-semibold">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {agents.length === 0 ? (
                         <tr>
                           <td
@@ -224,8 +224,8 @@ const AgentList = () => {
                             className="py-12 text-center text-gray-500 dark:text-gray-400"
                           >
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Search className="text-gray-400" size={24} />
+                              <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Search className="text-gray-400 dark:text-gray-500" size={24} />
                               </div>
                               <p className="font-medium">No agents found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -236,10 +236,10 @@ const AgentList = () => {
                         agents.map((agent, index) => (
                           <tr
                             key={agent.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
+                            className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
                               index % 2 === 0
-                                ? "bg-white dark:bg-gray-900"
-                                : "bg-gray-50/50 dark:bg-gray-800/50"
+                                ? "bg-white dark:bg-neutral-900"
+                                : "bg-gray-50/50 dark:bg-neutral-800/50"
                             }`}
                           >
                             <td className="py-4 px-4 sm:px-6">
@@ -271,7 +271,7 @@ const AgentList = () => {
                                 className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
                                   agent.two_factor_enabled
                                     ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
-                                    : "bg-red-100 dark:bg-gray-800 text-red-700 dark:text-gray-400"
+                                    : "bg-red-100 dark:bg-neutral-800 text-red-700 dark:text-gray-400"
                                 }`}
                               >
                                 <Shield className="mr-1" size={14} />
@@ -343,8 +343,8 @@ const AgentList = () => {
                   {agents.length === 0 ? (
                     <div className="col-span-full text-center py-12">
                       <div className="flex flex-col items-center gap-3">
-                        <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                          <Search className="text-gray-400" size={24} />
+                        <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                          <Search className="text-gray-400 dark:text-gray-500" size={24} />
                         </div>
                         <p className="font-medium text-gray-500 dark:text-gray-400">
                           No agents found
@@ -356,7 +356,7 @@ const AgentList = () => {
                     agents.map((agent) => (
                       <div
                         key={agent.id}
-                        className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300 hover:-translate-y-1 group min-h-0"
+                        className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300 hover:-translate-y-1 group min-h-0"
                       >
                         <div className="flex justify-between items-start mb-4">
                           <div className="flex items-center gap-3">
@@ -401,7 +401,7 @@ const AgentList = () => {
                         </div>
 
                         {/* Actions */}
-                        <div className="flex gap-2 pt-3 border-t border-gray-100 dark:border-gray-700">
+                        <div className="flex gap-2 pt-3 border-t border-gray-100 dark:border-neutral-700">
                           <button
                             onClick={() => navigate(`/admin/agents/${agent.id}`)}
                             className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm cursor-pointer"
@@ -428,7 +428,7 @@ const AgentList = () => {
 
         {/* Pagination */}
         {!loading && totalPages > 1 && (
-          <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
+          <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
                 Showing page{" "}

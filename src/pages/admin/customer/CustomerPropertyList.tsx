@@ -40,7 +40,7 @@ const CustomerPropertyList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-black/30">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary-600 dark:bg-primary-700 rounded-xl shadow-md">
@@ -57,8 +57,8 @@ const CustomerPropertyList = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search properties..."
@@ -68,7 +68,7 @@ const CustomerPropertyList = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -100,7 +100,7 @@ const CustomerPropertyList = () => {
             {filteredProperties.map((property) => (
               <div
                 key={property.id}
-                className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg dark:hover:shadow-black/30 hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
+                className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 overflow-hidden hover:shadow-lg dark:hover:shadow-black/30 hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -135,9 +135,9 @@ const CustomerPropertyList = () => {
 
         {/* Table View */}
         {viewMode === "table" && (
-          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30 overflow-hidden">
+          <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-black/30 overflow-hidden">
             <table className="min-w-full">
-              <thead className="bg-gray-50 dark:bg-gray-800">
+              <thead className="bg-gray-50 dark:bg-neutral-800">
                 <tr>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">Property</th>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">Location</th>
@@ -151,8 +151,8 @@ const CustomerPropertyList = () => {
                 {filteredProperties.map((property, index) => (
                   <tr
                     key={property.id}
-                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all ${
-                      index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                    className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all ${
+                      index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                     }`}
                   >
                     <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">{property.title}</td>

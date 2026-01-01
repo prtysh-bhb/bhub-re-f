@@ -207,7 +207,7 @@ const RemindersList = () => {
       property: 'text-purple-600 bg-purple-100 dark:bg-purple-900/30',
       inquiry: 'text-amber-600 bg-amber-100 dark:bg-amber-900/30',
       payment: 'text-red-600 bg-red-100 dark:bg-red-900/30',
-      general: 'text-gray-600 bg-gray-100 dark:bg-gray-900/30'
+      general: 'text-gray-600 bg-gray-100 dark:bg-neutral-900/30'
     };
 
     return typeColors[type as keyof typeof typeColors] || typeColors.general;
@@ -227,7 +227,7 @@ const RemindersList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
@@ -245,7 +245,7 @@ const RemindersList = () => {
 
             <div className="flex items-center gap-2 flex-wrap">
               {/* View Mode Toggle */}
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -271,8 +271,8 @@ const RemindersList = () => {
               </div>
 
               {/* Quick Filters */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
@@ -287,7 +287,7 @@ const RemindersList = () => {
               </div>
 
               {/* Status Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
@@ -302,7 +302,7 @@ const RemindersList = () => {
               </div>
 
               {/* Priority Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
                 <select
                   value={priorityFilter}
                   onChange={(e) => setPriorityFilter(e.target.value)}
@@ -317,7 +317,7 @@ const RemindersList = () => {
               </div>
 
               {/* Type Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
                 <select
                   value={typeFilter}
                   onChange={(e) => setTypeFilter(e.target.value)}
@@ -358,7 +358,7 @@ const RemindersList = () => {
           <>
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -372,7 +372,7 @@ const RemindersList = () => {
                         <th className="py-4 px-6 text-center font-semibold">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {reminders.length === 0 ? (
                         <tr>
                           <td
@@ -380,8 +380,8 @@ const RemindersList = () => {
                             className="py-12 text-center text-gray-500 dark:text-gray-400"
                           >
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Bell className="text-gray-400" size={24} />
+                              <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Bell className="text-gray-400 dark:text-gray-500" size={24} />
                               </div>
                               <p className="font-medium">No reminders found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -392,8 +392,8 @@ const RemindersList = () => {
                         reminders.map((reminder, index) => (
                           <tr
                             key={reminder.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
-                              index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                            className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
+                              index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                             } ${isOverdue(reminder.remind_at) && reminder.status === 'pending' ? 'bg-red-50/50 dark:bg-red-900/10' : ''}`}
                           >
                             <td className="py-4 px-6">
@@ -417,7 +417,7 @@ const RemindersList = () => {
                               </div>
                             </td>
                             <td className="py-4 px-6">
-                              <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 capitalize">
+                              <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-300 capitalize">
                                 {reminder.type.replace('_', ' ')}
                               </span>
                             </td>
@@ -527,8 +527,8 @@ const RemindersList = () => {
                 {reminders.length === 0 ? (
                   <div className="col-span-full text-center py-12">
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                        <Bell className="text-gray-400" size={24} />
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                        <Bell className="text-gray-400 dark:text-gray-500" size={24} />
                       </div>
                       <p className="font-medium text-gray-500 dark:text-gray-400">No reminders found</p>
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
@@ -538,7 +538,7 @@ const RemindersList = () => {
                   reminders.map((reminder) => (
                     <div
                       key={reminder.id}
-                      className={`bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all hover:-translate-y-1 group ${
+                      className={`bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all hover:-translate-y-1 group ${
                         isOverdue(reminder.remind_at) && reminder.status === 'pending' 
                           ? 'border-red-200 dark:border-red-800 bg-red-50/50 dark:bg-red-900/10' 
                           : ''
@@ -572,7 +572,7 @@ const RemindersList = () => {
 
                       {/* Related Information */}
                       {(reminder.customer || reminder.property || reminder.appointment) && (
-                        <div className="mb-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                        <div className="mb-4 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
                           <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">Related To:</p>
                           <div className="space-y-1">
                             {reminder.customer && (
@@ -637,7 +637,7 @@ const RemindersList = () => {
                       )}
 
                       {/* Actions */}
-                      <div className="flex gap-2 pt-4 border-t border-gray-100 dark:border-gray-700">
+                      <div className="flex gap-2 pt-4 border-t border-gray-100 dark:border-neutral-700">
                         {reminder.status === 'pending' && (
                           <>
                             <button
@@ -703,7 +703,7 @@ const RemindersList = () => {
         {/* Complete Popup */}
         {showCompletePopup && (
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-neutral-700">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
                   <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
@@ -713,7 +713,7 @@ const RemindersList = () => {
                 </h4>
                 <button
                   onClick={() => setShowCompletePopup(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                 >
                   <X size={20} />
                 </button>
@@ -727,7 +727,7 @@ const RemindersList = () => {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 rows={3}
-                className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
+                className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
                 placeholder="Enter note..."
               ></textarea>
 
@@ -752,7 +752,7 @@ const RemindersList = () => {
         {/* Snooze Popup */}
         {showSnoozePopup && (
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-neutral-700">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
                   <div className="p-2 bg-amber-100 dark:bg-green-900/30 rounded-lg">
@@ -762,7 +762,7 @@ const RemindersList = () => {
                 </h4>
                 <button
                   onClick={() => setShowSnoozePopup(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                 >
                   <X size={20} />
                 </button>
@@ -776,7 +776,7 @@ const RemindersList = () => {
                 type="date"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
+                className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
               ></input>
 
               <div className="flex justify-end gap-2">

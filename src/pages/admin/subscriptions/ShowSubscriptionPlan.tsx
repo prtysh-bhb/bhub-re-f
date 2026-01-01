@@ -109,7 +109,7 @@ const ShowSubscriptionPlan = () => {
           {/* Main Plan Information */}
           <div className="lg:col-span-2 space-y-6">
             {/* Plan Overview Card */}
-            <Card className={`bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl overflow-hidden`}>
+            <Card className={`bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl overflow-hidden`}>
               <CardContent className="p-0">
                 {/* Plan Header */}
                 <div className={`bg-primary-600 dark:bg-primary-700 p-6 text-white relative overflow-hidden`}>
@@ -145,7 +145,7 @@ const ShowSubscriptionPlan = () => {
                 </div>
 
                 {/* Plan Description */}
-                <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+                <div className="p-6 border-b border-gray-200 dark:border-neutral-700">
                   <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                     <FileText className="w-5 h-5 text-primary-600 dark:text-primary-400" />
                     Description
@@ -161,7 +161,7 @@ const ShowSubscriptionPlan = () => {
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+                      <div className="flex items-center justify-between p-4 bg-white dark:bg-neutral-800/50 rounded-xl border border-gray-200 dark:border-neutral-700">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
                             <Building2 className="w-5 h-5 text-primary-600 dark:text-primary-400" />
@@ -176,7 +176,7 @@ const ShowSubscriptionPlan = () => {
                         </span>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+                      <div className="flex items-center justify-between p-4 bg-white dark:bg-neutral-800/50 rounded-xl border border-gray-200 dark:border-neutral-700">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
                             <Star className="w-5 h-5 text-primary-600 dark:text-primary-400" />
@@ -191,7 +191,7 @@ const ShowSubscriptionPlan = () => {
                     </div>
 
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+                      <div className="flex items-center justify-between p-4 bg-white dark:bg-neutral-800/50 rounded-xl border border-gray-200 dark:border-neutral-700">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
                             <Image className="w-5 h-5 text-primary-600 dark:text-primary-400" />
@@ -204,7 +204,7 @@ const ShowSubscriptionPlan = () => {
                         <span className="text-xl font-bold text-primary-600 dark:text-primary-400">{plan.image_limit}</span>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+                      <div className="flex items-center justify-between p-4 bg-white dark:bg-neutral-800/50 rounded-xl border border-gray-200 dark:border-neutral-700">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center">
                             <Calendar className="w-5 h-5 text-amber-600 dark:text-amber-400" />
@@ -223,7 +223,7 @@ const ShowSubscriptionPlan = () => {
             </Card>
 
             {/* Features List */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                   <Star className="w-5 h-5 text-primary-600 dark:text-primary-400" />
@@ -249,7 +249,7 @@ const ShowSubscriptionPlan = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Premium Features */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Crown className="w-5 h-5 text-amber-600 dark:text-amber-400" />
@@ -257,7 +257,7 @@ const ShowSubscriptionPlan = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className={`flex items-center justify-between p-4 rounded-xl border-2 ${
-                    plan.video_allowed ? 'bg-primary-50 border-primary-200 dark:bg-primary-900/30 dark:border-primary-800/50' : 'bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700'
+                    plan.video_allowed ? 'bg-primary-50 border-primary-200 dark:bg-primary-900/30 dark:border-primary-800/50' : 'bg-gray-50 border-gray-200 dark:bg-neutral-800 dark:border-neutral-700'
                   }`}>
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
@@ -278,7 +278,7 @@ const ShowSubscriptionPlan = () => {
                   </div>
 
                   <div className={`flex items-center justify-between p-4 rounded-xl border-2 ${
-                    plan.priority_support ? 'bg-primary-50 border-primary-200 dark:bg-primary-900/30 dark:border-primary-800/50' : 'bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700'
+                    plan.priority_support ? 'bg-primary-50 border-primary-200 dark:bg-primary-900/30 dark:border-primary-800/50' : 'bg-gray-50 border-gray-200 dark:bg-neutral-800 dark:border-neutral-700'
                   }`}>
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
@@ -302,7 +302,7 @@ const ShowSubscriptionPlan = () => {
             </Card>
 
             {/* Plan Information */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Tag className="w-5 h-5 text-gray-600 dark:text-gray-400" />
@@ -325,7 +325,7 @@ const ShowSubscriptionPlan = () => {
                     <span className="text-sm text-gray-600 dark:text-gray-400">Status</span>
                     <Badge
                       variant={plan.is_active ? "default" : "secondary"}
-                      className={plan.is_active ? "bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-400" : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300"}
+                      className={plan.is_active ? "bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-400" : "bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-gray-300"}
                     >
                       {plan.is_active ? 'Active' : 'Inactive'}
                     </Badge>
@@ -335,7 +335,7 @@ const ShowSubscriptionPlan = () => {
             </Card>
 
             {/* Timestamps */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-gray-600 dark:text-gray-400" />
@@ -355,7 +355,7 @@ const ShowSubscriptionPlan = () => {
             </Card>
 
             {/* Quick Actions */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                 <div className="space-y-3">
@@ -369,7 +369,7 @@ const ShowSubscriptionPlan = () => {
                   <Button
                     onClick={() => navigate('/admin/subscriptions')}
                     variant="outline"
-                    className="w-full border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-semibold py-3 rounded-xl transition-all duration-300"
+                    className="w-full border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-semibold py-3 rounded-xl transition-all duration-300"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back to Plans

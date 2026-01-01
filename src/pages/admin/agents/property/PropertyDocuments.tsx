@@ -103,7 +103,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
       case 'docx':
         return { icon: FileText, color: 'text-primary-500 dark:text-primary-400', bg: 'bg-primary-100 dark:bg-primary-900/30' };
       default:
-        return { icon: File, color: 'text-gray-500 dark:text-gray-400', bg: 'bg-gray-100 dark:bg-gray-800' };
+        return { icon: File, color: 'text-gray-500 dark:text-gray-400', bg: 'bg-gray-100 dark:bg-neutral-800' };
     }
   };
 
@@ -116,7 +116,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
   };
 
   return (
-    <div className="dark:bg-gray-800/50 bg-white rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30 p-6">
+    <div className="dark:bg-neutral-800/50 bg-white rounded-2xl border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30 p-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div className="flex items-center gap-3">
           <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-500 rounded-lg">
@@ -185,7 +185,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
             return (
               <div
                 key={index}
-                className="group relative dark:bg-gray-800/30 bg-white rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:shadow-xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-1"
+                className="group relative dark:bg-neutral-800/30 bg-white rounded-xl border border-gray-200 dark:border-neutral-700 p-4 hover:shadow-xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-1"
                 onMouseEnter={() => setHoveredDoc(index)}
                 onMouseLeave={() => setHoveredDoc(null)}
               >
@@ -222,7 +222,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
                   </div>
                   
                   <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-                    <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">
+                    <span className="px-2 py-1 bg-gray-100 dark:bg-neutral-800 rounded">
                       {doc.name.split('.').pop()?.toUpperCase()}
                     </span>
                     <span>•</span>
@@ -264,8 +264,8 @@ const PropertyDocuments = ({ propertyId }: Props) => {
           })}
         </div>
       ) : (
-        <div className="text-center py-12 dark:bg-gray-800/30 bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700">
-          <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-full flex items-center justify-center mx-auto mb-4 dark:border-gray-700 border-gray-200 border">
+        <div className="text-center py-12 dark:bg-neutral-800/30 bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 dark:border-neutral-700">
+          <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-full flex items-center justify-center mx-auto mb-4 dark:border-neutral-700 border-gray-200 border">
             <FileText className="w-10 h-10 text-gray-400 dark:text-gray-600" />
           </div>
           <h4 className="text-lg font-semibold dark:text-gray-300 text-gray-700 mb-2">
@@ -290,7 +290,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
 
       {/* Stats Summary */}
       {documents.length > 0 && (
-        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-neutral-700">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="text-sm text-gray-500 dark:text-gray-400">
               <span className="font-medium dark:text-gray-300 text-gray-700">
@@ -318,7 +318,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
       {/* ✅ Delete Confirmation Modal */}
       {showConfirm && (
         <div className="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="dark:bg-gray-800 bg-white rounded-2xl shadow-2xl dark:shadow-black/40 p-6 w-full max-w-md border dark:border-gray-700/50 border-gray-200 animate-fadeIn">
+          <div className="dark:bg-neutral-800 bg-white rounded-2xl shadow-2xl dark:shadow-black/40 p-6 w-full max-w-md border dark:border-neutral-700/50 border-gray-200 animate-fadeIn">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-br from-red-500 to-rose-500 rounded-lg">
@@ -330,7 +330,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
               </div>
               <button
                 onClick={() => setShowConfirm(false)}
-                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
               >
                 <X size={20} />
               </button>
@@ -341,7 +341,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
                 Are you sure you want to delete this document? This action cannot be undone.
               </p>
               {deleteIndex !== null && documents[deleteIndex] && (
-                <div className="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg border dark:border-gray-700 border-gray-200">
+                <div className="p-3 bg-gray-50 dark:bg-neutral-800/50 rounded-lg border dark:border-neutral-700 border-gray-200">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-lg flex items-center justify-center">
                       {getFileIcon(documents[deleteIndex].name).icon === ImageIcon ? (

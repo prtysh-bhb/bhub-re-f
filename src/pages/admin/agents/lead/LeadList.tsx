@@ -49,7 +49,7 @@ const LeadList = () => {
       case "lost":
         return "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800";
       default:
-        return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border border-gray-200 dark:border-gray-700";
+        return "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-400 border border-gray-200 dark:border-neutral-700";
     }
   };
 
@@ -86,7 +86,7 @@ const LeadList = () => {
         {/* Empty State */}
         {leads.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20">
-            <ClipboardList size={50} className="text-gray-400 mb-3" />
+            <ClipboardList size={50} className="text-gray-400 dark:text-gray-500 mb-3" />
             <p className="text-gray-500 dark:text-gray-400 text-lg">
               No leads found
             </p>
@@ -96,7 +96,7 @@ const LeadList = () => {
             {leads.map((lead) => (
               <div
                 key={lead.id}
-                className="relative bg-white dark:bg-gray-800/50 p-5 rounded-2xl shadow-lg dark:shadow-black/30 border border-gray-100 dark:border-gray-700/50 hover:shadow-xl dark:hover:shadow-black/40 hover:-translate-y-1 transition-all duration-300 group"
+                className="relative bg-white dark:bg-neutral-800/50 p-5 rounded-2xl shadow-lg dark:shadow-black/30 border border-gray-100 dark:border-neutral-700/50 hover:shadow-xl dark:hover:shadow-black/40 hover:-translate-y-1 transition-all duration-300 group"
               >
                 {/* Customer Info */}
                 <div className="flex items-center gap-3 mb-3">
@@ -121,7 +121,7 @@ const LeadList = () => {
 
                 {/* Property Info */}
                 {lead.property && (
-                  <div className="border-t border-gray-100 dark:border-gray-700 pt-3 mt-3">
+                  <div className="border-t border-gray-100 dark:border-neutral-700 pt-3 mt-3">
                     <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 mb-1">
                       <Home size={14} className="text-primary-600 dark:text-primary-400" />
                       <span>{lead.property.title}</span>

@@ -280,7 +280,7 @@ const BlogCategories = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary rounded-xl shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.2)]">
@@ -297,8 +297,8 @@ const BlogCategories = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary/50 transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary/50 transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search categories..."
@@ -308,7 +308,7 @@ const BlogCategories = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -333,8 +333,8 @@ const BlogCategories = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary/50 transition-all">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary/50 transition-all">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
@@ -414,7 +414,7 @@ const BlogCategories = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-700/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+              <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-700/50 p-5 rounded-xl border border-gray-200 dark:border-neutral-700 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Total Blogs</p>
@@ -431,7 +431,7 @@ const BlogCategories = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -443,7 +443,7 @@ const BlogCategories = () => {
                         <th className="py-4 px-6 text-center font-semibold">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {categories.length === 0 ? (
                         <tr>
                           <td
@@ -451,8 +451,8 @@ const BlogCategories = () => {
                             className="py-12 text-center text-gray-500 dark:text-gray-400"
                           >
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Search className="text-gray-400" size={24} />
+                              <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Search className="text-gray-400 dark:text-gray-500" size={24} />
                               </div>
                               <p className="font-medium">No categories found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -473,8 +473,8 @@ const BlogCategories = () => {
                             <>
                               <tr
                                 key={category.id}
-                                className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all group cursor-pointer ${
-                                  index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                                className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all group cursor-pointer ${
+                                  index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                                 }`}
                                 onClick={() => toggleCategory(category.id)}
                               >
@@ -495,7 +495,7 @@ const BlogCategories = () => {
                                 </td>
                                 <td className="py-4 px-6">
                                   <div className="flex items-center gap-2">
-                                    <FileText size={14} className="text-gray-400" />
+                                    <FileText size={14} className="text-gray-400 dark:text-gray-500" />
                                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                                       {category.blogs_count || 0} Blogs
                                     </span>
@@ -553,10 +553,10 @@ const BlogCategories = () => {
                                 </td>
                               </tr>
                               {expandedCategory === category.id && (
-                                <tr className="bg-primary/5 dark:bg-primary/10 border-b border-gray-100 dark:border-gray-800">
+                                <tr className="bg-primary/5 dark:bg-primary/10 border-b border-gray-100 dark:border-neutral-800">
                                   <td colSpan={5} className="px-6 py-4">
                                     <div className="pl-12 pr-4">
-                                      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                                      <div className="bg-white dark:bg-neutral-800 p-4 rounded-lg border border-gray-200 dark:border-neutral-700">
                                         <div className="grid grid-cols-2 gap-4 mb-4">
                                           <div>
                                             <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">content:</h4>
@@ -566,13 +566,13 @@ const BlogCategories = () => {
                                             <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Details:</h4>
                                             <div className="space-y-2">
                                               <div className="flex items-center gap-2 text-sm">
-                                                <Tag size={14} className="text-gray-400" />
+                                                <Tag size={14} className="text-gray-400 dark:text-gray-500" />
                                                 <span className="text-gray-600 dark:text-gray-400">
                                                   Slug: <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">{category.slug}</code>
                                                 </span>
                                               </div>
                                               <div className="flex items-center gap-2 text-sm">
-                                                <Hash size={14} className="text-gray-400" />
+                                                <Hash size={14} className="text-gray-400 dark:text-gray-500" />
                                                 <span className="text-gray-600 dark:text-gray-400">
                                                   ID: {category.id}
                                                 </span>
@@ -580,13 +580,13 @@ const BlogCategories = () => {
                                             </div>
                                           </div>
                                         </div>
-                                        <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                        <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100 dark:border-neutral-700">
                                           <span className="text-xs text-gray-500 dark:text-gray-400">
                                             Updated: {formatReadableDate(category.updated_at)}
                                           </span>
                                           <button
                                             onClick={() => setExpandedCategory(null)}
-                                            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                                            className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                                           >
                                             <ChevronUp size={16} />
                                           </button>
@@ -612,8 +612,8 @@ const BlogCategories = () => {
                 {categories.length === 0 ? (
                   <div className="col-span-full text-center py-12">
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                        <Search className="text-gray-400" size={24} />
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                        <Search className="text-gray-400 dark:text-gray-500" size={24} />
                       </div>
                       <p className="font-medium text-gray-500 dark:text-gray-400">No categories found</p>
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
@@ -632,11 +632,11 @@ const BlogCategories = () => {
                     return (
                       <div
                         key={category.id}
-                        className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_16px_rgba(0,0,0,0.4)] hover:border-primary/30 dark:hover:border-primary/50 transition-all group overflow-hidden"
+                        className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_16px_rgba(0,0,0,0.4)] hover:border-primary/30 dark:hover:border-primary/50 transition-all group overflow-hidden"
                       >
                         {/* Category Header with Gradient */}
                         <div 
-                          className={`p-6 bg-gradient-to-br ${color.light} dark:${color.dark} border-b border-gray-200 dark:border-gray-700 cursor-pointer`}
+                          className={`p-6 bg-gradient-to-br ${color.light} dark:${color.dark} border-b border-gray-200 dark:border-neutral-700 cursor-pointer`}
                           onClick={() => toggleCategory(category.id)}
                         >
                           <div className="flex justify-between items-start mb-4">
@@ -659,13 +659,13 @@ const BlogCategories = () => {
                                 </div>
                               </div>
                             </div>
-                            <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                            <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
                               {expandedCategory === category.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                             </button>
                           </div>
 
                           {expandedCategory === category.id && (
-                            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-neutral-700">
                               <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-2">content:</h4>
                               <p className="text-gray-600 dark:text-gray-400 mb-4">{category.content}</p>
                               <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
@@ -809,8 +809,8 @@ const CategoryModal = ({
 
     return (
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-200 dark:border-neutral-700">
+          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-neutral-700">
             <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
               <div className="p-2 bg-primary rounded-lg shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.2)]">
                 <FolderOpen className="text-white" size={20} />
@@ -819,7 +819,7 @@ const CategoryModal = ({
             </h4>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+              className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
               disabled={submitting}
             >
               <X size={20} />
@@ -908,7 +908,7 @@ const CategoryModal = ({
             </div>
 
             {/* Form Actions */}
-            <div className="flex justify-end gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex justify-end gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-neutral-700">
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}

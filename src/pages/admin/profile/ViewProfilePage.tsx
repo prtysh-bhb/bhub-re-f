@@ -251,7 +251,7 @@ const ViewProfilePage = () => {
     return (
     <>
         <div className="flex items-center justify-center h-[70vh]">
-          <p className="text-gray-600">No profile data found.</p>
+          <p className="text-gray-600 dark:text-gray-400">No profile data found.</p>
         </div>
     </>
   );
@@ -261,7 +261,7 @@ const ViewProfilePage = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary/10 dark:bg-primary/20 rounded-xl">
@@ -298,7 +298,7 @@ const ViewProfilePage = () => {
         </div>
 
         {/* Profile Card */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
           {/* Cover & Avatar Section */}
           <div className="relative">
             <div className="h-32 bg-primary"></div>
@@ -337,7 +337,7 @@ const ViewProfilePage = () => {
 
             {/* Bio */}
             {(user as any).bio && (
-              <div className="mb-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+              <div className="mb-8 p-4 bg-gray-50 dark:bg-neutral-800 rounded-xl">
                 <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                   {(user as any).bio}
                 </p>
@@ -356,8 +356,8 @@ const ViewProfilePage = () => {
                 </h3>
 
                 <div className="space-y-3">
-                  <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                    <Mail className="text-gray-400 mt-0.5" size={18} />
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                    <Mail className="text-gray-400 dark:text-gray-500 mt-0.5" size={18} />
                     <div className="flex-1">
                       <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Email Address</p>
                       <p className="font-medium text-gray-900 dark:text-white">{(user as any).email}</p>
@@ -365,8 +365,8 @@ const ViewProfilePage = () => {
                   </div>
 
                   {(user as any).phone && (
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                      <Phone className="text-gray-400 mt-0.5" size={18} />
+                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                      <Phone className="text-gray-400 dark:text-gray-500 mt-0.5" size={18} />
                       <div className="flex-1">
                         <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Phone Number</p>
                         <p className="font-medium text-gray-900 dark:text-white">{(user as any).phone}</p>
@@ -375,8 +375,8 @@ const ViewProfilePage = () => {
                   )}
 
                   {(user as any).address && (
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                      <Home className="text-gray-400 mt-0.5" size={18} />
+                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                      <Home className="text-gray-400 dark:text-gray-500 mt-0.5" size={18} />
                       <div className="flex-1">
                         <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Address</p>
                         <p className="font-medium text-gray-900 dark:text-white">{(user as any).address}</p>
@@ -385,8 +385,8 @@ const ViewProfilePage = () => {
                   )}
 
                   {((user as any).city || (user as any).state) && (
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                      <MapPin className="text-gray-400 mt-0.5" size={18} />
+                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                      <MapPin className="text-gray-400 dark:text-gray-500 mt-0.5" size={18} />
                       <div className="flex-1">
                         <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Location</p>
                         <p className="font-medium text-gray-900 dark:text-white">
@@ -414,8 +414,8 @@ const ViewProfilePage = () => {
                   {((user as any).role === "agent" || (user as any).role === "admin") && (
                     <>
                       {(user as any).company_name && (
-                        <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                          <Building2 className="text-gray-400 mt-0.5" size={18} />
+                        <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                          <Building2 className="text-gray-400 dark:text-gray-500 mt-0.5" size={18} />
                           <div className="flex-1">
                             <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Company Name</p>
                             <p className="font-medium text-gray-900 dark:text-white">{(user as any).company_name}</p>
@@ -424,8 +424,8 @@ const ViewProfilePage = () => {
                       )}
 
                       {(user as any).license_number && (
-                        <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                          <Briefcase className="text-gray-400 mt-0.5" size={18} />
+                        <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                          <Briefcase className="text-gray-400 dark:text-gray-500 mt-0.5" size={18} />
                           <div className="flex-1">
                             <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">License Number</p>
                             <p className="font-medium text-gray-900 dark:text-white">{(user as any).license_number}</p>
@@ -436,7 +436,7 @@ const ViewProfilePage = () => {
                   )}
 
                   {/* Email Verification */}
-                  <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
                     {(user as any).email_verified_at ? (
                       <ShieldCheck className="text-primary-500 mt-0.5" size={18} />
                     ) : (
@@ -453,7 +453,7 @@ const ViewProfilePage = () => {
                   </div>
 
                   {/* Two-Factor Toggle */}
-                  <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
                     <div className="rounded-md bg-slate-50 dark:bg-slate-900/30">
                       <ShieldCheck className={`mt-0.5 ${(user as any)['2fa_enabled'] ? "text-primary-600" : "text-red-700"}`} size={18} />
                     </div>
@@ -492,8 +492,8 @@ const ViewProfilePage = () => {
                   </div>
 
                   {/* Last Login */}
-                  <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                    <Clock className="text-gray-400 mt-0.5" size={18} />
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                    <Clock className="text-gray-400 dark:text-gray-500 mt-0.5" size={18} />
                     <div className="flex-1">
                       <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Last Login</p>
                       <p className="font-medium text-gray-900 dark:text-white">

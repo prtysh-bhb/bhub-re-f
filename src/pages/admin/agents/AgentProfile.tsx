@@ -57,7 +57,7 @@ const AgentProfilePage = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)] overflow-hidden border border-gray-200 dark:border-gray-700">
+      <div className="bg-white dark:bg-neutral-900 rounded-3xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)] overflow-hidden border border-gray-200 dark:border-neutral-700">
         {/* Cover Banner with Gradient Overlay */}
         <div className="relative h-52 sm:h-60 md:h-72 bg-primary overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
@@ -91,7 +91,7 @@ const AgentProfilePage = () => {
             </div>
 
             {/* Agent Info Card */}
-            <div className="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)] p-5 sm:p-6 border border-gray-200 dark:border-gray-700">
+            <div className="flex-1 bg-white dark:bg-neutral-800 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)] p-5 sm:p-6 border border-gray-200 dark:border-neutral-700">
               <div className="flex flex-col lg:flex-row lg:justify-between gap-4">
                 {/* Left - Name & Email */}
                 <div className="flex-1">
@@ -121,7 +121,7 @@ const AgentProfilePage = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-3">
-                    <Mail size={16} className="text-gray-400" />
+                    <Mail size={16} className="text-gray-400 dark:text-gray-500" />
                     <span className="break-all">{agent?.email || "Not available"}</span>
                   </div>
                 </div>
@@ -191,7 +191,7 @@ const AgentProfilePage = () => {
         {/* Tabs Section */}
         <div className="mt-6 px-4 sm:px-8 md:px-10 pb-8">
           <Tabs defaultValue="details" className="w-full">
-            <TabsList className="flex flex-wrap justify-start gap-2 sm:gap-4 bg-gray-100 dark:bg-gray-800 p-2 rounded-xl mb-6">
+            <TabsList className="flex flex-wrap justify-start gap-2 sm:gap-4 bg-gray-100 dark:bg-neutral-800 p-2 rounded-xl mb-6">
               <TabsTrigger
                 value="details"
                 className="px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700 data-[state=active]:text-primary data-[state=active]:shadow-lg text-gray-600 dark:text-gray-400 cursor-pointer"

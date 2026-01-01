@@ -49,7 +49,7 @@ const AddProperties = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-2xl">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-2xl">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg">
               <HousePlus className="text-white" size={24} />
@@ -66,7 +66,7 @@ const AddProperties = () => {
         </div>
 
         {/* Form */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-2xl">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Basic Information */}
             <div>
@@ -85,7 +85,7 @@ const AddProperties = () => {
                     value={formData.title}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 text-gray-900 dark:text-white transition-all"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 text-gray-900 dark:text-white transition-all"
                     placeholder="Beautiful 3BR Modern Apartment"
                   />
                 </div>
@@ -99,7 +99,7 @@ const AddProperties = () => {
                     value={formData.propertyType}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                   >
                     <option value="">Select Type</option>
                     <option value="apartment">Apartment</option>
@@ -119,7 +119,7 @@ const AddProperties = () => {
                     value={formData.status}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                   >
                     <option value="sale">For Sale</option>
                     <option value="rent">For Rent</option>
@@ -138,7 +138,7 @@ const AddProperties = () => {
                       value={formData.price}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                      className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                       placeholder="250,000"
                     />
                   </div>
@@ -154,7 +154,7 @@ const AddProperties = () => {
                     value={formData.area}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="1200"
                   />
                 </div>
@@ -169,7 +169,7 @@ const AddProperties = () => {
                     value={formData.bedrooms}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="3"
                   />
                 </div>
@@ -184,7 +184,7 @@ const AddProperties = () => {
                     value={formData.bathrooms}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="2"
                   />
                 </div>
@@ -199,7 +199,7 @@ const AddProperties = () => {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="Describe the property features, amenities, and highlights..."
                   />
                 </div>
@@ -223,7 +223,7 @@ const AddProperties = () => {
                     value={formData.address}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="123 Main Street"
                   />
                 </div>
@@ -238,7 +238,7 @@ const AddProperties = () => {
                     value={formData.city}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="New York"
                   />
                 </div>
@@ -253,7 +253,7 @@ const AddProperties = () => {
                     value={formData.state}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="NY"
                   />
                 </div>
@@ -276,7 +276,7 @@ const AddProperties = () => {
                     value={formData.features}
                     onChange={handleChange}
                     rows={3}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="Pool, Gym, Parking, Garden, etc..."
                   />
                 </div>
@@ -286,7 +286,7 @@ const AddProperties = () => {
                     Property Images
                   </label>
                   <div className="flex items-center justify-center w-full">
-                    <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+                    <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-neutral-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <Image className="w-10 h-10 mb-3 text-gray-400" />
                         <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
@@ -302,7 +302,7 @@ const AddProperties = () => {
             </div>
 
             {/* Submit Buttons */}
-            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
+            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-neutral-800">
               <Button
                 type="submit"
                 className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-md hover:shadow-lg dark:hover:shadow-2xl"

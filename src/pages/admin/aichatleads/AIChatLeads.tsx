@@ -559,7 +559,7 @@ const AIChatLeadsDashboard = () => {
             <div className="flex items-center justify-center py-12">
               <div className="text-center">
                 <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto mb-4" />
-                <p className="text-gray-600">Loading leads...</p>
+                <p className="text-gray-600 dark:text-gray-400">Loading leads...</p>
               </div>
             </div>
           ) : filteredLeads.length === 0 ? (
@@ -568,7 +568,7 @@ const AIChatLeadsDashboard = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {searchTerm ? "No Matching Leads Found" : "No Leads Found"}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 {searchTerm 
                   ? `No leads found matching "${searchTerm}". Try a different search term.`
                   : "No AI chat leads available yet"}
@@ -818,7 +818,7 @@ const AIChatLeadsDashboard = () => {
                 </div>
                 <button
                   onClick={() => setSelectedLead(null)}
-                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 transition-colors"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -865,11 +865,11 @@ const AIChatLeadsDashboard = () => {
                       <h5 className="font-medium text-gray-900 mb-2">Timeline</h5>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-600">Created</span>
+                          <span className="text-gray-600 dark:text-gray-400">Created</span>
                           <span className="text-gray-900">{formatDate(selectedLead.created_at)}</span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-600">Last Updated</span>
+                          <span className="text-gray-600 dark:text-gray-400">Last Updated</span>
                           <span className="text-gray-900">{formatDate(selectedLead.updated_at)}</span>
                         </div>
                       </div>

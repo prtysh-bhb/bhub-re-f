@@ -140,7 +140,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-primary-300 text-primary-600",
       bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
       cardGradientLight: "from-primary-50 to-primary-100",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-primary-100",
       borderColorDark: "dark:border-primary-900/30"
     },
@@ -151,7 +151,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-primary-300 text-primary-600",
       bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
       cardGradientLight: "from-primary-50 to-primary-100",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-primary-100",
       borderColorDark: "dark:border-primary-900/30"
     },
@@ -162,7 +162,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-amber-300 text-amber-600",
       bgColor: "dark:from-amber-600 dark:to-orange-600 from-amber-500 to-orange-500",
       cardGradientLight: "from-amber-50 to-orange-50",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-amber-100",
       borderColorDark: "dark:border-amber-900/30"
     },
@@ -173,7 +173,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-primary-300 text-primary-600",
       bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
       cardGradientLight: "from-primary-50 to-primary-100",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-primary-100",
       borderColorDark: "dark:border-primary-900/30"
     },
@@ -184,7 +184,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-primary-300 text-primary-600",
       bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
       cardGradientLight: "from-primary-50 to-primary-100",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-primary-100",
       borderColorDark: "dark:border-primary-900/30"
     },
@@ -195,7 +195,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-primary-300 text-primary-600",
       bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
       cardGradientLight: "from-primary-50 to-primary-100",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-primary-100",
       borderColorDark: "dark:border-primary-900/30"
     },
@@ -210,7 +210,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-primary-300 text-primary-600",
       bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
       cardGradientLight: "from-primary-50 to-primary-100",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-primary-100",
       borderColorDark: "dark:border-primary-900/30"
     },
@@ -221,7 +221,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-primary-300 text-primary-600",
       bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
       cardGradientLight: "from-primary-50 to-primary-100",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-primary-100",
       borderColorDark: "dark:border-primary-900/30"
     },
@@ -232,7 +232,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-lime-300 text-lime-600", 
       bgColor: "dark:from-lime-600 dark:to-green-600 from-lime-500 to-green-500",
       cardGradientLight: "from-lime-50 to-green-50",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-lime-100",
       borderColorDark: "dark:border-lime-900/30"
     },
@@ -243,7 +243,7 @@ const AgentDashboardPage = () => {
       color: "dark:text-slate-300 text-slate-600", 
       bgColor: "dark:from-slate-600 dark:to-gray-600 from-slate-500 to-gray-500",
       cardGradientLight: "from-slate-50 to-gray-50",
-      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
+      cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50",
       borderColorLight: "border-slate-100",
       borderColorDark: "dark:border-slate-900/30"
     },
@@ -305,7 +305,7 @@ const AgentDashboardPage = () => {
 
     const config = statusConfig[status] || { 
       color: 'dark:text-gray-300 text-gray-700', 
-      bgColor: 'dark:bg-gray-800/50 bg-gray-100', 
+      bgColor: 'dark:bg-neutral-800/50 bg-gray-100', 
       gradient: 'dark:from-gray-800/50 dark:to-gray-700/40 from-gray-100 to-gray-50' 
     };
     
@@ -330,7 +330,7 @@ const AgentDashboardPage = () => {
     return (
     <>
         <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-primary-50/30 flex items-center justify-center">
-          <div className="text-center dark:text-rose-400 text-rose-500 p-8 dark:bg-gray-800/50 bg-white rounded-2xl shadow-xl dark:shadow-2xl dark:border-gray-700/50 border">
+          <div className="text-center dark:text-rose-400 text-rose-500 p-8 dark:bg-neutral-800/50 bg-white rounded-2xl shadow-xl dark:shadow-2xl dark:border-neutral-700/50 border">
             <XCircle className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">{error}</p>
           </div>
@@ -343,7 +343,7 @@ const AgentDashboardPage = () => {
     return (
     <>
         <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-primary-50/30 flex items-center justify-center">
-          <div className="text-center dark:text-gray-300 text-gray-500 p-8 dark:bg-gray-800/50 bg-white rounded-2xl shadow-xl dark:shadow-2xl dark:border-gray-700/50 border">
+          <div className="text-center dark:text-gray-300 text-gray-500 p-8 dark:bg-neutral-800/50 bg-white rounded-2xl shadow-xl dark:shadow-2xl dark:border-neutral-700/50 border">
             <Users className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">No profile data found.</p>
           </div>
@@ -396,7 +396,7 @@ const AgentDashboardPage = () => {
               icon: Target,
               gradient: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
               bgGradientLight: "from-primary-50 to-primary-100",
-              bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50"
+              bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50"
             },
             {
               label: "Inquiries This Month",
@@ -404,7 +404,7 @@ const AgentDashboardPage = () => {
               icon: TrendingUp,
               gradient: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
               bgGradientLight: "from-primary-50 to-primary-100",
-              bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50"
+              bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50"
             },
             {
               label: "Recent Inquiries",
@@ -412,7 +412,7 @@ const AgentDashboardPage = () => {
               icon: Eye,
               gradient: "dark:from-amber-600 dark:to-orange-600 from-amber-500 to-orange-500",
               bgGradientLight: "from-amber-50 to-orange-50",
-              bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50"
+              bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50"
             },
             {
               label: "Success Rate",
@@ -421,12 +421,12 @@ const AgentDashboardPage = () => {
               icon: Award,
               gradient: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
               bgGradientLight: "from-primary-50 to-primary-100",
-              bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50"
+              bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-neutral-700/50"
             },
           ].map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <div key={index} className={`bg-gradient-to-br ${stat.bgGradientLight} dark:bg-gradient-to-br ${stat.bgGradientDark} rounded-2xl p-6 border border-gray-100 dark:border-gray-700/50 shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}>
+              <div key={index} className={`bg-gradient-to-br ${stat.bgGradientLight} dark:bg-gradient-to-br ${stat.bgGradientDark} rounded-2xl p-6 border border-gray-100 dark:border-neutral-700/50 shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}>
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-gray-600 dark:text-gray-300 text-sm font-medium">{stat.label}</p>
@@ -455,7 +455,7 @@ const AgentDashboardPage = () => {
               {propertyStats.map((stat) => {
                 const Icon = stat.icon;
                 return (
-                  <Card key={stat.label} className={`bg-gradient-to-br ${stat.cardGradientLight} dark:bg-gradient-to-br ${stat.cardGradientDark} border border-gray-100 dark:border-gray-700/50 shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}>
+                  <Card key={stat.label} className={`bg-gradient-to-br ${stat.cardGradientLight} dark:bg-gradient-to-br ${stat.cardGradientDark} border border-gray-100 dark:border-neutral-700/50 shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}>
                     <CardContent className="p-5">
                       <div className="flex items-center space-x-4">
                         <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.bgColor} text-white shadow-lg dark:shadow-2xl`}>
@@ -485,7 +485,7 @@ const AgentDashboardPage = () => {
               {inquiryStats.map((stat) => {
                 const Icon = stat.icon;
                 return (
-                  <Card key={stat.label} className={`bg-gradient-to-br ${stat.cardGradientLight} dark:bg-gradient-to-br ${stat.cardGradientDark} border border-gray-100 dark:border-gray-700/50 shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}>
+                  <Card key={stat.label} className={`bg-gradient-to-br ${stat.cardGradientLight} dark:bg-gradient-to-br ${stat.cardGradientDark} border border-gray-100 dark:border-neutral-700/50 shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}>
                     <CardContent className="p-5">
                       <div className="flex items-center space-x-4">
                         <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.bgColor} text-white shadow-lg dark:shadow-2xl`}>
@@ -507,7 +507,7 @@ const AgentDashboardPage = () => {
         {/* Recent Activity Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Properties */}
-          <Card className="lg:col-span-2 dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-2xl">
+          <Card className="lg:col-span-2 dark:bg-neutral-800/50 bg-white border border-gray-100 dark:border-neutral-700/50 shadow-xl dark:shadow-2xl">
             <CardContent className="p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                 <div className="flex items-center gap-3">
@@ -575,7 +575,7 @@ const AgentDashboardPage = () => {
                     </div>
 
                     {/* Mobile Status Row */}
-                    <div className="sm:hidden flex items-center justify-between mt-3 pt-3 dark:border-gray-700/50 border-gray-100 border-t">
+                    <div className="sm:hidden flex items-center justify-between mt-3 pt-3 dark:border-neutral-700/50 border-gray-100 border-t">
                       <div className="flex items-center gap-1 dark:text-gray-500 text-gray-500 text-xs">
                         <Clock className="w-3 h-3" />
                         {formatReadableDate(property.created_at)}
@@ -609,7 +609,7 @@ const AgentDashboardPage = () => {
 
                 {/* View All Link */}
                 {recentProperties.length > 0 && (
-                  <div className="pt-4 dark:border-gray-700/50 border-gray-100 border-t">
+                  <div className="pt-4 dark:border-neutral-700/50 border-gray-100 border-t">
                     <Link
                       to="/agent/properties"
                       className="flex items-center justify-center gap-2 w-full py-3 dark:text-primary-400 text-primary-600 hover:dark:text-primary-300 hover:text-primary-700 font-semibold dark:hover:bg-primary-900/30 hover:bg-primary-50 rounded-xl transition-all duration-300 group"
@@ -624,7 +624,7 @@ const AgentDashboardPage = () => {
           </Card>
 
           {/* Recent Inquiries */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-lg dark:shadow-2xl">
+          <Card className="dark:bg-neutral-800/50 bg-white border border-gray-100 dark:border-neutral-700/50 shadow-lg dark:shadow-2xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -658,7 +658,7 @@ const AgentDashboardPage = () => {
                   </div>
                 ))}
                 {recentInquiries.length === 0 && (
-                  <div className="text-center py-12 dark:text-gray-400 text-gray-500 dark:bg-gradient-to-br dark:from-gray-800/50 dark:to-gray-900/30 bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl border border-dashed dark:border-gray-700/50 border-gray-200">
+                  <div className="text-center py-12 dark:text-gray-400 text-gray-500 dark:bg-gradient-to-br dark:from-gray-800/50 dark:to-gray-900/30 bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl border border-dashed dark:border-neutral-700/50 border-gray-200">
                     <MessageCircle className="w-16 h-16 mx-auto mb-4 opacity-50 dark:text-rose-400 text-rose-400" />
                     <p className="text-lg font-semibold">No inquiries found</p>
                     <p className="text-sm mt-1">Inquiries will appear here</p>
@@ -670,7 +670,7 @@ const AgentDashboardPage = () => {
         </div>
 
         {/* Top Performing Properties */}
-        <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-lg dark:shadow-2xl">
+        <Card className="dark:bg-neutral-800/50 bg-white border border-gray-100 dark:border-neutral-700/50 shadow-lg dark:shadow-2xl">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
@@ -712,7 +712,7 @@ const AgentDashboardPage = () => {
                 </Link>
               ))}
               {topProperties.length === 0 && (
-                <div className="col-span-full text-center py-12 dark:text-gray-400 text-gray-500 dark:bg-gradient-to-br dark:from-gray-800/50 dark:to-gray-900/30 bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl border border-dashed dark:border-gray-700/50 border-gray-200">
+                <div className="col-span-full text-center py-12 dark:text-gray-400 text-gray-500 dark:bg-gradient-to-br dark:from-gray-800/50 dark:to-gray-900/30 bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl border border-dashed dark:border-neutral-700/50 border-gray-200">
                   <TrendingUp className="w-16 h-16 mx-auto mb-4 opacity-50 dark:text-primary-400 text-primary-400" />
                   <p className="text-lg font-semibold">No performance data available</p>
                   <p className="text-sm mt-1">Properties with inquiries will appear here</p>

@@ -117,7 +117,7 @@ const SettingsPage = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/20">
@@ -168,7 +168,7 @@ const SettingsPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Sidebar Navigation - Groups */}
           <div className="lg:col-span-1">
-            <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 sticky top-6">
+            <Card className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 sticky top-6">
               <CardContent className="p-4">
                 {/* Changed Settings Indicator */}
                 {totalChangedCount > 0 && (
@@ -204,7 +204,7 @@ const SettingsPage = () => {
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <div className={`p-1.5 rounded-md ${activeGroup === group ? 'bg-white/20' : 'bg-gray-100 dark:bg-gray-800'}`}>
+                          <div className={`p-1.5 rounded-md ${activeGroup === group ? 'bg-white/20' : 'bg-gray-100 dark:bg-neutral-800'}`}>
                             <Settings className={`w-4 h-4 ${activeGroup === group ? 'text-white' : 'text-gray-500 dark:text-gray-400'}`} />
                           </div>
                           <span className="font-medium">{formatGroupName(group)}</span>
@@ -232,7 +232,7 @@ const SettingsPage = () => {
           <div className="lg:col-span-2 space-y-6">
             {loading ? (
               // Loading State
-              <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+              <Card className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800">
                 <CardContent className="p-12 text-center">
                   <div className="space-y-4">
                     <div className="w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
@@ -242,7 +242,7 @@ const SettingsPage = () => {
               </Card>
             ) : !activeGroup ? (
               // No Group Selected
-              <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+              <Card className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800">
                 <CardContent className="p-12 text-center">
                   <div className="space-y-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-primary-500/20">
@@ -261,11 +261,11 @@ const SettingsPage = () => {
               </Card>
             ) : currentGroupSettings?.length === 0 ? (
               // No Settings in Group
-              <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+              <Card className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800">
                 <CardContent className="p-12 text-center">
                   <div className="space-y-4">
-                    <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto">
-                      <Settings className="text-gray-400" size={24} />
+                    <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center mx-auto">
+                      <Settings className="text-gray-400 dark:text-gray-500" size={24} />
                     </div>
                     <div>
                       <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
@@ -327,10 +327,10 @@ const SettingsPage = () => {
                   {currentGroupSettings.map((setting) => (
                     <Card 
                       key={setting.id}
-                      className={`bg-white dark:bg-gray-900 border ${
+                      className={`bg-white dark:bg-neutral-900 border ${
                         changedSettings[setting.id] 
                           ? "border-amber-300 dark:border-amber-700" 
-                          : "border-gray-200 dark:border-gray-800"
+                          : "border-gray-200 dark:border-neutral-800"
                       }`}
                     >
                       <CardContent className="p-6">
@@ -404,7 +404,7 @@ const renderSettingInput = (
           type="number"
           value={value}
           onChange={handleChange}
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-shadow"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-shadow"
         />
       );
 
@@ -414,7 +414,7 @@ const renderSettingInput = (
           value={value}
           onChange={handleChange}
           rows={4}
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-y transition-shadow"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-y transition-shadow"
         />
       );
 
@@ -430,7 +430,7 @@ const renderSettingInput = (
           type={isPassword ? "password" : "text"}
           value={value}
           onChange={handleChange}
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-shadow"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-shadow"
         />
       );
   }

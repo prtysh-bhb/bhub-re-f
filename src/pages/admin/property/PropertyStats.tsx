@@ -126,7 +126,7 @@ const PropertyStats = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3 mr-auto">
               <div className="p-3 bg-gradient-to-br from-primary to-primary-600 rounded-xl shadow-md">
@@ -157,7 +157,7 @@ const PropertyStats = () => {
             return (
               <Card
                 key={item.label}
-                className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group overflow-hidden"
+                className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group overflow-hidden"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
@@ -200,7 +200,7 @@ const PropertyStats = () => {
         <Card className="bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/20 border border-primary/20 dark:border-primary/30 shadow-lg">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md">
+              <div className="p-3 bg-white dark:bg-neutral-800 rounded-xl shadow-md">
                 <TrendingUp className="text-primary dark:text-primary" size={24} />
               </div>
               <div>
@@ -214,19 +214,19 @@ const PropertyStats = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
+              <div className="bg-white dark:bg-neutral-800 p-4 rounded-lg">
                 <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Approval Rate</p>
                 <p className="text-2xl font-bold text-gray-900 dark:text-white">
                   {stats.total > 0 ? Math.round((stats.approved / stats.total) * 100) : 0}%
                 </p>
               </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
+              <div className="bg-white dark:bg-neutral-800 p-4 rounded-lg">
                 <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Sold/Rented</p>
                 <p className="text-2xl font-bold text-gray-900 dark:text-white">
                   {(stats.sold + stats.rented)?.toLocaleString() || 0}
                 </p>
               </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
+              <div className="bg-white dark:bg-neutral-800 p-4 rounded-lg">
                 <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Active Listings</p>
                 <p className="text-2xl font-bold text-gray-900 dark:text-white">
                   {stats.published?.toLocaleString() || 0}

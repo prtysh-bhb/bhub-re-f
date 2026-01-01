@@ -145,7 +145,7 @@ const AdminProfilePage = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-black/30">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary-600 dark:bg-primary-700 rounded-xl shadow-md">
@@ -173,9 +173,9 @@ const AdminProfilePage = () => {
         </div>
 
         {/* Profile Information */}
-        <form onSubmit={handleUpdate} className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30 overflow-hidden">
+        <form onSubmit={handleUpdate} className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-black/30 overflow-hidden">
           {/* Avatar Section */}
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+          <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Camera className="text-primary-600 dark:text-primary-400" size={20} />
               Profile Picture
@@ -190,7 +190,7 @@ const AdminProfilePage = () => {
                 <img
                   src={user.avatar_url || "/default-avatar.png"}
                   alt="avatar"
-                  className="w-32 h-32 rounded-2xl border-4 border-gray-200 dark:border-gray-700 object-cover shadow-lg"
+                  className="w-32 h-32 rounded-2xl border-4 border-gray-200 dark:border-neutral-700 object-cover shadow-lg"
                 />
               </div>
               <div className="flex-1">
@@ -226,7 +226,7 @@ const AdminProfilePage = () => {
           </div>
 
           {/* Personal Information */}
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+          <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <User className="text-primary-600 dark:text-primary-400" size={20} />
               Personal Information
@@ -242,7 +242,7 @@ const AdminProfilePage = () => {
                   placeholder="Full Name"
                   required
                   maxLength={50}
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
               <div>
@@ -254,7 +254,7 @@ const AdminProfilePage = () => {
                   maxLength={50}
                   disabled
                   placeholder="Email"
-                  className="bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
+                  className="bg-gray-50 dark:bg-neutral-800 border-gray-200 dark:border-neutral-700"
                 />
               </div>
               <div>
@@ -267,7 +267,7 @@ const AdminProfilePage = () => {
                   placeholder="Phone Number"
                   maxLength={15}
                   inputMode="tel"
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
               <div>
@@ -281,14 +281,14 @@ const AdminProfilePage = () => {
                   maxLength={10}
                   inputMode="numeric"
                   pattern="\d*"
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
             </div>
           </div>
 
           {/* Address Information */}
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+          <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <MapPin className="text-primary-600 dark:text-primary-400" size={20} />
               Address Information
@@ -303,7 +303,7 @@ const AdminProfilePage = () => {
                   onChange={(e) => setUser({ ...user, address: e.target.value })}
                   placeholder="Address"
                   maxLength={100}
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
               <div>
@@ -315,7 +315,7 @@ const AdminProfilePage = () => {
                   onChange={(e) => setUser({ ...user, city: e.target.value })}
                   placeholder="City"
                   maxLength={50}
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
               <div>
@@ -327,7 +327,7 @@ const AdminProfilePage = () => {
                   onChange={(e) => setUser({ ...user, state: e.target.value })}
                   placeholder="State"
                   maxLength={50}
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
             </div>
@@ -335,7 +335,7 @@ const AdminProfilePage = () => {
 
           {/* Company Information (for agents/admins) */}
           {(user.role === "agent" || user.role === "admin") && (
-            <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+            <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 <Building2 className="text-primary-600 dark:text-primary-400" size={20} />
                 Company Information
@@ -350,7 +350,7 @@ const AdminProfilePage = () => {
                     onChange={(e) => setUser({ ...user, company_name: e.target.value })}
                     placeholder="Company Name"
                     maxLength={100}
-                    className="border-gray-200 dark:border-gray-700"
+                    className="border-gray-200 dark:border-neutral-700"
                   />
                 </div>
                 <div>
@@ -362,7 +362,7 @@ const AdminProfilePage = () => {
                     onChange={(e) => setUser({ ...user, license_number: e.target.value })}
                     placeholder="License Number"
                     maxLength={50}
-                    className="border-gray-200 dark:border-gray-700"
+                    className="border-gray-200 dark:border-neutral-700"
                   />
                 </div>
               </div>
@@ -370,7 +370,7 @@ const AdminProfilePage = () => {
           )}
 
           {/* Bio */}
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+          <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Bio
             </label>
@@ -378,7 +378,7 @@ const AdminProfilePage = () => {
               value={user.bio || ""}
               onChange={(e) => setUser({ ...user, bio: e.target.value })}
               placeholder="Write a short bio..."
-              className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+              className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg p-3 text-sm text-gray-700 dark:bg-neutral-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
               rows={4}
               maxLength={1000}
             ></textarea>
@@ -388,7 +388,7 @@ const AdminProfilePage = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="p-6 bg-gray-50 dark:bg-gray-800/50">
+          <div className="p-6 bg-gray-50 dark:bg-neutral-800/50">
             <Button
               type="submit"
               className="bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg"
@@ -400,8 +400,8 @@ const AdminProfilePage = () => {
         </form>
 
         {/* Password Change */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg dark:shadow-black/30">
+          <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
               <Lock className="text-primary-600 dark:text-primary-400" size={20} />
               Change Password
@@ -425,7 +425,7 @@ const AdminProfilePage = () => {
                   onChange={(e) =>
                     setPassword({ ...password, current_password: e.target.value })
                   }
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
               <div>
@@ -440,7 +440,7 @@ const AdminProfilePage = () => {
                   onChange={(e) =>
                     setPassword({ ...password, new_password: e.target.value })
                   }
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
               <div>
@@ -458,7 +458,7 @@ const AdminProfilePage = () => {
                       new_password_confirmation: e.target.value,
                     })
                   }
-                  className="border-gray-200 dark:border-gray-700"
+                  className="border-gray-200 dark:border-neutral-700"
                 />
               </div>
             </div>
@@ -473,7 +473,7 @@ const AdminProfilePage = () => {
         </div>
 
         {/* Danger Zone */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border-2 border-red-200 dark:border-red-900/50 shadow-lg dark:shadow-black/30">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border-2 border-red-200 dark:border-red-900/50 shadow-lg dark:shadow-black/30">
           <div className="p-6 border-b border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-950/20">
             <h3 className="text-lg font-semibold text-red-600 dark:text-red-400 flex items-center gap-2">
               <AlertTriangle size={20} />

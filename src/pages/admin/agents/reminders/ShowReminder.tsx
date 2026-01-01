@@ -61,7 +61,7 @@ const ShowReminder = () => {
       case 'high': return 'bg-orange-100 text-orange-800 border-orange-200 dark:bg-orange-900/30 dark:text-orange-400 dark:border-orange-800/50';
       case 'medium': return 'bg-primary-100 text-primary-800 border-primary-200 dark:bg-primary-900/30 dark:text-primary-400 dark:border-primary-800/50';
       case 'low': return 'bg-primary-100 text-primary-800 border-primary-200 dark:bg-primary-900/30 dark:text-primary-400 dark:border-primary-800/50';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700';
+      default: return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-neutral-800 dark:text-gray-300 dark:border-neutral-700';
     }
   };
 
@@ -69,7 +69,7 @@ const ShowReminder = () => {
     switch (status) {
       case 'completed': return 'bg-primary-100 text-primary-800 border-primary-200 dark:bg-primary-900/30 dark:text-primary-400 dark:border-primary-800/50';
       case 'snoozed': return 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-800/50';
-      case 'cancelled': return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700';
+      case 'cancelled': return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-neutral-800 dark:text-gray-300 dark:border-neutral-700';
       default: return 'bg-primary-100 text-primary-800 border-primary-200 dark:bg-primary-900/30 dark:text-primary-400 dark:border-primary-800/50';
     }
   };
@@ -107,7 +107,7 @@ const ShowReminder = () => {
           {/* Main Reminder Information */}
           <div className="lg:col-span-2 space-y-6">
             {/* Reminder Overview Card */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl overflow-hidden">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl overflow-hidden">
               <CardContent className="p-0">
                 {/* Reminder Header */}
                 <div className="bg-primary-600 dark:bg-primary-700 p-6 text-white relative overflow-hidden">
@@ -150,7 +150,7 @@ const ShowReminder = () => {
                 </div>
 
                 {/* Reminder Description */}
-                <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+                <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
                   <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                     <FileText className="w-5 h-5 text-primary-600 dark:text-primary-400" />
                     Description
@@ -160,12 +160,12 @@ const ShowReminder = () => {
 
                 {/* Additional Notes */}
                 {reminder.notes && (
-                  <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+                  <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
                     <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                       <MessageCircle className="w-5 h-5 text-primary-600 dark:text-primary-400" />
                       Additional Notes
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-white dark:bg-neutral-800 p-4 rounded-xl border border-gray-200 dark:border-neutral-700">
                       {reminder.notes}
                     </p>
                   </div>
@@ -174,7 +174,7 @@ const ShowReminder = () => {
             </Card>
 
             {/* Related Entities */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-primary-600 dark:text-primary-400" />
@@ -266,7 +266,7 @@ const ShowReminder = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Notification Status */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Bell className="w-5 h-5 text-primary-600 dark:text-primary-400" />
@@ -305,7 +305,7 @@ const ShowReminder = () => {
                   <div className={`flex items-center justify-between p-4 rounded-xl border-2 ${
                     reminder.notification_sent
                       ? 'bg-primary-50 border-primary-200 dark:bg-primary-900/30 dark:border-primary-800/50'
-                      : 'bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700'
+                      : 'bg-gray-50 border-gray-200 dark:bg-neutral-800 dark:border-neutral-700'
                   }`}>
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
@@ -342,7 +342,7 @@ const ShowReminder = () => {
             </Card>
 
             {/* Reminder Information */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Tag className="w-5 h-5 text-gray-600 dark:text-gray-400" />
@@ -372,7 +372,7 @@ const ShowReminder = () => {
             </Card>
 
             {/* Timestamps */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-gray-600 dark:text-gray-400" />
@@ -408,7 +408,7 @@ const ShowReminder = () => {
             </Card>
 
             {/* Quick Actions */}
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-2xl shadow-xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                 <div className="space-y-3">
@@ -422,7 +422,7 @@ const ShowReminder = () => {
                   <Button
                     onClick={() => navigate('/agent/reminders')}
                     variant="outline"
-                    className="w-full border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-semibold py-3 rounded-xl transition-all duration-300"
+                    className="w-full border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-semibold py-3 rounded-xl transition-all duration-300"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back to Reminders

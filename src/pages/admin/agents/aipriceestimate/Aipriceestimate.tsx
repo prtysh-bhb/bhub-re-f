@@ -668,14 +668,14 @@ const AIPriceEstimator = () => {
                   <div className="flex items-center justify-center py-12">
                     <div className="text-center">
                       <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto mb-4" />
-                      <p className="text-gray-600">Loading history...</p>
+                      <p className="text-gray-600 dark:text-gray-400">Loading history...</p>
                     </div>
                   </div>
                 ) : estimates.length === 0 ? (
                   <div className="text-center py-12">
                     <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">No Estimates Yet</h3>
-                    <p className="text-gray-600">Generate your first AI price estimate</p>
+                    <p className="text-gray-600 dark:text-gray-400">Generate your first AI price estimate</p>
                     <button
                       type="button"
                       onClick={() => setShowHistory(false)}
@@ -927,7 +927,7 @@ const AIPriceEstimator = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       No Estimate Yet
                     </h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Fill in the property details and generate your first AI-powered price estimate
                     </p>
                   </div>
@@ -947,7 +947,7 @@ const AIPriceEstimator = () => {
                   <button
                     type="button"
                     onClick={() => setSelectedEstimate(null)}
-                    className="text-gray-400 hover:text-gray-600 transition-colors"
+                    className="text-gray-400 dark:text-gray-500 hover:text-gray-600 transition-colors"
                   >
                     <XCircle className="w-6 h-6" />
                   </button>
@@ -1044,14 +1044,14 @@ const AIPriceEstimator = () => {
                   {getAmenities(selectedEstimate) && (
                     <div>
                       <h5 className="font-medium text-gray-900 mb-2">Amenities</h5>
-                      <p className="text-gray-700">{getAmenities(selectedEstimate)}</p>
+                      <p className="text-gray-700 dark:text-gray-300">{getAmenities(selectedEstimate)}</p>
                     </div>
                   )}
 
                   {selectedEstimate.ai_reasoning && (
                     <div>
                       <h5 className="font-medium text-gray-900 mb-2">AI Reasoning</h5>
-                      <p className="text-gray-700">{selectedEstimate.ai_reasoning}</p>
+                      <p className="text-gray-700 dark:text-gray-300">{selectedEstimate.ai_reasoning}</p>
                     </div>
                   )}
 

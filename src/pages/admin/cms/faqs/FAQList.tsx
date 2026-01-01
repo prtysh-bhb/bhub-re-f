@@ -263,7 +263,7 @@ const FAQList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-elegant-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-primary-500 rounded-xl shadow-elegant-sm">
@@ -280,8 +280,8 @@ const FAQList = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 transition-all focus-within:border-primary-500 focus-within:ring-2 focus-within:ring-primary-500/20">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 transition-all focus-within:border-primary-500 focus-within:ring-2 focus-within:ring-primary-500/20">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search questions..."
@@ -291,7 +291,7 @@ const FAQList = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg shadow-sm">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -316,8 +316,8 @@ const FAQList = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 transition-all focus-within:border-primary-500 focus-within:ring-2 focus-within:ring-primary-500/20">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 transition-all focus-within:border-primary-500 focus-within:ring-2 focus-within:ring-primary-500/20">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
@@ -360,7 +360,7 @@ const FAQList = () => {
           <>
             {/* Stats Summary */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm hover:shadow-elegant-md transition-all">
+              <div className="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-elegant-sm hover:shadow-elegant-md transition-all">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total FAQs</p>
@@ -371,7 +371,7 @@ const FAQList = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-white dark:bg-gray-900 p-5 rounded-xl border border-primary-200 dark:border-primary-800/50 shadow-elegant-sm hover:shadow-elegant-md transition-all">
+              <div className="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-primary-200 dark:border-primary-800/50 shadow-elegant-sm hover:shadow-elegant-md transition-all">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-primary-700 dark:text-primary-300">Active FAQs</p>
@@ -384,7 +384,7 @@ const FAQList = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm hover:shadow-elegant-md transition-all">
+              <div className="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-elegant-sm hover:shadow-elegant-md transition-all">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Inactive FAQs</p>
@@ -401,7 +401,7 @@ const FAQList = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-elegant-sm overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -412,7 +412,7 @@ const FAQList = () => {
                         <th className="py-4 px-6 text-center font-semibold">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {faqs.length === 0 ? (
                         <tr>
                           <td
@@ -420,8 +420,8 @@ const FAQList = () => {
                             className="py-12 text-center text-gray-500 dark:text-gray-400"
                           >
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Search className="text-gray-400" size={24} />
+                              <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Search className="text-gray-400 dark:text-gray-500" size={24} />
                               </div>
                               <p className="font-medium">No FAQs found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -440,8 +440,8 @@ const FAQList = () => {
                           <>
                             <tr
                               key={faq.id}
-                              className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group cursor-pointer ${
-                                index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                              className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group cursor-pointer ${
+                                index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                               }`}
                               onClick={() => toggleFAQ(faq.id)}
                             >
@@ -512,19 +512,19 @@ const FAQList = () => {
                               </td>
                             </tr>
                             {expandedFAQ === faq.id && (
-                              <tr className="bg-primary-50/30 dark:bg-primary-900/5 border-b border-gray-100 dark:border-gray-800">
+                              <tr className="bg-primary-50/30 dark:bg-primary-900/5 border-b border-gray-100 dark:border-neutral-800">
                                 <td colSpan={4} className="px-6 py-4">
                                   <div className="pl-12 pr-4">
-                                    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                                    <div className="bg-white dark:bg-neutral-800 p-4 rounded-lg border border-gray-200 dark:border-neutral-700">
                                       <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Answer:</h4>
                                       <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
-                                      <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                      <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100 dark:border-neutral-700">
                                         <span className="text-xs text-gray-500 dark:text-gray-400">
                                           Updated: {formatDate(faq.updated_at)}
                                         </span>
                                         <button
                                           onClick={() => setExpandedFAQ(null)}
-                                          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                                          className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                                         >
                                           <ChevronUp size={16} />
                                         </button>
@@ -549,8 +549,8 @@ const FAQList = () => {
                 {faqs.length === 0 ? (
                   <div className="col-span-full text-center py-12">
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                        <Search className="text-gray-400" size={24} />
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                        <Search className="text-gray-400 dark:text-gray-500" size={24} />
                       </div>
                       <p className="font-medium text-gray-500 dark:text-gray-400">No FAQs found</p>
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
@@ -567,7 +567,7 @@ const FAQList = () => {
                   faqs.map((faq) => (
                     <div
                       key={faq.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm hover:shadow-elegant-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
+                      className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-elegant-sm hover:shadow-elegant-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
                     >
                       <div
                         className="p-6 cursor-pointer"
@@ -589,13 +589,13 @@ const FAQList = () => {
                               </div>
                             </div>
                           </div>
-                          <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                          <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
                             {expandedFAQ === faq.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                           </button>
                         </div>
 
                         {expandedFAQ === faq.id && (
-                          <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                          <div className="mt-4 pt-4 border-t border-gray-100 dark:border-neutral-700">
                             <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-2">Answer:</h4>
                             <p className="text-gray-600 dark:text-gray-400 mb-4">{faq.answer}</p>
                             <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
@@ -610,7 +610,7 @@ const FAQList = () => {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex gap-2 p-4 justify-between border-t border-gray-100 dark:border-gray-700">
+                      <div className="flex gap-2 p-4 justify-between border-t border-gray-100 dark:border-neutral-700">
                         <button
                           onClick={() => openEditModal(faq)}
                           className="flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm cursor-pointer shadow-sm hover:shadow-md"
@@ -727,8 +727,8 @@ const FAQList = () => {
 
     return (
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-elegant-lg w-full max-w-2xl border border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-elegant-lg w-full max-w-2xl border border-gray-200 dark:border-neutral-700">
+          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-neutral-700">
             <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
               <div className="p-2 bg-primary-500 rounded-lg shadow-sm">
                 <HelpCircle className="text-white" size={20} />
@@ -737,7 +737,7 @@ const FAQList = () => {
             </h4>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+              className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
               disabled={submitting}
             >
               <X size={20} />
@@ -820,7 +820,7 @@ const FAQList = () => {
             </div>
 
             {/* Form Actions */}
-            <div className="flex justify-end gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex justify-end gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-neutral-700">
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}

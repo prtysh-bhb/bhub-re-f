@@ -133,7 +133,7 @@ const PageEditor = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
               <Button
@@ -193,7 +193,7 @@ const PageEditor = () => {
           {/* Main Content Area */}
           <div className="lg:col-span-2 space-y-6">
             {/* Title */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
+            <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
               <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
                 Page Title *
               </label>
@@ -207,7 +207,7 @@ const PageEditor = () => {
             </div>
 
             {/* Editor */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
+            <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
               <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4 block">
                 Page Content *
               </label>
@@ -218,8 +218,8 @@ const PageEditor = () => {
             </div>
 
             {/* SEO Section */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
-              <div className="border-b border-gray-200 dark:border-gray-800 flex">
+            <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
+              <div className="border-b border-gray-200 dark:border-neutral-800 flex">
                 <button
                   onClick={() => setActiveTab("content")}
                   className={`px-6 py-3 font-medium transition-colors text-sm ${
@@ -256,7 +256,7 @@ const PageEditor = () => {
                         placeholder="SEO title for search engines"
                         value={formData.meta_title}
                         onChange={(e) => updateField("meta_title", e.target.value)}
-                        className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                        className="w-full p-3 border border-gray-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                         maxLength={60}
                       />
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -276,7 +276,7 @@ const PageEditor = () => {
                         onChange={(e) =>
                           updateField("meta_description", e.target.value)
                         }
-                        className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
+                        className="w-full p-3 border border-gray-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
                         maxLength={160}
                       />
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -320,7 +320,7 @@ const PageEditor = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Status */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
+            <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
               <h3 className="flex items-center gap-2 font-semibold text-gray-900 dark:text-white mb-4">
                 <Settings size={18} />
                 Page Settings
@@ -351,7 +351,7 @@ const PageEditor = () => {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
+                <div className="pt-4 border-t border-gray-200 dark:border-neutral-800">
                   <label className="flex items-center justify-between cursor-pointer group">
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                       Show in Footer
@@ -389,7 +389,7 @@ const PageEditor = () => {
                           e.target.value ? parseInt(e.target.value) : null
                         )
                       }
-                      className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full p-3 border border-gray-200 dark:border-neutral-700 rounded-lg text-sm bg-white dark:bg-neutral-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                       min="1"
                     />
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">

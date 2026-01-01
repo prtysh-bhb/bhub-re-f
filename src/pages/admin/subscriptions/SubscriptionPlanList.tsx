@@ -145,7 +145,7 @@ const SubscriptionPlanList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_8px_32px_-8px_rgb(var(--primary-500)/0.12)]">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-[0_8px_32px_-8px_rgb(var(--primary-500)/0.12)]">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-[0_8px_16px_-4px_rgb(var(--primary-500)/0.4)]">
@@ -162,8 +162,8 @@ const SubscriptionPlanList = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-[0_4px_16px_-4px_rgb(var(--primary-500)/0.2)] transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-[0_4px_16px_-4px_rgb(var(--primary-500)/0.2)] transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search plans..."
@@ -173,7 +173,7 @@ const SubscriptionPlanList = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -198,8 +198,8 @@ const SubscriptionPlanList = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-[0_4px_16px_-4px_rgb(var(--primary-500)/0.2)] transition-all">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-[0_4px_16px_-4px_rgb(var(--primary-500)/0.2)] transition-all">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
@@ -253,7 +253,7 @@ const SubscriptionPlanList = () => {
           <>
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -267,7 +267,7 @@ const SubscriptionPlanList = () => {
                         <th className="py-4 px-6 text-center font-semibold">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {plans.length === 0 ? (
                         <tr>
                           <td
@@ -275,8 +275,8 @@ const SubscriptionPlanList = () => {
                             className="py-12 text-center text-gray-500 dark:text-gray-400"
                           >
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Search className="text-gray-400" size={24} />
+                              <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Search className="text-gray-400 dark:text-gray-500" size={24} />
                               </div>
                               <p className="font-medium">No subscription plans found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -287,8 +287,8 @@ const SubscriptionPlanList = () => {
                         plans.map((plan, index) => (
                           <tr
                             key={plan.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/30 dark:hover:bg-primary-900/10 transition-all group ${
-                              index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
+                            className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/30 dark:hover:bg-primary-900/10 transition-all group ${
+                              index % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-gray-50/50 dark:bg-neutral-800/50"
                             }`}
                           >
                             <td className="py-4 px-6">
@@ -418,8 +418,8 @@ const SubscriptionPlanList = () => {
                 {plans.length === 0 ? (
                   <div className="col-span-full text-center py-12">
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                        <Search className="text-gray-400" size={24} />
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                        <Search className="text-gray-400 dark:text-gray-500" size={24} />
                       </div>
                       <p className="font-medium text-gray-500 dark:text-gray-400">No subscription plans found</p>
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
@@ -429,7 +429,7 @@ const SubscriptionPlanList = () => {
                   plans.map((plan) => (
                     <div
                       key={plan.id}
-                      className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-[0_12px_48px_-8px_rgb(var(--primary-500)/0.25)] hover:border-primary-200 dark:hover:border-primary-800 transition-all hover:-translate-y-1 group"
+                      className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm hover:shadow-[0_12px_48px_-8px_rgb(var(--primary-500)/0.25)] hover:border-primary-200 dark:hover:border-primary-800 transition-all hover:-translate-y-1 group"
                     >
                       {/* Plan Header */}
                       <div className="flex justify-between items-start mb-4">
@@ -529,7 +529,7 @@ const SubscriptionPlanList = () => {
                       )}
 
                       {/* Actions */}
-                      <div className="flex gap-2 pt-4 border-t border-gray-100 dark:border-gray-700">
+                      <div className="flex gap-2 pt-4 border-t border-gray-100 dark:border-neutral-700">
                         <button
                           onClick={() => navigate(`/admin/subscriptions/${plan.id}`)}
                           className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm"
@@ -577,7 +577,7 @@ const SubscriptionPlanList = () => {
         {/* Deactivate Popup */}
         {showDeactivatePopup && (
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-neutral-700">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
                   <div className={`p-2 ${selectedPlan?.is_active ? 'bg-amber-100 dark:bg-amber-900/30' : 'bg-primary-100 dark:bg-primary-900/30'} rounded-lg`}>
@@ -591,7 +591,7 @@ const SubscriptionPlanList = () => {
                 </h4>
                 <button
                   onClick={() => setShowDeactivatePopup(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                 >
                   <X size={20} />
                 </button>
@@ -607,7 +607,7 @@ const SubscriptionPlanList = () => {
                     value={reason}
                     onChange={(e) => setReason(e.target.value)}
                     rows={3}
-                    className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-amber-400 dark:focus:ring-amber-500 focus:border-amber-400 dark:focus:border-amber-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-amber-400 dark:focus:ring-amber-500 focus:border-amber-400 dark:focus:border-amber-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
                     placeholder="Enter reason..."
                   ></textarea>
               )}

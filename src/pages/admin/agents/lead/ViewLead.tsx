@@ -134,7 +134,7 @@ const ViewLead = () => {
         {/* Top Section - Lead Info */}
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Lead Card */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-6">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg border border-gray-100 dark:border-neutral-700 p-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-300">
                 <User size={22} />
@@ -143,7 +143,7 @@ const ViewLead = () => {
                 <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 capitalize">
                   {lead?.customer_name || "Unnamed Lead"}
                 </h1>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 dark:text-gray-400 text-sm">
                   ID #{lead?.id} — Created on{" "}
                   {new Date(lead?.created_at).toLocaleDateString()}
                 </p>
@@ -189,13 +189,13 @@ const ViewLead = () => {
           </div>
 
           {/* Actions Card */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-6">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg border border-gray-100 dark:border-neutral-700 p-6">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-3">
               Update Lead
             </h3>
 
             {/* Stage Select */}
-            <label className="text-gray-600 text-sm font-medium mb-2 block">
+            <label className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2 block">
               Lead Stage
             </label>
             <select
@@ -211,7 +211,7 @@ const ViewLead = () => {
             </select>
 
             {/* Add Note */}
-            <label className="text-gray-600 text-sm font-medium mb-2 block">
+            <label className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2 block">
               Add a Note
             </label>
             <textarea
@@ -233,7 +233,7 @@ const ViewLead = () => {
         </div>
 
         {/* Lead History */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-6">
+        <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg border border-gray-100 dark:border-neutral-700 p-6">
           <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">
             Lead History
           </h2>

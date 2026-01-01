@@ -6,7 +6,7 @@ const AgentDetailsTab = ({ agent }: { agent: AgentProfile }) => (
     {/* Info Cards Grid */}
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {/* Email */}
-      <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
+      <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
         <div className="flex items-start gap-3">
           <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:scale-110 transition-transform">
             <Mail className="text-primary dark:text-primary" size={18} />
@@ -19,7 +19,7 @@ const AgentDetailsTab = ({ agent }: { agent: AgentProfile }) => (
       </div>
 
       {/* Phone */}
-      <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
+      <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
         <div className="flex items-start gap-3">
           <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:scale-110 transition-transform">
             <Phone className="text-primary dark:text-primary" size={18} />
@@ -32,7 +32,7 @@ const AgentDetailsTab = ({ agent }: { agent: AgentProfile }) => (
       </div>
 
       {/* Company Name */}
-      <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
+      <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
         <div className="flex items-start gap-3">
           <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:scale-110 transition-transform">
             <Building2 className="text-primary dark:text-primary" size={18} />
@@ -45,7 +45,7 @@ const AgentDetailsTab = ({ agent }: { agent: AgentProfile }) => (
       </div>
 
       {/* Licence Number */}
-      <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
+      <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
         <div className="flex items-start gap-3">
           <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:scale-110 transition-transform">
             <CreditCard className="text-primary dark:text-primary" size={18} />
@@ -58,7 +58,7 @@ const AgentDetailsTab = ({ agent }: { agent: AgentProfile }) => (
       </div>
 
       {/* Location */}
-      <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
+      <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
         <div className="flex items-start gap-3">
           <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:scale-110 transition-transform">
             <MapPin className="text-primary dark:text-primary" size={18} />
@@ -71,7 +71,7 @@ const AgentDetailsTab = ({ agent }: { agent: AgentProfile }) => (
       </div>
 
       {/* Status */}
-      <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
+      <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
         <div className="flex items-start gap-3">
           <div className={`p-2 rounded-lg group-hover:scale-110 transition-transform ${
             agent.status
@@ -98,7 +98,7 @@ const AgentDetailsTab = ({ agent }: { agent: AgentProfile }) => (
       </div>
 
       {/* Total Properties */}
-      <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
+      <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
         <div className="flex items-start gap-3">
           <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:scale-110 transition-transform">
             <Home className="text-primary dark:text-primary" size={18} />
@@ -111,7 +111,7 @@ const AgentDetailsTab = ({ agent }: { agent: AgentProfile }) => (
       </div>
 
       {/* Joined Date */}
-      <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
+      <div className="bg-white dark:bg-neutral-900 p-4 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group">
         <div className="flex items-start gap-3">
           <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:scale-110 transition-transform">
             <Calendar className="text-primary dark:text-primary" size={18} />

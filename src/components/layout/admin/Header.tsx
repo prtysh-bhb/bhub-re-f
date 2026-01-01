@@ -123,7 +123,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
       {/* Header */}
       <header
         // safe area + avoid clipping in rounded parents
-        className="w-full overflow-visible sticky top-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 dark:border-gray-800 shadow-sm"
+        className="w-full overflow-visible sticky top-0 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 dark:border-neutral-800 shadow-sm"
       >
         <div className="max-w-[100%] mx-auto flex items-center justify-between gap-3">
           {/* Left side */}
@@ -137,8 +137,8 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             </button>
 
             {/* Desktop search (hidden on xs) */}
-            <div className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-800 dark:to-slate-800 rounded-lg px-3 py-2 border border-gray-200 dark:border-gray-700 focus-within:border-primary-400 dark:focus-within:border-primary-500 focus-within:shadow-sm transition-all">
-              <Search className="text-gray-400" size={16} />
+            <div className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-800 dark:to-slate-800 rounded-lg px-3 py-2 border border-gray-200 dark:border-neutral-700 focus-within:border-primary-400 dark:focus-within:border-primary-500 focus-within:shadow-sm transition-all">
+              <Search className="text-gray-400 dark:text-gray-500" size={16} />
               <input
                 type="text"
                 placeholder="Search..."
@@ -159,9 +159,9 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             {/* Mobile search overlay (full width below header when open) */}
             {mobileSearchOpen && (
               <div className="absolute left-0 right-0 top-[calc(100%+6px)] px-4 sm:px-6">
-                <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-2">
+                <div className="bg-white dark:bg-neutral-900 rounded-lg shadow-lg border border-gray-200 dark:border-neutral-700 p-2">
                   <div className="flex items-center gap-2 px-2">
-                    <Search className="text-gray-400" size={16} />
+                    <Search className="text-gray-400 dark:text-gray-500" size={16} />
                     <input
                       autoFocus
                       type="text"
@@ -234,8 +234,8 @@ const Header = ({ onMenuClick }: HeaderProps) => {
 
               {/* Dropdown menu */}
               {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 shadow-xl rounded-xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden">
-                  <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-950/30 dark:to-primary-900/30">
+                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-neutral-800 shadow-xl rounded-xl border border-gray-200 dark:border-neutral-700 z-50 overflow-hidden">
+                  <div className="px-4 py-3 border-b border-gray-200 dark:border-neutral-700 bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-950/30 dark:to-primary-900/30">
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">{user?.name || "User"}</p>
                     <p className="text-xs text-gray-600 dark:text-gray-400 capitalize">{user?.role}</p>
                   </div>
@@ -285,7 +285,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
                     </li>
                   </ul>
 
-                  <div className="border-t border-gray-200 dark:border-gray-700">
+                  <div className="border-t border-gray-200 dark:border-neutral-700">
                     <button
                       onClick={() => {
                         handleLogout();

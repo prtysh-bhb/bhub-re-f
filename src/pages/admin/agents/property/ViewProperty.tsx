@@ -155,7 +155,7 @@ const ViewProperty = () => {
     return (
     <>
         <div className="min-h-screen dark:bg-gray-950 bg-gray-50 flex items-center justify-center">
-          <div className="text-center dark:text-red-400 text-red-500 p-8 dark:bg-gray-800/50 bg-white rounded-2xl shadow-xl dark:border-gray-700/50 border">
+          <div className="text-center dark:text-red-400 text-red-500 p-8 dark:bg-neutral-800/50 bg-white rounded-2xl shadow-xl dark:border-neutral-700/50 border">
             <Home className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">Property not found</p>
           </div>
@@ -171,13 +171,13 @@ const ViewProperty = () => {
       case "published":
         return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400";
       case "draft":
-        return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400";
+        return "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-400";
       case "sold":
         return "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400";
       case "rented":
         return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400";
       default:
-        return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400";
+        return "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-400";
     }
   };
 
@@ -288,12 +288,12 @@ const ViewProperty = () => {
         </div>
 
         {/* ---------- Image Gallery ---------- */}
-        <div className="bg-white dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30 p-6">
+        <div className="bg-white dark:bg-neutral-800/50 rounded-2xl border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30 p-6">
           <h2 className="text-xl font-bold dark:text-white text-gray-800 mb-4">Property Gallery</h2>
           {allImages.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {allImages.map((img: string, i: number) => (
-                <div key={i} className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700">
+                <div key={i} className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-neutral-700">
                   <img
                     src={img}
                     alt={`Property Image ${i + 1}`}
@@ -308,7 +308,7 @@ const ViewProperty = () => {
               ))}
             </div>
           ) : (
-            <div className="w-full h-64 flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-800/30 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700">
+            <div className="w-full h-64 flex flex-col items-center justify-center bg-gray-100 dark:bg-neutral-800/30 rounded-xl border-2 border-dashed border-gray-300 dark:border-neutral-700">
               <Home className="w-16 h-16 text-gray-400 dark:text-gray-600 mb-4" />
               <p className="text-gray-500 dark:text-gray-400">No images available</p>
             </div>
@@ -320,7 +320,7 @@ const ViewProperty = () => {
           {/* Left Column - Property Info */}
           <div className="lg:col-span-2 space-y-6">
             {/* Quick Stats */}
-            <div className="bg-white dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30 p-6">
+            <div className="bg-white dark:bg-neutral-800/50 rounded-2xl border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30 p-6">
               <h2 className="text-xl font-bold dark:text-white text-gray-800 mb-6">Property Details</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <InfoCard
@@ -363,7 +363,7 @@ const ViewProperty = () => {
             </div>
 
             {/* Location & Address */}
-            <Card className="dark:bg-gray-800/50 bg-white border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30">
+            <Card className="dark:bg-neutral-800/50 bg-white border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold dark:text-white text-gray-800 mb-4">Location Details</h3>
                 <div className="space-y-4">
@@ -395,7 +395,7 @@ const ViewProperty = () => {
             </Card>
 
             {/* Description */}
-            <Card className="dark:bg-gray-800/50 bg-white border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30">
+            <Card className="dark:bg-neutral-800/50 bg-white border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold dark:text-white text-gray-800 mb-4">Description</h3>
                 <div className="prose dark:prose-invert max-w-none">
@@ -411,7 +411,7 @@ const ViewProperty = () => {
           <div className="space-y-6">
             {/* Amenities */}
             {property.amenities && property.amenities.length > 0 && (
-              <Card className="dark:bg-gray-800/50 bg-white border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30">
+              <Card className="dark:bg-neutral-800/50 bg-white border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold dark:text-white text-gray-800 mb-4">Amenities</h3>
                   <div className="flex flex-wrap gap-2">
@@ -432,7 +432,7 @@ const ViewProperty = () => {
             )}
 
             {/* Approval Status */}
-            <Card className="dark:bg-gray-800/50 bg-white border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30">
+            <Card className="dark:bg-neutral-800/50 bg-white border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold dark:text-white text-gray-800 mb-4">Approval Status</h3>
                 <div className="space-y-3">
@@ -450,7 +450,7 @@ const ViewProperty = () => {
             </Card>
 
             {/* Timeline */}
-            <Card className="dark:bg-gray-800/50 bg-white border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30">
+            <Card className="dark:bg-neutral-800/50 bg-white border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold dark:text-white text-gray-800 mb-4">Timeline</h3>
                 <div className="space-y-3">
@@ -479,7 +479,7 @@ const ViewProperty = () => {
 
         {/* Video Section */}
         {property.video_url && (
-          <div className="bg-white dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30 p-6">
+          <div className="bg-white dark:bg-neutral-800/50 rounded-2xl border border-gray-200 dark:border-neutral-700/50 shadow-lg dark:shadow-black/30 p-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <h3 className="text-xl font-bold dark:text-white text-gray-800">Property Video</h3>
@@ -492,7 +492,7 @@ const ViewProperty = () => {
                 <Trash2 size={16} /> Delete Video
               </button>
             </div>
-            <div className="relative h-72 sm:h-96 lg:h-[500px] bg-black rounded-xl overflow-hidden border-2 border-gray-300 dark:border-gray-700">
+            <div className="relative h-72 sm:h-96 lg:h-[500px] bg-black rounded-xl overflow-hidden border-2 border-gray-300 dark:border-neutral-700">
               <ReactPlayer
                 src={property.video_url}
                 width="100%"
@@ -552,7 +552,7 @@ const InfoCard = ({
   value: any; 
   color: string 
 }) => (
-  <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-700">
+  <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-neutral-800/30 rounded-xl border border-gray-200 dark:border-neutral-700">
     <div className="p-2 bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-lg">
       <div className={color}>
         {icon}

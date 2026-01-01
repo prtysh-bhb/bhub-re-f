@@ -297,7 +297,7 @@ const Wallet = () => {
     <>
       <div className="space-y-4 md:space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-4 md:p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 p-4 md:p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm">
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -317,14 +317,14 @@ const Wallet = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => loadAllData()}
-                  className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                  className="p-2 rounded-lg border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                   title="Refresh"
                 >
                   <RefreshCw size={18} />
                 </button>
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="md:hidden p-2 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                  className="md:hidden p-2 rounded-lg border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 >
                   {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
                 </button>
@@ -333,7 +333,7 @@ const Wallet = () => {
 
             {/* Mobile Tabs */}
             <div className="md:hidden">
-              <div className="flex border-b border-gray-200 dark:border-gray-800">
+              <div className="flex border-b border-gray-200 dark:border-neutral-800">
                 <button
                   onClick={() => setActiveTab("wallets")}
                   className={`flex-1 py-3 text-center text-sm font-medium transition-colors ${
@@ -442,7 +442,7 @@ const Wallet = () => {
 
             {/* Transaction Breakdown - Mobile Responsive */}
             {report && report.transactions_by_type.length > 0 && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-4 md:p-6">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm p-4 md:p-6">
                 <div className="flex items-center justify-between mb-4 md:mb-6">
                   <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                     <BarChart3 className="text-primary-500" size={18} />
@@ -457,7 +457,7 @@ const Wallet = () => {
                   {report.transactions_by_type.map((item) => (
                     <div
                       key={item.type}
-                      className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3 md:p-4"
+                      className="bg-gray-50 dark:bg-neutral-800/50 rounded-lg p-3 md:p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
                         <span className={`text-xs md:text-sm font-medium ${getTransactionColor(item.type)} truncate`}>
@@ -486,9 +486,9 @@ const Wallet = () => {
             <div className="md:hidden">
               {activeTab === "wallets" ? (
                 // Mobile Wallets View
-                <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+                <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
                   {/* Mobile Filters */}
-                  <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+                  <div className="p-4 border-b border-gray-200 dark:border-neutral-800">
                     <div className="space-y-3">
                       <div className="relative">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
@@ -497,7 +497,7 @@ const Wallet = () => {
                           placeholder="Search users..."
                           value={search}
                           onChange={(e) => setSearch(e.target.value)}
-                          className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                          className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
                         />
                       </div>
                       
@@ -510,7 +510,7 @@ const Wallet = () => {
                         </button>
                         <button
                           onClick={handleClearFilters}
-                          className="flex-1 px-3 py-2 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm"
+                          className="flex-1 px-3 py-2 border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm"
                         >
                           Clear
                         </button>
@@ -610,8 +610,8 @@ const Wallet = () => {
                 </div>
               ) : (
                 // Mobile Transactions View
-                <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-                  <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+                <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
+                  <div className="p-4 border-b border-gray-200 dark:border-neutral-800">
                     <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-3">
                       Recent Transactions
                     </h3>
@@ -628,7 +628,7 @@ const Wallet = () => {
                         {transactions.slice(0, 5).map((transaction) => (
                           <div
                             key={transaction.id}
-                            className="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg"
+                            className="p-3 bg-gray-50 dark:bg-neutral-800/50 rounded-lg"
                           >
                             <div className="flex items-center justify-between mb-2">
                               <div className="flex items-center gap-2">
@@ -660,8 +660,8 @@ const Wallet = () => {
             {/* Desktop Content */}
             <div className="hidden md:block">
               {/* Filters */}
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden mb-6">
-                <div className="p-4 md:p-6 border-b border-gray-200 dark:border-gray-800">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden mb-6">
+                <div className="p-4 md:p-6 border-b border-gray-200 dark:border-neutral-800">
                   <div className="flex flex-col lg:flex-row gap-3 md:gap-4">
                     {/* Search */}
                     <div className="flex-1">
@@ -672,7 +672,7 @@ const Wallet = () => {
                           placeholder="Search users by name or email..."
                           value={search}
                           onChange={(e) => setSearch(e.target.value)}
-                          className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                          className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
                         />
                       </div>
                     </div>
@@ -698,7 +698,7 @@ const Wallet = () => {
                           value={dateRange.from}
                           onChange={(e) => setDateRange({ ...dateRange, from: e.target.value })}
                           max={dateRange.to || today}
-                          className="pl-10 pr-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white w-40"
+                          className="pl-10 pr-3 py-2 border border-gray-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-900 text-gray-900 dark:text-white w-40"
                         />
                       </div>
                       <div className="relative">
@@ -709,7 +709,7 @@ const Wallet = () => {
                           onChange={(e) => setDateRange({ ...dateRange, to: e.target.value })}
                           min={dateRange.from}
                           max={today}
-                          className="pl-10 pr-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white w-40"
+                          className="pl-10 pr-3 py-2 border border-gray-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-900 text-gray-900 dark:text-white w-40"
                         />
                       </div>
                     </div>
@@ -724,7 +724,7 @@ const Wallet = () => {
                       </button>
                       <button
                         onClick={handleClearFilters}
-                        className="px-4 py-2 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                        className="px-4 py-2 border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                       >
                         Clear
                       </button>
@@ -745,13 +745,13 @@ const Wallet = () => {
                         <th className="py-3 px-4 md:px-6 text-center font-semibold text-sm">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {wallets.length === 0 ? (
                         <tr>
                           <td colSpan={6} className="py-8 md:py-12 text-center text-gray-500 dark:text-gray-400">
                             <div className="flex flex-col items-center gap-2 md:gap-3">
-                              <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Search className="text-gray-400" size={20} />
+                              <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Search className="text-gray-400 dark:text-gray-500" size={20} />
                               </div>
                               <p className="font-medium">No wallets found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -762,7 +762,7 @@ const Wallet = () => {
                         wallets.map((wallet) => (
                           <tr
                             key={wallet.id}
-                            className="border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-colors"
+                            className="border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-colors"
                           >
                             <td className="py-3 px-4 md:px-6">
                               <div className="flex items-center gap-2 md:gap-3">
@@ -840,8 +840,8 @@ const Wallet = () => {
               </div>
 
               {/* Recent Transactions Table */}
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-                <div className="p-4 md:p-6 border-b border-gray-200 dark:border-gray-800">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
+                <div className="p-4 md:p-6 border-b border-gray-200 dark:border-neutral-800">
                   <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                     <FileText className="text-primary-500" size={18} />
                     Recent Transactions
@@ -860,7 +860,7 @@ const Wallet = () => {
                         <th className="py-3 px-4 md:px-6 text-left font-semibold text-sm">Date</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {loadingTransactions ? (
                         <tr>
                           <td colSpan={6} className="py-8 text-center">
@@ -879,7 +879,7 @@ const Wallet = () => {
                         transactions.slice(0, 10).map((transaction) => (
                           <tr
                             key={transaction.id}
-                            className="border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors"
+                            className="border-b border-gray-100 dark:border-neutral-800 hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors"
                           >
                             <td className="py-3 px-4 md:px-6">
                               <div className="font-mono text-xs text-gray-600 dark:text-gray-400">
@@ -931,8 +931,8 @@ const Wallet = () => {
         {/* Add Credits Modal */}
         {showAddModal && selectedWallet && (
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md mx-4 md:mx-auto border border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-md mx-4 md:mx-auto border border-gray-200 dark:border-neutral-700">
+              <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 dark:border-neutral-700">
                 <h4 className="text-base md:text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
                   <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-lg shadow-primary-500/30">
                     <Plus className="text-white" size={18} />
@@ -941,7 +941,7 @@ const Wallet = () => {
                 </h4>
                 <button
                   onClick={() => setShowAddModal(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                 >
                   <ChevronRight size={20} />
                 </button>
@@ -950,7 +950,7 @@ const Wallet = () => {
               <div className="p-4 md:p-6">
                 <div className="mb-4 md:mb-6">
                   <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-2">User</div>
-                  <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-neutral-900 rounded-lg">
                     <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold shadow-lg shadow-primary-500/30">
                       {selectedWallet.user?.name?.charAt(0) || "U"}
                     </div>
@@ -994,7 +994,7 @@ const Wallet = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-2 md:gap-3 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="flex justify-end gap-2 md:gap-3 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-neutral-700">
                   <button
                     onClick={() => setShowAddModal(false)}
                     className="px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
@@ -1016,8 +1016,8 @@ const Wallet = () => {
         {/* Deduct Credits Modal */}
         {showDeductModal && selectedWallet && (
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md mx-4 md:mx-auto border border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-md mx-4 md:mx-auto border border-gray-200 dark:border-neutral-700">
+              <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 dark:border-neutral-700">
                 <h4 className="text-base md:text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
                   <div className="p-2 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg">
                     <Minus className="text-white" size={18} />
@@ -1026,7 +1026,7 @@ const Wallet = () => {
                 </h4>
                 <button
                   onClick={() => setShowDeductModal(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                 >
                   <ChevronRight size={20} />
                 </button>
@@ -1035,7 +1035,7 @@ const Wallet = () => {
               <div className="p-4 md:p-6">
                 <div className="mb-4 md:mb-6">
                   <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-2">User</div>
-                  <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-neutral-900 rounded-lg">
                     <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold shadow-lg shadow-primary-500/30">
                       {selectedWallet.user?.name?.charAt(0) || "U"}
                     </div>
@@ -1080,7 +1080,7 @@ const Wallet = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-2 md:gap-3 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="flex justify-end gap-2 md:gap-3 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-neutral-700">
                   <button
                     onClick={() => setShowDeductModal(false)}
                     className="px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
@@ -1102,8 +1102,8 @@ const Wallet = () => {
         {/* User Details Modal */}
         {showDetailsModal && selectedUserDetails && (
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl mx-4 md:mx-auto border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
-              <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
+            <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-4xl mx-4 md:mx-auto border border-gray-200 dark:border-neutral-700 max-h-[90vh] overflow-y-auto">
+              <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 dark:border-neutral-700 sticky top-0 bg-white dark:bg-neutral-800 z-10">
                 <h4 className="text-base md:text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
                   <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-lg shadow-primary-500/30">
                     <User className="text-white" size={18} />
@@ -1112,7 +1112,7 @@ const Wallet = () => {
                 </h4>
                 <button
                   onClick={() => setShowDetailsModal(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all flex-shrink-0 ml-2"
+                  className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all flex-shrink-0 ml-2"
                 >
                   <ChevronRight size={20} />
                 </button>
@@ -1179,7 +1179,7 @@ const Wallet = () => {
                       {selectedUserDetails.recent_transactions.map((transaction) => (
                         <div
                           key={transaction.id}
-                          className="flex items-center justify-between p-3 md:p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
+                          className="flex items-center justify-between p-3 md:p-4 bg-gray-50 dark:bg-neutral-900/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
                         >
                           <div className="flex items-center gap-2 md:gap-4 min-w-0">
                             <div className={`p-1.5 md:p-2 rounded-lg ${getTransactionColor(transaction.type)} bg-opacity-10 flex-shrink-0`}>

@@ -406,7 +406,7 @@ const BlogsList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50">
+        <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-gradient-to-br from-primary-400 via-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
@@ -423,8 +423,8 @@ const BlogsList = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all">
-                <Search size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all">
+                <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <input
                   type="text"
                   placeholder="Search blogs..."
@@ -434,7 +434,7 @@ const BlogsList = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-neutral-800 rounded-lg shadow-sm">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
@@ -459,8 +459,8 @@ const BlogsList = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all">
-                <Filter size={16} className="text-gray-400 mr-2" />
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all">
+                <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
@@ -552,7 +552,7 @@ const BlogsList = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50 overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -563,7 +563,7 @@ const BlogsList = () => {
                         <th className="py-4 px-6 text-center font-semibold">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white dark:bg-neutral-900">
                       {blogs.length === 0 ? (
                         <tr>
                           <td
@@ -571,8 +571,8 @@ const BlogsList = () => {
                             className="py-12 text-center text-gray-500 dark:text-gray-400"
                           >
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <Search className="text-gray-400" size={24} />
+                              <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                                <Search className="text-gray-400 dark:text-gray-500" size={24} />
                               </div>
                               <p className="font-medium">No blogs found</p>
                               <p className="text-sm">Try adjusting your search criteria</p>
@@ -591,10 +591,10 @@ const BlogsList = () => {
                           <>
                             <tr
                               key={blog.id}
-                              className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group cursor-pointer ${
+                              className={`border-b border-gray-100 dark:border-neutral-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group cursor-pointer ${
                                 index % 2 === 0
-                                  ? "bg-white dark:bg-gray-900"
-                                  : "bg-gray-50/50 dark:bg-gray-800/50"
+                                  ? "bg-white dark:bg-neutral-900"
+                                  : "bg-gray-50/50 dark:bg-neutral-800/50"
                               }`}
                               onClick={() => toggleBlog(blog.id)}
                             >
@@ -619,7 +619,7 @@ const BlogsList = () => {
                               </td>
                               <td className="py-4 px-6 text-gray-600 dark:text-gray-400 whitespace-nowrap">
                                 <div className="flex items-center gap-2">
-                                  <Calendar size={14} className="text-gray-400" />
+                                  <Calendar size={14} className="text-gray-400 dark:text-gray-500" />
                                   {formatDate(blog.created_at)}
                                 </div>
                               </td>
@@ -681,10 +681,10 @@ const BlogsList = () => {
                               </td>
                             </tr>
                             {expandedBlog === blog.id && (
-                              <tr className="bg-primary-50/30 dark:bg-primary-900/5 border-b border-gray-100 dark:border-gray-800">
+                              <tr className="bg-primary-50/30 dark:bg-primary-900/5 border-b border-gray-100 dark:border-neutral-800">
                                 <td colSpan={5} className="px-6 py-4">
                                   <div className="pl-20 pr-4">
-                                    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                                    <div className="bg-white dark:bg-neutral-800 p-4 rounded-lg border border-gray-200 dark:border-neutral-700">
                                       <div className="flex gap-4">
                                         <div className="w-32 h-24 rounded-lg overflow-hidden flex-shrink-0">
                                           <img
@@ -704,13 +704,13 @@ const BlogsList = () => {
                                           <p className="text-gray-600 dark:text-gray-400">
                                             {blog.content}
                                           </p>
-                                          <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                          <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-neutral-700">
                                             <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                                               <span>Updated: {formatDate(blog.updated_at)}</span>
                                             </div>
                                             <button
                                               onClick={() => setExpandedBlog(null)}
-                                              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                                              className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                                             >
                                               <ChevronUp size={16} />
                                             </button>
@@ -737,8 +737,8 @@ const BlogsList = () => {
                 {blogs.length === 0 ? (
                   <div className="col-span-full text-center py-12">
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                        <Search className="text-gray-400" size={24} />
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+                        <Search className="text-gray-400 dark:text-gray-500" size={24} />
                       </div>
                       <p className="font-medium text-gray-500 dark:text-gray-400">No blogs found</p>
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
@@ -755,7 +755,7 @@ const BlogsList = () => {
                   blogs.map((blog) => (
                     <div
                       key={blog.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50 hover:shadow-xl hover:shadow-primary-500/20 hover:border-primary-200 dark:hover:border-primary-800 transition-all group overflow-hidden"
+                      className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50 hover:shadow-xl hover:shadow-primary-500/20 hover:border-primary-200 dark:hover:border-primary-800 transition-all group overflow-hidden"
                     >
                       {/* Blog Image */}
                       <div className="relative h-48 overflow-hidden">
@@ -777,13 +777,13 @@ const BlogsList = () => {
                             {blog.title}
                           </h3>
                           {blog.views_count !== undefined && (
-                            <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                            <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-gray-400">
                               <Eye size={12} className="mr-1" />
                               {blog.views_count}
                             </span>
                           )}
 
-                          <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 ml-2">
+                          <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 ml-2">
                             {expandedBlog === blog.id ? (
                               <ChevronUp size={20} />
                             ) : (
@@ -800,7 +800,7 @@ const BlogsList = () => {
                         </div>
                             
                         {expandedBlog === blog.id ? (
-                          <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                          <div className="mt-4 pt-4 border-t border-gray-100 dark:border-neutral-700">
                             <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-2">
                               Content:
                             </h4>
@@ -818,7 +818,7 @@ const BlogsList = () => {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex gap-2 p-4 border-t border-gray-100 dark:border-gray-700 items-center justify-between">
+                      <div className="flex gap-2 p-4 border-t border-gray-100 dark:border-neutral-700 items-center justify-between">
                         <button
                           onClick={() => openEditModal(blog)}
                           className="flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm cursor-pointer hover:shadow-md hover:shadow-primary-500/20"
@@ -931,8 +931,8 @@ const BlogModal = ({
 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
+      <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200 dark:border-neutral-700 max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-neutral-700 sticky top-0 bg-white dark:bg-neutral-800 z-10">
           <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
             <div className="p-2 bg-gradient-to-br from-primary-400 via-primary-500 to-primary-600 rounded-lg shadow-lg shadow-primary-500/30">
               <FileText className="text-white" size={20} />
@@ -941,7 +941,7 @@ const BlogModal = ({
           </h4>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+            className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
             disabled={submitting}
           >
             <X size={20} />
@@ -1044,7 +1044,7 @@ const BlogModal = ({
               </div>
 
               {/* META FIELDS */}
-              <div className="space-y-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <div className="space-y-4 pt-6 border-t border-gray-200 dark:border-neutral-700">
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">
                   SEO Settings
                 </h3>
@@ -1164,7 +1164,7 @@ const BlogModal = ({
               </div>
 
               {/* MAIN IMAGE */}
-              <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-4 bg-white dark:bg-gray-800">
+              <div className="border border-gray-200 dark:border-neutral-700 rounded-xl p-4 bg-white dark:bg-neutral-800">
                 <div className="flex items-center justify-between mb-3">
                   <label className="block text-sm font-semibold text-gray-900 dark:text-gray-200">
                     Content Image
@@ -1191,8 +1191,8 @@ const BlogModal = ({
                     </button>
                   </div>
                 ) : (
-                  <div className="mb-4 text-center py-8 bg-gray-50/50 dark:bg-gray-800/50 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600">
-                    <ImageOff className="text-gray-400 mx-auto mb-2" size={24} />
+                  <div className="mb-4 text-center py-8 bg-gray-50/50 dark:bg-neutral-800/50 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600">
+                    <ImageOff className="text-gray-400 dark:text-gray-500 mx-auto mb-2" size={24} />
                     <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
                       No content image selected
                     </p>
@@ -1212,7 +1212,7 @@ const BlogModal = ({
                     htmlFor="image-upload"
                     className="cursor-pointer flex flex-col items-center"
                   >
-                    <ImageIcon className="text-gray-400 mb-2" size={24} />
+                    <ImageIcon className="text-gray-400 dark:text-gray-500 mb-2" size={24} />
                     <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                       Upload Content Image
                     </span>
@@ -1249,7 +1249,7 @@ const BlogModal = ({
           </div>
 
           {/* ACTION BUTTONS */}
-          <div className="flex flex-col sm:flex-row justify-end gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex flex-col sm:flex-row justify-end gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-neutral-700">
             <button
               type="button"
               onClick={() => setIsOpen(false)}
