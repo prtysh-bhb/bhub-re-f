@@ -129,7 +129,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
           {/* Left side */}
           <div className="flex items-center gap-2 sm:gap-4 min-w-0">
             <button
-              className="lg:hidden text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/20"
+              className="lg:hidden text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-950/20"
               onClick={onMenuClick}
               aria-label="Open menu"
             >
@@ -137,7 +137,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             </button>
 
             {/* Desktop search (hidden on xs) */}
-            <div className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-800 dark:to-slate-800 rounded-lg px-3 py-2 border border-gray-200 dark:border-gray-700 focus-within:border-blue-400 dark:focus-within:border-blue-500 focus-within:shadow-sm transition-all">
+            <div className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-800 dark:to-slate-800 rounded-lg px-3 py-2 border border-gray-200 dark:border-gray-700 focus-within:border-primary-400 dark:focus-within:border-primary-500 focus-within:shadow-sm transition-all">
               <Search className="text-gray-400" size={16} />
               <input
                 type="text"
@@ -186,7 +186,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
           <div className="flex items-center gap-2 relative min-w-0">
             {user?.role == 'agent' && (
               <Link to={'/agent/subscription-plans'}
-              className="p-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/20 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-950/20 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               <CreditCard size={18}/>
             </Link>
@@ -195,7 +195,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/20 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-950/20 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               aria-pressed={isDark}
               aria-label="Toggle dark mode"
             >
@@ -209,33 +209,33 @@ const Header = ({ onMenuClick }: HeaderProps) => {
                 onMarkAsRead={handleMarkAsRead}
                 onMarkAllAsRead={handleMarkAllAsRead}
                 onDelete={handleDelete}
-                customClass={'hover:bg-blue-50'}
+                customClass={'hover:bg-primary-50'}
             />
 
             {/* Avatar + Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setDropdownOpen((prev) => !prev)}
-                className="flex items-center gap-2 p-1 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/20 transition-colors"
+                className="flex items-center gap-2 p-1 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-950/20 transition-colors"
                 aria-expanded={dropdownOpen}
                 aria-label="Open user menu"
               >
                 <img
                   src={avatarUrl}
                   alt="user"
-                  className="w-8 h-8 rounded-full border-2 border-blue-200 dark:border-emerald-800 object-cover shadow-sm"
+                  className="w-8 h-8 rounded-full border-2 border-primary-200 dark:border-primary-800 object-cover shadow-sm"
                 />
                 {/* hide name on very small screens to avoid layout wrap */}
                 <div className="hidden sm:block text-left min-w-0">
                   <p className="text-sm font-medium text-gray-900 dark:text-white truncate">{user?.name || "User"}</p>
-                  <p className="text-xs text-blue-600 dark:text-emerald-400 capitalize">{role}</p>
+                  <p className="text-xs text-primary-600 dark:text-primary-400 capitalize">{role}</p>
                 </div>
               </button>
 
               {/* Dropdown menu */}
               {dropdownOpen && (
                 <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 shadow-xl rounded-xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden">
-                  <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-blue-950/30 dark:to-emerald-950/30">
+                  <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-950/30 dark:to-primary-900/30">
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">{user?.name || "User"}</p>
                     <p className="text-xs text-gray-600 dark:text-gray-400 capitalize">{user?.role}</p>
                   </div>

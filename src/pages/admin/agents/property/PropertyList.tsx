@@ -79,13 +79,13 @@ const PropertyList = () => {
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "published":
-        return "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800";
+        return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400 border-primary-200 dark:border-primary-800";
       case "draft":
         return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-gray-700";
       case "sold":
         return "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800";
       case "rented":
-        return "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800";
+        return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400 border-primary-200 dark:border-primary-800";
       default:
         return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-gray-700";
     }
@@ -95,7 +95,7 @@ const PropertyList = () => {
   const getApprovalColor = (approval?: string) => {
     switch (approval?.toLowerCase()) {
       case "approved":
-        return "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800";
+        return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400 border-primary-200 dark:border-primary-800";
       case "rejected":
         return "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800";
       default:
@@ -107,11 +107,11 @@ const PropertyList = () => {
   const getPropertyTypeIcon = (propertyType?: string) => {
     switch (propertyType?.toLowerCase()) {
       case 'house':
-        return { icon: Home, color: 'text-blue-600 dark:text-blue-400' };
+        return { icon: Home, color: 'text-primary-600 dark:text-primary-400' };
       case 'apartment':
         return { icon: Building2, color: 'text-purple-600 dark:text-purple-400' };
       case 'villa':
-        return { icon: Home, color: 'text-emerald-600 dark:text-emerald-400' };
+        return { icon: Home, color: 'text-primary-600 dark:text-primary-400' };
       case 'commercial':
         return { icon: Building2, color: 'text-amber-600 dark:text-amber-400' };
       default:
@@ -169,8 +169,8 @@ const PropertyList = () => {
                     {properties.filter(p => p.status.toLowerCase() === 'published').length}
                   </p>
                 </div>
-                <div className="p-2 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-lg">
-                  <TrendingUp className="text-emerald-600 dark:text-emerald-400" size={20} />
+                <div className="p-2 bg-primary-500/10 dark:bg-primary-500/20 rounded-lg">
+                  <TrendingUp className="text-primary-600 dark:text-primary-400" size={20} />
                 </div>
               </div>
             </div>

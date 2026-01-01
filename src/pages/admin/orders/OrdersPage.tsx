@@ -55,7 +55,7 @@ const OrdersPage = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "confirmed":
-        return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400";
+        return "bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400";
       case "pending":
         return "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400";
       case "cancelled":
@@ -171,9 +171,9 @@ const OrdersPage = () => {
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Total Orders</p>
             <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">{orders.length}</p>
           </div>
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-emerald-200 dark:border-emerald-900/30 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-primary-200 dark:border-primary-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Confirmed</p>
-            <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{orders.filter(o => o.status === "confirmed").length}</p>
+            <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">{orders.filter(o => o.status === "confirmed").length}</p>
           </div>
           <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-amber-200 dark:border-amber-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Pending</p>

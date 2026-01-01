@@ -56,12 +56,12 @@ const BlogCategories = () => {
 
   // Color palette for category cards
   const categoryColors = [
-    { gradient: "from-blue-500 to-cyan-500", light: "from-blue-50 to-cyan-50", dark: "from-blue-900/20 to-cyan-900/20" },
-    { gradient: "from-emerald-500 to-green-500", light: "from-emerald-50 to-green-50", dark: "from-emerald-900/20 to-green-900/20" },
-    { gradient: "from-purple-500 to-violet-500", light: "from-purple-50 to-violet-50", dark: "from-purple-900/20 to-violet-900/20" },
+    { gradient: "from-primary-500 to-primary-500", light: "from-primary-50 to-primary-50", dark: "from-primary-900/20 to-primary-900/20" },
+    { gradient: "from-primary-500 to-green-500", light: "from-primary-50 to-green-50", dark: "from-primary-900/20 to-green-900/20" },
+    { gradient: "from-purple-500 to-primary-500", light: "from-purple-50 to-primary-50", dark: "from-purple-900/20 to-primary-900/20" },
     { gradient: "from-amber-500 to-orange-500", light: "from-amber-50 to-orange-50", dark: "from-amber-900/20 to-orange-900/20" },
     { gradient: "from-rose-500 to-pink-500", light: "from-rose-50 to-pink-50", dark: "from-rose-900/20 to-pink-900/20" },
-    { gradient: "from-indigo-500 to-blue-500", light: "from-indigo-50 to-blue-50", dark: "from-indigo-900/20 to-blue-900/20" },
+    { gradient: "from-primary-500 to-primary-500", light: "from-primary-50 to-primary-50", dark: "from-primary-900/20 to-primary-900/20" },
   ];
 
   useEffect(() => {
@@ -264,7 +264,7 @@ const BlogCategories = () => {
     
     switch(status) {
       case true:
-        return `${baseClasses} bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400`;
+        return `${baseClasses} bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400`;
       case false:
         return `${baseClasses} bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400`;
       default:
@@ -388,16 +388,16 @@ const BlogCategories = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800 shadow-[0_2px_8px_rgba(16,185,129,0.1)]">
+              <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-5 rounded-xl border border-primary-200 dark:border-primary-800 shadow-[0_2px_8px_rgba(16,185,129,0.1)]">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">Active Categories</p>
-                    <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                    <p className="text-sm font-medium text-primary-700 dark:text-primary-300">Active Categories</p>
+                    <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                       {categories.filter(c => c.is_active).length}
                     </p>
                   </div>
-                  <div className="p-3 bg-emerald-500/10 rounded-lg">
-                    <CheckCircle className="text-emerald-600 dark:text-emerald-400" size={24} />
+                  <div className="p-3 bg-primary-500/10 rounded-lg">
+                    <CheckCircle className="text-primary-600 dark:text-primary-400" size={24} />
                   </div>
                 </div>
               </div>
@@ -507,7 +507,7 @@ const BlogCategories = () => {
                                 <td className="py-4 px-6">
                                   <span className={badge(category.is_active)}>
                                     <span className={`w-1.5 h-1.5 rounded-full mr-1.5 ${
-                                      category.is_active ? "bg-emerald-600 dark:bg-emerald-400" : "bg-red-600 dark:bg-red-400"
+                                      category.is_active ? "bg-primary-600 dark:bg-primary-400" : "bg-red-600 dark:bg-red-400"
                                     }`}></span>
                                     {category.is_active ? "Active" : "Inactive"}
                                   </span>
@@ -533,7 +533,7 @@ const BlogCategories = () => {
                                       className={`p-2 rounded-lg transition-all hover:scale-110 ${
                                         category.is_active
                                           ? "hover:bg-amber-100 dark:hover:bg-amber-900/30 text-amber-600 dark:text-amber-400"
-                                          : "hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400"
+                                          : "hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400"
                                       }`}
                                       title={category.is_active ? "Deactivate Category" : "Activate Category"}
                                     >
@@ -705,7 +705,7 @@ const BlogCategories = () => {
                               className={`flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-xs font-semibold transition-all ${
                                 category.is_active
                                   ? "hover:bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 dark:hover:bg-amber-900/50"
-                                  : "hover:bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-900/50"
+                                  : "hover:bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 dark:hover:bg-primary-900/50"
                               }`}
                             >
                               {category.is_active ? <XCircle size={16} /> : <CheckCircle size={16} />}
@@ -867,7 +867,7 @@ const CategoryModal = ({
                   className={`w-full px-4 py-3 rounded-lg border ${
                     formErrors.content 
                       ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500' 
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500 dark:focus:border-blue-500'
+                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500'
                   } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all resize-none`}
                   placeholder="Describe what this category is about..."
                   disabled={submitting}
@@ -899,7 +899,7 @@ const CategoryModal = ({
                     className="sr-only peer"
                     disabled={submitting}
                   />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-emerald-600"></div>
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600"></div>
                   <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
                     {formData.is_active ? "Active" : "Inactive"}
                   </span>
@@ -920,7 +920,7 @@ const CategoryModal = ({
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 hover:from-blue-700 hover:to-emerald-700 text-white transition-all shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-br from-primary-500 to-primary-500 hover:from-primary-700 hover:to-primary-700 text-white transition-all shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {submitting ? (
                   <>

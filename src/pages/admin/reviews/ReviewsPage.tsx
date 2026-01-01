@@ -66,7 +66,7 @@ const ReviewsPage = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "published":
-        return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400";
+        return "bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400";
       case "pending":
         return "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400";
       default:
@@ -184,7 +184,7 @@ const ReviewsPage = () => {
                   View Details
                 </button>
                 {review.status === "pending" && (
-                  <button className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-sm transition-all hover:shadow-md">
+                  <button className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-900/50 text-sm transition-all hover:shadow-md">
                     Approve
                   </button>
                 )}

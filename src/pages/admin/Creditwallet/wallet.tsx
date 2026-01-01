@@ -256,7 +256,7 @@ const Wallet = () => {
       case "purchase":
       case "admin_add":
       case "refund":
-        return "text-emerald-600 dark:text-emerald-400";
+        return "text-primary-600 dark:text-primary-400";
       case "spend":
       case "admin_deduct":
         return "text-red-600 dark:text-red-400";
@@ -270,7 +270,7 @@ const Wallet = () => {
       case "purchase":
       case "admin_add":
       case "refund":
-        return <Plus size={14} className="text-emerald-500" />;
+        return <Plus size={14} className="text-primary-500" />;
       case "spend":
       case "admin_deduct":
         return <Minus size={14} className="text-red-500" />;
@@ -338,7 +338,7 @@ const Wallet = () => {
                   onClick={() => setActiveTab("wallets")}
                   className={`flex-1 py-3 text-center text-sm font-medium transition-colors ${
                     activeTab === "wallets"
-                      ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-500"
+                      ? "text-primary-600 dark:text-primary-400 border-b-2 border-primary-500"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -348,7 +348,7 @@ const Wallet = () => {
                   onClick={() => setActiveTab("transactions")}
                   className={`flex-1 py-3 text-center text-sm font-medium transition-colors ${
                     activeTab === "transactions"
-                      ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-500"
+                      ? "text-primary-600 dark:text-primary-400 border-b-2 border-primary-500"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -390,18 +390,18 @@ const Wallet = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-4 md:p-5 rounded-xl border border-emerald-200 dark:border-emerald-800">
+                <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-4 md:p-5 rounded-xl border border-primary-200 dark:border-primary-800">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs md:text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                      <p className="text-xs md:text-sm font-medium text-primary-700 dark:text-primary-300">
                         Spent
                       </p>
-                      <p className="text-lg md:text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                      <p className="text-lg md:text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                         {formatCurrency(report.overview.total_credits_spent)}
                       </p>
                     </div>
-                    <div className="p-2 md:p-3 bg-emerald-500/10 rounded-lg">
-                      <TrendingDown className="text-emerald-600 dark:text-emerald-400" size={20} />
+                    <div className="p-2 md:p-3 bg-primary-500/10 rounded-lg">
+                      <TrendingDown className="text-primary-600 dark:text-primary-400" size={20} />
                     </div>
                   </div>
                 </div>
@@ -551,7 +551,7 @@ const Wallet = () => {
                                   setSelectedWallet(wallet);
                                   setShowAddModal(true);
                                 }}
-                                className="p-1.5 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-colors"
+                                className="p-1.5 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-colors"
                                 title="Add"
                               >
                                 <Plus size={16} />
@@ -578,7 +578,7 @@ const Wallet = () => {
                             </div>
                             <div>
                               <div className="text-xs text-gray-500 dark:text-gray-400">Purchased</div>
-                              <div className="text-emerald-600 dark:text-emerald-400 font-medium">
+                              <div className="text-primary-600 dark:text-primary-400 font-medium">
                                 {formatCurrency(wallet.total_credits_purchased)}
                               </div>
                             </div>
@@ -617,7 +617,7 @@ const Wallet = () => {
                     </h3>
                     {loadingTransactions ? (
                       <div className="py-8 text-center">
-                        <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                        <div className="w-6 h-6 border-2 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
                       </div>
                     ) : transactions.length === 0 ? (
                       <div className="py-8 text-center text-gray-500 dark:text-gray-400">
@@ -785,7 +785,7 @@ const Wallet = () => {
                               </div>
                             </td>
                             <td className="py-3 px-4 md:px-6">
-                              <div className="text-emerald-600 dark:text-emerald-400 font-medium">
+                              <div className="text-primary-600 dark:text-primary-400 font-medium">
                                 {formatCurrency(wallet.total_credits_purchased)}
                               </div>
                             </td>
@@ -814,7 +814,7 @@ const Wallet = () => {
                                     setSelectedWallet(wallet);
                                     setShowAddModal(true);
                                   }}
-                                  className="p-1.5 md:p-2 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-colors"
+                                  className="p-1.5 md:p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-colors"
                                   title="Add Credits"
                                 >
                                   <Plus size={16} />
@@ -865,7 +865,7 @@ const Wallet = () => {
                         <tr>
                           <td colSpan={6} className="py-8 text-center">
                             <div className="flex items-center justify-center">
-                              <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                              <div className="w-6 h-6 border-2 border-primary-500 border-t-transparent rounded-full animate-spin"></div>
                             </div>
                           </td>
                         </tr>
@@ -1145,11 +1145,11 @@ const Wallet = () => {
                           {formatCurrency(selectedUserDetails.wallet.current_credits)}
                         </p>
                       </div>
-                      <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-4 md:p-5 rounded-xl border border-emerald-200 dark:border-emerald-800">
-                        <p className="text-xs md:text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                      <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-4 md:p-5 rounded-xl border border-primary-200 dark:border-primary-800">
+                        <p className="text-xs md:text-sm font-medium text-primary-700 dark:text-primary-300">
                           Total Purchased
                         </p>
-                        <p className="text-xl md:text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                        <p className="text-xl md:text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                           {formatCurrency(selectedUserDetails.wallet.total_credits_purchased)}
                         </p>
                       </div>

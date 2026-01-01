@@ -183,20 +183,20 @@ const CreateReminder = () => {
       },
       appointment_followup: { 
         icon: Calendar, 
-        color: 'from-blue-500 to-cyan-500',
-        darkColor: 'dark:from-blue-600 dark:to-cyan-600',
-        bgColor: 'from-blue-50 to-cyan-50',
-        darkBgColor: 'dark:from-blue-900/30 dark:to-cyan-900/30',
-        borderColor: 'border-blue-200',
-        darkBorderColor: 'dark:border-blue-800/50',
+        color: 'from-primary-500 to-primary-500',
+        darkColor: 'dark:from-primary-600 dark:to-primary-600',
+        bgColor: 'from-primary-50 to-primary-50',
+        darkBgColor: 'dark:from-primary-900/30 dark:to-primary-900/30',
+        borderColor: 'border-primary-200',
+        darkBorderColor: 'dark:border-primary-800/50',
         label: 'Appointment Follow-up'
       },
       general: { 
         icon: Bell, 
-        color: 'from-purple-500 to-violet-500',
-        darkColor: 'dark:from-purple-600 dark:to-violet-600',
-        bgColor: 'from-purple-50 to-violet-50',
-        darkBgColor: 'dark:from-purple-900/30 dark:to-violet-900/30',
+        color: 'from-purple-500 to-primary-500',
+        darkColor: 'dark:from-purple-600 dark:to-primary-600',
+        bgColor: 'from-purple-50 to-primary-50',
+        darkBgColor: 'dark:from-purple-900/30 dark:to-primary-900/30',
         borderColor: 'border-purple-200',
         darkBorderColor: 'dark:border-purple-800/50',
         label: 'General'
@@ -209,7 +209,7 @@ const CreateReminder = () => {
   const getPriorityConfig = (priority: string) => {
     const priorityConfig = {
       low: { color: 'text-gray-600 bg-gray-100', darkColor: 'dark:text-gray-300 dark:bg-gray-800', icon: Bell },
-      medium: { color: 'text-blue-600 bg-blue-100', darkColor: 'dark:text-blue-400 dark:bg-blue-900/30', icon: Clock },
+      medium: { color: 'text-primary-600 bg-primary-100', darkColor: 'dark:text-primary-400 dark:bg-primary-900/30', icon: Clock },
       high: { color: 'text-amber-600 bg-amber-100', darkColor: 'dark:text-amber-400 dark:bg-amber-900/30', icon: AlertTriangle },
       urgent: { color: 'text-red-600 bg-red-100', darkColor: 'dark:text-red-400 dark:bg-red-900/30', icon: Zap }
     };
@@ -398,7 +398,7 @@ const CreateReminder = () => {
                                   <p className="font-semibold text-gray-900 dark:text-white">{type.label}</p>
                                 </div>
                                 {formData.type === type.value && (
-                                  <CheckCircle className="w-5 h-5 text-emerald-500 dark:text-emerald-400 ml-auto" />
+                                  <CheckCircle className="w-5 h-5 text-primary-500 dark:text-primary-400 ml-auto" />
                                 )}
                               </label>
                             );
@@ -429,7 +429,7 @@ const CreateReminder = () => {
                                 key={priority.value}
                                 className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all ${
                                   formData.priority === priority.value
-                                    ? 'border-blue-200 dark:border-blue-800/50 bg-blue-50 dark:bg-blue-900/30 shadow-md dark:shadow-lg'
+                                    ? 'border-primary-200 dark:border-primary-800/50 bg-primary-50 dark:bg-primary-900/30 shadow-md dark:shadow-lg'
                                     : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'
                                 }`}
                               >
@@ -448,7 +448,7 @@ const CreateReminder = () => {
                                   <p className="font-semibold text-gray-900 dark:text-white">{priority.label}</p>
                                 </div>
                                 {formData.priority === priority.value && (
-                                  <CheckCircle className="w-5 h-5 text-emerald-500 dark:text-emerald-400 ml-auto" />
+                                  <CheckCircle className="w-5 h-5 text-primary-500 dark:text-primary-400 ml-auto" />
                                 )}
                               </label>
                             );
@@ -739,8 +739,8 @@ const CreateReminder = () => {
         icon: Bell 
       },
       medium: { 
-        color: 'bg-blue-100 text-blue-700', 
-        darkColor: 'dark:bg-blue-900/30 dark:text-blue-400', 
+        color: 'bg-primary-100 text-primary-700', 
+        darkColor: 'dark:bg-primary-900/30 dark:text-primary-400', 
         icon: Clock 
       },
       high: { 

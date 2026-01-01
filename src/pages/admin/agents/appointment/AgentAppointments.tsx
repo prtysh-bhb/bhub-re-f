@@ -390,7 +390,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
       case "cancelled":
         return "bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400 dark:border dark:border-rose-800/50";
       case "completed":
-        return "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 dark:border dark:border-emerald-800/50";
+        return "bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 dark:border dark:border-primary-800/50";
       case "approved":
         return "bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 dark:border dark:border-primary-800/50";
       case "declined":
@@ -555,7 +555,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                 </div>
               </div>
               <div className="flex items-center gap-1 mt-3">
-                <span className="text-sm text-emerald-600 dark:text-emerald-400 font-medium">+12.5%</span>
+                <span className="text-sm text-primary-600 dark:text-primary-400 font-medium">+12.5%</span>
                 <span className="text-sm text-gray-500 dark:text-gray-500">from last month</span>
               </div>
             </div>
@@ -582,7 +582,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                     {appointments.filter((a) => a.status === "completed").length}
                   </p>
                 </div>
-                <div className="p-3 bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 rounded-xl shadow-md shadow-emerald-500/30">
+                <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-xl shadow-md shadow-emerald-500/30">
                   <Home className="w-6 h-6 text-white" />
                 </div>
               </div>

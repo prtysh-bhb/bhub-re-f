@@ -55,9 +55,9 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
   const getNotificationColor = (type: NotificationItem['type']) => {
     switch (type) {
       case 'inquiry_received':
-        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400';
+        return 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400';
       case 'appointment_scheduled':
-        return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400';
+        return 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400';
       case 'payment_success':
         return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400';
       case 'property_approved':
@@ -179,7 +179,7 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
       {/* Notification Bell Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`relative p-2 cursor-pointer rounded-lg dark:hover:bg-blue-950/20 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 ${customClass} transition-colors`}
+        className={`relative p-2 cursor-pointer rounded-lg dark:hover:bg-primary-950/20 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 ${customClass} transition-colors`}
         aria-expanded={isOpen}
         aria-label={`Open notifications ${unreadCount > 0 ? `(${unreadCount} unread)` : ''}`}
       >
@@ -193,7 +193,7 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
       {isOpen && (
         <div className="absolute right-0 mt-2 w-96 bg-white dark:bg-gray-800 shadow-xl rounded-xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden">
           {/* Header */}
-          <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-blue-950/30 dark:to-emerald-950/30">
+          <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-950/30 dark:to-primary-900/30">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white text-sm">Notifications</h3>
@@ -207,7 +207,7 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
                     onMarkAllAsRead();
                     setIsOpen(false);
                   }}
-                  className="text-xs cursor-pointer text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center gap-1"
+                  className="text-xs cursor-pointer text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium flex items-center gap-1"
                 >
                   <CheckCheck size={12} />
                   Mark all as read
@@ -261,7 +261,7 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
                     </div>
 
                     {/* Action Buttons */}
-                    {notification.read_at && <CheckCheck className="p-1 text-gray-400 hover:text-blue-600 dark:hover:text-blue-400" />}
+                    {notification.read_at && <CheckCheck className="p-1 text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" />}
 
                     <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       

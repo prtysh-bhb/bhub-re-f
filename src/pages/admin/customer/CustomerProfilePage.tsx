@@ -87,7 +87,7 @@ const CustomerProfilePage = () => {
                 <span
                   className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
                     customer?.two_factor_enabled
-                      ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                      ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
                       : "bg-red-100 dark:bg-gray-700 text-red-700 dark:text-gray-400"
                   }`}
                 >

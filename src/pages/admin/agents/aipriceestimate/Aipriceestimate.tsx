@@ -282,7 +282,7 @@ const AIPriceEstimator = () => {
   // Get confidence color
   const getConfidenceColor = (score?: number) => {
     if (!score) return "text-gray-500";
-    if (score >= 80) return "text-emerald-500";
+    if (score >= 80) return "text-primary-500";
     if (score >= 60) return "text-amber-500";
     return "text-red-500";
   };
@@ -313,9 +313,9 @@ const AIPriceEstimator = () => {
     if (!condition) return "text-gray-600 bg-gray-100";
     switch (condition.toLowerCase()) {
       case "excellent":
-        return "text-emerald-600 bg-emerald-100";
+        return "text-primary-600 bg-primary-100";
       case "good":
-        return "text-blue-600 bg-blue-100";
+        return "text-primary-600 bg-primary-100";
       case "average":
         return "text-amber-600 bg-amber-100";
       case "needs_work":
@@ -835,7 +835,7 @@ const AIPriceEstimator = () => {
                         <div
                           className={`h-full rounded-full ${
                             getConfidenceScore(estimateResult) >= 80
-                              ? "bg-emerald-500"
+                              ? "bg-primary-500"
                               : getConfidenceScore(estimateResult) >= 60
                               ? "bg-amber-500"
                               : "bg-red-500"
@@ -1018,7 +1018,7 @@ const AIPriceEstimator = () => {
                     <div
                       className={`h-full rounded-full ${
                         getConfidenceScore(selectedEstimate) >= 80
-                          ? "bg-emerald-500"
+                          ? "bg-primary-500"
                           : getConfidenceScore(selectedEstimate) >= 60
                           ? "bg-amber-500"
                           : "bg-red-500"

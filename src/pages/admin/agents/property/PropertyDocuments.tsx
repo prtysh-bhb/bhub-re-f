@@ -98,10 +98,10 @@ const PropertyDocuments = ({ propertyId }: Props) => {
       case 'jpeg':
       case 'png':
       case 'gif':
-        return { icon: ImageIcon, color: 'text-emerald-500 dark:text-emerald-400', bg: 'bg-emerald-100 dark:bg-emerald-900/30' };
+        return { icon: ImageIcon, color: 'text-primary-500 dark:text-primary-400', bg: 'bg-primary-100 dark:bg-primary-900/30' };
       case 'doc':
       case 'docx':
-        return { icon: FileText, color: 'text-blue-500 dark:text-blue-400', bg: 'bg-blue-100 dark:bg-blue-900/30' };
+        return { icon: FileText, color: 'text-primary-500 dark:text-primary-400', bg: 'bg-primary-100 dark:bg-primary-900/30' };
       default:
         return { icon: File, color: 'text-gray-500 dark:text-gray-400', bg: 'bg-gray-100 dark:bg-gray-800' };
     }
@@ -119,7 +119,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
     <div className="dark:bg-gray-800/50 bg-white rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30 p-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+          <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-500 rounded-lg">
             <FolderOpen className="text-white" size={20} />
           </div>
           <div>
@@ -132,7 +132,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
           </div>
         </div>
 
-        <label className="cursor-pointer inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all font-medium">
+        <label className="cursor-pointer inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-white px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all font-medium">
           {uploading ? (
             <>
               <Loader2 className="animate-spin" size={18} /> 
@@ -155,14 +155,14 @@ const PropertyDocuments = ({ propertyId }: Props) => {
       </div>
 
       {/* File Upload Guidelines */}
-      <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+      <div className="mb-6 p-4 bg-gradient-to-r from-primary-50 to-primary-50 dark:from-primary-900/20 dark:to-primary-900/20 rounded-xl border border-primary-200 dark:border-primary-800">
         <div className="flex items-start gap-3">
-          <Paperclip className="text-blue-500 dark:text-blue-400 mt-0.5" size={18} />
+          <Paperclip className="text-primary-500 dark:text-primary-400 mt-0.5" size={18} />
           <div>
-            <p className="text-sm font-medium text-blue-700 dark:text-blue-300 mb-1">
+            <p className="text-sm font-medium text-primary-700 dark:text-primary-300 mb-1">
               Supported files: PDF, DOC, DOCX, JPG, PNG, TXT, XLSX
             </p>
-            <p className="text-xs text-blue-600 dark:text-blue-400">
+            <p className="text-xs text-primary-600 dark:text-primary-400">
               Maximum file size: 10MB per file • You can select multiple files at once
             </p>
           </div>
@@ -171,7 +171,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
 
       {loading ? (
         <div className="flex flex-col items-center justify-center py-12">
-          <div className="w-12 h-12 border-3 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+          <div className="w-12 h-12 border-3 border-primary-500 dark:border-primary-500 border-t-transparent rounded-full animate-spin mb-4"></div>
           <p className="text-gray-500 dark:text-gray-400">Loading documents...</p>
         </div>
       ) : documents.length > 0 ? (
@@ -238,7 +238,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
                     href={fileUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-md transition-all hover:scale-110"
+                    className="p-2 bg-gradient-to-br from-primary-500 to-primary-500 text-white rounded-lg hover:shadow-md transition-all hover:scale-110"
                     title="View Document"
                   >
                     <Eye size={16} />
@@ -246,7 +246,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
                   <a
                     href={fileUrl}
                     download
-                    className="p-2 bg-gradient-to-br from-emerald-500 to-green-500 text-white rounded-lg hover:shadow-md transition-all hover:scale-110"
+                    className="p-2 bg-gradient-to-br from-primary-500 to-green-500 text-white rounded-lg hover:shadow-md transition-all hover:scale-110"
                     title="Download"
                   >
                     <Download size={16} />
@@ -274,7 +274,7 @@ const PropertyDocuments = ({ propertyId }: Props) => {
           <p className="text-gray-500 dark:text-gray-400 mb-6 max-w-sm mx-auto">
             Upload property documents, images, or files to get started
           </p>
-          <label className="cursor-pointer inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all font-medium">
+          <label className="cursor-pointer inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-white px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all font-medium">
             <Upload size={18} />
             <span>Upload Your First Document</span>
             <input
@@ -303,11 +303,11 @@ const PropertyDocuments = ({ propertyId }: Props) => {
                 <span className="text-gray-600 dark:text-gray-300">PDF: {documents.filter(d => d.name.toLowerCase().endsWith('.pdf')).length}</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-primary-500 rounded-full"></div>
                 <span className="text-gray-600 dark:text-gray-300">Images: {documents.filter(d => /\.(jpg|jpeg|png|gif)$/i.test(d.name)).length}</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-primary-500 rounded-full"></div>
                 <span className="text-gray-600 dark:text-gray-300">Documents: {documents.filter(d => /\.(doc|docx|txt)$/i.test(d.name)).length}</span>
               </div>
             </div>
@@ -345,9 +345,9 @@ const PropertyDocuments = ({ propertyId }: Props) => {
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-lg flex items-center justify-center">
                       {getFileIcon(documents[deleteIndex].name).icon === ImageIcon ? (
-                        <ImageIcon className="w-5 h-5 text-emerald-500 dark:text-emerald-400" />
+                        <ImageIcon className="w-5 h-5 text-primary-500 dark:text-primary-400" />
                       ) : (
-                        <FileText className="w-5 h-5 text-blue-500 dark:text-blue-400" />
+                        <FileText className="w-5 h-5 text-primary-500 dark:text-primary-400" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0">

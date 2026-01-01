@@ -335,14 +335,14 @@ const PageEditor = () => {
                     <span
                       className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-semibold ${
                         formData.status === "published"
-                          ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400"
+                          ? "bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400"
                           : "bg-gray-100 text-gray-700 dark:bg-gray-700/20 dark:text-gray-400"
                       }`}
                     >
                       <span
                         className={`w-2 h-2 rounded-full mr-2 ${
                           formData.status === "published"
-                            ? "bg-emerald-600 dark:bg-emerald-400"
+                            ? "bg-primary-600 dark:bg-primary-400"
                             : "bg-gray-600 dark:bg-gray-400"
                         }`}
                       />

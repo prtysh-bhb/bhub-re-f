@@ -270,7 +270,7 @@ const AgentList = () => {
                               <span
                                 className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
                                   agent.two_factor_enabled
-                                    ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                                    ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
                                     : "bg-red-100 dark:bg-gray-800 text-red-700 dark:text-gray-400"
                                 }`}
                               >
@@ -296,7 +296,7 @@ const AgentList = () => {
                                 <span
                                   className={`w-1.5 h-1.5 rounded-full mr-1.5 ${
                                     agent.status
-                                      ? "bg-emerald-600 dark:bg-emerald-400"
+                                      ? "bg-primary-600 dark:bg-primary-400"
                                       : "bg-red-600 dark:bg-red-400"
                                   }`}
                                 ></span>
@@ -314,7 +314,7 @@ const AgentList = () => {
                                   <Eye size={18} />
                                 </button>
                                 {/* <button
-                                  className="p-2 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-all hover:scale-110"
+                                  className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110"
                                   title="Edit Agent"
                                 >
                                   <Edit size={18} />
@@ -373,7 +373,7 @@ const AgentList = () => {
                               <span
                                 className={`inline-flex items-center mt-1 px-3 py-0.5 rounded-full text-xs font-semibold ${
                                   agent.two_factor_enabled
-                                    ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                                    ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
                                     : "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400"
                                 }`}
                               >
@@ -409,7 +409,7 @@ const AgentList = () => {
                             <Eye size={16} />
                             <span>View</span>
                           </button>
-                          {/* <button className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-all font-medium text-sm cursor-pointer">
+                          {/* <button className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm cursor-pointer">
                             <Edit size={16} />
                             <span>Edit</span>
                           </button> */}

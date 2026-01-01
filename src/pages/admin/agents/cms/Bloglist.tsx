@@ -361,7 +361,7 @@ const AgentBlogsList = () => {
 
     switch (status) {
       case "approved":
-        return `${baseClasses} bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400`;
+        return `${baseClasses} bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400`;
       case "rejected":
         return `${baseClasses} bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400`;
       default:
@@ -633,7 +633,7 @@ const AgentBlogsList = () => {
                       <span
                         className={`w-1.5 h-1.5 rounded-full mr-1.5 ${
                           blog.status === "approved"
-                            ? "bg-emerald-600 dark:bg-emerald-400"
+                            ? "bg-primary-600 dark:bg-primary-400"
                             : "bg-red-600 dark:bg-red-400"
                         }`}
                       ></span>

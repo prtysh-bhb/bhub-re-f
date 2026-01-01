@@ -43,7 +43,7 @@ const LeadList = () => {
       case "contacted":
         return "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800";
       case "interested":
-        return "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800";
+        return "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-800";
       case "closed":
         return "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800";
       case "lost":
@@ -131,7 +131,7 @@ const LeadList = () => {
                       <span>{lead.property.location}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
-                      <DollarSign size={14} className="text-emerald-500 dark:text-emerald-400" />
+                      <DollarSign size={14} className="text-primary-500 dark:text-primary-400" />
                       <span>${Number(lead.property.price).toLocaleString()}</span>
                     </div>
                   </div>

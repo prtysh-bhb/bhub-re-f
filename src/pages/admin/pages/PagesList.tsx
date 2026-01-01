@@ -71,9 +71,9 @@ const PagesList = () => {
 
     return status === "published" ? (
       <span
-        className={`${baseClasses} bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400`}
+        className={`${baseClasses} bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400`}
       >
-        <span className="w-1.5 h-1.5 rounded-full mr-1.5 bg-emerald-600 dark:bg-emerald-400"></span>
+        <span className="w-1.5 h-1.5 rounded-full mr-1.5 bg-primary-600 dark:bg-primary-400"></span>
         Published
       </span>
     ) : (
@@ -302,7 +302,7 @@ const PagesList = () => {
                             <span
                               className={
                                 page.show_in_footer
-                                  ? "text-emerald-600 dark:text-emerald-400 font-medium"
+                                  ? "text-primary-600 dark:text-primary-400 font-medium"
                                   : "text-gray-400"
                               }
                             >
@@ -420,7 +420,7 @@ const PagesList = () => {
                               <span
                                 className={
                                   page.show_in_footer
-                                    ? "text-emerald-600 dark:text-emerald-400 font-medium"
+                                    ? "text-primary-600 dark:text-primary-400 font-medium"
                                     : "text-gray-400"
                                 }
                               >

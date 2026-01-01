@@ -152,7 +152,7 @@ const RemindersList = () => {
     const priorityConfig = {
       urgent: { color: 'bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400', icon: Zap },
       high: { color: 'bg-amber-100 text-amber-700 dark:bg-amber-700/20 dark:text-amber-400', icon: AlertTriangle },
-      medium: { color: 'bg-blue-100 text-blue-700 dark:bg-blue-700/20 dark:text-blue-400', icon: Clock },
+      medium: { color: 'bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400', icon: Clock },
       low: { color: 'bg-gray-100 text-gray-700 dark:bg-gray-700/20 dark:text-gray-400', icon: Bell }
     };
 
@@ -170,7 +170,7 @@ const RemindersList = () => {
   const getStatusBadge = (status: string) => {
     const statusConfig = {
       pending: { color: 'bg-amber-100 text-amber-700 dark:bg-amber-700/20 dark:text-amber-400', icon: Clock },
-      completed: { color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400', icon: CheckCircle },
+      completed: { color: 'bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400', icon: CheckCircle },
       snoozed: { color: 'bg-purple-100 text-purple-700 dark:bg-purple-700/20 dark:text-purple-400', icon: RefreshCw },
       cancelled: { color: 'bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400', icon: XCircle }
     };
@@ -202,8 +202,8 @@ const RemindersList = () => {
 
   const getTypeColor = (type: string) => {
     const typeColors = {
-      appointment: 'text-blue-600 bg-blue-100 dark:bg-blue-900/30',
-      follow_up: 'text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30',
+      appointment: 'text-primary-600 bg-primary-100 dark:bg-primary-900/30',
+      follow_up: 'text-primary-600 bg-primary-100 dark:bg-primary-900/30',
       property: 'text-purple-600 bg-purple-100 dark:bg-purple-900/30',
       inquiry: 'text-amber-600 bg-amber-100 dark:bg-amber-900/30',
       payment: 'text-red-600 bg-red-100 dark:bg-red-900/30',
@@ -475,7 +475,7 @@ const RemindersList = () => {
                                   <>
                                     <button
                                       onClick={() => openCompletePopup(reminder)}
-                                      className="p-2 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-all hover:scale-110"
+                                      className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110"
                                       title="Mark Complete"
                                     >
                                       <CheckCircle size={18} />
@@ -491,7 +491,7 @@ const RemindersList = () => {
                                 )}
                                 <button
                                   onClick={() => navigate(`/agent/reminders/${reminder.id}/edit`)}
-                                  className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all hover:scale-110"
+                                  className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110"
                                   title="Edit Reminder"
                                 >
                                   <Edit3 size={18} />
@@ -603,13 +603,13 @@ const RemindersList = () => {
                       <div className={`mb-4 p-3 rounded-lg ${
                         isOverdue(reminder.remind_at) && reminder.status === 'pending'
                           ? 'bg-red-100 dark:bg-red-900/30 border border-red-200 dark:border-red-800'
-                          : 'bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800'
+                          : 'bg-primary-50 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800'
                       }`}>
                         <div className="flex items-center justify-between">
                           <span className={`text-sm font-semibold ${
                             isOverdue(reminder.remind_at) && reminder.status === 'pending'
                               ? 'text-red-700 dark:text-red-400'
-                              : 'text-blue-700 dark:text-blue-400'
+                              : 'text-primary-700 dark:text-primary-400'
                           }`}>
                             Due Date
                           </span>
@@ -642,7 +642,7 @@ const RemindersList = () => {
                           <>
                             <button
                               onClick={() => openCompletePopup(reminder)}
-                              className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-all font-medium text-sm"
+                              className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm"
                             >
                               <CheckCircle size={16} />
                               <span>Complete</span>

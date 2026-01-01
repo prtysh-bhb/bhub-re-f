@@ -310,7 +310,7 @@ const ViewProfilePage = () => {
                   className="w-32 h-32 rounded-2xl border-4 border-white dark:border-gray-900 shadow-xl object-cover"
                 />
                 {(user as any).email_verified_at && (
-                  <div className="absolute -bottom-2 -right-2 bg-emerald-500 rounded-full p-1.5 shadow-lg border-2 border-white dark:border-gray-900">
+                  <div className="absolute -bottom-2 -right-2 bg-primary-500 rounded-full p-1.5 shadow-lg border-2 border-white dark:border-gray-900">
                     <CheckCircle2 className="text-white" size={16} />
                   </div>
                 )}
@@ -438,13 +438,13 @@ const ViewProfilePage = () => {
                   {/* Email Verification */}
                   <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                     {(user as any).email_verified_at ? (
-                      <ShieldCheck className="text-emerald-500 mt-0.5" size={18} />
+                      <ShieldCheck className="text-primary-500 mt-0.5" size={18} />
                     ) : (
                       <AlertCircle className="text-amber-500 mt-0.5" size={18} />
                     )}
                     <div className="flex-1">
                       <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Email Verification</p>
-                      <p className={`font-medium ${(user as any).email_verified_at ? "text-emerald-600 dark:text-emerald-400" : "text-amber-600 dark:text-amber-400"}`}>
+                      <p className={`font-medium ${(user as any).email_verified_at ? "text-primary-600 dark:text-primary-400" : "text-amber-600 dark:text-amber-400"}`}>
                         {(user as any).email_verified_at
                           ? `Verified on ${new Date((user as any).email_verified_at).toLocaleDateString()}`
                           : "Not Verified"}
@@ -455,13 +455,13 @@ const ViewProfilePage = () => {
                   {/* Two-Factor Toggle */}
                   <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                     <div className="rounded-md bg-slate-50 dark:bg-slate-900/30">
-                      <ShieldCheck className={`mt-0.5 ${(user as any)['2fa_enabled'] ? "text-emerald-600" : "text-red-700"}`} size={18} />
+                      <ShieldCheck className={`mt-0.5 ${(user as any)['2fa_enabled'] ? "text-primary-600" : "text-red-700"}`} size={18} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between w-full">
                         <div>
                           <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Two-Factor Authentication</p>
-                          <p className={`font-medium ${(user as any)['2fa_enabled'] ? "text-emerald-600 dark:text-emerald-400" : "text-red-700 dark:text-white"}`}>
+                          <p className={`font-medium ${(user as any)['2fa_enabled'] ? "text-primary-600 dark:text-primary-400" : "text-red-700 dark:text-white"}`}>
                             {(user as any)['2fa_enabled'] ? "Enabled" : "Disabled"}
                           </p>
                         </div>

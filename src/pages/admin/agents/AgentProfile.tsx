@@ -112,7 +112,7 @@ const AgentProfilePage = () => {
                       <span
                         className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
                           agent?.two_factor_enabled
-                            ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                            ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
                             : "bg-red-100 dark:bg-gray-700 text-red-700 dark:text-gray-400"
                         }`}
                       >
@@ -156,11 +156,11 @@ const AgentProfilePage = () => {
 
         {/* Property Management Actions */}
         {/* <div className="mt-6 px-4 sm:px-8 md:px-10">
-          <div className="bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-blue-950/20 dark:to-emerald-950/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6">
+          <div className="bg-gradient-to-r from-primary-50 to-primary-50 dark:from-primary-950/20 dark:to-primary-950/20 border border-primary-200 dark:border-primary-800 rounded-2xl p-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex items-center gap-2">
-                  <Building2 className="text-blue-600 dark:text-blue-400" size={20} />
+                  <Building2 className="text-primary-600 dark:text-primary-400" size={20} />
                   Property Management
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -171,14 +171,14 @@ const AgentProfilePage = () => {
                 <Button
                   onClick={() => navigate(`/admin/agents/${id}/properties`)}
                   variant="outline"
-                  className="flex items-center gap-2 border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 cursor-pointer"
+                  className="flex items-center gap-2 border-primary-300 dark:border-primary-700 text-primary-700 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950/30 cursor-pointer"
                 >
                   <Building2 size={18} />
                   <span>View Properties</span>
                 </Button>
                 <Button
                   onClick={() => navigate(`/admin/agents/${id}/properties/new`)}
-                  className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg cursor-pointer"
+                  className="flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-white shadow-md hover:shadow-lg cursor-pointer"
                 >
                   <Plus size={18} />
                   <span>Add Property</span>

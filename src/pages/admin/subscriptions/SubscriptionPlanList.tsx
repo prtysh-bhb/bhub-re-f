@@ -221,7 +221,7 @@ const SubscriptionPlanList = () => {
                     toast.error("Failed to export plans");
                   }
                 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium cursor-pointer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium cursor-pointer"
               >
                 <FileDown size={16} />
                 <span>Export</span>

@@ -263,7 +263,7 @@ const Credit = () => {
   const getStatusBadge = (status: string) => {
     if (status === "active") {
       return (
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300">
           <CheckCircle className="w-3 h-3 mr-1" />
           Active
         </span>
@@ -349,17 +349,17 @@ const Credit = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-4 rounded-xl border border-primary-200 dark:border-primary-800">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                  <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
                     Active Packages
                   </p>
-                  <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                  <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                     {stats.active}
                   </p>
                 </div>
-                <TrendingUp className="text-emerald-600 dark:text-emerald-400 w-8 h-8" />
+                <TrendingUp className="text-primary-600 dark:text-primary-400 w-8 h-8" />
               </div>
             </div>
 
@@ -458,7 +458,7 @@ const Credit = () => {
                     key={pkg.id}
                     className={`bg-white dark:bg-gray-900 rounded-xl border shadow-sm hover:shadow-lg transition-all overflow-hidden group ${
                       pkg.status === "active"
-                        ? "border-emerald-200 dark:border-emerald-800 hover:border-emerald-300 dark:hover:border-emerald-700"
+                        ? "border-primary-200 dark:border-primary-800 hover:border-primary-300 dark:hover:border-primary-700"
                         : "border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700"
                     }`}
                   >
@@ -466,7 +466,7 @@ const Credit = () => {
                     <div
                       className={`p-6 ${
                         pkg.status === "active"
-                          ? "bg-gradient-to-r from-emerald-500 to-emerald-600"
+                          ? "bg-gradient-to-r from-primary-500 to-primary-600"
                           : "bg-gradient-to-r from-gray-500 to-gray-600"
                       }`}
                     >
@@ -835,7 +835,7 @@ const PackageModal = ({
                     value="active"
                     checked={formData.status === "active"}
                     onChange={handleInputChange}
-                    className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300"
+                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
                     disabled={submitting}
                   />
                   <span className="ml-2 text-gray-700 dark:text-gray-300">Active</span>
