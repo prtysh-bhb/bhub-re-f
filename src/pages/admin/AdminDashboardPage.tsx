@@ -274,7 +274,7 @@ const AdminDashboardPage = () => {
 
   return (
     <>
-      <div className="p-6 space-y-6 min-h-screen">
+      <div className="space-y-6">
         {/* Welcome Header - Elegant & Professional */}
         <div className="relative bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 py-6 px-4 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden">
           {/* Decorative gradient overlay */}
