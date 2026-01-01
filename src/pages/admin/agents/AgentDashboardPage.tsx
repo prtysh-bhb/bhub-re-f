@@ -181,49 +181,49 @@ const AgentDashboardPage = () => {
       label: "Sold",
       value: stats?.properties?.sold ?? 0,
       icon: DollarSign,
-      color: "dark:text-violet-300 text-violet-600",
-      bgColor: "dark:from-violet-600 dark:to-purple-600 from-violet-500 to-purple-500",
-      cardGradientLight: "from-violet-50 to-purple-50",
+      color: "dark:text-primary-300 text-primary-600",
+      bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
+      cardGradientLight: "from-primary-50 to-primary-100",
       cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
-      borderColorLight: "border-violet-100",
-      borderColorDark: "dark:border-violet-900/30"
+      borderColorLight: "border-primary-100",
+      borderColorDark: "dark:border-primary-900/30"
     },
     {
       label: "Rented",
       value: stats?.properties?.rented ?? 0,
       icon: Home,
-      color: "dark:text-indigo-300 text-indigo-600",
-      bgColor: "dark:from-indigo-600 dark:to-purple-600 from-indigo-500 to-purple-500",
-      cardGradientLight: "from-indigo-50 to-purple-50",
+      color: "dark:text-primary-300 text-primary-600",
+      bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
+      cardGradientLight: "from-primary-50 to-primary-100",
       cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
-      borderColorLight: "border-indigo-100",
-      borderColorDark: "dark:border-indigo-900/30"
+      borderColorLight: "border-primary-100",
+      borderColorDark: "dark:border-primary-900/30"
     },
   ];
 
   // Inquiry Statistics Cards with vibrant colors (dark mode compatible)
   const inquiryStats = [
-    { 
-      label: "Total Inquiries", 
-      value: stats?.inquiries?.total ?? 0, 
-      icon: MessageCircle, 
-      color: "dark:text-rose-300 text-rose-600", 
-      bgColor: "dark:from-rose-600 dark:to-pink-600 from-rose-500 to-pink-500",
-      cardGradientLight: "from-rose-50 to-pink-50",
+    {
+      label: "Total Inquiries",
+      value: stats?.inquiries?.total ?? 0,
+      icon: MessageCircle,
+      color: "dark:text-primary-300 text-primary-600",
+      bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
+      cardGradientLight: "from-primary-50 to-primary-100",
       cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
-      borderColorLight: "border-rose-100",
-      borderColorDark: "dark:border-rose-900/30"
+      borderColorLight: "border-primary-100",
+      borderColorDark: "dark:border-primary-900/30"
     },
-    { 
-      label: "New Inquiries", 
-      value: stats?.inquiries?.new ?? 0, 
-      icon: Users, 
-      color: "dark:text-fuchsia-300 text-fuchsia-600", 
-      bgColor: "dark:from-fuchsia-600 dark:to-purple-600 from-fuchsia-500 to-purple-500",
-      cardGradientLight: "from-fuchsia-50 to-purple-50",
+    {
+      label: "New Inquiries",
+      value: stats?.inquiries?.new ?? 0,
+      icon: Users,
+      color: "dark:text-primary-300 text-primary-600",
+      bgColor: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
+      cardGradientLight: "from-primary-50 to-primary-100",
       cardGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50",
-      borderColorLight: "border-fuchsia-100",
-      borderColorDark: "dark:border-fuchsia-900/30"
+      borderColorLight: "border-primary-100",
+      borderColorDark: "dark:border-primary-900/30"
     },
     { 
       label: "Contacted", 
@@ -261,10 +261,10 @@ const AgentDashboardPage = () => {
         bgColor: 'dark:bg-amber-900/40 bg-amber-100', 
         gradient: 'dark:from-amber-900/40 dark:to-amber-800/30 from-amber-100 to-amber-50' 
       },
-      sold: { 
-        color: 'dark:text-violet-300 text-violet-700', 
-        bgColor: 'dark:bg-violet-900/40 bg-violet-100', 
-        gradient: 'dark:from-violet-900/40 dark:to-violet-800/30 from-violet-100 to-violet-50' 
+      sold: {
+        color: 'dark:text-primary-300 text-primary-700',
+        bgColor: 'dark:bg-primary-900/40 bg-primary-100',
+        gradient: 'dark:from-primary-900/40 dark:to-primary-800/30 from-primary-100 to-primary-50'
       },
       rented: {
         color: 'dark:text-primary-300 text-primary-700',
@@ -419,8 +419,8 @@ const AgentDashboardPage = () => {
               value: stats?.inquiries.total ?
                 Math.round((stats.inquiries.closed / stats.inquiries.total) * 100) : 0,
               icon: Award,
-              gradient: "dark:from-violet-600 dark:to-purple-600 from-violet-500 to-purple-500",
-              bgGradientLight: "from-violet-50 to-purple-50",
+              gradient: "dark:from-primary-600 dark:to-primary-700 from-primary-500 to-primary-600",
+              bgGradientLight: "from-primary-50 to-primary-100",
               bgGradientDark: "dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50"
             },
           ].map((stat, index) => {
@@ -476,7 +476,7 @@ const AgentDashboardPage = () => {
           {/* Inquiry Statistics */}
           <div className="space-y-6 mt-10">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg">
+              <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-lg">
                 <MessageCircle className="w-5 h-5 text-white" />
               </div>
               <h2 className="dark:text-white text-gray-900 text-3xl font-bold">Inquiry Statistics</h2>
@@ -628,7 +628,7 @@ const AgentDashboardPage = () => {
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg">
+                  <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-lg">
                     <MessageCircle className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="dark:text-white text-gray-900 text-xl font-bold">Recent Inquiries</h3>
@@ -636,9 +636,9 @@ const AgentDashboardPage = () => {
               </div>
               <div className="space-y-4">
                 {recentInquiries.map((inquiry) => (
-                  <div 
-                    key={inquiry.id} 
-                    className="dark:bg-gradient-to-br dark:from-gray-800/50 dark:to-rose-900/20 bg-gradient-to-br from-white to-rose-50/50 dark:border-rose-800/50 border-rose-100 border rounded-xl p-4 hover:shadow-lg dark:hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 group"
+                  <div
+                    key={inquiry.id}
+                    className="dark:bg-gradient-to-br dark:from-gray-800/50 dark:to-primary-900/20 bg-gradient-to-br from-white to-primary-50/50 dark:border-primary-800/50 border-primary-100 border rounded-xl p-4 hover:shadow-lg dark:hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 group"
                   >
                     <Link to={'/agent/leads/'+inquiry.id}>
                       <div className="flex items-start justify-between">
