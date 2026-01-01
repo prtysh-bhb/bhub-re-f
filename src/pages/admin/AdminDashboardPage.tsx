@@ -274,9 +274,9 @@ const AdminDashboardPage = () => {
 
   return (
     <>
-      <div className="p-6 space-y-6 bg-gradient-to-br from-neutral-50 via-neutral-100/30 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950 min-h-screen">
+      <div className="p-6 space-y-6 bg-gradient-to-br from-neutral-50 via-primary-50/10 to-neutral-50 dark:from-neutral-950 dark:via-primary-950/5 dark:to-neutral-950 min-h-screen">
         {/* Welcome Header - Elegant & Professional */}
-        <div className="relative bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 py-10 px-8 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-white via-primary-50/20 to-primary-100/40 dark:from-neutral-900 dark:via-primary-950/20 dark:to-primary-900/30 py-10 px-8 rounded-2xl border border-primary-200/60 dark:border-primary-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden">
           {/* Decorative gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent opacity-50"></div>
 
@@ -313,7 +313,7 @@ const AdminDashboardPage = () => {
             return (
               <div
                 key={stat.label}
-                className="group relative bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 border border-neutral-200/60 dark:border-neutral-800/60 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300"
+                className="group relative bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 rounded-2xl p-6 shadow-lg shadow-primary-100/20 dark:shadow-black/20 border border-primary-200/40 dark:border-primary-800/40 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300"
               >
                 {/* Background gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 via-primary-50/0 to-primary-100/20 dark:from-primary-950/0 dark:via-primary-950/0 dark:to-primary-900/10 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
@@ -346,7 +346,7 @@ const AdminDashboardPage = () => {
         {/* Detailed Statistics Grid - Elegant Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* User Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
@@ -377,7 +377,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Property Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
@@ -408,7 +408,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Inquiry Statistics */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
@@ -442,7 +442,7 @@ const AdminDashboardPage = () => {
         {/* Recent Activity & Pending Approvals */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Users */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3.5">
@@ -486,7 +486,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Recent Properties */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3.5">
@@ -527,7 +527,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Pending Approvals */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3.5">
@@ -568,7 +568,7 @@ const AdminDashboardPage = () => {
         {/* Top Performers */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Top Agents by Properties */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
@@ -613,7 +613,7 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Top Agents by Inquiries */}
-          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
@@ -659,7 +659,7 @@ const AdminDashboardPage = () => {
         </div>
 
         {/* Property Types Distribution */}
-        <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+        <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
