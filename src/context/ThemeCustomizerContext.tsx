@@ -77,21 +77,21 @@ function applyThemeToDOM(config: ThemeConfig) {
     root.classList.toggle('dark', config.theming.themeMode === 'dark');
   }
 
-  // 2. Primary Color (CSS variable)
-  root.style.setProperty('--color-primary-custom', config.theming.primaryColor);
-
+  // 2. Primary Color (CSS variables for Tailwind v4)
   // Convert primary color to RGB and create shades
   const baseRgb = hexToRgb(config.theming.primaryColor);
-  root.style.setProperty('--color-primary-50', adjustColor(baseRgb, 95));
-  root.style.setProperty('--color-primary-100', adjustColor(baseRgb, 90));
-  root.style.setProperty('--color-primary-200', adjustColor(baseRgb, 75));
-  root.style.setProperty('--color-primary-300', adjustColor(baseRgb, 60));
-  root.style.setProperty('--color-primary-400', adjustColor(baseRgb, 40));
-  root.style.setProperty('--color-primary-500', baseRgb);
-  root.style.setProperty('--color-primary-600', adjustColor(baseRgb, -10));
-  root.style.setProperty('--color-primary-700', adjustColor(baseRgb, -25));
-  root.style.setProperty('--color-primary-800', adjustColor(baseRgb, -40));
-  root.style.setProperty('--color-primary-900', adjustColor(baseRgb, -60));
+
+  // Set dynamic CSS variables that feed into @theme directive
+  root.style.setProperty('--dynamic-primary-50', adjustColor(baseRgb, 95));
+  root.style.setProperty('--dynamic-primary-100', adjustColor(baseRgb, 90));
+  root.style.setProperty('--dynamic-primary-200', adjustColor(baseRgb, 75));
+  root.style.setProperty('--dynamic-primary-300', adjustColor(baseRgb, 60));
+  root.style.setProperty('--dynamic-primary-400', adjustColor(baseRgb, 40));
+  root.style.setProperty('--dynamic-primary-500', baseRgb);
+  root.style.setProperty('--dynamic-primary-600', adjustColor(baseRgb, -10));
+  root.style.setProperty('--dynamic-primary-700', adjustColor(baseRgb, -25));
+  root.style.setProperty('--dynamic-primary-800', adjustColor(baseRgb, -40));
+  root.style.setProperty('--dynamic-primary-900', adjustColor(baseRgb, -60));
 
   // 3. Skin (bordered adds borders to cards)
   root.classList.toggle('skin-bordered', config.theming.skin === 'bordered');

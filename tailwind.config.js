@@ -5,21 +5,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Premium Real Estate Color Palette - Sophisticated & Elegant
-        // Uses CSS custom properties for dynamic theming
-        primary: {
-          50: "rgb(var(--color-primary-50, 240 244 255) / <alpha-value>)",
-          100: "rgb(var(--color-primary-100, 224 233 255) / <alpha-value>)",
-          200: "rgb(var(--color-primary-200, 199 214 254) / <alpha-value>)",
-          300: "rgb(var(--color-primary-300, 165 184 252) / <alpha-value>)",
-          400: "rgb(var(--color-primary-400, 129 140 248) / <alpha-value>)",
-          500: "rgb(var(--color-primary-500, 99 102 241) / <alpha-value>)",
-          600: "rgb(var(--color-primary-600, 79 70 229) / <alpha-value>)",
-          700: "rgb(var(--color-primary-700, 67 56 202) / <alpha-value>)",
-          800: "rgb(var(--color-primary-800, 55 48 163) / <alpha-value>)",
-          900: "rgb(var(--color-primary-900, 49 46 129) / <alpha-value>)",
-          950: "#1e1b4b",
-        },
+        // Primary colors are defined in index.css using @theme directive
+        // This allows for dynamic runtime theming with CSS variables
+
         neutral: {
           50: "#fafafa",
           100: "#f5f5f5",
