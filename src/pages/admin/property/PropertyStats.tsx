@@ -32,7 +32,7 @@ const PropertyStats = () => {
     <>
         <div className="flex justify-center items-center min-h-[70vh]">
           <div className="text-center space-y-4">
-            <Loader2 className="w-16 h-16 text-blue-600 dark:text-emerald-400 animate-spin mx-auto" />
+            <Loader2 className="w-16 h-16 text-primary dark:text-primary animate-spin mx-auto" />
             <p className="text-gray-500 dark:text-gray-400">Loading statistics...</p>
           </div>
         </div>
@@ -54,9 +54,9 @@ const PropertyStats = () => {
       label: "Total Properties",
       value: stats.total,
       icon: Building2,
-      bgColor: "bg-blue-500/10 dark:bg-blue-500/20",
-      iconColor: "text-blue-600 dark:text-blue-400",
-      borderColor: "border-blue-200 dark:border-blue-800",
+      bgColor: "bg-primary/10 dark:bg-primary/20",
+      iconColor: "text-primary dark:text-primary",
+      borderColor: "border-primary/20 dark:border-primary/30",
       change: "+12%",
       trend: "up",
     },
@@ -64,9 +64,9 @@ const PropertyStats = () => {
       label: "Published",
       value: stats.published,
       icon: CheckCircle2,
-      bgColor: "bg-emerald-500/10 dark:bg-emerald-500/20",
-      iconColor: "text-emerald-600 dark:text-emerald-400",
-      borderColor: "border-emerald-200 dark:border-emerald-800",
+      bgColor: "bg-primary/10 dark:bg-primary/20",
+      iconColor: "text-primary dark:text-primary",
+      borderColor: "border-primary/20 dark:border-primary/30",
       change: "+8%",
       trend: "up",
     },
@@ -84,9 +84,9 @@ const PropertyStats = () => {
       label: "Approved",
       value: stats.approved,
       icon: TrendingUp,
-      bgColor: "bg-teal-500/10 dark:bg-teal-500/20",
-      iconColor: "text-teal-600 dark:text-teal-400",
-      borderColor: "border-teal-200 dark:border-teal-800",
+      bgColor: "bg-primary/10 dark:bg-primary/20",
+      iconColor: "text-primary dark:text-primary",
+      borderColor: "border-primary/20 dark:border-primary/30",
       change: "+15%",
       trend: "up",
     },
@@ -126,14 +126,14 @@ const PropertyStats = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3 mr-auto">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary to-primary-600 rounded-xl shadow-md">
                 <Building2 className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   Property Statistics
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -141,8 +141,8 @@ const PropertyStats = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-blue-950/30 dark:to-emerald-950/30 rounded-lg border border-blue-100 dark:border-emerald-900/50">
-              <BarChart3 className="text-blue-600 dark:text-emerald-400" size={16} />
+            <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-lg border border-primary/20 dark:border-primary/30">
+              <BarChart3 className="text-primary dark:text-primary" size={16} />
               <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">
                 Live Stats
               </span>
@@ -157,7 +157,7 @@ const PropertyStats = () => {
             return (
               <Card
                 key={item.label}
-                className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group overflow-hidden"
+                className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/40 transition-all group overflow-hidden"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
@@ -169,7 +169,7 @@ const PropertyStats = () => {
                     <div
                       className={`flex items-center gap-0.5 text-xs font-semibold ${
                         item.trend === "up"
-                          ? "text-emerald-600 dark:text-emerald-500"
+                          ? "text-green-600 dark:text-green-500"
                           : "text-red-600 dark:text-red-500"
                       }`}
                     >
@@ -197,11 +197,11 @@ const PropertyStats = () => {
         </div>
 
         {/* Summary Card */}
-        <Card className="bg-gradient-to-br from-blue-50 to-emerald-50 dark:from-blue-950/20 dark:to-emerald-950/20 border border-blue-100 dark:border-blue-900/50">
+        <Card className="bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/20 border border-primary/20 dark:border-primary/30 shadow-lg">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md">
-                <TrendingUp className="text-blue-600 dark:text-emerald-400" size={24} />
+                <TrendingUp className="text-primary dark:text-primary" size={24} />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">

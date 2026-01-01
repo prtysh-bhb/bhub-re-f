@@ -233,11 +233,11 @@ const AddProperty = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl shadow-lg dark:shadow-black/30">
+            <div className="p-3 bg-primary rounded-xl shadow-lg">
               <HousePlus className="text-white" size={24} />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold dark:text-white text-gray-800">
+              <h1 className="text-2xl md:text-3xl font-bold text-primary">
                 Add New Property
               </h1>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
@@ -246,24 +246,24 @@ const AddProperty = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 px-4 py-2.5 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
-            <CheckCircle2 className="text-blue-600 dark:text-blue-400" size={18} />
-            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
+          <div className="flex items-center gap-3 px-4 py-2.5 bg-primary/10 rounded-xl border border-primary/20">
+            <CheckCircle2 className="text-primary" size={18} />
+            <span className="text-sm font-medium text-primary">
               All fields are required
             </span>
           </div>
         </div>
 
         {/* Form Container */}
-        <div className="dark:bg-gray-800/50 bg-white rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30 p-6 md:p-8">
+        <div className="dark:bg-gray-800/50 bg-white rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-xl p-6 md:p-8">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* ---------- Property Info Section ---------- */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                <div className="p-2 bg-primary rounded-lg shadow-md">
                   <Home className="text-white" size={20} />
                 </div>
-                <h3 className="text-xl font-bold dark:text-white text-gray-800">
+                <h3 className="text-xl font-bold text-primary">
                   Property Information
                 </h3>
               </div>
@@ -501,10 +501,10 @@ const AddProperty = () => {
             {/* Amenities - Dark Mode */}
             <div className="mt-6 mb-12">
               <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                <div className="p-2 bg-primary rounded-lg shadow-md">
                   <HouseWifi className="text-white" size={20} />
                 </div>
-                <h3 className="text-xl font-bold dark:text-white text-gray-800">Amenities</h3>
+                <h3 className="text-xl font-bold text-primary">Amenities</h3>
               </div>
 
               <div
@@ -546,10 +546,10 @@ const AddProperty = () => {
                 transition-all
                 duration-200
                 cursor-pointer
-                hover:border-blue-500 dark:hover:border-blue-500
-                checked:bg-blue-600
-                checked:border-blue-600
-                checked:hover:bg-blue-700
+                hover:border-primary
+                checked:bg-primary
+                checked:border-primary
+                checked:hover:bg-primary/90
               "
                         />
                         {/* Check icon */}
@@ -593,10 +593,10 @@ const AddProperty = () => {
                 {/* Images Upload */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-gradient-to-br from-emerald-500 to-green-500 rounded-lg">
+                    <div className="p-2 bg-primary rounded-lg shadow-md">
                       <FileImage className="text-white" size={20} />
                     </div>
-                    <h3 className="text-xl font-bold dark:text-white text-gray-800">
+                    <h3 className="text-xl font-bold text-primary">
                       Property Images
                     </h3>
                   </div>
@@ -605,7 +605,7 @@ const AddProperty = () => {
                     className={`border-2 border-dashed rounded-xl p-6 text-center transition-colors ${
                       errors.images
                         ? "border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/10"
-                        : "dark:border-gray-600 border-gray-300 hover:border-blue-500 dark:hover:border-emerald-500"
+                        : "dark:border-gray-600 border-gray-300 hover:border-primary"
                     }`}
                   >
                     <div className="flex flex-col items-center">
@@ -617,7 +617,7 @@ const AddProperty = () => {
                         JPG, PNG up to 5MB each (max 10 images)
                       </p>
                       <label className="cursor-pointer">
-                        <div className="px-4 py-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg text-sm font-medium transition-all">
+                        <div className="px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-medium transition-all shadow-md hover:shadow-lg">
                           Choose Images
                         </div>
                         <input
@@ -670,10 +670,10 @@ const AddProperty = () => {
                 {/* Video Upload */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg">
+                    <div className="p-2 bg-primary rounded-lg shadow-md">
                       <Video className="text-white" size={20} />
                     </div>
-                    <h3 className="text-xl font-bold dark:text-white text-gray-800">
+                    <h3 className="text-xl font-bold text-primary">
                       Property Video
                     </h3>
                   </div>
@@ -682,7 +682,7 @@ const AddProperty = () => {
                     className={`border-2 border-dashed rounded-xl p-6 text-center transition-colors ${
                       errors.video
                         ? "border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/10"
-                        : "dark:border-gray-600 border-gray-300 hover:border-blue-500 dark:hover:border-emerald-500"
+                        : "dark:border-gray-600 border-gray-300 hover:border-primary"
                     }`}
                   >
                     <div className="flex flex-col items-center">
@@ -694,7 +694,7 @@ const AddProperty = () => {
                         MP4 format up to 50MB
                       </p>
                       <label className="cursor-pointer">
-                        <div className="px-4 py-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg text-sm font-medium transition-all">
+                        <div className="px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-medium transition-all shadow-md hover:shadow-lg">
                           Choose Video
                         </div>
                         <input
@@ -717,10 +717,10 @@ const AddProperty = () => {
 
                   {/* Selected Video Preview */}
                   {selectedVideo && (
-                    <div className="mt-4 p-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <Video className="text-blue-500 dark:text-blue-400" size={20} />
+                          <Video className="text-primary" size={20} />
                           <div>
                             <p className="text-sm font-medium dark:text-white text-gray-700">
                               {selectedVideo.name}
@@ -750,10 +750,10 @@ const AddProperty = () => {
             {/* ---------- Location Section ---------- */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                <div className="p-2 bg-primary rounded-lg shadow-md">
                   <MapPin className="text-white" size={20} />
                 </div>
-                <h3 className="text-xl font-bold dark:text-white text-gray-800">
+                <h3 className="text-xl font-bold text-primary">
                   Location Details
                 </h3>
               </div>
@@ -797,10 +797,10 @@ const AddProperty = () => {
             {/* ---------- Status Section ---------- */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg">
+                <div className="p-2 bg-primary rounded-lg shadow-md">
                   <Home className="text-white" size={20} />
                 </div>
-                <h3 className="text-xl font-bold dark:text-white text-gray-800">Status & Type</h3>
+                <h3 className="text-xl font-bold text-primary">Status & Type</h3>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -866,7 +866,7 @@ const AddProperty = () => {
               <Button
                 type="submit"
                 disabled={loading}
-                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all font-medium text-base"
+                className="px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl shadow-lg hover:shadow-xl transition-all font-medium text-base"
               >
                 {loading ? (
                   <span className="flex items-center gap-2">

@@ -241,7 +241,7 @@ const AgentCommentsList = () => {
   const getStatusBadge = (isApproved: boolean) => {
     if (isApproved) {
       return (
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
           <CheckCircle className="w-3 h-3 mr-1" />
           Approved
         </span>
@@ -279,7 +279,7 @@ const AgentCommentsList = () => {
     <>
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-4">
-            <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500">Loading blogs...</p>
           </div>
         </div>
@@ -291,14 +291,14 @@ const AgentCommentsList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary to-primary-600 rounded-xl shadow-md">
                 <MessageSquare className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   My Blog Comments
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -334,8 +334,8 @@ const AgentCommentsList = () => {
                   onClick={() => setSelectedBlog(blog)}
                   className={`p-4 rounded-xl border transition-all ${
                     selectedBlog?.id === blog.id
-                      ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20"
-                      : "border-gray-200 dark:border-gray-800 hover:border-blue-300 dark:hover:border-blue-700"
+                      ? "border-primary bg-primary/10 dark:bg-primary/20"
+                      : "border-gray-200 dark:border-gray-800 hover:border-primary/30 dark:hover:border-primary/40"
                   }`}
                 >
                   <div className="flex items-start gap-3">
@@ -369,35 +369,35 @@ const AgentCommentsList = () => {
         {/* Selected Blog Stats */}
         {selectedBlog && (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div className="bg-gradient-to-r from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/20 p-4 rounded-xl border border-primary/20 dark:border-primary/30 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                  <p className="text-sm font-medium text-primary dark:text-primary">
                     Selected Blog
                   </p>
-                  <p className="text-lg font-bold text-blue-900 dark:text-blue-100 mt-1 line-clamp-2">
+                  <p className="text-lg font-bold text-gray-900 dark:text-white mt-1 line-clamp-2">
                     {selectedBlog.title}
                   </p>
                 </div>
-                <ExternalLink className="text-blue-600 dark:text-blue-400 w-8 h-8" />
+                <ExternalLink className="text-primary dark:text-primary w-8 h-8" />
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <div className="bg-gradient-to-r from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/20 p-4 rounded-xl border border-primary/20 dark:border-primary/30 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                  <p className="text-sm font-medium text-primary dark:text-primary">
                     Total Comments
                   </p>
-                  <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                     {getBlogStats().total}
                   </p>
                 </div>
-                <MessageSquare className="text-emerald-600 dark:text-emerald-400 w-8 h-8" />
+                <MessageSquare className="text-primary dark:text-primary w-8 h-8" />
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20 p-4 rounded-xl border border-amber-200 dark:border-amber-800">
+            <div className="bg-gradient-to-r from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20 p-4 rounded-xl border border-amber-200 dark:border-amber-800 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-amber-700 dark:text-amber-300">
@@ -411,7 +411,7 @@ const AgentCommentsList = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-4 rounded-xl border border-red-200 dark:border-red-800">
+            <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-4 rounded-xl border border-red-200 dark:border-red-800 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-red-700 dark:text-red-300">
@@ -442,7 +442,7 @@ const AgentCommentsList = () => {
                       placeholder="Search comments..."
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                   </div>
 
@@ -450,7 +450,7 @@ const AgentCommentsList = () => {
                   <select
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
-                    className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
                   >
                     <option value="all">All Comments</option>
                     <option value="approved">Approved Only</option>
@@ -462,7 +462,7 @@ const AgentCommentsList = () => {
                   <div className="flex flex-wrap gap-2">
                     <button
                       onClick={handleBulkApprove}
-                      className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
+                      className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
                     >
                       <CheckCircle className="w-4 h-4" />
                       Approve ({selectedComments.length})
@@ -496,7 +496,7 @@ const AgentCommentsList = () => {
             {loadingComments && (
               <div className="flex items-center justify-center py-20">
                 <div className="text-center space-y-4">
-                  <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                  <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
                   <p className="text-gray-500">Loading comments...</p>
                 </div>
               </div>
@@ -534,7 +534,7 @@ const AgentCommentsList = () => {
                               type="checkbox"
                               checked={selectedComments.length === filteredComments.length && filteredComments.length > 0}
                               onChange={handleSelectAll}
-                              className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                              className="rounded border-gray-300 text-primary focus:ring-primary"
                             />
                           </th>
                           <th className="py-4 px-6 text-left font-semibold">Comment & User</th>
@@ -569,12 +569,12 @@ const AgentCommentsList = () => {
                                   type="checkbox"
                                   checked={selectedComments.includes(comment.id)}
                                   onChange={() => handleSelectComment(comment.id)}
-                                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                  className="rounded border-gray-300 text-primary focus:ring-primary"
                                 />
                               </td>
                               <td className="py-4 px-6">
                                 <div className="flex items-start gap-3">
-                                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                                  <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                                     {comment.user?.avatar_url ?  (
                                       <img
                                         src={comment.user.avatar_url}
@@ -614,7 +614,7 @@ const AgentCommentsList = () => {
                                   {!comment.is_approved ? (
                                     <button
                                       onClick={() => handleApproveComment(comment)}
-                                      className="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors text-sm font-medium flex items-center gap-1"
+                                      className="px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors text-sm font-medium flex items-center gap-1"
                                     >
                                       <CheckCircle className="w-3 h-3" />
                                       Approve
@@ -674,9 +674,9 @@ const AgentCommentsList = () => {
                               type="checkbox"
                               checked={selectedComments.includes(comment.id)}
                               onChange={() => handleSelectComment(comment.id)}
-                              className="rounded border-gray-300 text-blue-600 focus:ring-blue-500 mt-1"
+                              className="rounded border-gray-300 text-primary focus:ring-primary mt-1"
                             />
-                            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
+                            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-600 rounded-full flex items-center justify-center text-white font-bold">
                               {comment.user?.avatar_url? (
                                 <img
                                   src={comment.user.avatar_url}
@@ -710,7 +710,7 @@ const AgentCommentsList = () => {
                             {!comment.is_approved ? (
                               <button
                                 onClick={() => handleApproveComment(comment)}
-                                className="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors text-sm font-medium flex items-center gap-1"
+                                className="px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors text-sm font-medium flex items-center gap-1"
                               >
                                 <CheckCircle className="w-3 h-3" />
                                 Approve
@@ -776,7 +776,7 @@ const AgentCommentsList = () => {
                               onClick={() => handlePageChange(pageNumber)}
                               className={`px-3 py-1 rounded-lg text-sm font-medium ${
                                 currentPage === pageNumber
-                                  ? "bg-blue-600 text-white"
+                                  ? "bg-primary text-white"
                                   : "border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                               }`}
                             >

@@ -32,12 +32,12 @@ const stages = [
 ];
 
 const stageColors: Record<string, string> = {
-  new: "bg-blue-100 text-blue-700",
-  contacted: "bg-yellow-100 text-yellow-700",
-  qualified: "bg-teal-100 text-teal-700",
-  negotiation: "bg-orange-100 text-orange-700",
-  closed_won: "bg-green-100 text-green-700",
-  closed_lost: "bg-red-100 text-red-700",
+  new: "bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400",
+  contacted: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
+  qualified: "bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400",
+  negotiation: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400",
+  closed_won: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
+  closed_lost: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
 };
 
 const ViewLead = () => {
@@ -125,7 +125,7 @@ const ViewLead = () => {
         <div className="flex items-center mb-2">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:underline hover:translate-x-[-2px] transition-transform cursor-pointer"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-400 font-medium hover:underline hover:translate-x-[-2px] transition-transform cursor-pointer"
           >
             <ArrowLeft size={18} /> Back
           </button>
@@ -134,9 +134,9 @@ const ViewLead = () => {
         {/* Top Section - Lead Info */}
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Lead Card */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-100 dark:border-gray-700 p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300">
+              <div className="p-3 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-300">
                 <User size={22} />
               </div>
               <div>
@@ -152,19 +152,19 @@ const ViewLead = () => {
 
             <div className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
               <p className="flex items-center gap-2">
-                <Mail size={16} className="text-indigo-500" />
+                <Mail size={16} className="text-primary-500" />
                 {lead?.customer_email || "No email"}
               </p>
               <p className="flex items-center gap-2">
-                <Phone size={16} className="text-green-500" />
+                <Phone size={16} className="text-primary-500" />
                 {lead?.customer_phone || "No phone"}
               </p>
               <p className="flex items-center gap-2">
-                <MapPin size={16} className="text-pink-500" />
+                <MapPin size={16} className="text-primary-500" />
                 {lead?.property?.location || "No location"}
               </p>
               <p className="flex items-center gap-2">
-                <Home size={16} className="text-gray-500" />
+                <Home size={16} className="text-primary-500" />
                 {lead?.property?.title || "No property linked"}
               </p>
             </div>
@@ -181,7 +181,7 @@ const ViewLead = () => {
               {/* New button: Create appointment for this lead */}
               <Button
                 onClick={openCreateAppointment}
-                className="ml-3 bg-gradient-to-r from-blue-600 to-emerald-600 text-white"
+                className="ml-3 bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg transition-all"
               >
                 Create Appointment
               </Button>
@@ -189,7 +189,7 @@ const ViewLead = () => {
           </div>
 
           {/* Actions Card */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-100 dark:border-gray-700 p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-6">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-3">
               Update Lead
             </h3>
@@ -201,7 +201,7 @@ const ViewLead = () => {
             <select
               value={lead?.stage || ""}
               onChange={handleStageChange}
-              className="border border-gray-300 cursor-pointer dark:border-gray-600 rounded-md p-2 text-sm w-full bg-gray-50 dark:bg-gray-700 dark:text-gray-100 mb-5 focus:ring-2 focus:ring-indigo-400"
+              className="border border-gray-300 cursor-pointer dark:border-gray-600 rounded-md p-2 text-sm w-full bg-gray-50 dark:bg-gray-700 dark:text-gray-100 mb-5 focus:ring-2 focus:ring-primary-400"
             >
               {stages.map((s) => (
                 <option key={s} value={s}>
@@ -215,7 +215,7 @@ const ViewLead = () => {
               Add a Note
             </label>
             <textarea
-              className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-3 text-sm bg-gray-50 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-400"
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-3 text-sm bg-gray-50 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-primary-400"
               placeholder="Add a note..."
               rows={3}
               value={note}
@@ -224,7 +224,7 @@ const ViewLead = () => {
             <Button
               onClick={handleAddNote}
               disabled={updating}
-              className="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2 cursor-pointer"
+              className="mt-3 w-full bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               {updating ? <Loader2 className="animate-spin mr-2" /> : <Send size={16} />}
               Add Note
@@ -233,7 +233,7 @@ const ViewLead = () => {
         </div>
 
         {/* Lead History */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-100 dark:border-gray-700 p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-6">
           <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">
             Lead History
           </h2>
@@ -243,12 +243,12 @@ const ViewLead = () => {
           ) : (
             <div className="space-y-5">
               {history.map((h, i) => (
-                <div key={i} className="relative border-l-4 border-indigo-500 pl-4 pb-2">
+                <div key={i} className="relative border-l-4 border-primary-500 pl-4 pb-2">
                   <div className="flex justify-between items-center mb-1">
                     <span className="text-sm text-gray-600 dark:text-gray-300">
                       <Clock size={14} className="inline mr-1" /> {new Date(h.changed_at).toLocaleString()}
                     </span>
-                    <span className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                    <span className="text-sm font-medium text-primary-600 dark:text-primary-400">
                       {h.from_stage?.toUpperCase()} → {h.to_stage?.toUpperCase()}
                     </span>
                   </div>

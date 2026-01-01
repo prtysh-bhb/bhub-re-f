@@ -68,9 +68,9 @@ const AIChatLeadsDashboard = () => {
 
   // Status options
   const statusOptions: { value: AIChatLeadStatus; label: string; color: string; bgColor: string; icon: React.ReactNode }[] = [
-    { value: "new", label: "New", color: "text-blue-700", bgColor: "bg-blue-100", icon: <Clock className="w-4 h-4" /> },
+    { value: "new", label: "New", color: "text-primary", bgColor: "bg-primary/10", icon: <Clock className="w-4 h-4" /> },
     { value: "contacted", label: "Contacted", color: "text-purple-700", bgColor: "bg-purple-100", icon: <Phone className="w-4 h-4" /> },
-    { value: "qualified", label: "Qualified", color: "text-emerald-700", bgColor: "bg-emerald-100", icon: <UserCheck className="w-4 h-4" /> },
+    { value: "qualified", label: "Qualified", color: "text-primary", bgColor: "bg-primary/10", icon: <UserCheck className="w-4 h-4" /> },
     { value: "converted", label: "Converted", color: "text-green-700", bgColor: "bg-green-100", icon: <CheckCircle className="w-4 h-4" /> },
     { value: "lost", label: "Lost", color: "text-red-700", bgColor: "bg-red-100", icon: <UserX className="w-4 h-4" /> },
   ];
@@ -284,7 +284,7 @@ const AIChatLeadsDashboard = () => {
 
   // Get lead score color
   const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-emerald-600 bg-emerald-100";
+    if (score >= 80) return "text-primary bg-primary/10";
     if (score >= 60) return "text-amber-600 bg-amber-100";
     if (score >= 40) return "text-orange-600 bg-orange-100";
     return "text-red-600 bg-red-100";
@@ -313,7 +313,7 @@ const AIChatLeadsDashboard = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white">
+        <div className="bg-gradient-to-r from-primary to-primary-600 rounded-2xl p-6 text-white shadow-lg">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-white/20 rounded-xl backdrop-blur-sm">
@@ -321,7 +321,7 @@ const AIChatLeadsDashboard = () => {
               </div>
               <div>
                 <h1 className="text-2xl font-bold">AI Chat Leads</h1>
-                <p className="text-blue-100">Manage leads generated from AI chat conversations</p>
+                <p className="text-white/80">Manage leads generated from AI chat conversations</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -338,31 +338,31 @@ const AIChatLeadsDashboard = () => {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
-          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Total Leads</p>
                 <p className="text-2xl font-bold text-gray-900">{totalLeads}</p>
               </div>
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <Users className="w-5 h-5 text-blue-600" />
+              <div className="p-2 bg-primary/10 rounded-lg">
+                <Users className="w-5 h-5 text-primary" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">New</p>
                 <p className="text-2xl font-bold text-gray-900">{stats.new}</p>
               </div>
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <Clock className="w-5 h-5 text-blue-600" />
+              <div className="p-2 bg-primary/10 rounded-lg">
+                <Clock className="w-5 h-5 text-primary" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Contacted</p>
@@ -374,19 +374,19 @@ const AIChatLeadsDashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Qualified</p>
                 <p className="text-2xl font-bold text-gray-900">{stats.qualified}</p>
               </div>
-              <div className="p-2 bg-emerald-100 rounded-lg">
-                <UserCheck className="w-5 h-5 text-emerald-600" />
+              <div className="p-2 bg-primary/10 rounded-lg">
+                <UserCheck className="w-5 h-5 text-primary" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Converted</p>
@@ -398,7 +398,7 @@ const AIChatLeadsDashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Lost</p>
@@ -422,7 +422,7 @@ const AIChatLeadsDashboard = () => {
                   value={searchTerm}
                   onChange={handleSearchChange}
                   placeholder="Search leads by name, email, conversation ID, or status..."
-                  className="w-full pl-10 pr-10 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full pl-10 pr-10 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
                 />
                 {searchTerm && (
                   <button
@@ -435,7 +435,7 @@ const AIChatLeadsDashboard = () => {
                 )}
                 {searchLoading && (
                   <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                    <Loader2 className="w-4 h-4 animate-spin text-blue-500" />
+                    <Loader2 className="w-4 h-4 animate-spin text-primary" />
                   </div>
                 )}
               </form>
@@ -473,7 +473,7 @@ const AIChatLeadsDashboard = () => {
                   <select
                     value={filters.status}
                     onChange={(e) => handleFilterChange("status", e.target.value)}
-                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
                   >
                     <option value="">All Status</option>
                     {statusOptions.map((option) => (
@@ -496,7 +496,7 @@ const AIChatLeadsDashboard = () => {
                     value={filters.minScore}
                     onChange={(e) => handleFilterChange("minScore", e.target.value)}
                     placeholder="0-100"
-                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
                   />
                 </div>
 
@@ -509,7 +509,7 @@ const AIChatLeadsDashboard = () => {
                     <select
                       value={filters.sortBy}
                       onChange={(e) => handleFilterChange("sortBy", e.target.value as any)}
-                      className="flex-1 px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                      className="flex-1 px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
                     >
                       <option value="created_at">Created Date</option>
                       <option value="lead_score">Lead Score</option>
@@ -533,7 +533,7 @@ const AIChatLeadsDashboard = () => {
                 </button>
                 <button
                   onClick={applyFilters}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-600 transition-colors"
                 >
                   Apply Filters
                 </button>
@@ -558,7 +558,7 @@ const AIChatLeadsDashboard = () => {
           {loading ? (
             <div className="flex items-center justify-center py-12">
               <div className="text-center">
-                <Loader2 className="w-8 h-8 animate-spin text-blue-600 mx-auto mb-4" />
+                <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto mb-4" />
                 <p className="text-gray-600">Loading leads...</p>
               </div>
             </div>
@@ -576,7 +576,7 @@ const AIChatLeadsDashboard = () => {
               {searchTerm && (
                 <button
                   onClick={clearSearch}
-                  className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-600 transition-colors"
                 >
                   Clear Search
                 </button>
@@ -632,7 +632,7 @@ const AIChatLeadsDashboard = () => {
                                 e.stopPropagation();
                                 loadLeadById(lead.id);
                               }}
-                              className="flex-1 flex items-center justify-center gap-1 px-3 py-1.5 text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
+                              className="flex-1 flex items-center justify-center gap-1 px-3 py-1.5 text-sm text-primary hover:text-primary-600 hover:bg-primary/10 rounded-lg transition-colors"
                             >
                               <Eye className="w-3 h-3" />
                               View
@@ -732,7 +732,7 @@ const AIChatLeadsDashboard = () => {
                                   e.stopPropagation();
                                   loadLeadById(lead.id);
                                 }}
-                                className="flex items-center gap-1 px-3 py-1.5 text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
+                                className="flex items-center gap-1 px-3 py-1.5 text-sm text-primary hover:text-primary-600 hover:bg-primary/10 rounded-lg transition-colors"
                               >
                                 <Eye className="w-4 h-4" />
                                 View
@@ -786,14 +786,14 @@ const AIChatLeadsDashboard = () => {
 
               {/* Search Results Info */}
               {searchTerm && filteredLeads.length > 0 && (
-                <div className="px-6 py-4 border-t border-gray-200 bg-blue-50">
+                <div className="px-6 py-4 border-t border-gray-200 bg-primary/5">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm text-blue-700">
+                    <div className="text-sm text-primary">
                       Showing {filteredLeads.length} search result{filteredLeads.length !== 1 ? 's' : ''} for "{searchTerm}"
                     </div>
                     <button
                       onClick={clearSearch}
-                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                      className="text-sm text-primary hover:text-primary-600 hover:underline transition-colors"
                     >
                       Clear Search
                     </button>

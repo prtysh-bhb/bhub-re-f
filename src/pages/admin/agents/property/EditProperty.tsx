@@ -283,12 +283,12 @@ const EditProperty = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg dark:shadow-gray-800/10 transition-colors duration-200">
+      <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl transition-colors duration-200">
         <div className="flex items-center gap-3 mr-auto my-2">
-          <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl shadow-md">
+          <div className="p-3 bg-primary rounded-xl shadow-md">
             <HousePlus className="text-white" size={24} />
           </div>
-          <h1 className="text-2xl font-semibold text-gray-800 dark:text-white">
+          <h1 className="text-2xl font-semibold text-primary">
             Edit Property
           </h1>
         </div>
@@ -320,7 +320,7 @@ const EditProperty = () => {
                   name="property_type"
                   value={formData.property_type}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2.5 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
+                  className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2.5 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
                 >
                   <option value="" className="dark:bg-gray-700">Select Property Type</option>
                   {propertyTypes.map((type) => (
@@ -398,7 +398,7 @@ const EditProperty = () => {
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
-                className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
+                className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
                 rows={4}
               />
               {errors.description && (
@@ -425,7 +425,7 @@ const EditProperty = () => {
                     value={item.key}
                     checked={formData.amenities.includes(item.key)}
                     onChange={handleAmenityChange}
-                    className="accent-blue-600 dark:accent-blue-500 rounded cursor-pointer h-4 w-4"
+                    className="accent-primary rounded cursor-pointer h-4 w-4"
                   />
                   {item.label}
                 </label>
@@ -447,7 +447,7 @@ const EditProperty = () => {
                       className={`w-full h-48 object-cover rounded-xl border-2 transition-all duration-300 ${
                         removeImages.includes(i)
                           ? "opacity-40 border-red-400 dark:border-red-500"
-                          : "border-gray-300 dark:border-gray-600 group-hover:border-blue-500 dark:group-hover:border-blue-400"
+                          : "border-gray-300 dark:border-gray-600 group-hover:border-primary"
                       }`}
                     />
                     <button
@@ -476,7 +476,7 @@ const EditProperty = () => {
               multiple
               accept="image/*"
               onChange={handleImageUpload}
-              className="border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
+              className="border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-3 rounded-lg w-full focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
             />
             {newImages.length > 0 && (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-6">
@@ -485,7 +485,7 @@ const EditProperty = () => {
                     <img
                       src={URL.createObjectURL(file)}
                       alt={`New ${i}`}
-                      className="w-full h-48 object-cover rounded-xl border-2 border-gray-300 dark:border-gray-600 group-hover:border-blue-500 dark:group-hover:border-blue-400 transition-all duration-300"
+                      className="w-full h-48 object-cover rounded-xl border-2 border-gray-300 dark:border-gray-600 group-hover:border-primary transition-all duration-300"
                     />
                     <button
                       type="button"
@@ -664,7 +664,7 @@ const EditProperty = () => {
             <Button
               type="submit"
               disabled={saving}
-              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-2.5 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-2.5 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
             >
               {saving ? "Updating..." : "Update Property"}
             </Button>
@@ -705,7 +705,7 @@ const SelectField = ({ label, name, value, onChange, options }: any) => (
       name={name}
       value={value || ""}
       onChange={onChange}
-      className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2.5 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
+      className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2.5 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
     >
       {options.map((opt: any) => (
         <option key={opt.value} value={opt.value} className="dark:bg-gray-700">

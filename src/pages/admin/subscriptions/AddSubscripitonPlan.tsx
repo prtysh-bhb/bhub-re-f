@@ -283,13 +283,13 @@ const AddSubscriptionPlan = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg">
           <div className="flex items-center gap-3">
-            <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+            <div className="p-3 bg-primary rounded-xl shadow-md">
               <CreditCard className="text-white" size={24} />
             </div>
             <div>
-              <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-semibold text-primary">
                 Add New Subscription Plan
               </h1>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -300,12 +300,12 @@ const AddSubscriptionPlan = () => {
         </div>
 
         {/* Form */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Basic Information */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <CreditCard size={20} className="text-blue-600 dark:text-emerald-400" />
+                <CreditCard size={20} className="text-primary" />
                 Plan Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -321,9 +321,9 @@ const AddSubscriptionPlan = () => {
                     maxLength={100}
                     required
                     className={`w-full px-4 py-2 border ${
-                      errors.name 
-                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                      errors.name
+                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                     } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white transition-all`}
                     placeholder="Basic Plan"
                   />
@@ -345,9 +345,9 @@ const AddSubscriptionPlan = () => {
                     maxLength={100}
                     required
                     className={`w-full px-4 py-2 border ${
-                      errors.slug 
-                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                      errors.slug
+                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                     } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="basic-plan"
                   />
@@ -355,7 +355,7 @@ const AddSubscriptionPlan = () => {
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.slug}</p>
                   )}
                   {!isSlugManual && formData.name && (
-                    <p className="mt-1 text-xs text-blue-600 dark:text-emerald-400">
+                    <p className="mt-1 text-xs text-primary">
                       Slug will update automatically as you type the plan name
                     </p>
                   )}
@@ -373,9 +373,9 @@ const AddSubscriptionPlan = () => {
                     rows={3}
                     maxLength={500}
                     className={`w-full px-4 py-2 border ${
-                      errors.description 
-                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                      errors.description
+                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                     } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="Describe the plan features and benefits..."
                   />
@@ -392,7 +392,7 @@ const AddSubscriptionPlan = () => {
             {/* Pricing & Duration */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <DollarSign size={20} className="text-blue-600 dark:text-emerald-400" />
+                <DollarSign size={20} className="text-primary" />
                 Pricing & Duration
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -412,9 +412,9 @@ const AddSubscriptionPlan = () => {
                       step="0.01"
                       max={10000}
                       className={`w-full pl-10 pr-4 py-2 border ${
-                        errors.price 
-                          ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                        errors.price
+                          ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                       } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                       placeholder="29.99"
                     />
@@ -439,9 +439,9 @@ const AddSubscriptionPlan = () => {
                       min="1"
                       max="365"
                       className={`w-full pl-10 pr-4 py-2 border ${
-                        errors.duration_days 
-                          ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                        errors.duration_days
+                          ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                       } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                       placeholder="30"
                     />
@@ -463,9 +463,9 @@ const AddSubscriptionPlan = () => {
                     min="0"
                     max="100"
                     className={`w-full px-4 py-2 border ${
-                      errors.sort_order 
-                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                      errors.sort_order
+                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                     } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="1"
                   />
@@ -481,7 +481,7 @@ const AddSubscriptionPlan = () => {
                       name="is_active"
                       checked={formData.is_active}
                       onChange={handleChange}
-                      className="w-4 h-4 text-blue-600 dark:text-emerald-500 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500 dark:focus:ring-emerald-500"
+                      className="w-4 h-4 text-primary bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-primary"
                     />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                       Active Plan
@@ -494,7 +494,7 @@ const AddSubscriptionPlan = () => {
             {/* Limits & Features */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Zap size={20} className="text-blue-600 dark:text-emerald-400" />
+                <Zap size={20} className="text-primary" />
                 Plan Limits & Features
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -512,9 +512,9 @@ const AddSubscriptionPlan = () => {
                     min="0"
                     max="10000"
                     className={`w-full px-4 py-2 border ${
-                      errors.property_limit 
-                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                      errors.property_limit
+                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                     } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="10"
                   />
@@ -536,9 +536,9 @@ const AddSubscriptionPlan = () => {
                     min="0"
                     max="1000"
                     className={`w-full px-4 py-2 border ${
-                      errors.featured_limit 
-                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                      errors.featured_limit
+                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                     } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="5"
                   />
@@ -560,9 +560,9 @@ const AddSubscriptionPlan = () => {
                     min="1"
                     max="200"
                     className={`w-full px-4 py-2 border ${
-                      errors.image_limit 
-                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                      errors.image_limit
+                        ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                        : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                     } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                     placeholder="20"
                   />
@@ -579,7 +579,7 @@ const AddSubscriptionPlan = () => {
                         name="video_allowed"
                         checked={formData.video_allowed}
                         onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 dark:text-emerald-500 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500 dark:focus:ring-emerald-500"
+                        className="w-4 h-4 text-primary bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-primary"
                       />
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         Video Tours Allowed
@@ -594,7 +594,7 @@ const AddSubscriptionPlan = () => {
                         name="priority_support"
                         checked={formData.priority_support}
                         onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 dark:text-emerald-500 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500 dark:focus:ring-emerald-500"
+                        className="w-4 h-4 text-primary bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-primary"
                       />
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         Priority Support
@@ -608,7 +608,7 @@ const AddSubscriptionPlan = () => {
             {/* Features List */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Star size={20} className="text-blue-600 dark:text-emerald-400" />
+                <Star size={20} className="text-primary" />
                 Plan Features *
               </h3>
               <div className="space-y-3">
@@ -620,8 +620,8 @@ const AddSubscriptionPlan = () => {
                       onChange={(e) => updateFeature(index, e.target.value)}
                       className={`flex-1 px-4 py-2 border ${
                         errors.features && index === 0
-                          ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500' 
-                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                          ? 'border-red-500 focus:ring-red-500 dark:focus:ring-red-500'
+                          : 'border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary'
                       } bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white`}
                       placeholder="Enter feature description (e.g., '10 Property Listings')"
                     />
@@ -641,7 +641,7 @@ const AddSubscriptionPlan = () => {
                 <button
                   type="button"
                   onClick={addFeature}
-                  className="flex items-center gap-2 px-4 py-2 text-blue-600 dark:text-emerald-400 hover:bg-blue-50 dark:hover:bg-emerald-900/20 rounded-lg border border-dashed border-blue-300 dark:border-emerald-600 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 text-primary hover:bg-primary/10 rounded-lg border border-dashed border-primary/30 transition-colors"
                 >
                   <Plus size={18} />
                   Add Feature
@@ -653,7 +653,7 @@ const AddSubscriptionPlan = () => {
             <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
               <Button
                 type="submit"
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg"
+                className="bg-primary hover:bg-primary/90 text-white shadow-md hover:shadow-lg transition-all"
               >
                 <CreditCard size={18} className="mr-2" />
                 Create Subscription Plan

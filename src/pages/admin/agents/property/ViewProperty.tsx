@@ -142,9 +142,9 @@ const ViewProperty = () => {
   if (loading)
     return (
     <>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
+        <div className="min-h-screen dark:bg-gray-950 bg-gray-50 flex items-center justify-center">
           <div className="text-center space-y-4">
-            <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading property details...</p>
           </div>
         </div>
@@ -154,7 +154,7 @@ const ViewProperty = () => {
   if (!property)
     return (
     <>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
+        <div className="min-h-screen dark:bg-gray-950 bg-gray-50 flex items-center justify-center">
           <div className="text-center dark:text-red-400 text-red-500 p-8 dark:bg-gray-800/50 bg-white rounded-2xl shadow-xl dark:border-gray-700/50 border">
             <Home className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">Property not found</p>
@@ -169,13 +169,13 @@ const ViewProperty = () => {
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "published":
-        return "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400";
+        return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400";
       case "draft":
         return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400";
       case "sold":
         return "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400";
       case "rented":
-        return "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400";
+        return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400";
       default:
         return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400";
     }
@@ -184,7 +184,7 @@ const ViewProperty = () => {
   const getApprovalColor = (status?: string) => {
     switch (status?.toLowerCase()) {
       case "approved":
-        return "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400";
+        return "bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400";
       case "rejected":
         return "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400";
       default:
@@ -194,12 +194,12 @@ const ViewProperty = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto p-6 space-y-8 min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30">
+      <div className="max-w-7xl mx-auto p-6 space-y-8 min-h-screen dark:bg-gray-950 bg-gray-50">
         {/* ---------- Back & Delete Buttons ---------- */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <button
             onClick={handleBack}
-            className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium cursor-pointer px-4 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50"
+            className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium cursor-pointer px-4 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50"
           >
             <ArrowLeft size={18} />
             <span className="font-medium">Back to Properties</span>
@@ -221,7 +221,7 @@ const ViewProperty = () => {
               <button
                 onClick={handleMarkAsFeatured}
                 disabled={togglingFeatured}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all text-sm font-medium cursor-pointer disabled:opacity-60"
+                className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all text-sm font-medium cursor-pointer disabled:opacity-60"
                 title="Mark as featured"
               >
                 <Star size={16} />
@@ -247,7 +247,7 @@ const ViewProperty = () => {
         </div>
 
         {/* ---------- Property Header ---------- */}
-        <div className="bg-gradient-to-r from-blue-600 to-emerald-600 p-8 rounded-2xl shadow-xl dark:shadow-black/30 border-0 text-white relative overflow-hidden">
+        <div className="bg-primary-600 dark:bg-primary-700 p-8 rounded-2xl shadow-xl dark:shadow-black/30 border-0 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-black/10 dark:bg-black/20"></div>
           <div className="relative z-10">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
@@ -260,7 +260,7 @@ const ViewProperty = () => {
                     </span>
                   )}
                 </div>
-                <div className="flex items-center flex-wrap gap-4 text-blue-100/90">
+                <div className="flex items-center flex-wrap gap-4 text-white/90">
                   <div className="flex items-center gap-2">
                     <MapPin size={16} />
                     <span>{property.city ?? "—"}, {property.state ?? "—"}</span>
@@ -280,8 +280,8 @@ const ViewProperty = () => {
                 </span>
               </div>
             </div>
-            <p className="text-sm text-blue-100/80 mt-4">
-              Property ID: <span className="font-bold">{property.id}</span> • 
+            <p className="text-sm text-white/80 mt-4">
+              Property ID: <span className="font-bold">{property.id}</span> •
               Created: <span className="font-bold">{property.created_at ? new Date(property.created_at).toLocaleDateString() : "—"}</span>
             </p>
           </div>
@@ -323,41 +323,41 @@ const ViewProperty = () => {
             <div className="bg-white dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-black/30 p-6">
               <h2 className="text-xl font-bold dark:text-white text-gray-800 mb-6">Property Details</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <InfoCard 
+                <InfoCard
                   icon={<DollarSign className="w-5 h-5" />}
                   label="Price"
                   value={formatAmount(property.price)}
-                  color="text-emerald-600 dark:text-emerald-400"
+                  color="text-primary-600 dark:text-primary-400"
                 />
-                <InfoCard 
+                <InfoCard
                   icon={<Bed className="w-5 h-5" />}
                   label="Bedrooms"
                   value={property.bedrooms}
-                  color="text-blue-600 dark:text-blue-400"
+                  color="text-primary-600 dark:text-primary-400"
                 />
-                <InfoCard 
+                <InfoCard
                   icon={<Bath className="w-5 h-5" />}
                   label="Bathrooms"
                   value={property.bathrooms}
-                  color="text-purple-600 dark:text-purple-400"
+                  color="text-primary-600 dark:text-primary-400"
                 />
-                <InfoCard 
+                <InfoCard
                   icon={<Ruler className="w-5 h-5" />}
                   label="Area"
                   value={`${property.area} sqft`}
-                  color="text-amber-600 dark:text-amber-400"
+                  color="text-primary-600 dark:text-primary-400"
                 />
-                <InfoCard 
+                <InfoCard
                   icon={<Layers className="w-5 h-5" />}
                   label="Type"
                   value={property.type}
-                  color="text-cyan-600 dark:text-cyan-400"
+                  color="text-primary-600 dark:text-primary-400"
                 />
-                <InfoCard 
+                <InfoCard
                   icon={<Home className="w-5 h-5" />}
                   label="Property Type"
                   value={propertyTypes?.find((a) => a.key === property?.property_type)?.label ?? "-"}
-                  color="text-indigo-600 dark:text-indigo-400"
+                  color="text-primary-600 dark:text-primary-400"
                 />
               </div>
             </div>
@@ -368,7 +368,7 @@ const ViewProperty = () => {
                 <h3 className="text-lg font-bold dark:text-white text-gray-800 mb-4">Location Details</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                    <div className="p-2 bg-primary-600 dark:bg-primary-700 rounded-lg">
                       <MapPin className="text-white" size={18} />
                     </div>
                     <div>
@@ -420,7 +420,7 @@ const ViewProperty = () => {
                       return (
                         <span
                           key={i}
-                          className="px-3 py-2 rounded-lg bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 text-blue-700 dark:text-blue-400 text-sm font-medium border border-blue-100 dark:border-blue-800/50"
+                          className="px-3 py-2 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-sm font-medium border border-primary-100 dark:border-primary-800/50"
                         >
                           {amenity ? amenity.label : amenityKey}
                         </span>
