@@ -49,13 +49,13 @@ const AddProperties = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-2xl">
           <div className="flex items-center gap-3">
-            <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+            <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg">
               <HousePlus className="text-white" size={24} />
             </div>
             <div>
-              <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-semibold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
                 Add New Property
               </h1>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -66,12 +66,12 @@ const AddProperties = () => {
         </div>
 
         {/* Form */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Basic Information */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Home size={20} className="text-blue-600 dark:text-emerald-400" />
+                <Home size={20} className="text-primary-600 dark:text-primary-400" />
                 Basic Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -85,7 +85,7 @@ const AddProperties = () => {
                     value={formData.title}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500 text-gray-900 dark:text-white transition-all"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 text-gray-900 dark:text-white transition-all"
                     placeholder="Beautiful 3BR Modern Apartment"
                   />
                 </div>
@@ -99,7 +99,7 @@ const AddProperties = () => {
                     value={formData.propertyType}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                   >
                     <option value="">Select Type</option>
                     <option value="apartment">Apartment</option>
@@ -119,7 +119,7 @@ const AddProperties = () => {
                     value={formData.status}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                   >
                     <option value="sale">For Sale</option>
                     <option value="rent">For Rent</option>
@@ -138,7 +138,7 @@ const AddProperties = () => {
                       value={formData.price}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                      className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                       placeholder="250,000"
                     />
                   </div>
@@ -154,7 +154,7 @@ const AddProperties = () => {
                     value={formData.area}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="1200"
                   />
                 </div>
@@ -169,7 +169,7 @@ const AddProperties = () => {
                     value={formData.bedrooms}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="3"
                   />
                 </div>
@@ -184,7 +184,7 @@ const AddProperties = () => {
                     value={formData.bathrooms}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="2"
                   />
                 </div>
@@ -199,7 +199,7 @@ const AddProperties = () => {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="Describe the property features, amenities, and highlights..."
                   />
                 </div>
@@ -209,7 +209,7 @@ const AddProperties = () => {
             {/* Location */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <MapPin size={20} className="text-blue-600 dark:text-emerald-400" />
+                <MapPin size={20} className="text-primary-600 dark:text-primary-400" />
                 Location
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -223,7 +223,7 @@ const AddProperties = () => {
                     value={formData.address}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="123 Main Street"
                   />
                 </div>
@@ -238,7 +238,7 @@ const AddProperties = () => {
                     value={formData.city}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="New York"
                   />
                 </div>
@@ -253,7 +253,7 @@ const AddProperties = () => {
                     value={formData.state}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="NY"
                   />
                 </div>
@@ -263,7 +263,7 @@ const AddProperties = () => {
             {/* Features */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <FileText size={20} className="text-blue-600 dark:text-emerald-400" />
+                <FileText size={20} className="text-primary-600 dark:text-primary-400" />
                 Additional Features
               </h3>
               <div className="grid grid-cols-1 gap-4">
@@ -276,7 +276,7 @@ const AddProperties = () => {
                     value={formData.features}
                     onChange={handleChange}
                     rows={3}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                     placeholder="Pool, Gym, Parking, Garden, etc..."
                   />
                 </div>
@@ -305,7 +305,7 @@ const AddProperties = () => {
             <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
               <Button
                 type="submit"
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg"
+                className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-md hover:shadow-lg dark:hover:shadow-2xl"
               >
                 <HousePlus size={18} className="mr-2" />
                 Add Property

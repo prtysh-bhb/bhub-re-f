@@ -121,7 +121,7 @@ const PageEditor = () => {
     <>
         <div className="flex items-center justify-center py-20">
           <div className="text-center space-y-4">
-            <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading page...</p>
           </div>
         </div>
@@ -133,7 +133,7 @@ const PageEditor = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
               <Button
@@ -144,7 +144,7 @@ const PageEditor = () => {
               >
                 <ArrowLeft size={20} />
               </Button>
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary-600 rounded-xl shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]">
                 <FileEdit className="text-white" size={20} />
               </div>
               <div>
@@ -180,7 +180,7 @@ const PageEditor = () => {
               <Button
                 onClick={() => handleSubmit("published")}
                 disabled={submitting}
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg"
+                className="bg-primary-600 hover:bg-primary-700 text-white shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)] hover:shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.35)]"
               >
                 <Save size={18} />
                 <span>Publish</span>
@@ -193,7 +193,7 @@ const PageEditor = () => {
           {/* Main Content Area */}
           <div className="lg:col-span-2 space-y-6">
             {/* Title */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-6">
+            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
               <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
                 Page Title *
               </label>
@@ -207,7 +207,7 @@ const PageEditor = () => {
             </div>
 
             {/* Editor */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-6">
+            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
               <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4 block">
                 Page Content *
               </label>
@@ -218,13 +218,13 @@ const PageEditor = () => {
             </div>
 
             {/* SEO Section */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
               <div className="border-b border-gray-200 dark:border-gray-800 flex">
                 <button
                   onClick={() => setActiveTab("content")}
                   className={`px-6 py-3 font-medium transition-colors text-sm ${
                     activeTab === "content"
-                      ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 bg-blue-50/50 dark:bg-blue-900/10"
+                      ? "text-primary-600 border-b-2 border-primary-600 bg-primary-50/50 dark:bg-primary-900/10"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -234,7 +234,7 @@ const PageEditor = () => {
                   onClick={() => setActiveTab("seo")}
                   className={`px-6 py-3 font-medium transition-colors text-sm ${
                     activeTab === "seo"
-                      ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 bg-blue-50/50 dark:bg-blue-900/10"
+                      ? "text-primary-600 border-b-2 border-primary-600 bg-primary-50/50 dark:bg-primary-900/10"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -256,7 +256,7 @@ const PageEditor = () => {
                         placeholder="SEO title for search engines"
                         value={formData.meta_title}
                         onChange={(e) => updateField("meta_title", e.target.value)}
-                        className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-transparent transition-all"
+                        className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                         maxLength={60}
                       />
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -276,7 +276,7 @@ const PageEditor = () => {
                         onChange={(e) =>
                           updateField("meta_description", e.target.value)
                         }
-                        className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-transparent transition-all resize-none"
+                        className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
                         maxLength={160}
                       />
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -284,16 +284,16 @@ const PageEditor = () => {
                       </p>
                     </div>
 
-                    <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                      <h4 className="font-medium text-sm mb-3 flex items-center gap-2 text-blue-900 dark:text-blue-100">
+                    <div className="p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg border border-primary-200 dark:border-primary-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
+                      <h4 className="font-medium text-sm mb-3 flex items-center gap-2 text-primary-900 dark:text-primary-100">
                         <Search size={16} />
                         Search Engine Preview
                       </h4>
                       <div className="space-y-1">
-                        <p className="text-blue-700 dark:text-blue-400 text-sm font-medium line-clamp-1">
+                        <p className="text-primary-700 dark:text-primary-400 text-sm font-medium line-clamp-1">
                           {formData.meta_title || formData.title || "Page Title"}
                         </p>
-                        <p className="text-xs text-emerald-700 dark:text-emerald-400 flex items-center gap-1">
+                        <p className="text-xs text-green-700 dark:text-green-400 flex items-center gap-1">
                           <LinkIcon size={10} />
                           yourdomain.com/{generatedSlug || "page-slug"}
                         </p>
@@ -320,7 +320,7 @@ const PageEditor = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Status */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-6">
+            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] p-6">
               <h3 className="flex items-center gap-2 font-semibold text-gray-900 dark:text-white mb-4">
                 <Settings size={18} />
                 Page Settings
@@ -365,7 +365,7 @@ const PageEditor = () => {
                         }
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-checked:bg-blue-600 dark:peer-checked:bg-emerald-600 peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-emerald-800 transition-all"></div>
+                      <div className="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-checked:bg-primary-600 peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 transition-all"></div>
                       <div className="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-all peer-checked:translate-x-5"></div>
                     </div>
                   </label>
@@ -389,7 +389,7 @@ const PageEditor = () => {
                           e.target.value ? parseInt(e.target.value) : null
                         )
                       }
-                      className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-transparent transition-all"
+                      className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                       min="1"
                     />
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -401,26 +401,26 @@ const PageEditor = () => {
             </div>
 
             {/* Quick Info */}
-            <div className="bg-gradient-to-br from-blue-50 to-emerald-50 dark:from-blue-900/20 dark:to-emerald-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-6">
+            <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl border border-primary-200 dark:border-primary-800 p-6 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 <FileText size={18} />
                 Pro Tips
               </h3>
               <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 mt-0.5">•</span>
+                  <span className="text-primary-600 dark:text-primary-400 mt-0.5">•</span>
                   <span>Use headings (H1, H2, H3) to structure your content</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-600 dark:text-emerald-400 mt-0.5">•</span>
+                  <span className="text-primary-600 dark:text-primary-400 mt-0.5">•</span>
                   <span>Add images to make content more engaging</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 mt-0.5">•</span>
+                  <span className="text-primary-600 dark:text-primary-400 mt-0.5">•</span>
                   <span>Keep meta descriptions under 160 characters</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-600 dark:text-emerald-400 mt-0.5">•</span>
+                  <span className="text-primary-600 dark:text-primary-400 mt-0.5">•</span>
                   <span>Save drafts frequently while working</span>
                 </li>
               </ul>

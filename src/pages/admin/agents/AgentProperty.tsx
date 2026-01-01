@@ -52,7 +52,7 @@ const AgentProperty = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "published":
-        return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400";
+        return "bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400";
       case "pending_approval":
         return "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400";
       default:
@@ -64,14 +64,14 @@ const AgentProperty = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-2xl">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg">
                 <Building2 className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
                   My Properties
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -81,7 +81,7 @@ const AgentProperty = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -97,7 +97,7 @@ const AgentProperty = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -107,7 +107,7 @@ const AgentProperty = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -117,7 +117,7 @@ const AgentProperty = () => {
 
               <button
                 onClick={() => navigate("/admin/agents/add-properties")}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium"
               >
                 <HousePlus size={16} />
                 Add Property
@@ -132,7 +132,7 @@ const AgentProperty = () => {
             {filteredProperties.map((property) => (
               <div
                 key={property.id}
-                className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group"
+                className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-xl dark:hover:shadow-2xl hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -140,7 +140,7 @@ const AgentProperty = () => {
                     alt={property.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold ${getStatusColor(property.status)}`}>
+                  <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow-lg ${getStatusColor(property.status)}`}>
                     {property.status.replace("_", " ").toUpperCase()}
                   </span>
                 </div>
@@ -148,7 +148,7 @@ const AgentProperty = () => {
                   <h3 className="font-bold text-gray-900 dark:text-white mb-2">{property.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{property.address}</p>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
+                    <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">
                       {property.price}
                     </span>
                   </div>
@@ -158,11 +158,11 @@ const AgentProperty = () => {
                     <span>{property.area}</span>
                   </div>
                   <div className="flex gap-2 pt-3 border-t border-gray-100 dark:border-gray-700">
-                    <button className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all text-sm">
+                    <button className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all text-sm">
                       <Eye size={16} />
                       View
                     </button>
-                    <button className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-all text-sm">
+                    <button className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all text-sm">
                       <Edit size={16} />
                       Edit
                     </button>
@@ -178,7 +178,7 @@ const AgentProperty = () => {
 
         {/* Table View */}
         {viewMode === "table" && (
-          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-2xl overflow-hidden">
             <table className="min-w-full">
               <thead className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700">
                 <tr>
@@ -194,7 +194,7 @@ const AgentProperty = () => {
                 {filteredProperties.map((property, index) => (
                   <tr
                     key={property.id}
-                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all group ${
+                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
                       index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                     }`}
                   >
@@ -202,21 +202,21 @@ const AgentProperty = () => {
                       <div className="font-semibold text-gray-900 dark:text-white">{property.title}</div>
                     </td>
                     <td className="py-4 px-6 text-gray-600 dark:text-gray-400">{property.address}</td>
-                    <td className="py-4 px-6 font-bold text-blue-600 dark:text-emerald-400">{property.price}</td>
+                    <td className="py-4 px-6 font-bold text-primary-600 dark:text-primary-400">{property.price}</td>
                     <td className="py-4 px-6 text-sm text-gray-600 dark:text-gray-400">
                       {property.bedrooms} Beds · {property.bathrooms} Baths · {property.area}
                     </td>
                     <td className="py-4 px-6">
-                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${getStatusColor(property.status)}`}>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-sm ${getStatusColor(property.status)}`}>
                         {property.status.replace("_", " ").toUpperCase()}
                       </span>
                     </td>
                     <td className="py-4 px-6">
                       <div className="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all">
+                        <button className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all">
                           <Eye size={16} />
                         </button>
-                        <button className="p-2 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-all">
+                        <button className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all">
                           <Edit size={16} />
                         </button>
                         <button className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all">

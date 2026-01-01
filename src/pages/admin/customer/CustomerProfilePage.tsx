@@ -46,9 +46,9 @@ const CustomerProfilePage = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-[#1f2937] rounded-2xl shadow-md overflow-hidden">
+      <div className="bg-white dark:bg-[#1f2937] rounded-2xl shadow-lg dark:shadow-black/30 overflow-hidden">
         {/* Cover Banner */}
-        <div className="relative h-48 sm:h-56 md:h-64 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-500 rounded-t-2xl overflow-hidden">
+        <div className="relative h-48 sm:h-56 md:h-64 bg-primary-600 dark:bg-primary-700 rounded-t-2xl overflow-hidden">
           <img
             src={customer?.avatar || `/assets/user.jpg`}
             alt="cover"
@@ -125,19 +125,19 @@ const CustomerProfilePage = () => {
             <TabsList className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-6 border-b border-gray-200 dark:border-gray-700 mb-6">
               <TabsTrigger
                 value="details"
-                className="pb-2 text-gray-700 dark:text-gray-200 font-medium border-b-2 border-transparent data-[state=active]:border-indigo-500 data-[state=active]:text-indigo-600 text-sm sm:text-base"
+                className="pb-2 text-gray-700 dark:text-gray-200 font-medium border-b-2 border-transparent data-[state=active]:border-primary-500 data-[state=active]:text-primary-600 dark:data-[state=active]:text-primary-400 text-sm sm:text-base"
               >
                 Details
               </TabsTrigger>
               <TabsTrigger
                 value="activity"
-                className="pb-2 text-gray-700 dark:text-gray-200 font-medium border-b-2 border-transparent data-[state=active]:border-indigo-500 data-[state=active]:text-indigo-600 text-sm sm:text-base"
+                className="pb-2 text-gray-700 dark:text-gray-200 font-medium border-b-2 border-transparent data-[state=active]:border-primary-500 data-[state=active]:text-primary-600 dark:data-[state=active]:text-primary-400 text-sm sm:text-base"
               >
                 Activity Logs
               </TabsTrigger>
               <TabsTrigger
                 value="performance"
-                className="pb-2 text-gray-700 dark:text-gray-200 font-medium border-b-2 border-transparent data-[state=active]:border-indigo-500 data-[state=active]:text-indigo-600 text-sm sm:text-base"
+                className="pb-2 text-gray-700 dark:text-gray-200 font-medium border-b-2 border-transparent data-[state=active]:border-primary-500 data-[state=active]:text-primary-600 dark:data-[state=active]:text-primary-400 text-sm sm:text-base"
               >
                 Performance Tracking
               </TabsTrigger>

@@ -40,14 +40,14 @@ const CustomerPropertyList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary-600 dark:bg-primary-700 rounded-xl shadow-md">
                 <Building2 className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   My Properties
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -57,7 +57,7 @@ const CustomerPropertyList = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -73,7 +73,7 @@ const CustomerPropertyList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -83,7 +83,7 @@ const CustomerPropertyList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -100,7 +100,7 @@ const CustomerPropertyList = () => {
             {filteredProperties.map((property) => (
               <div
                 key={property.id}
-                className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group"
+                className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg dark:hover:shadow-black/30 hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -113,7 +113,7 @@ const CustomerPropertyList = () => {
                   <h3 className="font-bold text-gray-900 dark:text-white mb-2">{property.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{property.address}</p>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
+                    <span className="text-xl font-bold text-primary-600 dark:text-primary-400">
                       {property.price}
                     </span>
                   </div>
@@ -123,7 +123,7 @@ const CustomerPropertyList = () => {
                     <span>{property.area}</span>
                   </div>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Purchased: {new Date(property.purchaseDate).toLocaleDateString()}</p>
-                  <button className="w-full flex items-center justify-center gap-2 p-2 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-all text-sm font-medium">
+                  <button className="w-full flex items-center justify-center gap-2 p-2 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-all text-sm font-medium">
                     <Eye size={16} />
                     View Details
                   </button>
@@ -135,9 +135,9 @@ const CustomerPropertyList = () => {
 
         {/* Table View */}
         {viewMode === "table" && (
-          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30 overflow-hidden">
             <table className="min-w-full">
-              <thead className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700">
+              <thead className="bg-gray-50 dark:bg-gray-800">
                 <tr>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">Property</th>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">Location</th>
@@ -151,13 +151,13 @@ const CustomerPropertyList = () => {
                 {filteredProperties.map((property, index) => (
                   <tr
                     key={property.id}
-                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all ${
+                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all ${
                       index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                     }`}
                   >
                     <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">{property.title}</td>
                     <td className="py-4 px-6 text-gray-600 dark:text-gray-400">{property.address}</td>
-                    <td className="py-4 px-6 font-bold text-blue-600 dark:text-emerald-400">{property.price}</td>
+                    <td className="py-4 px-6 font-bold text-primary-600 dark:text-primary-400">{property.price}</td>
                     <td className="py-4 px-6 text-sm text-gray-600 dark:text-gray-400">
                       {property.bedrooms} Beds · {property.bathrooms} Baths · {property.area}
                     </td>
@@ -165,7 +165,7 @@ const CustomerPropertyList = () => {
                       {new Date(property.purchaseDate).toLocaleDateString()}
                     </td>
                     <td className="py-4 px-6 text-center">
-                      <button className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all">
+                      <button className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all">
                         <Eye size={16} />
                       </button>
                     </td>

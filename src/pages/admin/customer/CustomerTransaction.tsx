@@ -60,14 +60,14 @@ const CustomerTransaction = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary-600 dark:bg-primary-700 rounded-xl shadow-md">
                 <ArrowLeftRight className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   Customer Transactions
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -77,7 +77,7 @@ const CustomerTransaction = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -102,7 +102,7 @@ const CustomerTransaction = () => {
                 </select>
               </div>
 
-              <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium">
+              <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium">
                 <FileDown size={16} />
                 Export
               </button>
@@ -111,10 +111,10 @@ const CustomerTransaction = () => {
         </div>
 
         {/* Transactions Table */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="min-w-full">
-              <thead className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700">
+              <thead className="bg-gray-50 dark:bg-gray-800">
                 <tr>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">ID</th>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">Customer</th>
@@ -130,14 +130,14 @@ const CustomerTransaction = () => {
                 {filteredTransactions.map((transaction, index) => (
                   <tr
                     key={transaction.id}
-                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all group ${
+                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
                       index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                     }`}
                   >
                     <td className="py-4 px-6 font-mono text-sm text-gray-600 dark:text-gray-400">#{transaction.id}</td>
                     <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">{transaction.customerName}</td>
                     <td className="py-4 px-6 text-gray-600 dark:text-gray-400">{transaction.propertyTitle}</td>
-                    <td className="py-4 px-6 font-bold text-blue-600 dark:text-emerald-400">{transaction.amount}</td>
+                    <td className="py-4 px-6 font-bold text-primary-600 dark:text-primary-400">{transaction.amount}</td>
                     <td className="py-4 px-6 text-gray-600 dark:text-gray-400 capitalize">{transaction.type}</td>
                     <td className="py-4 px-6 text-gray-600 dark:text-gray-400">{new Date(transaction.date).toLocaleDateString()}</td>
                     <td className="py-4 px-6">
@@ -146,7 +146,7 @@ const CustomerTransaction = () => {
                       </span>
                     </td>
                     <td className="py-4 px-6 text-center">
-                      <button className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all opacity-0 group-hover:opacity-100">
+                      <button className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all opacity-0 group-hover:opacity-100">
                         <Eye size={16} />
                       </button>
                     </td>
@@ -159,15 +159,15 @@ const CustomerTransaction = () => {
 
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-blue-50 to-emerald-50 dark:from-blue-950/20 dark:to-emerald-950/20 p-6 rounded-xl border border-blue-100 dark:border-blue-900/50">
+          <div className="bg-primary-50 dark:bg-primary-950/20 p-6 rounded-xl border border-primary-100 dark:border-primary-900/50 shadow-md dark:shadow-black/20">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Total Transactions</p>
             <p className="text-3xl font-bold text-gray-900 dark:text-white">{transactions.length}</p>
           </div>
-          <div className="bg-gradient-to-br from-emerald-50 to-blue-50 dark:from-emerald-950/20 dark:to-blue-950/20 p-6 rounded-xl border border-emerald-100 dark:border-emerald-900/50">
+          <div className="bg-primary-50 dark:bg-primary-950/20 p-6 rounded-xl border border-primary-100 dark:border-primary-900/50 shadow-md dark:shadow-black/20">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Total Value</p>
             <p className="text-3xl font-bold text-gray-900 dark:text-white">$5.25M</p>
           </div>
-          <div className="bg-gradient-to-br from-amber-50 to-emerald-50 dark:from-amber-950/20 dark:to-emerald-950/20 p-6 rounded-xl border border-amber-100 dark:border-amber-900/50">
+          <div className="bg-amber-50 dark:bg-amber-950/20 p-6 rounded-xl border border-amber-100 dark:border-amber-900/50 shadow-md dark:shadow-black/20">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Pending</p>
             <p className="text-3xl font-bold text-gray-900 dark:text-white">1</p>
           </div>

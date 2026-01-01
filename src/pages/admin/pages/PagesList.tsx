@@ -114,10 +114,10 @@ const PagesList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary-600 rounded-xl shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]">
                 <FileText className="text-white" size={20} />
               </div>
               <div>
@@ -130,7 +130,7 @@ const PagesList = () => {
 
             <div className="flex items-center gap-2 flex-wrap">
               {/* Search */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -142,7 +142,7 @@ const PagesList = () => {
               </div>
 
               {/* Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 transition-all">
                 <Filter size={16} className="text-gray-400 mr-2" />
                 <select
                   value={filter}
@@ -161,7 +161,7 @@ const PagesList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -172,7 +172,7 @@ const PagesList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -183,7 +183,7 @@ const PagesList = () => {
 
               <Button
                 onClick={() => navigate("/admin/pages/create")}
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg"
+                className="bg-primary-600 hover:bg-primary-700 text-white shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)] hover:shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.35)]"
               >
                 <Plus size={18} />
                 <span>Add Page</span>
@@ -195,37 +195,37 @@ const PagesList = () => {
         {/* Stats Summary */}
         {!loading && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div className="bg-primary-50 dark:bg-primary-900/20 p-5 rounded-xl border border-primary-200 dark:border-primary-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                  <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
                     Total Pages
                   </p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">
+                  <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                     {pages.length}
                   </p>
                 </div>
-                <div className="p-3 bg-blue-500/10 rounded-lg">
-                  <FileText className="text-blue-600 dark:text-blue-400" size={20} />
+                <div className="p-3 bg-primary-500/10 rounded-lg">
+                  <FileText className="text-primary-600 dark:text-primary-400" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <div className="bg-green-50 dark:bg-green-900/20 p-5 rounded-xl border border-green-200 dark:border-green-800 shadow-[0_2px_8px_rgba(34,197,94,0.08)]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                  <p className="text-sm font-medium text-green-700 dark:text-green-300">
                     Published
                   </p>
-                  <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                  <p className="text-2xl font-bold text-green-900 dark:text-green-100 mt-1">
                     {pages.filter((p) => p.status === "published").length}
                   </p>
                 </div>
-                <div className="p-3 bg-emerald-500/10 rounded-lg">
-                  <CheckCircle className="text-emerald-600 dark:text-emerald-400" size={20} />
+                <div className="p-3 bg-green-500/10 rounded-lg">
+                  <CheckCircle className="text-green-600 dark:text-green-400" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900/20 dark:to-gray-800/20 p-5 rounded-xl border border-gray-200 dark:border-gray-800">
+            <div className="bg-gray-50 dark:bg-gray-900/20 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Drafts</p>
@@ -245,7 +245,7 @@ const PagesList = () => {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
               <p className="text-gray-500 dark:text-gray-400">Loading pages...</p>
             </div>
           </div>
@@ -268,7 +268,7 @@ const PagesList = () => {
                       {pages.length === 0 && (
                         <Button
                           onClick={() => navigate("/admin/pages/create")}
-                          className="mt-4 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white"
+                          className="mt-4 bg-primary-600 hover:bg-primary-700 text-white shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]"
                         >
                           <Plus size={18} />
                           <span>Create Your First Page</span>
@@ -280,7 +280,7 @@ const PagesList = () => {
                   filteredPages.map((page) => (
                     <div
                       key={page.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group overflow-hidden"
+                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.15)] hover:border-primary-200 dark:hover:border-primary-800 transition-all group overflow-hidden"
                     >
                       <div className="p-6">
                         <div className="flex justify-between items-start mb-4">
@@ -330,7 +330,7 @@ const PagesList = () => {
                               onClick={() => window.open(`/page/${page.slug}`, "_blank")}
                               variant="ghost"
                               size="sm"
-                              className="flex-1 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+                              className="flex-1 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400"
                             >
                               <Eye size={16} />
                               <span>View</span>
@@ -340,7 +340,7 @@ const PagesList = () => {
                             onClick={() => navigate(`/admin/pages/edit/${page.id}`)}
                             variant="ghost"
                             size="sm"
-                            className="flex-1 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400"
+                            className="flex-1 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400"
                           >
                             <Edit size={16} />
                             <span>Edit</span>
@@ -364,11 +364,11 @@ const PagesList = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
-                      <tr className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 text-gray-700 dark:text-gray-200">
+                      <tr className="bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
                         <th className="py-4 px-6 text-left font-semibold">Title</th>
                         <th className="py-4 px-6 text-left font-semibold">Slug</th>
                         <th className="py-4 px-6 text-center font-semibold">Status</th>
@@ -398,7 +398,7 @@ const PagesList = () => {
                         filteredPages.map((page, index) => (
                           <tr
                             key={page.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all group ${
+                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
                               index % 2 === 0
                                 ? "bg-white dark:bg-gray-900"
                                 : "bg-gray-50/50 dark:bg-gray-800/50"
@@ -441,7 +441,7 @@ const PagesList = () => {
                                 {page.status === "published" && (
                                   <button
                                     onClick={() => window.open(`/page/${page.slug}`, "_blank")}
-                                    className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all hover:scale-110"
+                                    className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110"
                                     title="View Page"
                                   >
                                     <Eye size={18} />
@@ -449,7 +449,7 @@ const PagesList = () => {
                                 )}
                                 <button
                                   onClick={() => navigate(`/admin/pages/edit/${page.id}`)}
-                                  className="p-2 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-all hover:scale-110"
+                                  className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110"
                                   title="Edit Page"
                                 >
                                   <Edit size={18} />

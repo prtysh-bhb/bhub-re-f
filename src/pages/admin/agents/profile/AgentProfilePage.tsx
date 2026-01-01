@@ -146,7 +146,7 @@ const AgentProfilePage = () => {
     <>
         <div className="flex items-center justify-center h-[70vh]">
           <div className="text-center space-y-4">
-            <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading profile...</p>
           </div>
         </div>
@@ -157,14 +157,14 @@ const AgentProfilePage = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary-600 dark:bg-primary-700 rounded-xl shadow-md">
                 <UserCog className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   Edit Profile
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -185,11 +185,11 @@ const AgentProfilePage = () => {
         </div>
 
         {/* Profile Information */}
-        <form onSubmit={handleUpdate} className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+        <form onSubmit={handleUpdate} className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30 overflow-hidden">
           {/* Avatar Section */}
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <Camera className="text-blue-600 dark:text-emerald-400" size={20} />
+              <Camera className="text-primary-600 dark:text-primary-400" size={20} />
               Profile Picture
             </h3>
             <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -218,7 +218,7 @@ const AgentProfilePage = () => {
                       onChange={handleAvatarUpload}
                       disabled={uploadingAvatar}
                     />
-                    <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer text-sm font-medium">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer text-sm font-medium">
                       <Upload size={16} />
                       Upload New
                     </div>
@@ -240,7 +240,7 @@ const AgentProfilePage = () => {
           {/* Personal Information */}
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <User className="text-blue-600 dark:text-emerald-400" size={20} />
+              <User className="text-primary-600 dark:text-primary-400" size={20} />
               Personal Information
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -311,7 +311,7 @@ const AgentProfilePage = () => {
           {/* Address Information */}
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <MapPin className="text-blue-600 dark:text-emerald-400" size={20} />
+              <MapPin className="text-primary-600 dark:text-primary-400" size={20} />
               Address Information
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -363,7 +363,7 @@ const AgentProfilePage = () => {
           {/* Professional Information */}
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <Building2 className="text-blue-600 dark:text-emerald-400" size={20} />
+              <Building2 className="text-primary-600 dark:text-primary-400" size={20} />
               Professional Information
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -409,7 +409,7 @@ const AgentProfilePage = () => {
               value={user.bio || ""}
               onChange={(e) => setUser({ ...user, bio: e.target.value })}
               placeholder="Write a short bio..."
-              className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 focus:border-blue-500 dark:focus:border-emerald-500 transition-all"
+              className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
               rows={4}
               maxLength={1000}
             ></textarea>
@@ -422,7 +422,7 @@ const AgentProfilePage = () => {
           <div className="p-6 bg-gray-50 dark:bg-gray-800/50">
             <Button
               type="submit"
-              className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg"
+              className="bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg"
             >
               <Save size={18} className="mr-2" />
               Save Changes
@@ -431,10 +431,10 @@ const AgentProfilePage = () => {
         </form>
 
         {/* Password Change */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-black/30">
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-              <Lock className="text-emerald-600 dark:text-emerald-400" size={20} />
+              <Lock className="text-primary-600 dark:text-primary-400" size={20} />
               Change Password
             </h3>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -520,7 +520,7 @@ const AgentProfilePage = () => {
               </div>
             </div>
             <Button
-              className="bg-emerald-600 hover:bg-emerald-700 text-white"
+              className="bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg"
               onClick={handlePasswordChange}
             >
               <Lock size={18} className="mr-2" />
@@ -530,7 +530,7 @@ const AgentProfilePage = () => {
         </div>
 
         {/* Danger Zone */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl border-2 border-red-200 dark:border-red-900/50 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 rounded-xl border-2 border-red-200 dark:border-red-900/50 shadow-lg dark:shadow-black/30">
           <div className="p-6 border-b border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-950/20">
             <h3 className="text-lg font-semibold text-red-600 dark:text-red-400 flex items-center gap-2">
               <AlertTriangle size={20} />

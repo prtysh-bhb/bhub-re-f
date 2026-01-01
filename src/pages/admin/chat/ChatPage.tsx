@@ -292,7 +292,7 @@ const ChatPage = () => {
 
   return (
     <>
-      <div className="h-[calc(100vh-8rem)] bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+      <div className="h-[calc(100vh-8rem)] bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.08)] overflow-hidden">
         <div className="grid grid-cols-12 h-full">
           {/* LEFT: Conversations list */}
           <div
@@ -303,14 +303,14 @@ const ChatPage = () => {
             {/* Header */}
             <div className="p-4 border-b border-gray-200 dark:border-gray-800">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
+                <div className="p-2 bg-primary-600 rounded-lg shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]">
                   <MessageCircle className="text-white" size={20} />
                 </div>
-                <h2 className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Messages
                 </h2>
               </div>
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-gray-50 dark:bg-gray-800">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-gray-50 dark:bg-gray-800 hover:border-primary-400 dark:hover:border-primary-600 transition-colors">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -331,14 +331,14 @@ const ChatPage = () => {
                   onClick={() => handleSelectConversation(conversation.id)}
                   className={`p-4 border-b border-gray-100 dark:border-gray-800 cursor-pointer transition-all ${
                     selectedChat === conversation.id
-                      ? "bg-blue-50 dark:bg-blue-950/20 border-l-4 border-l-blue-600 dark:border-l-emerald-500"
+                      ? "bg-primary-50 dark:bg-primary-950/20 border-l-4 border-l-primary-600"
                       : "hover:bg-gray-50 dark:hover:bg-gray-800"
                   }`}
                 >
                   <div className="flex items-start justify-between mb-1">
                     <div className="flex items-center gap-2">
                       <div className="relative">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-sm">
+                        <div className="w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-sm shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]">
                           {conversation.name.charAt(0)}
                         </div>
                       </div>
@@ -350,7 +350,7 @@ const ChatPage = () => {
                     </div>
                     <div className="flex items-center justify-end w-10 h-10">
                       {unreadCounts && unreadCounts[conversation?.id] > 0 && (
-                        <p className="ml-2 px-2 py-0.5 bg-blue-600 dark:bg-emerald-600 text-white text-xs font-bold rounded-full">
+                        <p className="ml-2 px-2 py-0.5 bg-primary-600 text-white text-xs font-bold rounded-full">
                           {unreadCounts[conversation?.id]}
                         </p>
                       )}
@@ -382,11 +382,11 @@ const ChatPage = () => {
                       </button>
                     )}
                     <div className="relative">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold">
+                      <div className="w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]">
                         {selectedConversation?.name?.charAt(0) ?? "U"}
                       </div>
                       {selectedConversation?.is_active && (
-                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-gray-900 rounded-full"></div>
+                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full"></div>
                       )}
                     </div>
                     <div>
@@ -409,8 +409,8 @@ const ChatPage = () => {
                         <div
                           className={`p-3 rounded-lg ${
                             message.sender_id == user.id
-                              ? "bg-gradient-to-r from-blue-600 to-emerald-600 text-white"
-                              : "bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700"
+                              ? "bg-primary-600 text-white shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)]"
+                              : "bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 shadow-sm"
                           }`}
                           style={{ maxWidth: "100%", maxHeight: "35rem", overflow: "auto" }}
                         >
@@ -524,7 +524,7 @@ const ChatPage = () => {
                   <button
                     ref={scrollButtonRef}
                     onClick={scrollToBottom}
-                    className="fixed bottom-32 right-8 cursor-pointer md:right-12 p-3 bg-gray-400 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                    className="fixed bottom-32 right-8 cursor-pointer md:right-12 p-3 bg-primary-600 text-white rounded-full shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.3)] hover:shadow-[0_6px_16px_rgba(var(--color-primary-rgb),0.4)] transition-all duration-300 z-10"
                     title="Scroll to bottom"
                   >
                     <ArrowDown size={20} />
@@ -547,9 +547,9 @@ const ChatPage = () => {
                 {/* File Preview */}
                 {selectedFile && (
                   <div className="px-4 py-2 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+                        <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
                           {getFileIcon(fileType)}
                         </div>
                         <div>
@@ -608,12 +608,12 @@ const ChatPage = () => {
                       onKeyPress={handleKeyPress}
                       placeholder="Type a message..."
                       disabled={isSending}
-                      className="flex-1 px-4 py-2 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white outline-none disabled:opacity-50"
+                      className="flex-1 px-4 py-2 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 text-gray-900 dark:text-white outline-none disabled:opacity-50"
                     />
                     <button
                       onClick={handleSendMessage}
                       disabled={(!messageInput.trim() && !selectedFile) || isSending}
-                      className="p-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="p-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.25)] hover:shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.35)] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSending ? (
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
