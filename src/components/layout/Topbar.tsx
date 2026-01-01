@@ -93,7 +93,7 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
             className="relative w-10 h-10 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 flex items-center justify-center transition-colors"
             aria-label="Notifications"
           >
-            <Bell className="w-5 h-5" />
+            <Bell className="w-5 h-5 text-primary-600 dark:text-primary-400" />
             <span className="absolute top-2 right-2 w-2 h-2 bg-error-600 rounded-full"></span>
           </button>
 
@@ -101,18 +101,18 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
           {showNotifications && (
             <div className="absolute right-0 mt-2 w-80 bg-white dark:bg-neutral-900 rounded-lg shadow-xl border border-neutral-200 dark:border-neutral-800 py-2 animate-scale-in">
               <div className="px-4 py-2 border-b border-neutral-200 dark:border-neutral-800">
-                <h3 className="font-semibold text-sm">Notifications</h3>
+                <h3 className="font-semibold text-sm text-primary-500">Notifications</h3>
               </div>
               <div className="max-h-96 overflow-y-auto">
                 <div className="px-4 py-3 hover:bg-neutral-50 dark:hover:bg-neutral-800 cursor-pointer">
-                  <p className="text-sm font-medium">New property inquiry</p>
+                  <p className="text-sm text-primary-600">New property inquiry</p>
                   <p className="text-xs text-neutral-500 mt-1">
                     John Doe is interested in your listing
                   </p>
                   <p className="text-xs text-neutral-400 mt-1">2 minutes ago</p>
                 </div>
                 <div className="px-4 py-3 hover:bg-neutral-50 dark:hover:bg-neutral-800 cursor-pointer">
-                  <p className="text-sm font-medium">Property approved</p>
+                  <p className="text-sm text-primary-600">Property approved</p>
                   <p className="text-xs text-neutral-500 mt-1">
                     Your listing has been approved
                   </p>

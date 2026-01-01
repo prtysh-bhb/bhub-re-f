@@ -237,7 +237,7 @@ const AdminDashboardPage = () => {
   if (loading) {
     return (
     <>
-        <div className="min-h-screen bg-neutral-100/50 dark:bg-neutral-950 flex items-center justify-center">
+        <div className="min-h-screen  flex items-center justify-center">
           <Loader />
         </div>
     </>
@@ -247,7 +247,7 @@ const AdminDashboardPage = () => {
   if (error) {
     return (
     <>
-        <div className="min-h-screen bg-neutral-100/50 dark:bg-neutral-950 flex items-center justify-center">
+        <div className="min-h-screen  flex items-center justify-center">
           <div className="text-center text-error-600 dark:text-error-400 p-8 bg-white dark:bg-neutral-900 rounded-2xl shadow-xl border border-neutral-200 dark:border-neutral-800">
             <XCircle className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">{error}</p>
@@ -260,7 +260,7 @@ const AdminDashboardPage = () => {
   if (!profile) {
     return (
     <>
-        <div className="min-h-screen bg-neutral-100/50 dark:bg-neutral-950 flex items-center justify-center">
+        <div className="min-h-screen  flex items-center justify-center">
           <div className="text-center text-neutral-500 dark:text-neutral-400 p-8 bg-white dark:bg-neutral-900 rounded-2xl shadow-xl border border-neutral-200 dark:border-neutral-800">
             <Users className="w-16 h-16 mx-auto mb-4" />
             <p className="text-lg font-semibold">No profile data found.</p>
@@ -274,17 +274,17 @@ const AdminDashboardPage = () => {
 
   return (
     <>
-      <div className="p-6 space-y-6 bg-gradient-to-br from-neutral-50 via-primary-50/10 to-neutral-50 dark:from-neutral-950 dark:via-primary-950/5 dark:to-neutral-950 min-h-screen">
+      <div className="p-6 space-y-6 min-h-screen">
         {/* Welcome Header - Elegant & Professional */}
-        <div className="relative bg-gradient-to-br from-white via-primary-50/20 to-primary-100/40 dark:from-neutral-900 dark:via-primary-950/20 dark:to-primary-900/30 py-10 px-8 rounded-2xl border border-primary-200/60 dark:border-primary-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 py-6 px-4 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden">
           {/* Decorative gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent opacity-50"></div>
 
           <div className="relative flex items-center justify-between">
             <div>
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-3 mb-2">
                 <div className="w-1.5 h-8 bg-gradient-to-b from-primary-600 to-primary-400 rounded-full"></div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-neutral-100 dark:to-neutral-300 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-neutral-100 dark:to-neutral-300 bg-clip-text text-transparent">
                   Welcome back, {userName}
                 </h1>
               </div>
@@ -313,7 +313,7 @@ const AdminDashboardPage = () => {
             return (
               <div
                 key={stat.label}
-                className="group relative bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 rounded-2xl p-6 shadow-lg shadow-primary-100/20 dark:shadow-black/20 border border-primary-200/40 dark:border-primary-800/40 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300"
+                className="group relative bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 border border-neutral-200/60 dark:border-neutral-800/60 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300"
               >
                 {/* Background gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 via-primary-50/0 to-primary-100/20 dark:from-primary-950/0 dark:via-primary-950/0 dark:to-primary-900/10 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
@@ -335,7 +335,7 @@ const AdminDashboardPage = () => {
                     </div>
                   </div>
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-lg shadow-primary-500/30 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
-                    <Icon className="w-7 h-7 text-white" />
+                    <Icon className="w-7 h-7 text-primary-600 dark:text-primary-400" />
                   </div>
                 </div>
               </div>
@@ -346,11 +346,11 @@ const AdminDashboardPage = () => {
         {/* Detailed Statistics Grid - Elegant Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* User Statistics */}
-          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                  <Users className="w-6 h-6 text-white" />
+                  <Users className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">User Statistics</h3>
               </div>
@@ -377,11 +377,11 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Property Statistics */}
-          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                  <Building2 className="w-6 h-6 text-white" />
+                  <Building2 className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Property Statistics</h3>
               </div>
@@ -408,11 +408,11 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Inquiry Statistics */}
-          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                  <MessageCircle className="w-6 h-6 text-white" />
+                  <MessageCircle className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Inquiry Statistics</h3>
               </div>
@@ -442,12 +442,12 @@ const AdminDashboardPage = () => {
         {/* Recent Activity & Pending Approvals */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Users */}
-          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3.5">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                    <Zap className="w-6 h-6 text-white" />
+                    <Zap className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                   </div>
                   <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Recent Users</h3>
                 </div>
@@ -461,7 +461,7 @@ const AdminDashboardPage = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div className="w-11 h-11 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-full flex items-center justify-center shadow-md shadow-primary-500/20 group-hover:scale-110 transition-transform duration-200">
-                          <Users className="w-5 h-5 text-white" />
+                          <Users className="w-5 h-5 text-primary-500" />
                         </div>
                         <div>
                           <p className="text-neutral-900 dark:text-neutral-100 text-sm font-bold">{user.name}</p>
@@ -486,12 +486,12 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Recent Properties */}
-          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3.5">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                    <Rocket className="w-6 h-6 text-white" />
+                    <Rocket className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                   </div>
                   <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Recent Properties</h3>
                 </div>
@@ -527,16 +527,16 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Pending Approvals */}
-          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3.5">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                    <Clock4 className="w-6 h-6 text-white" />
+                    <Clock4 className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                   </div>
                   <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Pending Approvals</h3>
                 </div>
-                <span className="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white px-3 py-1.5 rounded-full text-sm font-bold shadow-md shadow-primary-500/30">
+                <span className="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-primary-500 px-3 py-1.5 rounded-full text-sm font-bold shadow-md shadow-primary-500/30">
                   {pendingApprovals.length}
                 </span>
               </div>
@@ -568,11 +568,11 @@ const AdminDashboardPage = () => {
         {/* Top Performers */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Top Agents by Properties */}
-          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                  <TrendingUp className="w-6 h-6 text-white" />
+                  <TrendingUp className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Top Agents (Properties)</h3>
               </div>
@@ -585,9 +585,9 @@ const AdminDashboardPage = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-transform group-hover:scale-110 duration-200 ${
-                          index === 0 ? 'bg-gradient-to-br from-primary-400 to-primary-500 text-white shadow-primary-500/30' :
-                          index === 1 ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-primary-600/30' :
-                          index === 2 ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-primary-700/30' :
+                          index === 0 ? 'bg-gradient-to-br from-primary-400 to-primary-500 text-primary-500 shadow-primary-500/30' :
+                          index === 1 ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-primary-500 shadow-primary-600/30' :
+                          index === 2 ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-primary-500 shadow-primary-700/30' :
                           'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
                         }`}>
                           {index < 3 ? (
@@ -613,11 +613,11 @@ const AdminDashboardPage = () => {
           </Card>
 
           {/* Top Agents by Inquiries */}
-          <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                  <BarChart3 className="w-6 h-6 text-white" />
+                  <BarChart3 className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Top Agents (Inquiries)</h3>
               </div>
@@ -630,9 +630,9 @@ const AdminDashboardPage = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-transform group-hover:scale-110 duration-200 ${
-                          index === 0 ? 'bg-gradient-to-br from-primary-400 to-primary-500 text-white shadow-primary-500/30' :
-                          index === 1 ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-primary-600/30' :
-                          index === 2 ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-primary-700/30' :
+                          index === 0 ? 'bg-gradient-to-br from-primary-400 to-primary-500 text-primary-500 shadow-primary-500/30' :
+                          index === 1 ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-primary-500 shadow-primary-600/30' :
+                          index === 2 ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-primary-500 shadow-primary-700/30' :
                           'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
                         }`}>
                           {index < 3 ? (
@@ -659,11 +659,11 @@ const AdminDashboardPage = () => {
         </div>
 
         {/* Property Types Distribution */}
-        <Card className="bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
+        <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
-                <Home className="w-6 h-6 text-white" />
+                <Home className="w-6 h-6 text-primary-600 dark:text-primary-400" />
               </div>
               <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Properties by Type</h3>
             </div>
@@ -689,7 +689,7 @@ const AdminDashboardPage = () => {
 
                     <div className="relative">
                       <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${shades[index % shades.length]} shadow-lg shadow-primary-500/20 mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                        <span className="text-2xl font-bold text-white">{type.count}</span>
+                        <span className="text-2xl font-semibold text-primary-500">{type.count}</span>
                       </div>
                       <div className="text-neutral-700 dark:text-neutral-300 text-sm font-bold capitalize">{type.type || 'Unknown'}</div>
                     </div>

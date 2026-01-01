@@ -24,13 +24,13 @@ export const AdminLayout: React.FC = () => {
 
       {/* Main Content */}
       <main
-        className="transition-all duration-300 pt-16"
+        className="transition-all duration-300 bg-gradient-to-br from-neutral-50 via-neutral-100/30 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950"
         style={{
           marginLeft: config.layout.menuCollapsed ? "80px" : "260px",
         }}
       >
         <div
-          className="p-6"
+          className=""
           style={{
             maxWidth: config.layout.contentWidth === "compact" ? "1280px" : "100%",
             marginLeft: "auto",

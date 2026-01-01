@@ -24,13 +24,13 @@ export const AgentLayout: React.FC = () => {
 
       {/* Main Content */}
       <main
-        className="transition-all duration-300 pt-16"
+        className="transition-all duration-300"
         style={{
           marginLeft: config.layout.menuCollapsed ? "80px" : "260px",
         }}
       >
         <div
-          className="p-6"
+          className=""
           style={{
             maxWidth: config.layout.contentWidth === "compact" ? "1280px" : "100%",
             marginLeft: "auto",

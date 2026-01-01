@@ -340,7 +340,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ role }) => {
       </nav>
 
       {/* Collapse Toggle */}
-      <div className="sticky bottom-0 bg-gradient-to-t from-white via-white dark:from-neutral-900 dark:via-neutral-900 to-transparent p-3 pt-6">
+      <div className="sticky bottom-0 p-3 pt-6">
         <button
           onClick={() => updateLayout({ menuCollapsed: !collapsed })}
           className="w-full h-10 flex items-center justify-center rounded-lg bg-neutral-100/80 dark:bg-neutral-800/80 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 transition-all group"
