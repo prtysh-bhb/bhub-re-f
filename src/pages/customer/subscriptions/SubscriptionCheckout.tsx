@@ -233,7 +233,7 @@ function CheckoutForm() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Payment Form */}
-            <Card className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm border-2 border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl">
+            <Card className="bg-white dark:bg-neutral-900/50 dark:backdrop-blur-sm border-2 border-gray-200 dark:border-neutral-800 rounded-2xl shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Shield className="w-6 h-6 text-emerald-600 dark:text-emerald-500" />
@@ -259,7 +259,7 @@ function CheckoutForm() {
                     <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100">
                       Card Information
                     </label>
-                    <div className="border-2 border-gray-300 dark:border-gray-700 rounded-xl p-4 hover:border-blue-500 dark:hover:border-blue-500 focus-within:border-blue-500 dark:focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500 dark:focus-within:ring-blue-500 transition-all duration-200">
+                    <div className="border-2 border-gray-300 dark:border-neutral-700 rounded-xl p-4 hover:border-blue-500 dark:hover:border-blue-500 focus-within:border-blue-500 dark:focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500 dark:focus-within:ring-blue-500 transition-all duration-200">
                       <CardElement options={cardElementOptionsDark} />
                     </div>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -287,7 +287,7 @@ function CheckoutForm() {
                   </Button>
 
                   {/* Trust Indicators */}
-                  <div className="flex items-center justify-center gap-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center justify-center gap-6 pt-4 border-t border-gray-200 dark:border-neutral-700">
                     <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                       <Shield className="w-4 h-4 text-emerald-600 dark:text-emerald-500" />
                       SSL Secure
@@ -336,7 +336,7 @@ function CheckoutForm() {
                         <h4 className="font-semibold text-gray-900 dark:text-white text-lg">What's Included:</h4>
                         
                         <div className="grid grid-cols-2 gap-4">
-                          <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                          <div className="flex items-center gap-3 p-3 bg-white dark:bg-neutral-800 rounded-xl border border-gray-200 dark:border-neutral-700">
                             <Building2 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                             <div>
                               <p className="font-semibold text-gray-900 dark:text-white text-sm">
@@ -346,7 +346,7 @@ function CheckoutForm() {
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                          <div className="flex items-center gap-3 p-3 bg-white dark:bg-neutral-800 rounded-xl border border-gray-200 dark:border-neutral-700">
                             <Star className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                             <div>
                               <p className="font-semibold text-gray-900 dark:text-white text-sm">{subscriptionPlan.featured_limit}</p>
@@ -354,7 +354,7 @@ function CheckoutForm() {
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                          <div className="flex items-center gap-3 p-3 bg-white dark:bg-neutral-800 rounded-xl border border-gray-200 dark:border-neutral-700">
                             <Image className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                             <div>
                               <p className="font-semibold text-gray-900 dark:text-white text-sm">{subscriptionPlan.image_limit}</p>
@@ -362,7 +362,7 @@ function CheckoutForm() {
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                          <div className="flex items-center gap-3 p-3 bg-white dark:bg-neutral-800 rounded-xl border border-gray-200 dark:border-neutral-700">
                             <Calendar className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                             <div>
                               <p className="font-semibold text-gray-900 dark:text-white text-sm">{subscriptionPlan.duration_days}</p>
@@ -382,7 +382,7 @@ function CheckoutForm() {
                           ))}
                           
                           {/* Additional Premium Indicators */}
-                          <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700">
+                          <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-neutral-700">
                             <span className="text-sm font-semibold text-gray-900 dark:text-white">Video Tours</span>
                             {subscriptionPlan.video_allowed ? (
                               <CheckCircle className="w-5 h-5 text-emerald-500 dark:text-emerald-400" />
@@ -402,7 +402,7 @@ function CheckoutForm() {
                       </div>
 
                       {/* Total */}
-                      <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                      <div className="border-t border-gray-200 dark:border-neutral-700 pt-4">
                         <div className="flex items-center justify-between text-lg font-bold text-gray-900 dark:text-white">
                           <span>Total Due Today</span>
                           <span>${subscriptionPlan.price}</span>

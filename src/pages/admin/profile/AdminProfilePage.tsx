@@ -164,7 +164,7 @@ const AdminProfilePage = () => {
             <Button
               onClick={() => navigate(-1)}
               variant="outline"
-              className="border-gray-300 dark:border-gray-600"
+              className="border-gray-300 dark:border-neutral-600"
             >
               <ArrowLeft size={18} className="mr-2" />
               Back
@@ -216,7 +216,7 @@ const AdminProfilePage = () => {
                     size="sm"
                     type="button"
                     onClick={handleDeleteAvatar}
-                    className="border-gray-300 dark:border-gray-600"
+                    className="border-gray-300 dark:border-neutral-600"
                   >
                     Remove
                   </Button>

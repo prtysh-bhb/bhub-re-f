@@ -97,7 +97,7 @@ const AgentProperty = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -107,7 +107,7 @@ const AgentProperty = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >

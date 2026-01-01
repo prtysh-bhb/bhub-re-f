@@ -975,7 +975,7 @@ const Wallet = () => {
                       min="1"
                       value={adjustCredits.credits}
                       onChange={(e) => setAdjustCredits({ ...adjustCredits, credits: e.target.value })}
-                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm md:text-base"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm md:text-base"
                       placeholder="Enter credits amount"
                     />
                   </div>
@@ -988,7 +988,7 @@ const Wallet = () => {
                       value={adjustCredits.reason}
                       onChange={(e) => setAdjustCredits({ ...adjustCredits, reason: e.target.value })}
                       rows={3}
-                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none text-sm md:text-base"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none text-sm md:text-base"
                       placeholder="Enter reason for adding credits"
                     />
                   </div>
@@ -997,7 +997,7 @@ const Wallet = () => {
                 <div className="flex justify-end gap-2 md:gap-3 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-neutral-700">
                   <button
                     onClick={() => setShowAddModal(false)}
-                    className="px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
+                    className="px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                   >
                     Cancel
                   </button>
@@ -1061,7 +1061,7 @@ const Wallet = () => {
                       max={selectedWallet.current_credits}
                       value={adjustCredits.credits}
                       onChange={(e) => setAdjustCredits({ ...adjustCredits, credits: e.target.value })}
-                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm md:text-base"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm md:text-base"
                       placeholder={`Max: ${formatCurrency(selectedWallet.current_credits)}`}
                     />
                   </div>
@@ -1074,7 +1074,7 @@ const Wallet = () => {
                       value={adjustCredits.reason}
                       onChange={(e) => setAdjustCredits({ ...adjustCredits, reason: e.target.value })}
                       rows={3}
-                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-red-500 focus:border-red-500 resize-none text-sm md:text-base"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-red-500 focus:border-red-500 resize-none text-sm md:text-base"
                       placeholder="Enter reason for deducting credits"
                     />
                   </div>
@@ -1083,7 +1083,7 @@ const Wallet = () => {
                 <div className="flex justify-end gap-2 md:gap-3 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-neutral-700">
                   <button
                     onClick={() => setShowDeductModal(false)}
-                    className="px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
+                    className="px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                   >
                     Cancel
                   </button>

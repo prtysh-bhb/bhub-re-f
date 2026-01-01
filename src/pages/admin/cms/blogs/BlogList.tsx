@@ -384,7 +384,7 @@ const BlogsList = () => {
       case "rejected":
         return `${baseClasses} bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400`;
       default:
-        return `${baseClasses} bg-gray-100 text-gray-700 dark:bg-gray-700/20 dark:text-gray-400`;
+        return `${baseClasses} bg-gray-100 text-gray-700 dark:bg-neutral-700/20 dark:text-gray-400`;
     }
   };
 
@@ -439,7 +439,7 @@ const BlogsList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-md shadow-primary-500/20 text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-md shadow-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -450,7 +450,7 @@ const BlogsList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-md shadow-primary-500/20 text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-md shadow-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -965,8 +965,8 @@ const BlogModal = ({
                   className={`w-full px-4 py-3 rounded-lg border ${
                     formErrors.title
                       ? "border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500"
-                      : "border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500"
-                  } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
+                      : "border-gray-300 dark:border-neutral-600 focus:ring-primary-500 focus:border-primary-500"
+                  } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all`}
                   placeholder="Enter blog title"
                   disabled={submitting}
                 />
@@ -1058,7 +1058,7 @@ const BlogModal = ({
                     name="meta_title"
                     value={formData.meta_title || ""}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100"
                     placeholder="Meta title for SEO"
                     disabled={submitting}
                   />
@@ -1074,7 +1074,7 @@ const BlogModal = ({
                     value={formData.meta_description || ""}
                     onChange={handleInputChange}
                     rows={3}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100"
                     placeholder="Meta description for SEO"
                     disabled={submitting}
                   ></textarea>
@@ -1090,7 +1090,7 @@ const BlogModal = ({
                     name="meta_keywords"
                     value={formData.meta_keywords || ""}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100"
                     placeholder="keyword1, keyword2, keyword3"
                     disabled={submitting}
                   />
@@ -1139,7 +1139,7 @@ const BlogModal = ({
                   </div>
                 )}
 
-                <div className="border-2 border-dashed border-amber-300 dark:border-amber-600 rounded-lg p-4 text-center hover:border-amber-400 dark:hover:border-amber-500 transition-colors bg-white dark:bg-gray-700">
+                <div className="border-2 border-dashed border-amber-300 dark:border-amber-600 rounded-lg p-4 text-center hover:border-amber-400 dark:hover:border-amber-500 transition-colors bg-white dark:bg-neutral-700">
                   <input
                     type="file"
                     accept="image/*"
@@ -1169,7 +1169,7 @@ const BlogModal = ({
                   <label className="block text-sm font-semibold text-gray-900 dark:text-gray-200">
                     Content Image
                   </label>
-                  <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded">
+                  <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-neutral-700 text-gray-600 dark:text-gray-400 rounded">
                     Optional
                   </span>
                 </div>
@@ -1179,7 +1179,7 @@ const BlogModal = ({
                     <img
                       src={imagePreview}
                       alt="Content Preview"
-                      className="w-full h-48 object-cover rounded-lg border border-gray-300 dark:border-gray-600"
+                      className="w-full h-48 object-cover rounded-lg border border-gray-300 dark:border-neutral-600"
                     />
                     <button
                       type="button"
@@ -1191,7 +1191,7 @@ const BlogModal = ({
                     </button>
                   </div>
                 ) : (
-                  <div className="mb-4 text-center py-8 bg-gray-50/50 dark:bg-neutral-800/50 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600">
+                  <div className="mb-4 text-center py-8 bg-gray-50/50 dark:bg-neutral-800/50 rounded-lg border-2 border-dashed border-gray-300 dark:border-neutral-600">
                     <ImageOff className="text-gray-400 dark:text-gray-500 mx-auto mb-2" size={24} />
                     <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
                       No content image selected
@@ -1199,7 +1199,7 @@ const BlogModal = ({
                   </div>
                 )}
 
-                <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 text-center hover:border-primary-500 transition-colors">
+                <div className="border-2 border-dashed border-gray-300 dark:border-neutral-600 rounded-lg p-4 text-center hover:border-primary-500 transition-colors">
                   <input
                     type="file"
                     accept="image/*"
@@ -1238,8 +1238,8 @@ const BlogModal = ({
               className={`w-full px-4 py-3 rounded-lg border ${
                 formErrors.content
                   ? "border-red-300 dark:border-red-700"
-                  : "border-gray-300 dark:border-gray-600"
-              } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all resize-y`}
+                  : "border-gray-300 dark:border-neutral-600"
+              } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all resize-y`}
               placeholder="Enter blog description/content (Supports HTML)"
               disabled={submitting}
             />
@@ -1253,7 +1253,7 @@ const BlogModal = ({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="px-4 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 order-2 sm:order-1"
+              className="px-4 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 order-2 sm:order-1"
               disabled={submitting}
             >
               Cancel

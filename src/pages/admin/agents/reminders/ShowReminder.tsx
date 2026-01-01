@@ -311,7 +311,7 @@ const ShowReminder = () => {
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
                         reminder.notification_sent
                           ? 'bg-primary-100 dark:bg-primary-800/30'
-                          : 'bg-gray-100 dark:bg-gray-700'
+                          : 'bg-gray-100 dark:bg-neutral-700'
                       }`}>
                         <Bell className={`w-5 h-5 ${
                           reminder.notification_sent

@@ -57,7 +57,7 @@ const FAQSection = () => {
               placeholder="Search for answers..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm"
+              className="w-full pl-12 pr-4 py-4 bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm"
             />
           </div>
         </div>
@@ -67,10 +67,10 @@ const FAQSection = () => {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className={`bg-white dark:bg-gray-800 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl ${
+              className={`bg-white dark:bg-neutral-800 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl ${
                 openItems.includes(item.id)
                   ? "border-blue-200 dark:border-blue-800 shadow-lg"
-                  : "border-gray-200 dark:border-gray-700 hover:border-blue-100 dark:hover:border-blue-900"
+                  : "border-gray-200 dark:border-neutral-700 hover:border-blue-100 dark:hover:border-blue-900"
               }`}
             >
               <button
@@ -103,7 +103,7 @@ const FAQSection = () => {
                 <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                   openItems.includes(item.id)
                     ? "bg-gradient-to-br from-blue-500 to-emerald-500 text-white rotate-180"
-                    : "bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400"
+                    : "bg-gray-100 text-gray-600 dark:bg-neutral-700 dark:text-gray-400"
                 }`}>
                   {openItems.includes(item.id) ? (
                     <Minus className="w-5 h-5" />
@@ -126,7 +126,7 @@ const FAQSection = () => {
         {/* No Results */}
         {filteredItems.length === 0 && (
           <div className="text-center py-12">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center">
               <Search className="w-10 h-10 text-gray-400" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
@@ -139,7 +139,7 @@ const FAQSection = () => {
         )}
 
         {/* CTA Section */}
-        <div className="mt-12 pt-12 border-t border-gray-200 dark:border-gray-800">
+        <div className="mt-12 pt-12 border-t border-gray-200 dark:border-neutral-800">
           <div className="max-w-3xl mx-auto text-center">
             <div className="p-8 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-blue-950/20 dark:to-emerald-950/20 rounded-2xl border border-blue-100 dark:border-blue-900">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
@@ -152,7 +152,7 @@ const FAQSection = () => {
                 <Link to={'/contact'} className="px-6 py-3 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5">
                   Contact Support
                 </Link>
-                <button className="px-6 py-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 text-gray-800 dark:text-gray-300 font-semibold rounded-lg transition-all duration-300">
+                <button className="px-6 py-3 bg-white dark:bg-neutral-800 border-2 border-gray-300 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-500 text-gray-800 dark:text-gray-300 font-semibold rounded-lg transition-all duration-300">
                   Visit Help Center
                 </button>
               </div>

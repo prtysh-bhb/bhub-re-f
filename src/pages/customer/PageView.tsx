@@ -91,7 +91,7 @@ const PageView = () => {
 
   return (
     <>
-      <div className="bg-gray-50 dark:bg-gray-900">
+      <div className="bg-gray-50 dark:bg-neutral-900">
         {/* Page Header */}
         <div className="bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
           <div className="container mx-auto px-4 py-12 md:py-16">
@@ -132,7 +132,7 @@ const PageView = () => {
         {/* Page Content */}
         <div className="container mx-auto px-4 py-12">
           <article className="max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-xl border border-gray-200 dark:border-neutral-700 overflow-hidden">
               <div className="p-8 md:p-12 lg:p-16 cmsContent">
                 <div
                   className="cmsContent"
@@ -145,7 +145,7 @@ const PageView = () => {
             <div className="mt-12 text-center">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all shadow-sm hover:shadow-md text-gray-700 dark:text-gray-300 font-medium"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all shadow-sm hover:shadow-md text-gray-700 dark:text-gray-300 font-medium"
               >
                 <ArrowLeft size={18} className="rotate-90" />
                 Back to Top

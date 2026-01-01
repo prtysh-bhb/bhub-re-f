@@ -185,7 +185,7 @@ const Notifications: React.FC<NotificationsComponentProps> = ({
       >
         <Bell size={18} />
         {unreadCount > 0 && (
-          <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900 shadow-sm" />
+          <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full border-2 border-white dark:border-neutral-900 shadow-sm" />
         )}
       </button>
 

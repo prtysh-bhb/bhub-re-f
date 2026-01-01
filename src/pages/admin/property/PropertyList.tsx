@@ -100,7 +100,7 @@ const PropertyList = () => {
       case "rejected":
         return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-300 dark:border-red-700 shadow-sm shadow-red-100 dark:shadow-red-900/20";
       default:
-        return "bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-gray-300 border-gray-300 dark:border-gray-600";
+        return "bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-gray-300 border-gray-300 dark:border-neutral-600";
     }
   };
 
@@ -163,7 +163,7 @@ const PropertyList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-lg transition-all duration-300 ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-lg shadow-primary-500/20 text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-lg shadow-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                   }`}
                 >
@@ -173,7 +173,7 @@ const PropertyList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-lg transition-all duration-300 ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-lg shadow-primary-500/20 text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-lg shadow-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                   }`}
                 >
@@ -507,7 +507,7 @@ const PropertyList = () => {
                 <Button
                   variant="outline"
                   onClick={() => setShowRejectPopup(false)}
-                  className="border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300"
+                  className="border-gray-300 dark:border-neutral-600 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300"
                 >
                   Cancel
                 </Button>

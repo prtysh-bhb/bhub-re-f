@@ -107,9 +107,9 @@ const RichTextEditor = ({ content, onChange }: RichTextEditorProps) => {
   );
 
   return (
-    <div className="border rounded-xl overflow-hidden bg-white dark:bg-gray-900">
+    <div className="border rounded-xl overflow-hidden bg-white dark:bg-neutral-900">
       {/* Toolbar */}
-      <div className="border-b bg-gray-50 dark:bg-gray-800 p-2 flex flex-wrap gap-1">
+      <div className="border-b bg-gray-50 dark:bg-neutral-800 p-2 flex flex-wrap gap-1">
         {/* Text Formatting */}
         <div className="flex gap-1 border-r pr-2">
           <ToolbarButton

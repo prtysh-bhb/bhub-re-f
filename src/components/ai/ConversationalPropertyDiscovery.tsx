@@ -840,7 +840,7 @@ const ConversationalPropertyDiscovery = () => {
   ];
 
   return (
-    <div className="flex flex-col h-[800px] max-w-5xl mx-auto bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+    <div className="flex flex-col h-[800px] max-w-5xl mx-auto bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 rounded-3xl shadow-2xl border border-gray-200 dark:border-neutral-800 overflow-hidden">
       {/* Header */}
       <div className="relative bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 p-6 text-white">
         <div className="absolute inset-0 opacity-20">
@@ -922,7 +922,7 @@ const ConversationalPropertyDiscovery = () => {
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <Bot className="w-5 h-5 text-white" />
                 </div>
-                <div className="bg-white dark:bg-gray-800 rounded-2xl px-5 py-3 shadow-md">
+                <div className="bg-white dark:bg-neutral-800 rounded-2xl px-5 py-3 shadow-md">
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
                     <div
@@ -958,13 +958,13 @@ const ConversationalPropertyDiscovery = () => {
       </div>
 
       {/* Input Area */}
-      <div className="p-6 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+      <div className="p-6 bg-white dark:bg-neutral-800 border-t border-gray-200 dark:border-neutral-700">
         <div className="flex gap-2 mb-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300">
           {quickActions.map((action) => (
             <button
               key={action.label}
               onClick={() => handleSuggestionClick(action.query)}
-              className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-xl text-sm font-medium whitespace-nowrap transition-all"
+              className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-neutral-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-xl text-sm font-medium whitespace-nowrap transition-all"
               disabled={isTyping || isLoadingHistory}
             >
               <action.icon className="w-4 h-4" />
@@ -987,7 +987,7 @@ const ConversationalPropertyDiscovery = () => {
                 }
               }}
               placeholder="Describe your dream property in natural language..."
-              className="w-full px-6 py-4 pr-32 rounded-2xl bg-gray-100 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 text-gray-900 dark:text-white placeholder:text-gray-500 transition-all text-base disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-4 pr-32 rounded-2xl bg-gray-100 dark:bg-neutral-700 border-2 border-gray-200 dark:border-neutral-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 text-gray-900 dark:text-white placeholder:text-gray-500 transition-all text-base disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={isTyping || isLoadingHistory}
             />
 
@@ -1025,7 +1025,7 @@ const ConversationalPropertyDiscovery = () => {
             whileTap={{ scale: !inputValue.trim() || isTyping || isLoadingHistory ? 1 : 0.95 }}
             className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all ${
               !inputValue.trim() || isTyping || isLoadingHistory
-                ? "bg-gray-300 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed"
+                ? "bg-gray-300 dark:bg-neutral-700 text-gray-400 dark:text-gray-500 cursor-not-allowed"
                 : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg"
             }`}
           >
@@ -1082,7 +1082,7 @@ const MessageBubble = ({
     >
       <div
         className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-          isUser ? "bg-gray-300 dark:bg-gray-700" : "bg-gradient-to-br from-purple-600 to-blue-600"
+          isUser ? "bg-gray-300 dark:bg-neutral-700" : "bg-gradient-to-br from-purple-600 to-blue-600"
         }`}
       >
         {isUser ? (
@@ -1097,7 +1097,7 @@ const MessageBubble = ({
           className={`rounded-2xl px-5 py-3 ${
             isUser
               ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-              : "bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-md"
+              : "bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 shadow-md"
           }`}
         >
           <p className="text-base leading-relaxed whitespace-pre-line">{message.content}</p>
@@ -1141,7 +1141,7 @@ const MessageBubble = ({
               <button
                 key={index}
                 onClick={() => onSuggestionClick(suggestion)}
-                className="px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-all hover:shadow-md"
+                className="px-4 py-2 bg-gray-100 dark:bg-neutral-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-all hover:shadow-md"
               >
                 {suggestion}
               </button>
@@ -1200,14 +1200,14 @@ const PropertyCardComponent = ({
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 group"
+      className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-neutral-700 group"
     >
       {/* For mobile and tablet: Stack image on top, content below */}
       <div className="md:flex gap-4 p-4">
         {/* Image Section - Full width on mobile, left side on desktop */}
         <div className="w-full md:w-40 h-48 md:h-38 flex-shrink-0 rounded-xl overflow-hidden mb-4 md:mb-0">
           {!imageLoaded && !imageError && (
-            <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse" />
+            <div className="absolute inset-0 bg-gray-200 dark:bg-neutral-700 animate-pulse" />
           )}
           <img
             src={property.primary_image_url}
@@ -1295,7 +1295,7 @@ const PropertyCardComponent = ({
       <div className="flex flex-col sm:flex-row gap-2 p-4 pt-0">
         <button
           onClick={() => onAction(property.id, "favorite")}
-          className="flex-1 py-3 sm:py-2 bg-gray-100 dark:bg-gray-700 hover:bg-red-50 dark:hover:bg-red-900/20 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 rounded-lg font-medium transition-all flex items-center justify-center gap-2"
+          className="flex-1 py-3 sm:py-2 bg-gray-100 dark:bg-neutral-700 hover:bg-red-50 dark:hover:bg-red-900/20 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 rounded-lg font-medium transition-all flex items-center justify-center gap-2"
         >
           <Heart className="w-4 h-4" />
           <span>Save</span>

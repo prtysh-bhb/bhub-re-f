@@ -386,7 +386,7 @@ const ChatPage = () => {
                         {selectedConversation?.name?.charAt(0) ?? "U"}
                       </div>
                       {selectedConversation?.is_active && (
-                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full"></div>
+                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-neutral-900 rounded-full"></div>
                       )}
                     </div>
                     <div>
@@ -575,7 +575,7 @@ const ChatPage = () => {
                         <img 
                           src={filePreview} 
                           alt="Preview" 
-                          className="max-w-48 max-h-32 rounded-lg object-cover border border-gray-200 dark:border-gray-600"
+                          className="max-w-48 max-h-32 rounded-lg object-cover border border-gray-200 dark:border-neutral-600"
                         />
                       </div>
                     )}

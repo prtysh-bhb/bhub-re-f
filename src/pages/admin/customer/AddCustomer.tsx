@@ -234,7 +234,7 @@ const AddCustomer = () => {
                 onClick={() => setFormData({
                   name: "", email: "", phone: "", address: "", city: "", state: "", zipCode: "", preferences: "", budget: "", propertyType: ""
                 })}
-                className="border-gray-300 dark:border-gray-600"
+                className="border-gray-300 dark:border-neutral-600"
               >
                 Reset Form
               </Button>

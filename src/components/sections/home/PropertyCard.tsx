@@ -364,7 +364,7 @@ const PropertyCard: FC<PropertyCardProps> = ({ property, isFavorite = false, fet
                 transition={{ duration: 0.6 }}
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+              <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-neutral-800">
                 <Home className="w-16 h-16 text-gray-300 dark:text-gray-600" />
               </div>
             )}

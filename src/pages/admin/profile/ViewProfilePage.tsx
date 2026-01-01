@@ -281,7 +281,7 @@ const ViewProfilePage = () => {
               <Button
                 onClick={() => navigate(-1)}
                 variant="outline"
-                className="border-gray-300 dark:border-gray-600 cursor-pointer"
+                className="border-gray-300 dark:border-neutral-600 cursor-pointer"
               >
                 <ArrowLeft size={18} className="mr-2" />
                 Back
@@ -307,10 +307,10 @@ const ViewProfilePage = () => {
                 <img
                   src={(user as any).avatar_url || "/default-avatar.png"}
                   alt="avatar"
-                  className="w-32 h-32 rounded-2xl border-4 border-white dark:border-gray-900 shadow-xl object-cover"
+                  className="w-32 h-32 rounded-2xl border-4 border-white dark:border-neutral-900 shadow-xl object-cover"
                 />
                 {(user as any).email_verified_at && (
-                  <div className="absolute -bottom-2 -right-2 bg-primary-500 rounded-full p-1.5 shadow-lg border-2 border-white dark:border-gray-900">
+                  <div className="absolute -bottom-2 -right-2 bg-primary-500 rounded-full p-1.5 shadow-lg border-2 border-white dark:border-neutral-900">
                     <CheckCircle2 className="text-white" size={16} />
                   </div>
                 )}

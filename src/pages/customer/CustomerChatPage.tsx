@@ -291,16 +291,16 @@ const CustomerChatPage = () => {
   const selectedConversation = conversations?.find((c) => c.id === selectedChat);
 
   return (
-    <div className="h-[calc(100vh-8rem)] bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+    <div className="h-[calc(100vh-8rem)] bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
       <div className="grid grid-cols-12 h-full">
         {/* LEFT: Conversations list */}
         <div
-          className={`col-span-12 md:col-span-4 border-r border-gray-200 dark:border-gray-800 flex flex-col min-h-0 ${
+          className={`col-span-12 md:col-span-4 border-r border-gray-200 dark:border-neutral-800 flex flex-col min-h-0 ${
             isMobile ? (mobileChatOpen ? "hidden" : "block") : "block"
           }`}
         >
           {/* Header */}
-          <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+          <div className="p-4 border-b border-gray-200 dark:border-neutral-800">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
                 <MessageCircle className="text-white" size={20} />
@@ -309,7 +309,7 @@ const CustomerChatPage = () => {
                 Messages
               </h2>
             </div>
-            <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-gray-50 dark:bg-gray-800">
+            <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-gray-50 dark:bg-neutral-800">
               <Search size={16} className="text-gray-400 mr-2" />
               <input
                 type="text"
@@ -328,7 +328,7 @@ const CustomerChatPage = () => {
               <div
                 key={agent.id}
                 onClick={() => handleSelectConversation(agent.id)}
-                className={`p-4 border-b border-gray-100 dark:border-gray-800 cursor-pointer transition-all ${
+                className={`p-4 border-b border-gray-100 dark:border-neutral-800 cursor-pointer transition-all ${
                   selectedChat === agent.id
                     ? "bg-blue-50 dark:bg-blue-950/20 border-l-4 border-l-blue-600 dark:border-l-emerald-500"
                     : "hover:bg-gray-50 dark:hover:bg-gray-800"
@@ -341,7 +341,7 @@ const CustomerChatPage = () => {
                         {agent.name.charAt(0)}
                       </div>
                       {agent.is_active && (
-                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-gray-900 rounded-full"></div>
+                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-neutral-900 rounded-full"></div>
                       )}
                     </div>
                     <div>
@@ -375,7 +375,7 @@ const CustomerChatPage = () => {
           {selectedChat ? (
             <>
               {/* Header with back button on mobile */}
-              <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
+              <div className="p-4 border-b border-gray-200 dark:border-neutral-800 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   {isMobile && (
                     <button
@@ -391,7 +391,7 @@ const CustomerChatPage = () => {
                       {selectedConversation?.name?.charAt(0) ?? "A"}
                     </div>
                     {selectedConversation?.is_active && (
-                      <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-gray-900 rounded-full"></div>
+                      <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-neutral-900 rounded-full"></div>
                     )}
                   </div>
                   <div>
@@ -408,7 +408,7 @@ const CustomerChatPage = () => {
               {/* Scrollable Messages */}
               <div
                 ref={chatScrollRef}
-                className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-800/30 min-h-0"
+                className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-neutral-800/30 min-h-0"
                 style={{ WebkitOverflowScrolling: "touch" }}
               >
                 {messagesByConversation?.map((message) => (
@@ -418,7 +418,7 @@ const CustomerChatPage = () => {
                         className={`p-3 rounded-lg ${
                           message.sender_id == user.id
                             ? "bg-gradient-to-r from-blue-600 to-emerald-600 text-white"
-                            : "bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700"
+                            : "bg-white dark:bg-neutral-900 text-gray-900 dark:text-white border border-gray-200 dark:border-neutral-700"
                         }`}
                         style={{ maxWidth: "100%", maxHeight: "35rem", overflow: "auto" }}
                       >
@@ -542,7 +542,7 @@ const CustomerChatPage = () => {
                 {isTyping && (
                   <div className="flex justify-start">
                     <div className="max-w-[60%]">
-                      <div className="p-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
+                      <div className="p-3 rounded-lg bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700">
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                           {selectedConversation?.name || "Agent"} is typing...
                         </p>
@@ -554,8 +554,8 @@ const CustomerChatPage = () => {
 
               {/* File Preview */}
               {selectedFile && (
-                <div className="px-4 py-2 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div className="px-4 py-2 border-t border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800">
+                  <div className="flex items-center justify-between p-3 bg-white dark:bg-neutral-900 rounded-lg border border-gray-200 dark:border-neutral-700">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
                         {getFileIcon(fileType)}
@@ -583,7 +583,7 @@ const CustomerChatPage = () => {
                       <img 
                         src={filePreview} 
                         alt="Preview" 
-                        className="max-w-48 max-h-32 rounded-lg object-cover border border-gray-200 dark:border-gray-600"
+                        className="max-w-48 max-h-32 rounded-lg object-cover border border-gray-200 dark:border-neutral-600"
                       />
                     </div>
                   )}
@@ -591,7 +591,7 @@ const CustomerChatPage = () => {
               )}
 
               {/* Input Area */}
-              <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+              <div className="p-4 border-t border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
                 <div className="flex items-center gap-2">
                   {/* File Upload Button */}
                   <input
@@ -616,7 +616,7 @@ const CustomerChatPage = () => {
                     onKeyPress={handleKeyPress}
                     placeholder="Type a message..."
                     disabled={isSending}
-                    className="flex-1 px-4 py-2 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white outline-none disabled:opacity-50"
+                    className="flex-1 px-4 py-2 border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-emerald-500 text-gray-900 dark:text-white outline-none disabled:opacity-50"
                   />
                   <button
                     onClick={handleSendMessage}

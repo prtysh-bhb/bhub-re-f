@@ -510,7 +510,7 @@ const menuItems =
 
           <Button
             variant="ghost"
-            className="relative w-full flex items-center justify-center gap-2 text-gray-400 hover:text-red-400 hover:bg-red-500/10 transition-all cursor-pointer text-sm rounded-xl backdrop-blur-sm border border-transparent hover:border-red-500/30"
+            className="relative w-full flex items-center justify-center gap-2 text-gray-400 hover:text-red-400 hover:bg-red-500/10 transition-all cursor-pointer text-sm rounded-xl backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-800/50 hover:border-red-500/30"
             onClick={() => {
               localStorage.clear();
               window.location.href = "/";

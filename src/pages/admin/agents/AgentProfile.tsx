@@ -79,7 +79,7 @@ const AgentProfilePage = () => {
                 <img
                   src={agent?.avatar || "/assets/user.jpg"}
                   alt={agent?.name || "Agent"}
-                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl border-4 border-white dark:border-gray-900 shadow-[0_8px_24px_rgba(0,0,0,0.12)] object-cover ring-4 ring-primary/20"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl border-4 border-white dark:border-neutral-900 shadow-[0_8px_24px_rgba(0,0,0,0.12)] object-cover ring-4 ring-primary/20"
                 />
                 {agent?.status && (
                   <div className="absolute -bottom-2 -right-2 bg-green-500 text-white px-3 py-1.5 rounded-xl text-xs font-bold shadow-lg flex items-center gap-1">
@@ -113,7 +113,7 @@ const AgentProfilePage = () => {
                         className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
                           agent?.two_factor_enabled
                             ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
-                            : "bg-red-100 dark:bg-gray-700 text-red-700 dark:text-gray-400"
+                            : "bg-red-100 dark:bg-neutral-700 text-red-700 dark:text-gray-400"
                         }`}
                       >
                         {agent?.two_factor_enabled ? "2FA On" : "2FA Off"}
@@ -128,15 +128,15 @@ const AgentProfilePage = () => {
 
                 {/* Right - Meta Info Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 lg:gap-3 gap-4 text-sm">
-                  <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg">
+                  <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-neutral-700/50 px-3 py-2 rounded-lg">
                     <Phone size={16} className="text-primary" />
                     <span>{agent?.phone || undefined}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg">
+                  <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-neutral-700/50 px-3 py-2 rounded-lg">
                     <MapPin size={16} className="text-primary" />
                     <span>{agent?.city || "Unknown"}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg col-span-2 sm:col-span-1">
+                  <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-neutral-700/50 px-3 py-2 rounded-lg col-span-2 sm:col-span-1">
                     <Calendar size={16} className="text-primary" />
                     <span>
                       {agent?.joined

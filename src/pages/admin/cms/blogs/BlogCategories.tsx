@@ -313,7 +313,7 @@ const BlogCategories = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary"
+                      ? "bg-white dark:bg-neutral-700 shadow-sm text-primary"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -324,7 +324,7 @@ const BlogCategories = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary"
+                      ? "bg-white dark:bg-neutral-700 shadow-sm text-primary"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -568,7 +568,7 @@ const BlogCategories = () => {
                                               <div className="flex items-center gap-2 text-sm">
                                                 <Tag size={14} className="text-gray-400 dark:text-gray-500" />
                                                 <span className="text-gray-600 dark:text-gray-400">
-                                                  Slug: <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">{category.slug}</code>
+                                                  Slug: <code className="bg-gray-100 dark:bg-neutral-700 px-2 py-1 rounded">{category.slug}</code>
                                                 </span>
                                               </div>
                                               <div className="flex items-center gap-2 text-sm">
@@ -841,8 +841,8 @@ const CategoryModal = ({
                   className={`w-full px-4 py-3 rounded-lg border ${
                     formErrors.name
                       ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary/50 focus:border-primary'
-                  } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
+                      : 'border-gray-300 dark:border-neutral-600 focus:ring-primary/50 focus:border-primary'
+                  } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all`}
                   placeholder="Enter category name (e.g., Technology, Lifestyle)"
                   disabled={submitting}
                 />
@@ -867,8 +867,8 @@ const CategoryModal = ({
                   className={`w-full px-4 py-3 rounded-lg border ${
                     formErrors.content 
                       ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500' 
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500'
-                  } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all resize-none`}
+                      : 'border-gray-300 dark:border-neutral-600 focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500'
+                  } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all resize-none`}
                   placeholder="Describe what this category is about..."
                   disabled={submitting}
                 />
@@ -881,7 +881,7 @@ const CategoryModal = ({
               </div>
 
               {/* Status Field */}
-              <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-neutral-700/50 rounded-lg">
                 <div>
                   <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     Status
@@ -899,7 +899,7 @@ const CategoryModal = ({
                     className="sr-only peer"
                     disabled={submitting}
                   />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600"></div>
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-neutral-600 peer-checked:bg-primary-600"></div>
                   <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
                     {formData.is_active ? "Active" : "Inactive"}
                   </span>
@@ -912,7 +912,7 @@ const CategoryModal = ({
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
+                className="px-4 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
                 disabled={submitting}
               >
                 Cancel

@@ -210,7 +210,7 @@ const BlogPage = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
                   placeholder="Search articles..."
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border-0 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-900 dark:text-white shadow-lg"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm border-0 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-900 dark:text-white shadow-lg"
                 />
                 <button
                   onClick={handleSearch}
@@ -227,7 +227,7 @@ const BlogPage = () => {
       {/* Stats */}
       {statistics && (
         <section className="hidden md:block container w-full max-w-4xl mx-auto px-4 -mt-8 relative z-20">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-xl p-6 grid grid-cols-2 md:grid-cols-3 gap-4">
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
                 {statistics.total_blogs}
@@ -288,7 +288,7 @@ const BlogPage = () => {
                       <article
                         key={blog.id}
                         onClick={() => navigate(`/blog/${blog.slug}`)}
-                        className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                        className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
                       >
                         <div className="relative h-48 overflow-hidden">
                           <img
@@ -349,7 +349,7 @@ const BlogPage = () => {
                       <article
                         key={blog.id}
                         onClick={() => navigate(`/blog/${blog.slug}`)}
-                        className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col md:flex-row"
+                        className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col md:flex-row"
                       >
                         <div className="md:w-1/3 relative">
                           <img
@@ -430,7 +430,7 @@ const BlogPage = () => {
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       !selectedCategory
                         ? "bg-blue-600 text-white"
-                        : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                        : "bg-gray-200 dark:bg-neutral-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                     }`}
                   >
                     All Categories
@@ -442,7 +442,7 @@ const BlogPage = () => {
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                         selectedCategory === category.slug || selectedCategory === category.name
                           ? "bg-blue-600 text-white"
-                          : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                          : "bg-gray-200 dark:bg-neutral-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                       }`}
                     >
                       {category.name}
@@ -450,10 +450,10 @@ const BlogPage = () => {
                   ))}
                   {categories.length > 4 && (
                     <div className="relative group">
-                      <button className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600">
+                      <button className="px-4 py-2 bg-gray-200 dark:bg-neutral-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600">
                         More +
                       </button>
-                      <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-neutral-800 rounded-xl shadow-2xl border border-gray-200 dark:border-neutral-700 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         {categories.slice(4).map((category) => (
                           <button
                             key={category.id}
@@ -471,7 +471,7 @@ const BlogPage = () => {
 
               {blogs.length === 0 ? (
                 <div className="text-center py-12">
-                  <div className="w-20 h-20 mx-auto bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                  <div className="w-20 h-20 mx-auto bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center mb-4">
                     <BookOpen className="text-gray-400" size={32} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
@@ -504,7 +504,7 @@ const BlogPage = () => {
                       <article
                         key={blog.id}
                         onClick={() => navigate(`/blog/${blog.slug}`)}
-                        className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                        className="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
                       >
                         <div className="relative h-48 overflow-hidden">
                           <img
@@ -537,7 +537,7 @@ const BlogPage = () => {
                           <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                             {truncateText(blog.excerpt || blog.content, 100)}
                           </p>
-                          <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
+                          <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-neutral-700">
                             <div className="flex items-center gap-2">
                               {blog.user?.avatar_url && (
                                 <img
@@ -585,7 +585,7 @@ const BlogPage = () => {
             <div className="sticky top-24 space-y-6">
               {/* Popular Articles */}
               {popularBlogs.length > 0 && (
-                <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+                <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                     <TrendingUp className="text-amber-500" />
                     Popular Articles
@@ -624,7 +624,7 @@ const BlogPage = () => {
               )}
 
               {/* Categories */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+              <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Tag className="text-purple-500" />
                   Categories
@@ -640,7 +640,7 @@ const BlogPage = () => {
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-medium">All Categories</span>
-                      <span className="text-sm bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full">
+                      <span className="text-sm bg-gray-200 dark:bg-neutral-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full">
                         {statistics?.total_categories || 0}
                       </span>
                     </div>
@@ -657,7 +657,7 @@ const BlogPage = () => {
                     >
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{category.name}</span>
-                        <span className="text-sm bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full">
+                        <span className="text-sm bg-gray-200 dark:bg-neutral-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full">
                           {/* You would need to get category counts from API */}
                           {Math.floor(Math.random() * 50) + 1}
                         </span>

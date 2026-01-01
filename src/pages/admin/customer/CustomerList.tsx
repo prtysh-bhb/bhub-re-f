@@ -461,7 +461,7 @@ const CustomerList = () => {
                               className={`inline-flex items-center mt-1 px-2 py-0.5 rounded-full text-xs font-semibold ${
                                 c.two_factor_enabled
                                   ? "bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20 text-primary-700 dark:text-primary-400 border border-primary-200/60 dark:border-primary-800/40"
-                                  : "bg-red-100 dark:bg-gray-700 text-red-700 dark:text-gray-400"
+                                  : "bg-red-100 dark:bg-neutral-700 text-red-700 dark:text-gray-400"
                               }`}
                             >
                               <Shield className="mr-1" size={14} />
@@ -536,7 +536,7 @@ const CustomerList = () => {
                 <button
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={page === 1}
-                  className="px-5 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-500 dark:hover:border-primary-500 text-gray-700 dark:text-gray-300 transition-all"
+                  className="px-5 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-neutral-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-500 dark:hover:border-primary-500 text-gray-700 dark:text-gray-300 transition-all"
                 >
                   Previous
                 </button>
@@ -580,14 +580,14 @@ const CustomerList = () => {
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 rows={3}
-                className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-amber-400 dark:focus:ring-amber-500 focus:border-amber-400 dark:focus:border-amber-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
+                className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-amber-400 dark:focus:ring-amber-500 focus:border-amber-400 dark:focus:border-amber-500 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
                 placeholder="Enter reason..."
               ></textarea>
 
               <div className="flex justify-end gap-2">
                 <button
                   onClick={() => setShowDeactivatePopup(false)}
-                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
+                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-600 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
                 >
                   Cancel
                 </button>

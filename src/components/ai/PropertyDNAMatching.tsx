@@ -182,7 +182,7 @@ const PropertyDNAMatching = ({ propertyId, propertyTitle }: PropertyDNAMatchingP
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-800 group"
+              className="bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-neutral-800 group"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -206,7 +206,7 @@ const PropertyDNAMatching = ({ propertyId, propertyTitle }: PropertyDNAMatchingP
               </div>
 
               {/* Progress Bar */}
-              <div className="relative h-3 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+              <div className="relative h-3 bg-gray-200 dark:bg-neutral-800 rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${score}%` }}
@@ -255,7 +255,7 @@ const PropertyDNAMatching = ({ propertyId, propertyTitle }: PropertyDNAMatchingP
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-3 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-3 rounded-xl"
+                className="flex items-start gap-3 bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm p-3 rounded-xl"
               >
                 <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-white text-xs font-bold">✓</span>
@@ -293,7 +293,7 @@ const PropertyDNAMatching = ({ propertyId, propertyTitle }: PropertyDNAMatchingP
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-3 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-3 rounded-xl"
+                className="flex items-start gap-3 bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm p-3 rounded-xl"
               >
                 <div className="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-white text-xs font-bold">!</span>
@@ -311,7 +311,7 @@ const PropertyDNAMatching = ({ propertyId, propertyTitle }: PropertyDNAMatchingP
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-800"
+        className="bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-neutral-800"
       >
         <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-6">
           Feature Match Analysis
@@ -333,7 +333,7 @@ const PropertyDNAMatching = ({ propertyId, propertyTitle }: PropertyDNAMatchingP
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.05 }}
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center hover:shadow-md transition-all"
+              className="bg-gray-50 dark:bg-neutral-800 rounded-xl p-4 text-center hover:shadow-md transition-all"
             >
               <div
                 className={`w-12 h-12 bg-${feature.color}-100 dark:bg-${feature.color}-900/30 rounded-xl flex items-center justify-center mx-auto mb-3`}

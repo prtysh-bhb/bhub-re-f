@@ -320,11 +320,11 @@ const EditProperty = () => {
                   name="property_type"
                   value={formData.property_type}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2.5 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
+                  className="w-full border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white p-2.5 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
                 >
-                  <option value="" className="dark:bg-gray-700">Select Property Type</option>
+                  <option value="" className="dark:bg-neutral-700">Select Property Type</option>
                   {propertyTypes.map((type) => (
-                    <option key={type.key} value={type.key} className="dark:bg-gray-700">
+                    <option key={type.key} value={type.key} className="dark:bg-neutral-700">
                       {type.label}
                     </option>
                   ))}
@@ -398,7 +398,7 @@ const EditProperty = () => {
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
-                className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
+                className="w-full border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
                 rows={4}
               />
               {errors.description && (
@@ -414,7 +414,7 @@ const EditProperty = () => {
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
               Amenities
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-9 gap-4 bg-gray-100 dark:bg-gray-700/50 p-6 rounded-xl">
+            <div className="grid grid-cols-2 lg:grid-cols-9 gap-4 bg-gray-100 dark:bg-neutral-700/50 p-6 rounded-xl">
               {amenities.map((item) => (
                 <label
                   key={item.key}
@@ -447,13 +447,13 @@ const EditProperty = () => {
                       className={`w-full h-48 object-cover rounded-xl border-2 transition-all duration-300 ${
                         removeImages.includes(i)
                           ? "opacity-40 border-red-400 dark:border-red-500"
-                          : "border-gray-300 dark:border-gray-600 group-hover:border-primary"
+                          : "border-gray-300 dark:border-neutral-600 group-hover:border-primary"
                       }`}
                     />
                     <button
                       type="button"
                       onClick={() => handleRemoveExistingImage(i)}
-                      className="absolute top-2 right-2 bg-white dark:bg-neutral-800 border border-gray-300 dark:border-gray-600 rounded-full px-3 py-1.5 text-xs shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                      className="absolute top-2 right-2 bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-full px-3 py-1.5 text-xs shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                     >
                       {removeImages.includes(i) ? "Undo" : "Remove"}
                     </button>
@@ -476,7 +476,7 @@ const EditProperty = () => {
               multiple
               accept="image/*"
               onChange={handleImageUpload}
-              className="border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-3 rounded-lg w-full focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
+              className="border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white p-3 rounded-lg w-full focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
             />
             {newImages.length > 0 && (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-6">
@@ -485,12 +485,12 @@ const EditProperty = () => {
                     <img
                       src={URL.createObjectURL(file)}
                       alt={`New ${i}`}
-                      className="w-full h-48 object-cover rounded-xl border-2 border-gray-300 dark:border-gray-600 group-hover:border-primary transition-all duration-300"
+                      className="w-full h-48 object-cover rounded-xl border-2 border-gray-300 dark:border-neutral-600 group-hover:border-primary transition-all duration-300"
                     />
                     <button
                       type="button"
                       onClick={() => handleRemoveNewImage(i)}
-                      className="absolute top-2 right-2 bg-white dark:bg-neutral-800 border border-gray-300 dark:border-gray-600 rounded-full px-3 py-1.5 text-xs shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                      className="absolute top-2 right-2 bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-full px-3 py-1.5 text-xs shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                     >
                       Remove
                     </button>
@@ -512,7 +512,7 @@ const EditProperty = () => {
               <Input
                 type="file"
                 name="video"
-                className={`border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 ${
+                className={`border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-gray-300 ${
                   errors.video ? "border-red-500 dark:border-red-400" : ""
                 }`}
                 accept="video/mp4, video/quicktime, video/x-msvideo, video/x-ms-wmv"
@@ -541,7 +541,7 @@ const EditProperty = () => {
                   onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) =>
                     handleKeyPress(e, /[a-zA-Z0-9@._-\s]/, false)
                   }
-                  className={`border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 ${errors.address ? "border-red-500 dark:border-red-400" : ""}`}
+                  className={`border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-gray-300 ${errors.address ? "border-red-500 dark:border-red-400" : ""}`}
                   maxLength={255}
                 />
                 {errors.address && (
@@ -560,7 +560,7 @@ const EditProperty = () => {
                   onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) =>
                     handleKeyPress(e, /[a-zA-Z0-9@._-\s]/, false)
                   }
-                  className={`border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 ${errors.location ? "border-red-500 dark:border-red-400" : ""}`}
+                  className={`border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-gray-300 ${errors.location ? "border-red-500 dark:border-red-400" : ""}`}
                   maxLength={50}
                 />
                 {errors.location && (
@@ -579,7 +579,7 @@ const EditProperty = () => {
                     handleKeyPress(e, /[a-zA-Z\s]/, false)
                   }
                   onChange={handleChange}
-                  className={`border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 ${errors.city ? "border-red-500 dark:border-red-400" : ""}`}
+                  className={`border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-gray-300 ${errors.city ? "border-red-500 dark:border-red-400" : ""}`}
                   maxLength={50}
                 />
                 {errors.city && (
@@ -598,7 +598,7 @@ const EditProperty = () => {
                   onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) =>
                     handleKeyPress(e, /[a-zA-Z\s]/, false)
                   }
-                  className={`border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 ${errors.state ? "border-red-500 dark:border-red-400" : ""}`}
+                  className={`border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-gray-300 ${errors.state ? "border-red-500 dark:border-red-400" : ""}`}
                   maxLength={50}
                 />
                 {errors.state && (
@@ -614,7 +614,7 @@ const EditProperty = () => {
                   name="zipcode"
                   value={formData.zipcode}
                   onChange={handleChange}
-                  className={`border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 ${errors.zipcode ? "border-red-500 dark:border-red-400" : ""}`}
+                  className={`border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-gray-300 ${errors.zipcode ? "border-red-500 dark:border-red-400" : ""}`}
                   maxLength={10}
                   onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) => {
                     const allowedKeys = ["Enter", "Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"];
@@ -687,7 +687,7 @@ const InputField = ({ label, name, value, onChange, type = "text", error, maxLen
       value={value || ""}
       onChange={onChange}
       maxLength={maxLength || undefined}
-      className={`border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white ${
+      className={`border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white ${
         error ? "border-red-400 dark:border-red-400" : ""
       }`}
       onKeyPress={onKeyPress || undefined}
@@ -705,10 +705,10 @@ const SelectField = ({ label, name, value, onChange, options }: any) => (
       name={name}
       value={value || ""}
       onChange={onChange}
-      className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2.5 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
+      className="w-full border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white p-2.5 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors duration-200"
     >
       {options.map((opt: any) => (
-        <option key={opt.value} value={opt.value} className="dark:bg-gray-700">
+        <option key={opt.value} value={opt.value} className="dark:bg-neutral-700">
           {opt.label}
         </option>
       ))}

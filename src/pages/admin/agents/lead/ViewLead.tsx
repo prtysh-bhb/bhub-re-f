@@ -201,7 +201,7 @@ const ViewLead = () => {
             <select
               value={lead?.stage || ""}
               onChange={handleStageChange}
-              className="border border-gray-300 cursor-pointer dark:border-gray-600 rounded-md p-2 text-sm w-full bg-gray-50 dark:bg-gray-700 dark:text-gray-100 mb-5 focus:ring-2 focus:ring-primary-400"
+              className="border border-gray-300 cursor-pointer dark:border-neutral-600 rounded-md p-2 text-sm w-full bg-gray-50 dark:bg-neutral-700 dark:text-gray-100 mb-5 focus:ring-2 focus:ring-primary-400"
             >
               {stages.map((s) => (
                 <option key={s} value={s}>
@@ -215,7 +215,7 @@ const ViewLead = () => {
               Add a Note
             </label>
             <textarea
-              className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-3 text-sm bg-gray-50 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-primary-400"
+              className="w-full border border-gray-300 dark:border-neutral-600 rounded-md p-3 text-sm bg-gray-50 dark:bg-neutral-700 dark:text-gray-100 focus:ring-2 focus:ring-primary-400"
               placeholder="Add a note..."
               rows={3}
               value={note}

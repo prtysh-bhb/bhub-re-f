@@ -432,7 +432,7 @@ const CustomerWallet = () => {
         </div>
 
         {/* Main Balance Card */}
-        <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-sm mb-8">
+        <div className="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-gray-200 dark:border-neutral-800 shadow-sm mb-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
@@ -508,7 +508,7 @@ const CustomerWallet = () => {
                       key={action.type}
                       onClick={() => handleQuickActionClick(action)}
                       disabled={!walletSummary || walletSummary.current_credits < action.cost || isProcessing}
-                      className="p-3 text-center bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed group"
+                      className="p-3 text-center bg-gray-50 dark:bg-neutral-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed group"
                     >
                       <div className="flex flex-col items-center gap-2">
                         <div className={`p-2 rounded-lg ${
@@ -520,7 +520,7 @@ const CustomerWallet = () => {
                             ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400'
                             : action.type.includes('inquiry') || action.type.includes('tour') || action.type.includes('analytics')
                             ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400'
-                            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
+                            : 'bg-gray-100 dark:bg-neutral-700 text-gray-600 dark:text-gray-400'
                         }`}>
                           {quickActionIcons[action.type] || <FileText className="w-4 h-4" />}
                         </div>
@@ -567,7 +567,7 @@ const CustomerWallet = () => {
 
         {/* Rest of the component remains the same... */}
         {/* Credit Packages */}
-        <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 shadow-sm mb-8">
+        <div className="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-gray-200 dark:border-neutral-800 shadow-sm mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
@@ -597,7 +597,7 @@ const CustomerWallet = () => {
                     className={`border rounded-xl p-5 transition-all hover:shadow-lg ${
                       pkg.status === "active"
                         ? "border-emerald-200 dark:border-emerald-800 hover:border-emerald-300 dark:hover:border-emerald-700"
-                        : "border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700"
+                        : "border-gray-200 dark:border-neutral-800 hover:border-gray-300 dark:hover:border-gray-700"
                     }`}
                   >
                     <div className="flex items-start justify-between mb-4">
@@ -608,7 +608,7 @@ const CustomerWallet = () => {
                             Available
                           </span>
                         ) : (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 mt-1">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-gray-300 mt-1">
                             Unavailable
                           </span>
                         )}
@@ -660,8 +660,8 @@ const CustomerWallet = () => {
         </div>
 
         {/* Transaction History */}
-        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+        <div className="bg-white dark:bg-neutral-900 rounded-2xl border border-gray-200 dark:border-neutral-800 shadow-sm overflow-hidden">
+          <div className="p-6 border-b border-gray-200 dark:border-neutral-800">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
@@ -680,14 +680,14 @@ const CustomerWallet = () => {
                     placeholder="Search transactions..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
-                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value="all">All Transactions</option>
                   <option value="purchase">Purchases</option>
@@ -698,9 +698,9 @@ const CustomerWallet = () => {
           </div>
 
           {/* Transaction Stats */}
-          <div className="p-6 bg-gray-50 dark:bg-gray-800/50">
+          <div className="p-6 bg-gray-50 dark:bg-neutral-800/50">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <div className="p-4 bg-white dark:bg-neutral-800 rounded-lg">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
                     <History className="text-blue-600 dark:text-blue-400 w-5 h-5" />
@@ -713,7 +713,7 @@ const CustomerWallet = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <div className="p-4 bg-white dark:bg-neutral-800 rounded-lg">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
                     <TrendingUp className="text-emerald-600 dark:text-emerald-400 w-5 h-5" />
@@ -726,7 +726,7 @@ const CustomerWallet = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <div className="p-4 bg-white dark:bg-neutral-800 rounded-lg">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg">
                     <TrendingDown className="text-red-600 dark:text-red-400 w-5 h-5" />
@@ -739,7 +739,7 @@ const CustomerWallet = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <div className="p-4 bg-white dark:bg-neutral-800 rounded-lg">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg">
                     <Clock className="text-amber-600 dark:text-amber-400 w-5 h-5" />
@@ -770,10 +770,10 @@ const CustomerWallet = () => {
                 {filteredTransactions.map((transaction) => (
                   <div
                     key={transaction.id}
-                    className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="flex items-center justify-between p-4 bg-gray-50 dark:bg-neutral-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="p-2 bg-white dark:bg-gray-900 rounded-lg">
+                      <div className="p-2 bg-white dark:bg-neutral-900 rounded-lg">
                         {getTransactionIcon(transaction.type, transaction.credits)}
                       </div>
                       <div>
@@ -817,11 +817,11 @@ const CustomerWallet = () => {
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                  <div className="flex justify-center gap-2 pt-6 border-t border-gray-200 dark:border-gray-800">
+                  <div className="flex justify-center gap-2 pt-6 border-t border-gray-200 dark:border-neutral-800">
                     <button
                       onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                       disabled={currentPage === 1}
-                      className="px-3 py-1 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="px-3 py-1 rounded-lg border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Previous
                     </button>
@@ -831,7 +831,7 @@ const CustomerWallet = () => {
                     <button
                       onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                       disabled={currentPage === totalPages}
-                      className="px-3 py-1 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="px-3 py-1 rounded-lg border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Next
                     </button>
@@ -939,8 +939,8 @@ const BuyPackageModal = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-gray-700">
-        <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+      <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-neutral-700">
+        <div className="p-6 border-b border-gray-200 dark:border-neutral-700">
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
               Purchase Credits
@@ -979,7 +979,7 @@ const BuyPackageModal = ({
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
               Card Details
             </label>
-            <div className="p-4 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900">
+            <div className="p-4 border border-gray-300 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-900">
               <CardElement
                 options={{
                   style: {
@@ -1003,7 +1003,7 @@ const BuyPackageModal = ({
           </div>
 
           {/* Security Note */}
-          <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+          <div className="mb-6 p-4 bg-gray-50 dark:bg-neutral-900 rounded-lg">
             <div className="flex items-start gap-3">
               <CheckCircle className="text-emerald-600 dark:text-emerald-400 w-5 h-5 flex-shrink-0 mt-0.5" />
               <div>
@@ -1019,7 +1019,7 @@ const BuyPackageModal = ({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="w-20 px-4 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
+              className="w-20 px-4 py-3 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
               disabled={processing}
             >
               <X className="w-4 h-4 inline-block" />
@@ -1083,8 +1083,8 @@ const QuickActionModal = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-gray-700">
-        <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+      <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-neutral-700">
+        <div className="p-6 border-b border-gray-200 dark:border-neutral-700">
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
               Confirm Action
@@ -1114,7 +1114,7 @@ const QuickActionModal = ({
           </div>
 
           {/* Balance Info */}
-          <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+          <div className="mb-6 p-4 bg-gray-50 dark:bg-neutral-900 rounded-lg">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Current Balance</p>
@@ -1142,7 +1142,7 @@ const QuickActionModal = ({
                 value={propertyId}
                 onChange={(e) => setPropertyId(e.target.value)}
                 placeholder="Enter property ID if applicable"
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                 Enter the property ID this action is for (if applicable)
@@ -1167,7 +1167,7 @@ const QuickActionModal = ({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="w-20 px-4 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
+              className="w-20 px-4 py-3 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
               disabled={isProcessing}
             >
               <X className="w-4 h-4 inline-block" />

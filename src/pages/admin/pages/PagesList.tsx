@@ -78,7 +78,7 @@ const PagesList = () => {
       </span>
     ) : (
       <span
-        className={`${baseClasses} bg-gray-100 text-gray-700 dark:bg-gray-700/20 dark:text-gray-400`}
+        className={`${baseClasses} bg-gray-100 text-gray-700 dark:bg-neutral-700/20 dark:text-gray-400`}
       >
         <span className="w-1.5 h-1.5 rounded-full mr-1.5 bg-gray-600 dark:bg-gray-400"></span>
         Draft
@@ -161,7 +161,7 @@ const PagesList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600"
+                      ? "bg-white dark:bg-neutral-700 shadow-sm text-primary-600"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -172,7 +172,7 @@ const PagesList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600"
+                      ? "bg-white dark:bg-neutral-700 shadow-sm text-primary-600"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"

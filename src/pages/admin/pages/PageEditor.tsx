@@ -162,7 +162,7 @@ const PageEditor = () => {
                 <Button
                   variant="outline"
                   onClick={() => window.open(`/page/${generatedSlug}`, "_blank")}
-                  className="border-gray-300 dark:border-gray-600"
+                  className="border-gray-300 dark:border-neutral-600"
                 >
                   <Eye size={18} />
                   <span>Preview</span>
@@ -172,7 +172,7 @@ const PageEditor = () => {
                 variant="outline"
                 onClick={() => handleSubmit("draft")}
                 disabled={submitting}
-                className="border-gray-300 dark:border-gray-600"
+                className="border-gray-300 dark:border-neutral-600"
               >
                 <Save size={18} />
                 <span>Save Draft</span>
@@ -336,7 +336,7 @@ const PageEditor = () => {
                       className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-semibold ${
                         formData.status === "published"
                           ? "bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400"
-                          : "bg-gray-100 text-gray-700 dark:bg-gray-700/20 dark:text-gray-400"
+                          : "bg-gray-100 text-gray-700 dark:bg-neutral-700/20 dark:text-gray-400"
                       }`}
                     >
                       <span
@@ -365,7 +365,7 @@ const PageEditor = () => {
                         }
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-checked:bg-primary-600 peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 transition-all"></div>
+                      <div className="w-11 h-6 bg-gray-200 dark:bg-neutral-700 rounded-full peer peer-checked:bg-primary-600 peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 transition-all"></div>
                       <div className="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-all peer-checked:translate-x-5"></div>
                     </div>
                   </label>

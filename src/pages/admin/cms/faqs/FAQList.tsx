@@ -296,7 +296,7 @@ const FAQList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-elegant-sm text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-elegant-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -307,7 +307,7 @@ const FAQList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-elegant-sm text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-elegant-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -759,8 +759,8 @@ const FAQList = () => {
                   className={`w-full px-4 py-3 rounded-lg border ${
                     formErrors.question
                       ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500'
-                  } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
+                      : 'border-gray-300 dark:border-neutral-600 focus:ring-primary-500 focus:border-primary-500'
+                  } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all`}
                   placeholder="Enter the question"
                   disabled={submitting}
                 />
@@ -782,8 +782,8 @@ const FAQList = () => {
                   className={`w-full px-4 py-3 rounded-lg border ${
                     formErrors.answer
                       ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500'
-                  } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all resize-none`}
+                      : 'border-gray-300 dark:border-neutral-600 focus:ring-primary-500 focus:border-primary-500'
+                  } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all resize-none`}
                   placeholder="Enter the detailed answer"
                   disabled={submitting}
                 />
@@ -793,7 +793,7 @@ const FAQList = () => {
               </div>
 
               {/* Status Field */}
-              <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-neutral-700/50 rounded-lg">
                 <div>
                   <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     Status
@@ -811,7 +811,7 @@ const FAQList = () => {
                     className="sr-only peer"
                     disabled={submitting}
                   />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600"></div>
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-neutral-600 peer-checked:bg-primary-600"></div>
                   <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
                     {formData.status ? "Active" : "Inactive"}
                   </span>
@@ -824,7 +824,7 @@ const FAQList = () => {
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
+                className="px-4 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
                 disabled={submitting}
               >
                 Cancel

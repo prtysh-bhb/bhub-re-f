@@ -481,7 +481,7 @@ const AddSubscriptionPlan = () => {
                       name="is_active"
                       checked={formData.is_active}
                       onChange={handleChange}
-                      className="w-4 h-4 text-primary bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-primary"
+                      className="w-4 h-4 text-primary bg-gray-100 dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 rounded focus:ring-primary"
                     />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                       Active Plan
@@ -579,7 +579,7 @@ const AddSubscriptionPlan = () => {
                         name="video_allowed"
                         checked={formData.video_allowed}
                         onChange={handleChange}
-                        className="w-4 h-4 text-primary bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-primary"
+                        className="w-4 h-4 text-primary bg-gray-100 dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 rounded focus:ring-primary"
                       />
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         Video Tours Allowed
@@ -594,7 +594,7 @@ const AddSubscriptionPlan = () => {
                         name="priority_support"
                         checked={formData.priority_support}
                         onChange={handleChange}
-                        className="w-4 h-4 text-primary bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-primary"
+                        className="w-4 h-4 text-primary bg-gray-100 dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 rounded focus:ring-primary"
                       />
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         Priority Support
@@ -662,7 +662,7 @@ const AddSubscriptionPlan = () => {
                 type="button"
                 variant="outline"
                 onClick={resetForm}
-                className="border-gray-300 dark:border-gray-600"
+                className="border-gray-300 dark:border-neutral-600"
               >
                 Reset Form
               </Button>

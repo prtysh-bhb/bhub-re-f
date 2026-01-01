@@ -458,7 +458,7 @@ const Credit = () => {
                     key={pkg.id}
                     className={`bg-white dark:bg-neutral-900 rounded-xl border shadow-sm hover:shadow-lg transition-all overflow-hidden group ${
                       pkg.status === "active"
-                        ? "border-primary-200 dark:border-primary-800 hover:border-primary-300 dark:hover:border-primary-700"
+                        ? "border-primary-200 dark:border-primary-800 hover:border-primary-400/60 dark:hover:border-primary-600/60"
                         : "border-gray-200 dark:border-neutral-800 hover:border-gray-300 dark:hover:border-gray-700"
                     }`}
                   >
@@ -733,8 +733,8 @@ const PackageModal = ({
                 className={`w-full px-4 py-3 rounded-lg border ${
                   formErrors.name
                     ? "border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500"
-                    : "border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500"
-                } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
+                    : "border-gray-300 dark:border-neutral-600 focus:ring-primary-500 focus:border-primary-500"
+                } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all`}
                 placeholder="e.g., Starter Pack, Pro Bundle"
                 disabled={submitting}
               />
@@ -764,8 +764,8 @@ const PackageModal = ({
                     className={`w-full pl-10 pr-4 py-3 rounded-lg border ${
                       formErrors.price
                         ? "border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500"
-                        : "border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500"
-                    } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
+                        : "border-gray-300 dark:border-neutral-600 focus:ring-primary-500 focus:border-primary-500"
+                    } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all`}
                     placeholder="0.00"
                     disabled={submitting}
                   />
@@ -794,8 +794,8 @@ const PackageModal = ({
                     className={`w-full pl-10 pr-4 py-3 rounded-lg border ${
                       formErrors.coins
                         ? "border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500"
-                        : "border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500"
-                    } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
+                        : "border-gray-300 dark:border-neutral-600 focus:ring-primary-500 focus:border-primary-500"
+                    } bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 transition-all`}
                     placeholder="e.g., 1000"
                     disabled={submitting}
                   />
@@ -816,7 +816,7 @@ const PackageModal = ({
                 value={formData.description || ""}
                 onChange={handleInputChange}
                 rows={3}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Describe what users get with this package..."
                 disabled={submitting}
               />
@@ -861,7 +861,7 @@ const PackageModal = ({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="px-4 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors order-2 sm:order-1"
+              className="px-4 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors order-2 sm:order-1"
               disabled={submitting}
             >
               Cancel

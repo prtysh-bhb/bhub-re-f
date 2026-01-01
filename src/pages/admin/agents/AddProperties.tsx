@@ -286,7 +286,7 @@ const AddProperties = () => {
                     Property Images
                   </label>
                   <div className="flex items-center justify-center w-full">
-                    <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-neutral-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+                    <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 dark:border-neutral-600 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-neutral-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <Image className="w-10 h-10 mb-3 text-gray-400" />
                         <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
@@ -316,7 +316,7 @@ const AddProperties = () => {
                 onClick={() => setFormData({
                   title: "", description: "", price: "", address: "", city: "", state: "", zipCode: "", propertyType: "", bedrooms: "", bathrooms: "", area: "", features: "", status: "sale"
                 })}
-                className="border-gray-300 dark:border-gray-600"
+                className="border-gray-300 dark:border-neutral-600"
               >
                 Reset Form
               </Button>

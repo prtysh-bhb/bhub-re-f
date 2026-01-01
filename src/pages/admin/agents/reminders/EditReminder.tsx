@@ -324,7 +324,7 @@ const EditReminder = () => {
               <Button
                 onClick={() => navigate(`/agent/reminders/${reminder.id}`)}
                 variant="outline"
-                className="border-gray-300 dark:border-gray-600"
+                className="border-gray-300 dark:border-neutral-600"
               >
                 <Eye className="w-4 h-4 mr-2" />
                 View Details
@@ -332,7 +332,7 @@ const EditReminder = () => {
               <Button
                 onClick={() => navigate('/agent/reminders')}
                 variant="outline"
-                className="border-gray-300 dark:border-gray-600"
+                className="border-gray-300 dark:border-neutral-600"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Reminders
@@ -610,7 +610,7 @@ const EditReminder = () => {
                       type="button"
                       onClick={() => navigate('/agent/reminders')}
                       variant="outline"
-                      className="border-gray-300 dark:border-gray-600"
+                      className="border-gray-300 dark:border-neutral-600"
                     >
                       <XCircle className="w-4 h-4 mr-2" />
                       Cancel

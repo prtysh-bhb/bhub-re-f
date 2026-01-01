@@ -107,7 +107,7 @@ const AIHub = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => setActiveFeature(null)}
-          className="mb-6 px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700"
+          className="mb-6 px-6 py-3 bg-white dark:bg-neutral-800 text-gray-700 dark:text-gray-300 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center gap-2 border border-gray-200 dark:border-neutral-700"
         >
           ← Back to AI Hub
         </motion.button>
@@ -179,7 +179,7 @@ const AIHub = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full mb-6 border border-purple-200 dark:border-purple-800"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-full mb-6 border border-purple-200 dark:border-purple-800"
             >
               <Sparkles className="w-4 h-4 text-purple-600" />
               <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
@@ -241,7 +241,7 @@ const AIHub = () => {
                 Start AI Chat
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl font-semibold text-lg hover:shadow-xl transition-all border-2 border-gray-200 dark:border-gray-700">
+              <button className="px-8 py-4 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white rounded-2xl font-semibold text-lg hover:shadow-xl transition-all border-2 border-gray-200 dark:border-neutral-700">
                 Watch Demo
               </button>
             </div>
@@ -256,7 +256,7 @@ const AIHub = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
                 onClick={() => handleFeatureClick(feature.id)}
-                className="group relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all cursor-pointer border border-gray-200 dark:border-gray-700 overflow-hidden"
+                className="group relative bg-white dark:bg-neutral-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all cursor-pointer border border-gray-200 dark:border-neutral-700 overflow-hidden"
               >
                 {/* Gradient Background on Hover */}
                 <div
@@ -289,7 +289,7 @@ const AIHub = () => {
                     {feature.stats.map((stat) => (
                       <div
                         key={stat.label}
-                        className="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl"
+                        className="text-center p-3 bg-gray-50 dark:bg-neutral-700/50 rounded-xl"
                       >
                         <div className="text-lg font-bold text-gray-900 dark:text-white">
                           {stat.value}
@@ -325,7 +325,7 @@ const AIHub = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700"
+            className="bg-white dark:bg-neutral-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-neutral-700"
           >
             <div className="text-center mb-8">
               <Award className="w-12 h-12 text-purple-600 mx-auto mb-4" />

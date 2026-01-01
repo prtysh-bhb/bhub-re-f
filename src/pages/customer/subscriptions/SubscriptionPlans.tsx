@@ -287,24 +287,24 @@ const SubscriptionPlans = () => {
                         <div className="space-y-4 mb-8">
                           {/* Core Limits */}
                           <div className="grid grid-cols-2 gap-4 mb-6">
-                            <div className="text-center p-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                            <div className="text-center p-3 bg-white dark:bg-neutral-800 rounded-xl border border-gray-200 dark:border-neutral-700">
                               <Building2 className="w-6 h-6 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
                               <p className="font-semibold text-gray-900 dark:text-white text-sm">
                                 {plan.property_limit === 0 ? 'Unlimited' : plan.property_limit}
                               </p>
                               <p className="text-xs text-gray-500 dark:text-gray-400">Properties</p>
                             </div>
-                            <div className="text-center p-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                            <div className="text-center p-3 bg-white dark:bg-neutral-800 rounded-xl border border-gray-200 dark:border-neutral-700">
                               <Star className="w-6 h-6 text-emerald-600 dark:text-emerald-400 mx-auto mb-2" />
                               <p className="font-semibold text-gray-900 dark:text-white text-sm">{plan.featured_limit}</p>
                               <p className="text-xs text-gray-500 dark:text-gray-400">Featured</p>
                             </div>
-                            <div className="text-center p-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                            <div className="text-center p-3 bg-white dark:bg-neutral-800 rounded-xl border border-gray-200 dark:border-neutral-700">
                               <Image className="w-6 h-6 text-purple-600 dark:text-purple-400 mx-auto mb-2" />
                               <p className="font-semibold text-gray-900 dark:text-white text-sm">{plan.image_limit}</p>
                               <p className="text-xs text-gray-500 dark:text-gray-400">Images</p>
                             </div>
-                            <div className="text-center p-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                            <div className="text-center p-3 bg-white dark:bg-neutral-800 rounded-xl border border-gray-200 dark:border-neutral-700">
                               <Calendar className="w-6 h-6 text-amber-600 dark:text-amber-400 mx-auto mb-2" />
                               <p className="font-semibold text-gray-900 dark:text-white text-sm">{plan.duration_days}</p>
                               <p className="text-xs text-gray-500 dark:text-gray-400">Days</p>
@@ -321,7 +321,7 @@ const SubscriptionPlans = () => {
                             ))}
                             
                             {/* Premium Features */}
-                            <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+                            <div className="border-t border-gray-200 dark:border-neutral-700 pt-3 mt-3">
                               <div className="flex items-center justify-between mb-2">
                                 <span className="text-sm font-semibold text-gray-900 dark:text-white">Video Tours</span>
                                 {plan.video_allowed ? (
@@ -389,7 +389,7 @@ const SubscriptionPlans = () => {
                     answer: "Yes, you can cancel your subscription at any time. No long-term contracts required."
                   }
                 ].map((faq, index) => (
-                  <Card key={index} className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm border-2 border-gray-200 dark:border-gray-800 rounded-2xl shadow-lg">
+                  <Card key={index} className="bg-white dark:bg-neutral-900/50 dark:backdrop-blur-sm border-2 border-gray-200 dark:border-neutral-800 rounded-2xl shadow-lg">
                     <CardContent className="p-6">
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                         <Shield className="w-5 h-5 text-blue-600 dark:text-blue-400" />

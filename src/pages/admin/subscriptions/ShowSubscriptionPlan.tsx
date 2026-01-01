@@ -261,7 +261,7 @@ const ShowSubscriptionPlan = () => {
                   }`}>
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                        plan.video_allowed ? 'bg-primary-100 dark:bg-primary-800/30' : 'bg-gray-100 dark:bg-gray-700'
+                        plan.video_allowed ? 'bg-primary-100 dark:bg-primary-800/30' : 'bg-gray-100 dark:bg-neutral-700'
                       }`}>
                         <Video className={`w-5 h-5 ${plan.video_allowed ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400 dark:text-gray-500'}`} />
                       </div>
@@ -282,7 +282,7 @@ const ShowSubscriptionPlan = () => {
                   }`}>
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                        plan.priority_support ? 'bg-primary-100 dark:bg-primary-800/30' : 'bg-gray-100 dark:bg-gray-700'
+                        plan.priority_support ? 'bg-primary-100 dark:bg-primary-800/30' : 'bg-gray-100 dark:bg-neutral-700'
                       }`}>
                         <Headphones className={`w-5 h-5 ${plan.priority_support ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400 dark:text-gray-500'}`} />
                       </div>

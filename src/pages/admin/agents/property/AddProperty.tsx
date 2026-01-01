@@ -287,7 +287,7 @@ const AddProperty = () => {
                       }
                       maxLength={100}
                       placeholder="Beautiful Family House"
-                      className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 ${
+                      className={`dark:bg-neutral-800 dark:border-neutral-600 dark:text-white dark:placeholder-gray-400 ${
                         errors.title ? "border-red-500 dark:border-red-500" : ""
                       }`}
                     />
@@ -316,7 +316,7 @@ const AddProperty = () => {
                       name="property_type"
                       value={formData.property_type}
                       onChange={handleChange}
-                      className={`w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-gray-600 dark:text-white cursor-pointer ${
+                      className={`w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-neutral-600 dark:text-white cursor-pointer ${
                         errors.property_type ? "border-red-500 dark:border-red-500" : ""
                       }`}
                     >
@@ -360,7 +360,7 @@ const AddProperty = () => {
                         handleKeyPress(e, /[0-9]/, false)
                       }
                       placeholder="150000"
-                      className={`pl-8 dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
+                      className={`pl-8 dark:bg-neutral-800 dark:border-neutral-600 dark:text-white ${
                         errors.price ? "border-red-500 dark:border-red-500" : ""
                       }`}
                     />
@@ -391,7 +391,7 @@ const AddProperty = () => {
                       handleKeyPress(e, /[0-9]/, false)
                     }
                     placeholder="1200"
-                    className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
+                    className={`dark:bg-neutral-800 dark:border-neutral-600 dark:text-white ${
                       errors.area ? "border-red-500 dark:border-red-500" : ""
                     }`}
                   />
@@ -421,7 +421,7 @@ const AddProperty = () => {
                       handleKeyPress(e, /[0-9]/, false)
                     }
                     placeholder="3"
-                    className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
+                    className={`dark:bg-neutral-800 dark:border-neutral-600 dark:text-white ${
                       errors.bedrooms ? "border-red-500 dark:border-red-500" : ""
                     }`}
                   />
@@ -451,7 +451,7 @@ const AddProperty = () => {
                       handleKeyPress(e, /[0-9]/, false)
                     }
                     placeholder="2"
-                    className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
+                    className={`dark:bg-neutral-800 dark:border-neutral-600 dark:text-white ${
                       errors.bathrooms ? "border-red-500 dark:border-red-500" : ""
                     }`}
                   />
@@ -480,7 +480,7 @@ const AddProperty = () => {
                     handleKeyPress(e, /[a-z0-9 .,!?'"()-]/, true)
                   }
                   placeholder="Describe the property features, neighborhood, and unique selling points..."
-                  className={`w-full border rounded-xl p-4 h-32 dark:bg-neutral-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 resize-none ${
+                  className={`w-full border rounded-xl p-4 h-32 dark:bg-neutral-800 dark:border-neutral-600 dark:text-white dark:placeholder-gray-400 resize-none ${
                     errors.description ? "border-red-500 dark:border-red-500" : ""
                   }`}
                 />
@@ -541,7 +541,7 @@ const AddProperty = () => {
                 w-5 h-5
                 rounded-md
                 border-2
-                border-gray-300 dark:border-gray-600
+                border-gray-300 dark:border-neutral-600
                 bg-white dark:bg-neutral-800
                 transition-all
                 duration-200
@@ -605,7 +605,7 @@ const AddProperty = () => {
                     className={`border-2 border-dashed rounded-xl p-6 text-center transition-colors ${
                       errors.images
                         ? "border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/10"
-                        : "dark:border-gray-600 border-gray-300 hover:border-primary"
+                        : "dark:border-neutral-600 border-gray-300 hover:border-primary"
                     }`}
                   >
                     <div className="flex flex-col items-center">
@@ -682,7 +682,7 @@ const AddProperty = () => {
                     className={`border-2 border-dashed rounded-xl p-6 text-center transition-colors ${
                       errors.video
                         ? "border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/10"
-                        : "dark:border-gray-600 border-gray-300 hover:border-primary"
+                        : "dark:border-neutral-600 border-gray-300 hover:border-primary"
                     }`}
                   >
                     <div className="flex flex-col items-center">
@@ -779,7 +779,7 @@ const AddProperty = () => {
                       onChange={handleChange}
                       maxLength={field.maxLength}
                       placeholder={`Enter ${field.label.toLowerCase()}`}
-                      className={`dark:bg-neutral-800 dark:border-gray-600 dark:text-white ${
+                      className={`dark:bg-neutral-800 dark:border-neutral-600 dark:text-white ${
                         errors[field.name] ? "border-red-500 dark:border-red-500" : ""
                       }`}
                     />
@@ -812,7 +812,7 @@ const AddProperty = () => {
                     name="status"
                     value={formData.status}
                     onChange={handleChange}
-                    className="w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-gray-600 dark:text-white cursor-pointer"
+                    className="w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-neutral-600 dark:text-white cursor-pointer"
                   >
                     <option value="draft" className="dark:bg-neutral-800">
                       Draft
@@ -833,7 +833,7 @@ const AddProperty = () => {
                     name="type"
                     value={formData.type}
                     onChange={handleChange}
-                    className={`w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-gray-600 dark:text-white cursor-pointer ${
+                    className={`w-full border p-2.5 rounded-xl dark:bg-neutral-800 dark:border-neutral-600 dark:text-white cursor-pointer ${
                       errors.type ? "border-red-500 dark:border-red-500" : ""
                     }`}
                   >
@@ -859,7 +859,7 @@ const AddProperty = () => {
               <button
                 type="button"
                 onClick={() => navigate("/agent/properties")}
-                className="px-6 py-3 rounded-xl border dark:border-gray-600 border-gray-300 dark:text-gray-300 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all font-medium"
+                className="px-6 py-3 rounded-xl border dark:border-neutral-600 border-gray-300 dark:text-gray-300 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all font-medium"
               >
                 Cancel
               </button>

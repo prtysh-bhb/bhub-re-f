@@ -220,7 +220,7 @@ export const ThemeCustomizer: React.FC = () => {
                       "relative p-2.5 rounded-xl border-2 transition-all group",
                       config.theming.themeMode === mode.value
                         ? "border-primary-500 bg-primary-50 dark:bg-primary-900/20"
-                        : "border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-700"
+                        : "border-neutral-200 dark:border-neutral-700 hover:border-primary-400/60 dark:hover:border-primary-600/60"
                     )}
                   >
                     <Icon

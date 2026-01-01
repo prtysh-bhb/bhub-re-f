@@ -255,7 +255,7 @@ const MySubscriptions = () => {
                                 {activeSubscription?.plan?.property_limit ?? 0}
                               </span>
                             </div>
-                            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div className="w-full bg-gray-200 dark:bg-neutral-700 rounded-full h-2">
                               <div 
                                 className={`h-2 rounded-full transition-all duration-500 ${getUsageColor(
                                   getUsagePercentage(10, activeSubscription?.plan?.property_limit ?? 0)
@@ -273,7 +273,7 @@ const MySubscriptions = () => {
                               <span>Featured Properties</span>
                               <span>{activeSubscription?.plan?.featured_limit ?? 0}</span>
                             </div>
-                            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div className="w-full bg-gray-200 dark:bg-neutral-700 rounded-full h-2">
                               <div 
                                 className={`h-2 rounded-full transition-all duration-500 ${getUsageColor(
                                   getUsagePercentage(10, activeSubscription?.plan?.featured_limit ?? 0)
@@ -291,7 +291,7 @@ const MySubscriptions = () => {
                               <span>Images Used</span>
                               <span>{activeSubscription?.plan?.image_limit ?? 0}</span>
                             </div>
-                            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div className="w-full bg-gray-200 dark:bg-neutral-700 rounded-full h-2">
                               <div 
                                 className={`h-2 rounded-full transition-all duration-500 ${getUsageColor(
                                   getUsagePercentage(10, activeSubscription?.plan?.image_limit ?? 0)
@@ -320,7 +320,7 @@ const MySubscriptions = () => {
                           ))}
                           
                           {/* Premium Features */}
-                          <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+                          <div className="border-t border-gray-200 dark:border-neutral-700 pt-3 mt-3">
                             <div className="flex items-center justify-between mb-2">
                               <span className="text-sm font-semibold text-gray-900 dark:text-white">Video Tours</span>
                               {activeSubscription?.plan?.video_allowed ? (
@@ -343,7 +343,7 @@ const MySubscriptions = () => {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex flex-col sm:flex-row gap-4 pt-6 mt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div className="flex flex-col sm:flex-row gap-4 pt-6 mt-6 border-t border-gray-200 dark:border-neutral-700">
                       <Button
                         onClick={() => navigate(isAgent ? '/agent/subscription-plans' : '/subscription-plans')}
                         variant="outline"
@@ -398,7 +398,7 @@ const MySubscriptions = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pastSubscriptions.map((subscription) => (
-                  <Card key={subscription.id} className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm border-2 border-gray-200 dark:border-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card key={subscription.id} className="bg-white dark:bg-neutral-900/50 dark:backdrop-blur-sm border-2 border-gray-200 dark:border-neutral-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <div>
@@ -461,7 +461,7 @@ const MySubscriptions = () => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="flex-1 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                  className="flex-1 border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                   onClick={() => window.open('/help/subscriptions', '_blank')}
                 >
                   <Download className="w-4 h-4 mr-2" />

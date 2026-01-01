@@ -88,7 +88,7 @@ const CustomerProfilePage = () => {
                   className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
                     customer?.two_factor_enabled
                       ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
-                      : "bg-red-100 dark:bg-gray-700 text-red-700 dark:text-gray-400"
+                      : "bg-red-100 dark:bg-neutral-700 text-red-700 dark:text-gray-400"
                   }`}
                 >
                   <Shield className="mr-1" size={14} />

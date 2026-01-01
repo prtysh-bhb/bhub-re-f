@@ -408,7 +408,7 @@ const PropertyList = () => {
               <div className="flex justify-end gap-3">
                 <button
                   onClick={() => setShowConfirm(false)}
-                  className="px-5 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-300 text-gray-700 text-sm font-medium cursor-pointer transition-all"
+                  className="px-5 py-2.5 rounded-xl bg-gray-100 dark:bg-neutral-700 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-300 text-gray-700 text-sm font-medium cursor-pointer transition-all"
                 >
                   Cancel
                 </button>

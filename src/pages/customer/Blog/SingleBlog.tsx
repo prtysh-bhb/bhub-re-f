@@ -284,7 +284,7 @@ const SingleBlogPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Navigation */}
-      <div className="sticky top-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <div className="sticky top-0 z-40 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border-b border-gray-200 dark:border-neutral-800">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <button
@@ -444,7 +444,7 @@ const SingleBlogPage = () => {
           </article>
 
           {/* Tags & Share */}
-          <div className="border-t border-b border-gray-200 dark:border-gray-800 py-6 mb-8">
+          <div className="border-t border-b border-gray-200 dark:border-neutral-800 py-6 mb-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
@@ -474,7 +474,7 @@ const SingleBlogPage = () => {
                   </button>
                   <button
                     onClick={() => handleShare("copy")}
-                    className="p-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                    className="p-2 bg-gray-200 dark:bg-neutral-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                     title="Copy link"
                   >
                     <LinkIcon size={18} />
@@ -488,7 +488,7 @@ const SingleBlogPage = () => {
                   {blog.meta_tags?.keywords?.split(",").map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+                      className="px-3 py-1 bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-300 rounded-full text-sm"
                     >
                       {tag.trim()}
                     </span>
@@ -500,7 +500,7 @@ const SingleBlogPage = () => {
 
           {/* Author Bio */}
           {blog.user?.email && (
-            <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6 mb-12">
+            <div className="bg-gray-50 dark:bg-neutral-800/50 rounded-2xl p-6 mb-12">
               <div className="flex items-start gap-4">
                 {blog.user.avatar_url && (
                   <img
@@ -530,7 +530,7 @@ const SingleBlogPage = () => {
                   <article
                     key={relatedBlog.id}
                     onClick={() => navigate(`/blog/${relatedBlog.slug}`)}
-                    className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                    className="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
                   >
                     <div className="relative h-40 overflow-hidden">
                       <img
@@ -558,7 +558,7 @@ const SingleBlogPage = () => {
           )}
 
           {/* Comments Section */}
-          <section className="bg-white dark:bg-gray-800 rounded-2xl p-6 mb-12">
+          <section className="bg-white dark:bg-neutral-800 rounded-2xl p-6 mb-12">
             <div className="flex items-center gap-2 mb-6">
               <MessageCircle className="text-gray-500" />
               <h2 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -589,7 +589,7 @@ const SingleBlogPage = () => {
                     placeholder="Share your thoughts..."
                     value={newComment}
                     onChange={(e) => setNewComment(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                     rows={3}
                     disabled={submittingComment}
                   />
@@ -642,7 +642,7 @@ const SingleBlogPage = () => {
                     return (
                       <div
                         key={comment.id}
-                        className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-0 group"
+                        className="border-b border-gray-200 dark:border-neutral-700 pb-6 last:border-0 group"
                       >
                         <div className="flex items-start justify-between gap-3 mb-3">
                           <div className="flex items-start gap-3">
@@ -722,7 +722,7 @@ const SingleBlogPage = () => {
                             <textarea
                               value={editCommentText}
                               onChange={(e) => setEditCommentText(e.target.value)}
-                              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                               rows={3}
                             />
                           </div>

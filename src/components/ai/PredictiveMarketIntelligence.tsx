@@ -238,7 +238,7 @@ const PredictiveMarketIntelligence = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all"
+            className="bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-neutral-800 hover:shadow-xl transition-all"
           >
             <div className="flex items-start justify-between mb-4">
               <div
@@ -265,7 +265,7 @@ const PredictiveMarketIntelligence = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-800"
+        className="bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-neutral-800"
       >
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -284,7 +284,7 @@ const PredictiveMarketIntelligence = () => {
                 className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
                   selectedTimeframe === timeframe
                     ? "bg-purple-600 text-white shadow-lg"
-                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    : "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                 }`}
               >
                 {timeframe}
@@ -346,7 +346,7 @@ const PredictiveMarketIntelligence = () => {
         </div>
 
         {/* Legend */}
-        <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-gray-200 dark:border-gray-800">
+        <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-gray-200 dark:border-neutral-800">
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded" />
             <span className="text-sm text-gray-700 dark:text-gray-300">Actual Price</span>
@@ -362,7 +362,7 @@ const PredictiveMarketIntelligence = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-800"
+        className="bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-neutral-800"
       >
         <div className="flex items-center gap-3 mb-6">
           <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
@@ -385,7 +385,7 @@ const PredictiveMarketIntelligence = () => {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 hover:shadow-md transition-all border border-gray-200 dark:border-gray-700"
+                className="bg-gray-50 dark:bg-neutral-800 rounded-xl p-4 hover:shadow-md transition-all border border-gray-200 dark:border-neutral-700"
               >
                 <div className="flex items-start gap-3">
                   <div

@@ -94,7 +94,7 @@ const AgentList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -105,7 +105,7 @@ const AgentList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
+                      ? "bg-white dark:bg-neutral-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -439,7 +439,7 @@ const AgentList = () => {
                 <button
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={page === 1}
-                  className="flex-1 sm:flex-none px-5 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-500 text-gray-700 dark:text-gray-300 transition-all"
+                  className="flex-1 sm:flex-none px-5 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-neutral-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-500 text-gray-700 dark:text-gray-300 transition-all"
                 >
                   Previous
                 </button>

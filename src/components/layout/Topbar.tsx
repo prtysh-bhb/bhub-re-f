@@ -68,7 +68,7 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
           <input
             type="search"
             placeholder="Search properties, agents, customers..."
-            className="w-full h-10 pl-10 pr-4 rounded-lg border border-neutral-300/80 dark:border-neutral-700/80 bg-neutral-100/80 dark:bg-neutral-800/80 hover:border-primary-300 dark:hover:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 focus:bg-white dark:focus:bg-neutral-900 text-sm transition-all placeholder:text-neutral-500"
+            className="w-full h-10 pl-10 pr-4 rounded-lg border border-neutral-300/80 dark:border-neutral-700/80 bg-neutral-100/80 dark:bg-neutral-800/80 hover:border-primary-400/60 dark:hover:border-primary-600/60 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 focus:bg-white dark:focus:bg-neutral-900 text-sm transition-all placeholder:text-neutral-500"
           />
         </div>
       </div>

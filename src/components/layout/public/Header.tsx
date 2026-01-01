@@ -67,7 +67,7 @@ const Header = () => {
         className={clsx(
           "fixed top-0 left-0 w-full z-50 transition-all duration-500",
           scrolled
-            ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-lg border-b border-gray-200 dark:border-gray-800"
+            ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-lg border-b border-gray-200 dark:border-neutral-800"
             : "bg-transparent"
         )}
       >
@@ -180,7 +180,7 @@ const Header = () => {
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
             >
               {/* Header Section */}
-              <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-gray-800 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-slate-800 dark:to-slate-800">
+              <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-neutral-800 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-slate-800 dark:to-slate-800">
                 <div className="flex items-center gap-3">
                   <Building2 className="w-7 h-7 text-blue-600 dark:text-blue-400" />
                   <h2 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 dark:from-blue-400 dark:to-emerald-400 bg-clip-text text-transparent">
@@ -285,7 +285,7 @@ const Header = () => {
               </div>
 
               {/* Footer Section (Optional) */}
-              <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-slate-800/50">
+              <div className="px-6 py-4 border-t border-gray-200 dark:border-neutral-800 bg-gray-50 dark:bg-slate-800/50">
                 <p className="text-xs text-center text-gray-500 dark:text-gray-400">
                   © 2024 {APP_NAME}. All rights reserved.
                 </p>
