@@ -69,7 +69,7 @@ const AgentList = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
-              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all w-full sm:w-auto">
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all w-full sm:w-auto">
                 <Search size={16} className="text-gray-400 dark:text-gray-500 mr-2 flex-shrink-0" />
                 <input
                   type="text"
@@ -356,7 +356,7 @@ const AgentList = () => {
                     agents.map((agent) => (
                       <div
                         key={agent.id}
-                        className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300 hover:-translate-y-1 group min-h-0"
+                        className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all duration-300 hover:-translate-y-1 group min-h-0"
                       >
                         <div className="flex justify-between items-start mb-4">
                           <div className="flex items-center gap-3">

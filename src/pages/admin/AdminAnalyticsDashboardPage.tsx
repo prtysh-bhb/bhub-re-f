@@ -120,7 +120,7 @@ const AdminAnalyticsDashboardPage = () => {
 
         {/* Conversion Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
+          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-neutral-200/50 dark:border-neutral-800/50 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
@@ -136,7 +136,7 @@ const AdminAnalyticsDashboardPage = () => {
             </div>
           </div>
 
-          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
+          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-neutral-200/50 dark:border-neutral-800/50 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
@@ -152,7 +152,7 @@ const AdminAnalyticsDashboardPage = () => {
             </div>
           </div>
 
-          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
+          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-neutral-200/50 dark:border-neutral-800/50 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
@@ -168,7 +168,7 @@ const AdminAnalyticsDashboardPage = () => {
             </div>
           </div>
 
-          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
+          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-neutral-200/50 dark:border-neutral-800/50 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
@@ -184,7 +184,7 @@ const AdminAnalyticsDashboardPage = () => {
             </div>
           </div>
 
-          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-primary-200/40 dark:border-primary-800/40 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
+          <div className="group bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border border-neutral-200/50 dark:border-neutral-800/50 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
@@ -570,7 +570,7 @@ const AdminAnalyticsDashboardPage = () => {
                 {analytics.agent_performance.by_properties.slice(0, 5).map((agent, index) => (
                   <div
                     key={agent.id}
-                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-400/60 dark:hover:border-primary-600/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -612,7 +612,7 @@ const AdminAnalyticsDashboardPage = () => {
                 {analytics.agent_performance.by_inquiries.slice(0, 5).map((agent, index) => (
                   <div
                     key={agent.id}
-                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-400/60 dark:hover:border-primary-600/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -654,7 +654,7 @@ const AdminAnalyticsDashboardPage = () => {
                 {analytics.agent_performance.top_rated.slice(0, 5).map((agent, index) => (
                   <div
                     key={agent.id}
-                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-400/60 dark:hover:border-primary-600/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -735,7 +735,7 @@ const AdminAnalyticsDashboardPage = () => {
               {analytics.view_trends.top_properties.slice(0, 10).map((item, index) => (
                 <div
                   key={item.property_id}
-                  className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
+                  className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-400/60 dark:hover:border-primary-600/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">

@@ -230,7 +230,7 @@ const CustomerList = () => {
         {/* Stats Summary */}
         {!loading && !error && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="group bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
+            <div className="group bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
@@ -245,7 +245,7 @@ const CustomerList = () => {
                 </div>
               </div>
             </div>
-            <div className="group bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
+            <div className="group bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
@@ -445,7 +445,7 @@ const CustomerList = () => {
                   customers.map((c) => (
                     <div
                       key={c.id}
-                      className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all hover:-translate-y-1 group"
+                      className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all hover:-translate-y-1 group"
                     >
                       <div className="flex justify-between items-start mb-4">
                         <div className="flex items-center gap-3">

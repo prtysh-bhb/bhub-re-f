@@ -271,7 +271,7 @@ const RemindersList = () => {
               </div>
 
               {/* Quick Filters */}
-              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all">
                 <Filter size={16} className="text-gray-400 dark:text-gray-500 mr-2" />
                 <select
                   value={filter}
@@ -287,7 +287,7 @@ const RemindersList = () => {
               </div>
 
               {/* Status Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all">
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
@@ -302,7 +302,7 @@ const RemindersList = () => {
               </div>
 
               {/* Priority Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all">
                 <select
                   value={priorityFilter}
                   onChange={(e) => setPriorityFilter(e.target.value)}
@@ -317,7 +317,7 @@ const RemindersList = () => {
               </div>
 
               {/* Type Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 bg-white dark:bg-neutral-900 shadow-sm hover:border-primary-400/60 dark:hover:border-primary-600/60 transition-all">
                 <select
                   value={typeFilter}
                   onChange={(e) => setTypeFilter(e.target.value)}
