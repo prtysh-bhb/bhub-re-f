@@ -125,7 +125,7 @@ const PropertyList = () => {
         {/* ---------- Header ---------- */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl shadow-lg dark:shadow-black/30">
+            <div className="p-3 bg-[var(--color-primary-500)] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
               <House className="text-white" size={24} />
             </div>
             <div>
@@ -140,7 +140,7 @@ const PropertyList = () => {
 
           <Button
             onClick={() => navigate("/agent/properties/new")}
-            className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white cursor-pointer shadow-md hover:shadow-lg transition-all duration-300 px-6 py-3 rounded-xl font-medium"
+            className="bg-[var(--color-primary-600)] hover:bg-[var(--color-primary-700)] text-white cursor-pointer shadow-[0_4px_14px_0_rgb(0,0,0,0.1)] hover:shadow-[0_6px_20px_0_rgb(0,0,0,0.15)] dark:shadow-[0_4px_14px_0_rgb(0,0,0,0.4)] dark:hover:shadow-[0_6px_20px_0_rgb(0,0,0,0.5)] transition-all duration-300 px-6 py-3 rounded-xl font-medium"
           >
             <Plus className="w-4 h-4 mr-2" />
             Add New Property
@@ -150,52 +150,52 @@ const PropertyList = () => {
         {/* Stats Summary */}
         {properties.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div className="bg-white dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-blue-700 dark:text-blue-300">Total Properties</p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">{properties.length}</p>
+                  <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Properties</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{properties.length}</p>
                 </div>
-                <div className="p-2 bg-blue-500/10 rounded-lg">
-                  <Home className="text-blue-600 dark:text-blue-400" size={20} />
+                <div className="p-2 bg-[var(--color-primary-500)]/10 dark:bg-[var(--color-primary-500)]/20 rounded-lg">
+                  <Home className="text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <div className="bg-white dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">Published</p>
-                  <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                  <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Published</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                     {properties.filter(p => p.status.toLowerCase() === 'published').length}
                   </p>
                 </div>
-                <div className="p-2 bg-emerald-500/10 rounded-lg">
+                <div className="p-2 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-lg">
                   <TrendingUp className="text-emerald-600 dark:text-emerald-400" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20 p-4 rounded-xl border border-amber-200 dark:border-amber-800">
+            <div className="bg-white dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-amber-700 dark:text-amber-300">Pending</p>
-                  <p className="text-2xl font-bold text-amber-900 dark:text-amber-100 mt-1">
+                  <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Pending</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                     {properties.filter(p => !p.approval_status || p.approval_status.toLowerCase() !== 'approved').length}
                   </p>
                 </div>
-                <div className="p-2 bg-amber-500/10 rounded-lg">
+                <div className="p-2 bg-amber-500/10 dark:bg-amber-500/20 rounded-lg">
                   <Shield className="text-amber-600 dark:text-amber-400" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-4 rounded-xl border border-purple-200 dark:border-purple-800">
+            <div className="bg-white dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-purple-700 dark:text-purple-300">Featured</p>
-                  <p className="text-2xl font-bold text-purple-900 dark:text-purple-100 mt-1">
+                  <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Featured</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                     {properties.filter(p => p.is_featured).length}
                   </p>
                 </div>
-                <div className="p-2 bg-purple-500/10 rounded-lg">
+                <div className="p-2 bg-purple-500/10 dark:bg-purple-500/20 rounded-lg">
                   <Star className="text-purple-600 dark:text-purple-400" size={20} />
                 </div>
               </div>
@@ -207,14 +207,14 @@ const PropertyList = () => {
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-16 h-16 border-4 border-[var(--color-primary-500)] border-t-transparent rounded-full animate-spin mx-auto"></div>
               <p className="text-gray-500 dark:text-gray-400">Loading properties...</p>
             </div>
           </div>
         ) : properties.length === 0 ? (
-          <div className="text-center py-16 dark:bg-gray-800/50 bg-white rounded-xl border-2 border-dashed dark:border-gray-700 border-gray-200 shadow-sm dark:shadow-black/30">
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-emerald-100 dark:from-blue-900/20 dark:to-emerald-900/20 rounded-full flex items-center justify-center mx-auto mb-4 dark:border-blue-800/30 border-blue-200 border">
-              <Home className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+          <div className="text-center py-16 dark:bg-gray-800/50 bg-white rounded-xl border-2 border-dashed dark:border-gray-700 border-gray-200 shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)]">
+            <div className="w-20 h-20 bg-[var(--color-primary-500)]/10 dark:bg-[var(--color-primary-500)]/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-[var(--color-primary-200)] dark:border-[var(--color-primary-800)]/30">
+              <Home className="w-8 h-8 text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]" />
             </div>
             <h3 className="text-lg font-semibold dark:text-gray-300 text-gray-700 mb-2">No Properties Yet</h3>
             <p className="text-gray-500 dark:text-gray-400 text-sm mb-6 max-w-sm mx-auto">
@@ -222,7 +222,7 @@ const PropertyList = () => {
             </p>
             <Button
               onClick={() => navigate("/agent/properties/new")}
-              className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg px-6 py-3 rounded-xl"
+              className="bg-[var(--color-primary-600)] hover:bg-[var(--color-primary-700)] text-white shadow-[0_4px_14px_0_rgb(0,0,0,0.1)] hover:shadow-[0_6px_20px_0_rgb(0,0,0,0.15)] dark:shadow-[0_4px_14px_0_rgb(0,0,0,0.4)] dark:hover:shadow-[0_6px_20px_0_rgb(0,0,0,0.5)] px-6 py-3 rounded-xl"
             >
               + Add Your First Property
             </Button>
@@ -236,7 +236,7 @@ const PropertyList = () => {
               return (
                 <div
                   key={property.id}
-                  className="group dark:bg-gray-800/50 bg-white rounded-2xl shadow-lg dark:shadow-black/30 hover:shadow-xl dark:hover:shadow-black/40 transition-all duration-300 border dark:border-gray-700/50 border-gray-100 overflow-hidden hover:-translate-y-1"
+                  className="group dark:bg-gray-800/50 bg-white rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 border dark:border-gray-700/50 border-gray-100 overflow-hidden hover:-translate-y-1"
                 >
                   {/* Property Image Section */}
                   {property.image_urls?.[0] ? (
@@ -269,7 +269,7 @@ const PropertyList = () => {
                     <div>
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h2 className="text-lg font-bold dark:text-white text-gray-800 group-hover:text-blue-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
+                          <h2 className="text-lg font-bold dark:text-white text-gray-800 group-hover:text-[var(--color-primary-600)] dark:group-hover:text-[var(--color-primary-400)] transition-colors line-clamp-2">
                             {property.title}
                           </h2>
                           <div className="flex items-center gap-2 mt-2">
@@ -301,8 +301,8 @@ const PropertyList = () => {
 
                       <div className="space-y-3">
                         <div className="flex items-center gap-2 text-sm">
-                          <div className="p-1.5 rounded-lg bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/20 dark:to-blue-800/20">
-                            <MapPin className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                          <div className="p-1.5 rounded-lg bg-[var(--color-primary-500)]/10 dark:bg-[var(--color-primary-500)]/20">
+                            <MapPin className="w-4 h-4 text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]" />
                           </div>
                           <span className="text-gray-600 dark:text-gray-300">
                             {property.city}, {property.state}
@@ -310,8 +310,8 @@ const PropertyList = () => {
                         </div>
 
                         <div className="flex items-center gap-2 text-sm">
-                          <div className="p-1.5 rounded-lg bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/20 dark:to-emerald-800/20">
-                            <DollarSign className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                          <div className="p-1.5 rounded-lg bg-[var(--color-primary-500)]/10 dark:bg-[var(--color-primary-500)]/20">
+                            <DollarSign className="w-4 h-4 text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]" />
                           </div>
                           <span className="text-lg font-bold dark:text-white text-gray-800">
                             {formatAmount(property.price)}
@@ -344,10 +344,10 @@ const PropertyList = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex items-center gap-2 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-900/30 cursor-pointer rounded-lg px-4 py-2 transition-all"
+                        className="flex items-center gap-2 text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)] border-[var(--color-primary-200)] dark:border-[var(--color-primary-800)] hover:bg-[var(--color-primary-50)] dark:hover:bg-[var(--color-primary-900)]/30 cursor-pointer rounded-lg px-4 py-2 transition-all"
                         onClick={() => navigate(`/agent/properties/${property.id}`)}
                       >
-                        <Eye className="w-4 h-4" /> 
+                        <Eye className="w-4 h-4" />
                         <span>View</span>
                       </Button>
 
@@ -355,7 +355,7 @@ const PropertyList = () => {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-900/30 cursor-pointer rounded-lg p-2 transition-all hover:scale-110"
+                          className="text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)] border-[var(--color-primary-200)] dark:border-[var(--color-primary-800)] hover:bg-[var(--color-primary-50)] dark:hover:bg-[var(--color-primary-900)]/30 cursor-pointer rounded-lg p-2 transition-all hover:scale-110"
                           onClick={() => navigate(`/agent/properties/${property.id}/edit`)}
                           title="Edit Property"
                         >

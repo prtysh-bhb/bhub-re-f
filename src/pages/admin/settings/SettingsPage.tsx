@@ -120,11 +120,11 @@ const SettingsPage = () => {
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/20">
                 <Settings className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent">
                   Application Settings
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -147,7 +147,7 @@ const SettingsPage = () => {
               <Button
                 onClick={handleSaveAll}
                 disabled={saving || totalChangedCount === 0}
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg flex items-center gap-2"
+                className="bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 flex items-center gap-2"
               >
                 {saving ? (
                   <>
@@ -199,7 +199,7 @@ const SettingsPage = () => {
                         onClick={() => setActiveGroup(group)}
                         className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all ${
                           activeGroup === group
-                            ? "bg-gradient-to-r from-blue-600 to-emerald-600 text-white shadow-lg"
+                            ? "bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg shadow-primary-500/25"
                             : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                         }`}
                       >
@@ -235,7 +235,7 @@ const SettingsPage = () => {
               <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
                 <CardContent className="p-12 text-center">
                   <div className="space-y-4">
-                    <div className="w-12 h-12 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                    <div className="w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
                     <p className="text-gray-500 dark:text-gray-400">Loading settings...</p>
                   </div>
                 </CardContent>
@@ -245,7 +245,7 @@ const SettingsPage = () => {
               <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
                 <CardContent className="p-12 text-center">
                   <div className="space-y-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-primary-500/20">
                       <Settings className="text-white" size={24} />
                     </div>
                     <div>
@@ -282,7 +282,7 @@ const SettingsPage = () => {
               // Settings Form
               <>
                 {/* Group Header */}
-                <Card className="bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-blue-900/20 dark:to-emerald-900/20 border border-blue-200 dark:border-blue-800">
+                <Card className="bg-gradient-to-r from-primary-50 to-primary-100/50 dark:from-primary-900/20 dark:to-primary-800/10 border border-primary-200 dark:border-primary-800 shadow-sm shadow-primary-500/5">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -303,7 +303,7 @@ const SettingsPage = () => {
                           onClick={handleSaveAll}
                           size="sm"
                           disabled={saving}
-                          className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white"
+                          className="bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white shadow-md shadow-primary-500/25 hover:shadow-lg hover:shadow-primary-500/30"
                         >
                           {saving ? (
                             <>
@@ -386,12 +386,12 @@ const renderSettingInput = (
         <button
           type="button"
           onClick={() => onChange(boolValue ? "false" : "true")}
-          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-            boolValue ? "bg-emerald-500" : "bg-gray-300 dark:bg-gray-600"
+          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-all ${
+            boolValue ? "bg-gradient-to-r from-primary-500 to-primary-600 shadow-md shadow-primary-500/25" : "bg-gray-300 dark:bg-gray-600"
           }`}
         >
           <span
-            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-sm ${
               boolValue ? "translate-x-6" : "translate-x-1"
             }`}
           />
@@ -404,7 +404,7 @@ const renderSettingInput = (
           type="number"
           value={value}
           onChange={handleChange}
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-shadow"
         />
       );
 
@@ -414,7 +414,7 @@ const renderSettingInput = (
           value={value}
           onChange={handleChange}
           rows={4}
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-y transition-shadow"
         />
       );
 
@@ -430,7 +430,7 @@ const renderSettingInput = (
           type={isPassword ? "password" : "text"}
           value={value}
           onChange={handleChange}
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-shadow"
         />
       );
   }

@@ -118,20 +118,20 @@ const SubscriptionPlanList = () => {
   };
 
   const getPlanIcon = (plan: SubscriptionPlan) => {
-    if (plan.price >= 150) return <Crown className="text-amber-500" size={20} />;
-    if (plan.price >= 50) return <Zap className="text-purple-500" size={20} />;
-    return <Star className="text-blue-500" size={20} />;
+    if (plan.price >= 150) return <Crown className="text-white" size={20} />;
+    if (plan.price >= 50) return <Zap className="text-white" size={20} />;
+    return <Star className="text-white" size={20} />;
   };
 
   const getPlanGradient = (plan: SubscriptionPlan) => {
-    if (plan.price >= 150) return "from-amber-500 to-orange-500";
-    if (plan.price >= 50) return "from-purple-500 to-pink-500";
-    return "from-blue-500 to-cyan-500";
+    if (plan.price >= 150) return "from-primary-600 via-primary-500 to-primary-400";
+    if (plan.price >= 50) return "from-primary-500 to-primary-400";
+    return "from-primary-400 to-primary-300";
   };
 
   const badge = (isActive: boolean) =>
     isActive
-      ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400"
+      ? "bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400"
       : "bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400";
 
   const formatPrice = (price: number) => {
@@ -145,10 +145,10 @@ const SubscriptionPlanList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_8px_32px_-8px_rgb(var(--primary-500)/0.12)]">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-[0_8px_16px_-4px_rgb(var(--primary-500)/0.4)]">
                 <CreditCard className="text-white" size={20} />
               </div>
               <div>
@@ -162,7 +162,7 @@ const SubscriptionPlanList = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-[0_4px_16px_-4px_rgb(var(--primary-500)/0.2)] transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -178,7 +178,7 @@ const SubscriptionPlanList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -189,7 +189,7 @@ const SubscriptionPlanList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -198,7 +198,7 @@ const SubscriptionPlanList = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-[0_4px_16px_-4px_rgb(var(--primary-500)/0.2)] transition-all">
                 <Filter size={16} className="text-gray-400 mr-2" />
                 <select
                   value={filter}
@@ -229,7 +229,7 @@ const SubscriptionPlanList = () => {
 
               <Button
                 onClick={() => navigate("/admin/subscriptions/new")}
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg"
+                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-[0_4px_16px_-2px_rgb(var(--primary-500)/0.4)] hover:shadow-[0_8px_24px_-4px_rgb(var(--primary-500)/0.5)]"
               >
                 <Plus size={18} />
                 <span>New Plan</span>
@@ -287,7 +287,7 @@ const SubscriptionPlanList = () => {
                         plans.map((plan, index) => (
                           <tr
                             key={plan.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition-all group ${
+                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/30 dark:hover:bg-primary-900/10 transition-all group ${
                               index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                             }`}
                           >
@@ -335,16 +335,16 @@ const SubscriptionPlanList = () => {
                             <td className="py-4 px-6">
                               <div className="flex flex-wrap gap-1">
                                 {plan.video_allowed && (
-                                  <span className="inline-flex items-center px-2 py-1 rounded-md text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
+                                  <span className="inline-flex items-center px-2 py-1 rounded-md text-xs bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400">
                                     Video
                                   </span>
                                 )}
                                 {plan.priority_support && (
-                                  <span className="inline-flex items-center px-2 py-1 rounded-md text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400">
+                                  <span className="inline-flex items-center px-2 py-1 rounded-md text-xs bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400">
                                     Priority
                                   </span>
                                 )}
-                                <span className="inline-flex items-center px-2 py-1 rounded-md text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400">
+                                <span className="inline-flex items-center px-2 py-1 rounded-md text-xs bg-primary-100/50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400">
                                   {plan.image_limit} Images
                                 </span>
                               </div>
@@ -356,7 +356,7 @@ const SubscriptionPlanList = () => {
                                 )}`}
                               >
                                 <span className={`w-1.5 h-1.5 rounded-full mr-1.5 ${
-                                  plan.is_active ? "bg-emerald-600 dark:bg-emerald-400" : "bg-red-600 dark:bg-red-400"
+                                  plan.is_active ? "bg-primary-600 dark:bg-primary-400" : "bg-red-600 dark:bg-red-400"
                                 }`}></span>
                                 {plan.is_active ? "Active" : "Inactive"}
                               </span>
@@ -365,14 +365,14 @@ const SubscriptionPlanList = () => {
                               <div className="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                 <button
                                   onClick={() => navigate(`/admin/subscriptions/${plan.id}`)}
-                                  className="p-2 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 text-purple-600 dark:text-purple-400 transition-all hover:scale-110"
+                                  className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110"
                                   title="View Details"
                                 >
                                   <Eye size={18} />
                                 </button>
                                 <button
                                   onClick={() => navigate(`/admin/subscriptions/${plan.id}/edit`)}
-                                  className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all hover:scale-110"
+                                  className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110"
                                   title="Edit Plan"
                                 >
                                   <Edit3 size={18} />
@@ -388,7 +388,7 @@ const SubscriptionPlanList = () => {
                                 ) : (
                                   <button
                                     onClick={() => openDeactivatePopup(plan)}
-                                    className="px-3 py-1 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 text-xs font-semibold transition-all"
+                                    className="px-3 py-1 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 text-xs font-semibold transition-all"
                                     title="Activate Plan"
                                   >
                                     Activate
@@ -429,12 +429,12 @@ const SubscriptionPlanList = () => {
                   plans.map((plan) => (
                     <div
                       key={plan.id}
-                      className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-purple-200 dark:hover:border-purple-800 transition-all hover:-translate-y-1 group"
+                      className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-[0_12px_48px_-8px_rgb(var(--primary-500)/0.25)] hover:border-primary-200 dark:hover:border-primary-800 transition-all hover:-translate-y-1 group"
                     >
                       {/* Plan Header */}
                       <div className="flex justify-between items-start mb-4">
                         <div className="flex items-center gap-3">
-                          <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+                          <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-[0_4px_12px_-2px_rgb(var(--primary-500)/0.4)]">
                             <CreditCard className="text-white" size={24} />
                           </div>
                           <div>
@@ -490,7 +490,7 @@ const SubscriptionPlanList = () => {
                           <span className="text-gray-600 dark:text-gray-400">Video Tours:</span>
                           <span className="font-semibold">
                             {plan.video_allowed ? (
-                              <Check className="w-4 h-4 text-emerald-500" />
+                              <Check className="w-4 h-4 text-primary-500" />
                             ) : (
                               <XIcon className="w-4 h-4 text-red-500" />
                             )}
@@ -500,7 +500,7 @@ const SubscriptionPlanList = () => {
                           <span className="text-gray-600 dark:text-gray-400">Priority Support:</span>
                           <span className="font-semibold">
                             {plan.priority_support ? (
-                              <Check className="w-4 h-4 text-emerald-500" />
+                              <Check className="w-4 h-4 text-primary-500" />
                             ) : (
                               <XIcon className="w-4 h-4 text-red-500" />
                             )}
@@ -515,12 +515,12 @@ const SubscriptionPlanList = () => {
                           <div className="space-y-1">
                             {plan.features.slice(0, 3).map((feature, index) => (
                               <div key={index} className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                                <div className="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
                                 {feature}
                               </div>
                             ))}
                             {plan.features.length > 3 && (
-                              <div className="text-xs text-purple-600 dark:text-purple-400 font-medium">
+                              <div className="text-xs text-primary-600 dark:text-primary-400 font-medium">
                                 +{plan.features.length - 3} more features
                               </div>
                             )}
@@ -532,14 +532,14 @@ const SubscriptionPlanList = () => {
                       <div className="flex gap-2 pt-4 border-t border-gray-100 dark:border-gray-700">
                         <button
                           onClick={() => navigate(`/admin/subscriptions/${plan.id}`)}
-                          className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-purple-100 dark:hover:bg-purple-900/30 text-purple-600 dark:text-purple-400 transition-all font-medium text-sm"
+                          className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm"
                         >
                           <Eye size={16} />
                           <span>View</span>
                         </button>
                         <button
                           onClick={() => navigate(`/admin/subscriptions/${plan.id}/edit`)}
-                          className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all font-medium text-sm"
+                          className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm"
                         >
                           <Edit3 size={16} />
                           <span>Edit</span>
@@ -554,7 +554,7 @@ const SubscriptionPlanList = () => {
                         ) : (
                           <button
                             onClick={() => openDeactivatePopup(plan)}
-                            className="px-3 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-semibold rounded-xl hover:bg-emerald-200 dark:hover:bg-emerald-900/50 transition-all"
+                            className="px-3 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-xs font-semibold rounded-xl hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-all"
                           >
                             Activate
                           </button>
@@ -580,11 +580,11 @@ const SubscriptionPlanList = () => {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
-                  <div className={`p-2 ${selectedPlan?.is_active ? 'bg-amber-100' : 'bg-green-100'} dark:bg-amber-900/30 rounded-lg`}>
+                  <div className={`p-2 ${selectedPlan?.is_active ? 'bg-amber-100 dark:bg-amber-900/30' : 'bg-primary-100 dark:bg-primary-900/30'} rounded-lg`}>
                   {selectedPlan?.is_active ? (
                     <AlertTriangle className="text-amber-600 dark:text-amber-400" size={20} />
                   ) : (
-                    <Check className="text-emerald-600 dark:text-emerald-400" size={20} />
+                    <Check className="text-primary-600 dark:text-primary-400" size={20} />
                   )}
                   </div>
                   {selectedPlan?.is_active ? "Deactivate Plan" : "Activate Plan"}

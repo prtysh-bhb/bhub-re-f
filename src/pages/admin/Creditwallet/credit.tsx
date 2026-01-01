@@ -285,11 +285,11 @@ const Credit = () => {
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
                 <Coins className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   Credit Packages
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -307,7 +307,7 @@ const Credit = () => {
                   placeholder="Search packages..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
 
@@ -315,7 +315,7 @@ const Credit = () => {
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="all">All Status</option>
                 <option value="active">Active Only</option>
@@ -325,7 +325,7 @@ const Credit = () => {
               {/* Add Package Button */}
               <button
                 onClick={openAddModal}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white transition-all shadow-md hover:shadow-lg font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white transition-all shadow-md hover:shadow-lg font-medium"
               >
                 <Plus size={16} />
                 <span>Add Package</span>
@@ -335,17 +335,17 @@ const Credit = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-4 rounded-xl border border-primary-200 dark:border-primary-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                  <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
                     Total Packages
                   </p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">
+                  <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                     {stats.total}
                   </p>
                 </div>
-                <Package className="text-blue-600 dark:text-blue-400 w-8 h-8" />
+                <Package className="text-primary-600 dark:text-primary-400 w-8 h-8" />
               </div>
             </div>
 
@@ -397,7 +397,7 @@ const Credit = () => {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-16 h-16 border-4 border-primary-500 dark:border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
               <p className="text-gray-500 dark:text-gray-400">Loading packages...</p>
             </div>
           </div>
@@ -427,7 +427,7 @@ const Credit = () => {
             {filteredPackages.length === 0 ? (
               <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-12 text-center">
                 <div className="flex flex-col items-center gap-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg shadow-primary-500/30">
                     <Package className="text-white w-10 h-10" />
                   </div>
                   <div>
@@ -442,7 +442,7 @@ const Credit = () => {
                     <div className="flex justify-center items-center">
                       <button
                         onClick={openAddModal}
-                        className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg transition-all shadow-md hover:shadow-lg font-medium"
+                        className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white rounded-lg transition-all shadow-md hover:shadow-lg font-medium"
                       >
                         <Plus size={18} />
                         Create First Package
@@ -539,7 +539,7 @@ const Credit = () => {
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => openEditModal(pkg)}
-                            className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-colors"
+                            className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-colors"
                             title="Edit Package"
                           >
                             <Edit size={18} />
@@ -704,7 +704,7 @@ const PackageModal = ({
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
           <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
-            <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
+            <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-lg shadow-primary-500/30">
               <Coins className="text-white" size={20} />
             </div>
             {title}
@@ -733,7 +733,7 @@ const PackageModal = ({
                 className={`w-full px-4 py-3 rounded-lg border ${
                   formErrors.name
                     ? "border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500"
-                    : "border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
+                    : "border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500"
                 } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
                 placeholder="e.g., Starter Pack, Pro Bundle"
                 disabled={submitting}
@@ -764,7 +764,7 @@ const PackageModal = ({
                     className={`w-full pl-10 pr-4 py-3 rounded-lg border ${
                       formErrors.price
                         ? "border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500"
-                        : "border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
+                        : "border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500"
                     } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
                     placeholder="0.00"
                     disabled={submitting}
@@ -794,7 +794,7 @@ const PackageModal = ({
                     className={`w-full pl-10 pr-4 py-3 rounded-lg border ${
                       formErrors.coins
                         ? "border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500"
-                        : "border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
+                        : "border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500"
                     } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
                     placeholder="e.g., 1000"
                     disabled={submitting}
@@ -816,7 +816,7 @@ const PackageModal = ({
                 value={formData.description || ""}
                 onChange={handleInputChange}
                 rows={3}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Describe what users get with this package..."
                 disabled={submitting}
               />
@@ -870,7 +870,7 @@ const PackageModal = ({
             <button
               type="submit"
               disabled={submitting}
-              className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md order-1 sm:order-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-md order-1 sm:order-2 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {submitting ? (
                 <>

@@ -239,7 +239,7 @@ const ViewProfilePage = () => {
     <>
         <div className="flex items-center justify-center h-[70vh]">
           <div className="text-center space-y-4">
-            <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading profile...</p>
           </div>
         </div>
@@ -264,11 +264,11 @@ const ViewProfilePage = () => {
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
-                <User className="text-white" size={24} />
+              <div className="p-3 bg-primary/10 dark:bg-primary/20 rounded-xl">
+                <User className="text-primary" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-primary">
                   My Profile
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -288,7 +288,7 @@ const ViewProfilePage = () => {
               </Button>
               <Button
                 onClick={() => navigate("/admin/profile/edit")}
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg cursor-pointer"
+                className="bg-primary hover:bg-primary/90 text-white shadow-md hover:shadow-lg cursor-pointer"
               >
                 <Edit size={18} className="mr-2" />
                 Edit Profile
@@ -301,7 +301,7 @@ const ViewProfilePage = () => {
         <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
           {/* Cover & Avatar Section */}
           <div className="relative">
-            <div className="h-32 bg-gradient-to-r from-blue-500 via-blue-600 to-emerald-500"></div>
+            <div className="h-32 bg-primary"></div>
             <div className="absolute -bottom-16 left-8">
               <div className="relative">
                 <img
@@ -325,7 +325,7 @@ const ViewProfilePage = () => {
                 {(user as any).name}
               </h2>
               <div className="flex items-center gap-4">
-                <span className="px-3 py-1 bg-gradient-to-r from-blue-100 to-emerald-100 dark:from-blue-900/30 dark:to-emerald-900/30 text-blue-700 dark:text-emerald-400 rounded-lg text-sm font-semibold capitalize">
+                <span className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-lg text-sm font-semibold capitalize">
                   {(user as any).role}
                 </span>
                 <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
@@ -349,8 +349,8 @@ const ViewProfilePage = () => {
               {/* Contact Information */}
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2 mb-4">
-                  <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                    <Mail className="text-blue-600 dark:text-blue-400" size={18} />
+                  <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg">
+                    <Mail className="text-primary" size={18} />
                   </div>
                   Contact Information
                 </h3>
@@ -403,8 +403,8 @@ const ViewProfilePage = () => {
               {/* Additional Information */}
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2 mb-4">
-                  <div className="p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
-                    <Briefcase className="text-emerald-600 dark:text-emerald-400" size={18} />
+                  <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg">
+                    <Briefcase className="text-primary" size={18} />
                   </div>
                   Additional Details
                 </h3>
@@ -471,7 +471,7 @@ const ViewProfilePage = () => {
                             <button
                               onClick={() => { setDisableCode(""); setDisableError(null); setShowDisableConfirm(true); }}
                               disabled={twoFactorDisableLoading}
-                              className="inline-flex items-center h-8 px-3 rounded-full bg-red-700 text-white hover:opacity-90 cursor-pointer"
+                              className="inline-flex items-center h-8 px-3 rounded-full bg-red-600 dark:bg-red-700 text-white hover:opacity-90 cursor-pointer transition-opacity"
                               title="Disable two-factor authentication"
                             >
                               {twoFactorDisableLoading ? "Disabling..." : "Disable"}
@@ -480,7 +480,7 @@ const ViewProfilePage = () => {
                             <button
                               onClick={startTwoFactorSetup}
                               disabled={twoFactorLoading}
-                              className="inline-flex items-center h-8 px-3 rounded-full bg-emerald-600 text-white hover:opacity-90 cursor-pointer"
+                              className="inline-flex items-center h-8 px-3 rounded-full bg-primary text-white hover:bg-primary/90 cursor-pointer transition-colors"
                               title="Enable two-factor authentication"
                             >
                               {twoFactorLoading ? "Preparing..." : "Enable"}
@@ -543,13 +543,13 @@ const ViewProfilePage = () => {
                       value={otpCode}
                       onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, "").slice(0, 6))}
                       placeholder="Enter 6-digit code"
-                      className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                     />
                   </div>
 
                   <div className="flex gap-3 justify-end">
-                    <button type="button" onClick={() => { setTwoFactorModalOpen(false); setQrData(null); }} disabled={twoFactorConfirmLoading} className="px-4 py-2 rounded-xl border border-gray-200">Cancel</button>
-                    <button type="submit" disabled={twoFactorConfirmLoading} className="px-4 py-2 rounded-xl bg-emerald-600 text-white">
+                    <button type="button" onClick={() => { setTwoFactorModalOpen(false); setQrData(null); }} disabled={twoFactorConfirmLoading} className="px-4 py-2 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button type="submit" disabled={twoFactorConfirmLoading} className="px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-white transition-colors">
                       {twoFactorConfirmLoading ? "Enabling..." : "Enable 2FA"}
                     </button>
                   </div>
@@ -581,14 +581,14 @@ const ViewProfilePage = () => {
                     value={disableCode}
                     onChange={(e) => { setDisableCode(e.target.value.replace(/\D/g, "").slice(0, 6)); setDisableError(null); }}
                     placeholder="Enter 6-digit code"
-                    className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-rose-500"
+                    className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-all"
                   />
                   {disableError && <p className="text-sm text-red-600 mt-2">{disableError}</p>}
                 </div>
 
                 <div className="flex justify-end gap-3">
-                  <button onClick={() => { setShowDisableConfirm(false); setDisableCode(""); setDisableError(null); }} disabled={twoFactorDisableLoading} className="px-4 py-2 rounded-xl border border-gray-200">Cancel</button>
-                  <button onClick={confirmDisableTwoFactor} disabled={twoFactorDisableLoading} className="px-4 py-2 rounded-xl bg-rose-600 text-white">
+                  <button onClick={() => { setShowDisableConfirm(false); setDisableCode(""); setDisableError(null); }} disabled={twoFactorDisableLoading} className="px-4 py-2 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">Cancel</button>
+                  <button onClick={confirmDisableTwoFactor} disabled={twoFactorDisableLoading} className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white transition-colors">
                     {twoFactorDisableLoading ? "Disabling..." : "Disable 2FA"}
                   </button>
                 </div>

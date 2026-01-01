@@ -376,15 +376,15 @@ const BlogsList = () => {
   };
 
   const badge = (status: string) => {
-    const baseClasses = "inline-flex items-center px-3 py-1 rounded-full text-xs font-bold";
+    const baseClasses = "inline-flex items-center px-3 py-1 rounded-full text-xs font-bold shadow-sm";
 
     switch (status) {
       case "approved":
-        return `${baseClasses} bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400`;
+        return `${baseClasses} bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400`;
       case "rejected":
         return `${baseClasses} bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400`;
       default:
-        return `${baseClasses} bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400`;
+        return `${baseClasses} bg-gray-100 text-gray-700 dark:bg-gray-700/20 dark:text-gray-400`;
     }
   };
 
@@ -406,14 +406,14 @@ const BlogsList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-400 via-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
                 <FileText className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent">
                   Blog Posts
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -423,7 +423,7 @@ const BlogsList = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -434,12 +434,12 @@ const BlogsList = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-md shadow-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -450,7 +450,7 @@ const BlogsList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-md shadow-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -459,7 +459,7 @@ const BlogsList = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all">
                 <Filter size={16} className="text-gray-400 mr-2" />
                 <select
                   value={filter}
@@ -474,7 +474,7 @@ const BlogsList = () => {
 
               <button
                 onClick={openAddModal}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white transition-all text-sm shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 font-medium"
               >
                 <Plus size={16} />
                 <span>Add Blog</span>
@@ -487,7 +487,7 @@ const BlogsList = () => {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto shadow-lg shadow-primary-500/20"></div>
               <p className="text-gray-500 dark:text-gray-400">Loading blogs...</p>
             </div>
           </div>
@@ -503,37 +503,37 @@ const BlogsList = () => {
           <>
             {/* Stats Summary */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 rounded-xl border border-blue-200 dark:border-blue-800">
+              <div className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-5 rounded-xl border border-primary-200 dark:border-primary-800 shadow-lg shadow-primary-500/10">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                    <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
                       Total Blogs
                     </p>
-                    <p className="text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">
+                    <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                       {blogs.length}
                     </p>
                   </div>
-                  <div className="p-3 bg-blue-500/10 rounded-lg">
-                    <FileText className="text-blue-600 dark:text-blue-400" size={24} />
+                  <div className="p-3 bg-primary-500/10 rounded-lg shadow-md shadow-primary-500/20">
+                    <FileText className="text-primary-600 dark:text-primary-400" size={24} />
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800">
+              <div className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-5 rounded-xl border border-primary-200 dark:border-primary-800 shadow-lg shadow-primary-500/10">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                    <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
                       Approved Blogs
                     </p>
-                    <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                    <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                       {blogs.filter((b) => b.status === "approved").length}
                     </p>
                   </div>
-                  <div className="p-3 bg-emerald-500/10 rounded-lg">
-                    <CheckCircle className="text-emerald-600 dark:text-emerald-400" size={24} />
+                  <div className="p-3 bg-primary-500/10 rounded-lg shadow-md shadow-primary-500/20">
+                    <CheckCircle className="text-primary-600 dark:text-primary-400" size={24} />
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-5 rounded-xl border border-red-200 dark:border-red-800">
+              <div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-5 rounded-xl border border-red-200 dark:border-red-800 shadow-lg shadow-red-500/10">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-red-700 dark:text-red-300">
@@ -543,7 +543,7 @@ const BlogsList = () => {
                       {blogs.filter((b) => b.status === "rejected").length}
                     </p>
                   </div>
-                  <div className="p-3 bg-red-500/10 rounded-lg">
+                  <div className="p-3 bg-red-500/10 rounded-lg shadow-md shadow-red-500/20">
                     <XCircle className="text-red-600 dark:text-red-400" size={24} />
                   </div>
                 </div>
@@ -552,7 +552,7 @@ const BlogsList = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -578,7 +578,7 @@ const BlogsList = () => {
                               <p className="text-sm">Try adjusting your search criteria</p>
                               <button
                                 onClick={openAddModal}
-                                className="mt-2 px-4 py-2 text-sm bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg transition-all"
+                                className="mt-2 px-4 py-2 text-sm bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white rounded-lg transition-all shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40"
                               >
                                 <Plus size={16} className="inline mr-2" />
                                 Add Your First Blog
@@ -591,7 +591,7 @@ const BlogsList = () => {
                           <>
                             <tr
                               key={blog.id}
-                              className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all group cursor-pointer ${
+                              className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group cursor-pointer ${
                                 index % 2 === 0
                                   ? "bg-white dark:bg-gray-900"
                                   : "bg-gray-50/50 dark:bg-gray-800/50"
@@ -628,7 +628,7 @@ const BlogsList = () => {
                                   <span
                                     className={`w-1.5 h-1.5 rounded-full mr-1.5 ${
                                       blog.status === "approved"
-                                        ? "bg-emerald-600 dark:bg-emerald-400"
+                                        ? "bg-primary-600 dark:bg-primary-400"
                                         : "bg-red-600 dark:bg-red-400"
                                     }`}
                                   ></span>
@@ -642,7 +642,7 @@ const BlogsList = () => {
                                       e.stopPropagation();
                                       openEditModal(blog);
                                     }}
-                                    className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-emerald-900/30 text-blue-600 dark:text-blue-400 transition-all hover:scale-110"
+                                    className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110 hover:shadow-md hover:shadow-primary-500/20"
                                     title="Edit Blog"
                                   >
                                     <Edit size={18} />
@@ -652,10 +652,10 @@ const BlogsList = () => {
                                       e.stopPropagation();
                                       handleToggleStatus(blog.id);
                                     }}
-                                    className={`p-2 rounded-lg transition-all hover:scale-110 ${
+                                    className={`p-2 rounded-lg transition-all hover:scale-110 hover:shadow-md ${
                                       blog.status === "approved"
-                                        ? "hover:bg-amber-100 dark:hover:bg-amber-900/30 text-amber-600 dark:text-amber-400"
-                                        : "hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400"
+                                        ? "hover:bg-amber-100 dark:hover:bg-amber-900/30 text-amber-600 dark:text-amber-400 hover:shadow-amber-500/20"
+                                        : "hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:shadow-primary-500/20"
                                     }`}
                                     title={
                                       blog.status === "approved" ? "Rejected Blog" : "Approved Blog"
@@ -672,7 +672,7 @@ const BlogsList = () => {
                                       e.stopPropagation();
                                       openDeletePopup(blog);
                                     }}
-                                    className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all hover:scale-110"
+                                    className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all hover:scale-110 hover:shadow-md hover:shadow-red-500/20"
                                     title="Delete Blog"
                                   >
                                     <Trash2 size={18} />
@@ -681,7 +681,7 @@ const BlogsList = () => {
                               </td>
                             </tr>
                             {expandedBlog === blog.id && (
-                              <tr className="bg-blue-50/30 dark:bg-blue-900/5 border-b border-gray-100 dark:border-gray-800">
+                              <tr className="bg-primary-50/30 dark:bg-primary-900/5 border-b border-gray-100 dark:border-gray-800">
                                 <td colSpan={5} className="px-6 py-4">
                                   <div className="pl-20 pr-4">
                                     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
@@ -744,7 +744,7 @@ const BlogsList = () => {
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
                       <button
                         onClick={openAddModal}
-                        className="mt-4 px-4 py-2 text-sm bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg transition-all"
+                        className="mt-4 px-4 py-2 text-sm bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white rounded-lg transition-all shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40"
                       >
                         <Plus size={16} className="inline mr-2" />
                         Add Your First Blog
@@ -755,7 +755,7 @@ const BlogsList = () => {
                   blogs.map((blog) => (
                     <div
                       key={blog.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group overflow-hidden"
+                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50 hover:shadow-xl hover:shadow-primary-500/20 hover:border-primary-200 dark:hover:border-primary-800 transition-all group overflow-hidden"
                     >
                       {/* Blog Image */}
                       <div className="relative h-48 overflow-hidden">
@@ -821,14 +821,14 @@ const BlogsList = () => {
                       <div className="flex gap-2 p-4 border-t border-gray-100 dark:border-gray-700 items-center justify-between">
                         <button
                           onClick={() => openEditModal(blog)}
-                          className="flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all font-medium text-sm cursor-pointer"
+                          className="flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm cursor-pointer hover:shadow-md hover:shadow-primary-500/20"
                         >
                           <Edit size={16} />
                           <span>Edit</span>
                         </button>
                         <button
                           onClick={() => openDeletePopup(blog)}
-                          className="p-2.5 rounded-xl hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all cursor-pointer"
+                          className="p-2.5 rounded-xl hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all cursor-pointer hover:shadow-md hover:shadow-red-500/20"
                         >
                           <Trash2 size={16} />
                         </button>
@@ -934,7 +934,7 @@ const BlogModal = ({
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
           <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
-            <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
+            <div className="p-2 bg-gradient-to-br from-primary-400 via-primary-500 to-primary-600 rounded-lg shadow-lg shadow-primary-500/30">
               <FileText className="text-white" size={20} />
             </div>
             {title}
@@ -965,7 +965,7 @@ const BlogModal = ({
                   className={`w-full px-4 py-3 rounded-lg border ${
                     formErrors.title
                       ? "border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500"
-                      : "border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500 dark:focus:border-emerald-500"
+                      : "border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500"
                   } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
                   placeholder="Enter blog title"
                   disabled={submitting}
@@ -1199,7 +1199,7 @@ const BlogModal = ({
                   </div>
                 )}
 
-                <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 text-center hover:border-blue-500 dark:hover:border-emerald-500 transition-colors">
+                <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 text-center hover:border-primary-500 transition-colors">
                   <input
                     type="file"
                     accept="image/*"
@@ -1262,7 +1262,7 @@ const BlogModal = ({
             <button
               type="submit"
               disabled={submitting}
-              className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md order-1 sm:order-2"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 order-1 sm:order-2"
             >
               {submitting ? (
                 <>

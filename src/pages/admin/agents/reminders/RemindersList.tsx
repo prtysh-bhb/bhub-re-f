@@ -230,11 +230,11 @@ const RemindersList = () => {
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
                 <Bell className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   Reminders
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -250,7 +250,7 @@ const RemindersList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -261,7 +261,7 @@ const RemindersList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -271,7 +271,7 @@ const RemindersList = () => {
               </div>
 
               {/* Quick Filters */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
                 <Filter size={16} className="text-gray-400 mr-2" />
                 <select
                   value={filter}
@@ -287,7 +287,7 @@ const RemindersList = () => {
               </div>
 
               {/* Status Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
@@ -302,7 +302,7 @@ const RemindersList = () => {
               </div>
 
               {/* Priority Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
                 <select
                   value={priorityFilter}
                   onChange={(e) => setPriorityFilter(e.target.value)}
@@ -317,7 +317,7 @@ const RemindersList = () => {
               </div>
 
               {/* Type Filter */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all">
                 <select
                   value={typeFilter}
                   onChange={(e) => setTypeFilter(e.target.value)}
@@ -336,7 +336,7 @@ const RemindersList = () => {
               {/* New Reminder Button */}
               <button
                 onClick={() => navigate("/agent/reminders/new")}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium"
               >
                 <Plus size={16} />
                 <span>New Reminder</span>
@@ -392,7 +392,7 @@ const RemindersList = () => {
                         reminders.map((reminder, index) => (
                           <tr
                             key={reminder.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition-all group ${
+                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
                               index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                             } ${isOverdue(reminder.remind_at) && reminder.status === 'pending' ? 'bg-red-50/50 dark:bg-red-900/10' : ''}`}
                           >
@@ -538,7 +538,7 @@ const RemindersList = () => {
                   reminders.map((reminder) => (
                     <div
                       key={reminder.id}
-                      className={`bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-purple-200 dark:hover:border-purple-800 transition-all hover:-translate-y-1 group ${
+                      className={`bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all hover:-translate-y-1 group ${
                         isOverdue(reminder.remind_at) && reminder.status === 'pending' 
                           ? 'border-red-200 dark:border-red-800 bg-red-50/50 dark:bg-red-900/10' 
                           : ''
@@ -658,7 +658,7 @@ const RemindersList = () => {
                         )}
                         <button
                           onClick={() => navigate(`/agent/reminders/${reminder.id}/edit`)}
-                          className="p-2.5 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all"
+                          className="p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all"
                           title="Edit"
                         >
                           <Edit3 size={16} />
@@ -727,7 +727,7 @@ const RemindersList = () => {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 rows={3}
-                className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-green-400 dark:focus:ring-green-500 focus:border-green-400 dark:focus:border-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
+                className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
                 placeholder="Enter note..."
               ></textarea>
 
@@ -740,7 +740,7 @@ const RemindersList = () => {
                 </button>
                 <button
                   onClick={markAsCompleted}
-                  className="px-4 py-2 rounded-lg text-sm bg-green-600 hover:bg-green-700 text-white font-medium transition-all shadow-md hover:shadow-lg"
+                  className="px-4 py-2 rounded-lg text-sm bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium transition-all shadow-md hover:shadow-lg"
                 >
                   Confirm
                 </button>
@@ -776,7 +776,7 @@ const RemindersList = () => {
                 type="date"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-amber-400 dark:focus:ring-amber-500 focus:border-amber-400 dark:focus:border-amber-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
+                className="w-full border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-500 focus:border-primary-500 dark:focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mb-4 transition-all"
               ></input>
 
               <div className="flex justify-end gap-2">
@@ -788,7 +788,7 @@ const RemindersList = () => {
                 </button>
                 <button
                   onClick={snoozeReminder}
-                  className="px-4 py-2 rounded-lg text-sm bg-amber-600 hover:bg-amber-700 text-white font-medium transition-all shadow-md hover:shadow-lg"
+                  className="px-4 py-2 rounded-lg text-sm bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium transition-all shadow-md hover:shadow-lg"
                 >
                   Confirm
                 </button>

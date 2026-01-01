@@ -301,11 +301,11 @@ const Wallet = () => {
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 md:p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+                <div className="p-2 md:p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
                   <CreditCard className="text-white" size={20} />
                 </div>
                 <div>
-                  <h1 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                  <h1 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
                     Wallet Management
                   </h1>
                   <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -363,7 +363,7 @@ const Wallet = () => {
         {loading ? (
           <div className="flex items-center justify-center py-16 md:py-20">
             <div className="text-center space-y-4">
-              <div className="w-12 h-12 md:w-16 md:h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-12 h-12 md:w-16 md:h-16 border-4 border-primary-500 dark:border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
               <p className="text-sm md:text-base text-gray-500 dark:text-gray-400">
                 Loading wallet data...
               </p>
@@ -374,18 +374,18 @@ const Wallet = () => {
             {/* Stats Overview - Mobile Responsive */}
             {report && (
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-                <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 md:p-5 rounded-xl border border-blue-200 dark:border-blue-800">
+                <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-4 md:p-5 rounded-xl border border-primary-200 dark:border-primary-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs md:text-sm font-medium text-blue-700 dark:text-blue-300">
+                      <p className="text-xs md:text-sm font-medium text-primary-700 dark:text-primary-300">
                         Purchased
                       </p>
-                      <p className="text-lg md:text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">
+                      <p className="text-lg md:text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                         {formatCurrency(report.overview.total_credits_purchased)}
                       </p>
                     </div>
-                    <div className="p-2 md:p-3 bg-blue-500/10 rounded-lg">
-                      <TrendingUp className="text-blue-600 dark:text-blue-400" size={20} />
+                    <div className="p-2 md:p-3 bg-primary-500/10 rounded-lg">
+                      <TrendingUp className="text-primary-600 dark:text-primary-400" size={20} />
                     </div>
                   </div>
                 </div>
@@ -445,7 +445,7 @@ const Wallet = () => {
               <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-4 md:p-6">
                 <div className="flex items-center justify-between mb-4 md:mb-6">
                   <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                    <BarChart3 className="text-blue-500" size={18} />
+                    <BarChart3 className="text-primary-500" size={18} />
                     <span className="hidden md:inline">Transaction Breakdown</span>
                     <span className="md:hidden">Breakdown</span>
                   </h2>
@@ -497,14 +497,14 @@ const Wallet = () => {
                           placeholder="Search users..."
                           value={search}
                           onChange={(e) => setSearch(e.target.value)}
-                          className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
                         />
                       </div>
                       
                       <div className="flex gap-2">
                         <button
                           onClick={handleSearch}
-                          className="flex-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm"
+                          className="flex-1 px-3 py-2 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white rounded-lg transition-colors text-sm shadow-md"
                         >
                           Search
                         </button>
@@ -533,7 +533,7 @@ const Wallet = () => {
                         >
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold">
+                              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold shadow-lg shadow-primary-500/30">
                                 {wallet.user?.name?.charAt(0) || "U"}
                               </div>
                               <div>
@@ -597,7 +597,7 @@ const Wallet = () => {
                                 setSelectedWallet(wallet);
                                 loadUserDetails(wallet.user_id);
                               }}
-                              className="flex items-center gap-1 text-blue-600 dark:text-blue-400"
+                              className="flex items-center gap-1 text-primary-600 dark:text-primary-400"
                             >
                               <Eye size={12} />
                               Details
@@ -672,7 +672,7 @@ const Wallet = () => {
                           placeholder="Search users by name or email..."
                           value={search}
                           onChange={(e) => setSearch(e.target.value)}
-                          className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
                         />
                       </div>
                     </div>
@@ -718,7 +718,7 @@ const Wallet = () => {
                     <div className="flex gap-2">
                       <button
                         onClick={handleSearch}
-                        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                        className="px-4 py-2 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white rounded-lg transition-colors shadow-md"
                       >
                         Apply Filters
                       </button>
@@ -762,11 +762,11 @@ const Wallet = () => {
                         wallets.map((wallet) => (
                           <tr
                             key={wallet.id}
-                            className="border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors"
+                            className="border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-colors"
                           >
                             <td className="py-3 px-4 md:px-6">
                               <div className="flex items-center gap-2 md:gap-3">
-                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-sm">
+                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/30">
                                   {wallet.user?.name?.charAt(0) || "U"}
                                 </div>
                                 <div>
@@ -804,7 +804,7 @@ const Wallet = () => {
                                     setSelectedWallet(wallet);
                                     loadUserDetails(wallet.user_id);
                                   }}
-                                  className="p-1.5 md:p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-emerald-900/30 text-blue-600 dark:text-blue-400 transition-colors"
+                                  className="p-1.5 md:p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-colors"
                                   title="View Details"
                                 >
                                   <Eye size={16} />
@@ -843,7 +843,7 @@ const Wallet = () => {
               <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
                 <div className="p-4 md:p-6 border-b border-gray-200 dark:border-gray-800">
                   <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                    <FileText className="text-blue-500" size={18} />
+                    <FileText className="text-primary-500" size={18} />
                     Recent Transactions
                   </h2>
                 </div>
@@ -934,7 +934,7 @@ const Wallet = () => {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md mx-4 md:mx-auto border border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 dark:border-gray-700">
                 <h4 className="text-base md:text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
-                  <div className="p-2 bg-gradient-to-br from-emerald-500 to-green-500 rounded-lg">
+                  <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-lg shadow-primary-500/30">
                     <Plus className="text-white" size={18} />
                   </div>
                   Add Credits
@@ -951,7 +951,7 @@ const Wallet = () => {
                 <div className="mb-4 md:mb-6">
                   <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-2">User</div>
                   <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold shadow-lg shadow-primary-500/30">
                       {selectedWallet.user?.name?.charAt(0) || "U"}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -975,7 +975,7 @@ const Wallet = () => {
                       min="1"
                       value={adjustCredits.credits}
                       onChange={(e) => setAdjustCredits({ ...adjustCredits, credits: e.target.value })}
-                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm md:text-base"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm md:text-base"
                       placeholder="Enter credits amount"
                     />
                   </div>
@@ -988,7 +988,7 @@ const Wallet = () => {
                       value={adjustCredits.reason}
                       onChange={(e) => setAdjustCredits({ ...adjustCredits, reason: e.target.value })}
                       rows={3}
-                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none text-sm md:text-base"
+                      className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none text-sm md:text-base"
                       placeholder="Enter reason for adding credits"
                     />
                   </div>
@@ -1003,7 +1003,7 @@ const Wallet = () => {
                   </button>
                   <button
                     onClick={handleAddCredits}
-                    className="px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white shadow-md"
+                    className="px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-md"
                   >
                     Add Credits
                   </button>
@@ -1036,7 +1036,7 @@ const Wallet = () => {
                 <div className="mb-4 md:mb-6">
                   <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-2">User</div>
                   <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold shadow-lg shadow-primary-500/30">
                       {selectedWallet.user?.name?.charAt(0) || "U"}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -1105,7 +1105,7 @@ const Wallet = () => {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl mx-4 md:mx-auto border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
               <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
                 <h4 className="text-base md:text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
-                  <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
+                  <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-lg shadow-primary-500/30">
                     <User className="text-white" size={18} />
                   </div>
                   <span className="truncate">User Wallet Details</span>
@@ -1122,7 +1122,7 @@ const Wallet = () => {
                 {/* User Info */}
                 <div className="mb-6 md:mb-8">
                   <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white text-xl md:text-2xl font-bold flex-shrink-0">
+                    <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white text-xl md:text-2xl font-bold flex-shrink-0 shadow-lg shadow-primary-500/30">
                       {selectedUserDetails.user.name?.charAt(0) || "U"}
                     </div>
                     <div className="min-w-0">
@@ -1137,11 +1137,11 @@ const Wallet = () => {
 
                   {selectedUserDetails.wallet && (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-                      <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 md:p-5 rounded-xl border border-blue-200 dark:border-blue-800">
-                        <p className="text-xs md:text-sm font-medium text-blue-700 dark:text-blue-300">
+                      <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-4 md:p-5 rounded-xl border border-primary-200 dark:border-primary-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
+                        <p className="text-xs md:text-sm font-medium text-primary-700 dark:text-primary-300">
                           Current Credits
                         </p>
-                        <p className="text-xl md:text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">
+                        <p className="text-xl md:text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                           {formatCurrency(selectedUserDetails.wallet.current_credits)}
                         </p>
                       </div>

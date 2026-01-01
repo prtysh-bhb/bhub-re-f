@@ -39,17 +39,17 @@ const LeadList = () => {
   const getStageColor = (stage: string) => {
     switch (stage?.toLowerCase()) {
       case "new":
-        return "bg-blue-100 text-blue-700";
+        return "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-800";
       case "contacted":
-        return "bg-yellow-100 text-yellow-700";
+        return "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800";
       case "interested":
-        return "bg-green-100 text-green-700";
+        return "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800";
       case "closed":
-        return "bg-purple-100 text-purple-700";
+        return "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800";
       case "lost":
-        return "bg-red-100 text-red-700";
+        return "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800";
       default:
-        return "bg-gray-100 text-gray-600";
+        return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border border-gray-200 dark:border-gray-700";
     }
   };
 
@@ -68,10 +68,15 @@ const LeadList = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center gap-3 mr-auto">
-            <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+            <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
               <NotebookPen className="text-white" size={24} />
             </div>
-            <h1 className="text-2xl font-semibold text-gray-800">My Leads</h1>
+            <div>
+              <h1 className="text-2xl font-semibold text-gray-800 dark:text-white">My Leads</h1>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                Manage and track your inquiries
+              </p>
+            </div>
           </div>
           <span className="text-sm text-gray-500 dark:text-gray-400">
             {leads.length} lead{leads.length !== 1 && "s"}
@@ -91,18 +96,18 @@ const LeadList = () => {
             {leads.map((lead) => (
               <div
                 key={lead.id}
-                className="relative bg-white dark:bg-gray-800 p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:-translate-y-1 transition-all duration-200 group"
+                className="relative bg-white dark:bg-gray-800/50 p-5 rounded-2xl shadow-lg dark:shadow-black/30 border border-gray-100 dark:border-gray-700/50 hover:shadow-xl dark:hover:shadow-black/40 hover:-translate-y-1 transition-all duration-300 group"
               >
                 {/* Customer Info */}
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300">
+                  <div className="p-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-300">
                     <User size={20} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800 dark:text-gray-100 capitalize">
                       {lead.customer_name || "Unnamed"}
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
                       {lead.customer_email || "No email"}
                     </p>
                   </div>
@@ -110,7 +115,7 @@ const LeadList = () => {
 
                 {/* Contact */}
                 <div className="text-sm text-gray-600 dark:text-gray-300 mb-3 flex items-center">
-                  <Phone className="inline mr-2 text-blue-500" size={14} />
+                  <Phone className="inline mr-2 text-primary-600 dark:text-primary-400" size={14} />
                   {lead.customer_phone || "No phone"}
                 </div>
 
@@ -118,15 +123,15 @@ const LeadList = () => {
                 {lead.property && (
                   <div className="border-t border-gray-100 dark:border-gray-700 pt-3 mt-3">
                     <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 mb-1">
-                      <Home size={14} className="text-indigo-500" />
+                      <Home size={14} className="text-primary-600 dark:text-primary-400" />
                       <span>{lead.property.title}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 mb-1">
-                      <MapPin size={14} className="text-pink-500" />
+                      <MapPin size={14} className="text-rose-500 dark:text-rose-400" />
                       <span>{lead.property.location}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
-                      <DollarSign size={14} className="text-green-500" />
+                      <DollarSign size={14} className="text-emerald-500 dark:text-emerald-400" />
                       <span>${Number(lead.property.price).toLocaleString()}</span>
                     </div>
                   </div>
@@ -135,7 +140,7 @@ const LeadList = () => {
                 {/* Stage */}
                 <div className="mt-4 flex items-center justify-between">
                   <span
-                    className={`px-2 py-1 text-xs font-semibold rounded-full ${getStageColor(
+                    className={`px-3 py-1.5 text-xs font-semibold rounded-full capitalize ${getStageColor(
                       lead.stage
                     )}`}
                   >
@@ -145,7 +150,7 @@ const LeadList = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="flex items-center gap-1 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/30 cursor-pointer transition-all"
+                    className="flex items-center gap-1 text-primary-600 dark:text-primary-400 border-primary-200 dark:border-primary-800 hover:bg-primary-50 dark:hover:bg-primary-900/30 cursor-pointer transition-all rounded-lg px-4 py-2"
                     onClick={() =>
                       navigate(`/agent/leads/${lead.id}`)
                     }

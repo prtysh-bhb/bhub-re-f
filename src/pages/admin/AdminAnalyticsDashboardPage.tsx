@@ -32,15 +32,16 @@ import {
   BarChart3,
 } from "lucide-react";
 
+// Dynamic primary color palette - shades of the user's selected primary color
 const COLORS = [
-  "#3b82f6", // blue
-  "#10b981", // green
-  "#f59e0b", // amber
-  "#ef4444", // red
-  "#8b5cf6", // purple
-  "#ec4899", // pink
-  "#06b6d4", // cyan
-  "#f97316", // orange
+  "hsl(var(--primary-600))",
+  "hsl(var(--primary-500))",
+  "hsl(var(--primary-700))",
+  "hsl(var(--primary-400))",
+  "hsl(var(--primary-800))",
+  "hsl(var(--primary-300))",
+  "hsl(var(--primary-600))",
+  "hsl(var(--primary-500))",
 ];
 
 const AdminAnalyticsDashboardPage = () => {
@@ -67,7 +68,7 @@ const AdminAnalyticsDashboardPage = () => {
   if (loading || !analytics) {
     return (
     <>
-        <div className="min-h-screen dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 flex items-center justify-center">
+        <div className="min-h-screen bg-neutral-100/50 dark:bg-neutral-950 flex items-center justify-center">
           <Loader />
         </div>
     </>
@@ -76,21 +77,25 @@ const AdminAnalyticsDashboardPage = () => {
 
   return (
     <>
-      <div className="p-6 space-y-6 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-950 bg-gradient-to-br from-slate-50 to-blue-50/30 min-h-screen">
-        {/* Welcome Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-emerald-600 py-6 px-8 rounded-2xl shadow-2xl dark:shadow-black/30 border-0 text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10 dark:bg-black/20"></div>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+      <div className="p-6 space-y-6 bg-gradient-to-br from-neutral-50 via-neutral-100/30 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950 min-h-screen">
+        {/* Welcome Header - Elegant & Professional */}
+        <div className="relative bg-gradient-to-br from-white via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 py-8 px-8 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden">
+          {/* Decorative gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent opacity-50"></div>
 
-          <div className="relative z-10">
+          <div className="relative">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
                 <div className="flex items-center gap-3 mb-3">
-                  <BarChart3 className="w-8 h-8" />
-                  <h1 className="text-2xl font-bold">Analytics Dashboard</h1>
+                  <div className="w-1.5 h-8 bg-gradient-to-b from-primary-600 to-primary-400 rounded-full"></div>
+                  <BarChart3 className="w-7 h-7 text-primary-600 dark:text-primary-400" />
+                  <h1 className="text-2xl font-bold bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-neutral-100 dark:to-neutral-300 bg-clip-text text-transparent">
+                    Analytics Dashboard
+                  </h1>
                 </div>
-                <p className="text-blue-100/90 text-lg">Visual insights and performance trends</p>
+                <p className="text-neutral-600 dark:text-neutral-400 text-base ml-5">
+                  Visual insights and performance trends
+                </p>
               </div>
 
               {/* Period Selector */}
@@ -101,8 +106,8 @@ const AdminAnalyticsDashboardPage = () => {
                     onClick={() => setPeriod(days)}
                     className={`px-4 py-2.5 rounded-xl font-semibold transition-all duration-200 ${
                       period === days
-                        ? "bg-white text-blue-600 shadow-lg"
-                        : "bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30"
+                        ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg shadow-primary-500/30"
+                        : "bg-white/80 dark:bg-neutral-800/80 text-neutral-700 dark:text-neutral-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 border border-neutral-200 dark:border-neutral-700"
                     }`}
                   >
                     {days === 365 ? "1 Year" : `${days} Days`}
@@ -115,82 +120,82 @@ const AdminAnalyticsDashboardPage = () => {
 
         {/* Conversion Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 border border-blue-100 dark:border dark:border-blue-900/30 dark:border-gray-700/50 rounded-2xl p-6 shadow-xl dark:shadow-black/30 hover:shadow-2xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-2">
+          <div className="group bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm font-semibold">
+                <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
                   Total Views
                 </p>
-                <p className="text-gray-900 dark:text-white text-3xl font-bold mt-2">
+                <p className="text-neutral-900 dark:text-neutral-100 text-3xl font-bold">
                   {analytics.conversion_metrics.total_views.toLocaleString()}
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br dark:from-blue-600 dark:to-cyan-600 from-blue-500 to-cyan-500 text-white shadow-lg dark:shadow-black/30">
-                <Eye className="w-6 h-6" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary-500/30 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 flex items-center justify-center">
+                <Eye className="w-7 h-7" />
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-emerald-50 to-green-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 border border-emerald-100 dark:border dark:border-emerald-900/30 dark:border-gray-700/50 rounded-2xl p-6 shadow-xl dark:shadow-black/30 hover:shadow-2xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-2">
+          <div className="group bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm font-semibold">
+                <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
                   Total Inquiries
                 </p>
-                <p className="text-gray-900 dark:text-white text-3xl font-bold mt-2">
+                <p className="text-neutral-900 dark:text-neutral-100 text-3xl font-bold">
                   {analytics.conversion_metrics.total_inquiries.toLocaleString()}
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br dark:from-emerald-600 dark:to-green-600 from-emerald-500 to-green-500 text-white shadow-lg dark:shadow-black/30">
-                <MessageCircle className="w-6 h-6" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary-500/30 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 flex items-center justify-center">
+                <MessageCircle className="w-7 h-7" />
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-violet-50 to-purple-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 border border-violet-100 dark:border dark:border-violet-900/30 dark:border-gray-700/50 rounded-2xl p-6 shadow-xl dark:shadow-black/30 hover:shadow-2xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-2">
+          <div className="group bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm font-semibold">
+                <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
                   Closed Inquiries
                 </p>
-                <p className="text-gray-900 dark:text-white text-3xl font-bold mt-2">
+                <p className="text-neutral-900 dark:text-neutral-100 text-3xl font-bold">
                   {analytics.conversion_metrics.closed_inquiries.toLocaleString()}
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br dark:from-violet-600 dark:to-purple-600 from-violet-500 to-purple-500 text-white shadow-lg dark:shadow-black/30">
-                <TrendingUp className="w-6 h-6" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary-500/30 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 flex items-center justify-center">
+                <TrendingUp className="w-7 h-7" />
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 border border-amber-100 dark:border dark:border-amber-900/30 dark:border-gray-700/50 rounded-2xl p-6 shadow-xl dark:shadow-black/30 hover:shadow-2xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-2">
+          <div className="group bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm font-semibold">
+                <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
                   View → Inquiry
                 </p>
-                <p className="text-gray-900 dark:text-white text-3xl font-bold mt-2">
+                <p className="text-neutral-900 dark:text-neutral-100 text-3xl font-bold">
                   {analytics.conversion_metrics.view_to_inquiry_rate}%
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br dark:from-amber-600 dark:to-yellow-600 from-amber-500 to-yellow-500 text-white shadow-lg dark:shadow-black/30">
-                <TrendingUp className="w-6 h-6" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary-500/30 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 flex items-center justify-center">
+                <TrendingUp className="w-7 h-7" />
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-teal-50 to-emerald-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 border border-teal-100 dark:border dark:border-teal-900/30 dark:border-gray-700/50 rounded-2xl p-6 shadow-xl dark:shadow-black/30 hover:shadow-2xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-2">
+          <div className="group bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 rounded-2xl p-6 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm font-semibold">
+                <p className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-2">
                   Inquiry → Close
                 </p>
-                <p className="text-gray-900 dark:text-white text-3xl font-bold mt-2">
+                <p className="text-neutral-900 dark:text-neutral-100 text-3xl font-bold">
                   {analytics.conversion_metrics.inquiry_to_close_rate}%
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br dark:from-teal-600 dark:to-emerald-600 from-teal-500 to-emerald-500 text-white shadow-lg dark:shadow-black/30">
-                <Award className="w-6 h-6" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary-500/30 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 flex items-center justify-center">
+                <Award className="w-7 h-7" />
               </div>
             </div>
           </div>
@@ -199,26 +204,27 @@ const AdminAnalyticsDashboardPage = () => {
         {/* User Trends */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* User Registrations */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
-                  <Users className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   User Registrations Over Time
                 </h3>
               </div>
               <ResponsiveContainer width="100%" height={300}>
                 <AreaChart data={analytics.user_trends.registrations}>
-                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" />
-                  <XAxis dataKey="date" className="dark:text-gray-400 text-gray-600" />
-                  <YAxis className="dark:text-gray-400 text-gray-600" />
+                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" stroke="hsl(var(--neutral-300))" />
+                  <XAxis dataKey="date" className="dark:text-neutral-400 text-neutral-600" />
+                  <YAxis className="dark:text-neutral-400 text-neutral-600" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1f2937",
+                      backgroundColor: "hsl(var(--neutral-900))",
                       border: "none",
                       borderRadius: "8px",
+                      color: "hsl(var(--neutral-100))",
                     }}
                   />
                   <Legend />
@@ -226,24 +232,24 @@ const AdminAnalyticsDashboardPage = () => {
                     type="monotone"
                     dataKey="total"
                     stackId="1"
-                    stroke="#3b82f6"
-                    fill="#3b82f6"
+                    stroke="hsl(var(--primary-600))"
+                    fill="hsl(var(--primary-600))"
                     name="Total"
                   />
                   <Area
                     type="monotone"
                     dataKey="agents"
                     stackId="2"
-                    stroke="#10b981"
-                    fill="#10b981"
+                    stroke="hsl(var(--primary-500))"
+                    fill="hsl(var(--primary-500))"
                     name="Agents"
                   />
                   <Area
                     type="monotone"
                     dataKey="customers"
                     stackId="2"
-                    stroke="#f59e0b"
-                    fill="#f59e0b"
+                    stroke="hsl(var(--primary-400))"
+                    fill="hsl(var(--primary-400))"
                     name="Customers"
                   />
                 </AreaChart>
@@ -252,13 +258,13 @@ const AdminAnalyticsDashboardPage = () => {
           </Card>
 
           {/* User Role Distribution */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-emerald-500 to-green-500 rounded-lg">
-                  <Users className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   User Distribution by Role
                 </h3>
               </div>
@@ -271,7 +277,7 @@ const AdminAnalyticsDashboardPage = () => {
                     labelLine={false}
                     label={(entry) => `${entry.role}: ${entry.count}`}
                     outerRadius={100}
-                    fill="#8884d8"
+                    fill="hsl(var(--primary-500))"
                     dataKey="count"
                   >
                     {analytics.user_trends.role_distribution.map((_, index) => (
@@ -280,9 +286,10 @@ const AdminAnalyticsDashboardPage = () => {
                   </Pie>
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1f2937",
+                      backgroundColor: "hsl(var(--neutral-900))",
                       border: "none",
                       borderRadius: "8px",
+                      color: "hsl(var(--neutral-100))",
                     }}
                   />
                 </PieChart>
@@ -294,54 +301,55 @@ const AdminAnalyticsDashboardPage = () => {
         {/* Property Trends */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Property Listings */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-500 rounded-lg">
-                  <Building2 className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Building2 className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   Property Listings Trend
                 </h3>
               </div>
               <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={analytics.property_trends.listings}>
-                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" />
-                  <XAxis dataKey="date" className="dark:text-gray-400 text-gray-600" />
-                  <YAxis className="dark:text-gray-400 text-gray-600" />
+                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" stroke="hsl(var(--neutral-300))" />
+                  <XAxis dataKey="date" className="dark:text-neutral-400 text-neutral-600" />
+                  <YAxis className="dark:text-neutral-400 text-neutral-600" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1f2937",
+                      backgroundColor: "hsl(var(--neutral-900))",
                       border: "none",
                       borderRadius: "8px",
+                      color: "hsl(var(--neutral-100))",
                     }}
                   />
                   <Legend />
                   <Line
                     type="monotone"
                     dataKey="total"
-                    stroke="#3b82f6"
+                    stroke="hsl(var(--primary-600))"
                     strokeWidth={2}
                     name="Total"
                   />
                   <Line
                     type="monotone"
                     dataKey="published"
-                    stroke="#10b981"
+                    stroke="hsl(var(--primary-500))"
                     strokeWidth={2}
                     name="Published"
                   />
                   <Line
                     type="monotone"
                     dataKey="sold"
-                    stroke="#ef4444"
+                    stroke="hsl(var(--primary-700))"
                     strokeWidth={2}
                     name="Sold"
                   />
                   <Line
                     type="monotone"
                     dataKey="rented"
-                    stroke="#f59e0b"
+                    stroke="hsl(var(--primary-400))"
                     strokeWidth={2}
                     name="Rented"
                   />
@@ -351,30 +359,31 @@ const AdminAnalyticsDashboardPage = () => {
           </Card>
 
           {/* Property Status Distribution */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg">
-                  <Building2 className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Building2 className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   Properties by Status
                 </h3>
               </div>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={analytics.property_trends.status_summary}>
-                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" />
-                  <XAxis dataKey="status" className="dark:text-gray-400 text-gray-600" />
-                  <YAxis className="dark:text-gray-400 text-gray-600" />
+                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" stroke="hsl(var(--neutral-300))" />
+                  <XAxis dataKey="status" className="dark:text-neutral-400 text-neutral-600" />
+                  <YAxis className="dark:text-neutral-400 text-neutral-600" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1f2937",
+                      backgroundColor: "hsl(var(--neutral-900))",
                       border: "none",
                       borderRadius: "8px",
+                      color: "hsl(var(--neutral-100))",
                     }}
                   />
                   <Legend />
-                  <Bar dataKey="count" fill="#3b82f6" name="Count" />
+                  <Bar dataKey="count" fill="hsl(var(--primary-600))" name="Count" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
@@ -384,24 +393,25 @@ const AdminAnalyticsDashboardPage = () => {
         {/* Inquiry and View Trends */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Inquiry Trends */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg">
-                  <MessageCircle className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <MessageCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">Inquiry Trends</h3>
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">Inquiry Trends</h3>
               </div>
               <ResponsiveContainer width="100%" height={300}>
                 <AreaChart data={analytics.inquiry_trends.trends}>
-                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" />
-                  <XAxis dataKey="date" className="dark:text-gray-400 text-gray-600" />
-                  <YAxis className="dark:text-gray-400 text-gray-600" />
+                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" stroke="hsl(var(--neutral-300))" />
+                  <XAxis dataKey="date" className="dark:text-neutral-400 text-neutral-600" />
+                  <YAxis className="dark:text-neutral-400 text-neutral-600" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1f2937",
+                      backgroundColor: "hsl(var(--neutral-900))",
                       border: "none",
                       borderRadius: "8px",
+                      color: "hsl(var(--neutral-100))",
                     }}
                   />
                   <Legend />
@@ -409,24 +419,24 @@ const AdminAnalyticsDashboardPage = () => {
                     type="monotone"
                     dataKey="new"
                     stackId="1"
-                    stroke="#3b82f6"
-                    fill="#3b82f6"
+                    stroke="hsl(var(--primary-600))"
+                    fill="hsl(var(--primary-600))"
                     name="New"
                   />
                   <Area
                     type="monotone"
                     dataKey="contacted"
                     stackId="1"
-                    stroke="#f59e0b"
-                    fill="#f59e0b"
+                    stroke="hsl(var(--primary-500))"
+                    fill="hsl(var(--primary-500))"
                     name="Contacted"
                   />
                   <Area
                     type="monotone"
                     dataKey="closed"
                     stackId="1"
-                    stroke="#10b981"
-                    fill="#10b981"
+                    stroke="hsl(var(--primary-400))"
+                    fill="hsl(var(--primary-400))"
                     name="Closed"
                   />
                 </AreaChart>
@@ -435,34 +445,35 @@ const AdminAnalyticsDashboardPage = () => {
           </Card>
 
           {/* Property Views */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-lg">
-                  <Eye className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Eye className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   Property Views Over Time
                 </h3>
               </div>
               <ResponsiveContainer width="100%" height={300}>
                 <AreaChart data={analytics.view_trends.trends}>
-                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" />
-                  <XAxis dataKey="date" className="dark:text-gray-400 text-gray-600" />
-                  <YAxis className="dark:text-gray-400 text-gray-600" />
+                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" stroke="hsl(var(--neutral-300))" />
+                  <XAxis dataKey="date" className="dark:text-neutral-400 text-neutral-600" />
+                  <YAxis className="dark:text-neutral-400 text-neutral-600" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1f2937",
+                      backgroundColor: "hsl(var(--neutral-900))",
                       border: "none",
                       borderRadius: "8px",
+                      color: "hsl(var(--neutral-100))",
                     }}
                   />
                   <Legend />
                   <Area
                     type="monotone"
                     dataKey="count"
-                    stroke="#8b5cf6"
-                    fill="#8b5cf6"
+                    stroke="hsl(var(--primary-600))"
+                    fill="hsl(var(--primary-600))"
                     name="Views"
                   />
                 </AreaChart>
@@ -474,34 +485,35 @@ const AdminAnalyticsDashboardPage = () => {
         {/* Financial Trends */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Payment Revenue */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg">
-                  <DollarSign className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <DollarSign className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   Payment Revenue Trend
                 </h3>
               </div>
               <ResponsiveContainer width="100%" height={300}>
                 <AreaChart data={analytics.financial_trends.payments}>
-                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" />
-                  <XAxis dataKey="date" className="dark:text-gray-400 text-gray-600" />
-                  <YAxis className="dark:text-gray-400 text-gray-600" />
+                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" stroke="hsl(var(--neutral-300))" />
+                  <XAxis dataKey="date" className="dark:text-neutral-400 text-neutral-600" />
+                  <YAxis className="dark:text-neutral-400 text-neutral-600" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1f2937",
+                      backgroundColor: "hsl(var(--neutral-900))",
                       border: "none",
                       borderRadius: "8px",
+                      color: "hsl(var(--neutral-100))",
                     }}
                   />
                   <Legend />
                   <Area
                     type="monotone"
                     dataKey="total_amount"
-                    stroke="#10b981"
-                    fill="#10b981"
+                    stroke="hsl(var(--primary-600))"
+                    fill="hsl(var(--primary-600))"
                     name="Revenue ($)"
                   />
                 </AreaChart>
@@ -510,30 +522,31 @@ const AdminAnalyticsDashboardPage = () => {
           </Card>
 
           {/* Subscriptions */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg">
-                  <Calendar className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Calendar className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   New Subscriptions
                 </h3>
               </div>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={analytics.financial_trends.subscriptions}>
-                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" />
-                  <XAxis dataKey="date" className="dark:text-gray-400 text-gray-600" />
-                  <YAxis className="dark:text-gray-400 text-gray-600" />
+                  <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" stroke="hsl(var(--neutral-300))" />
+                  <XAxis dataKey="date" className="dark:text-neutral-400 text-neutral-600" />
+                  <YAxis className="dark:text-neutral-400 text-neutral-600" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1f2937",
+                      backgroundColor: "hsl(var(--neutral-900))",
                       border: "none",
                       borderRadius: "8px",
+                      color: "hsl(var(--neutral-100))",
                     }}
                   />
                   <Legend />
-                  <Bar dataKey="count" fill="#8b5cf6" name="Subscriptions" />
+                  <Bar dataKey="count" fill="hsl(var(--primary-600))" name="Subscriptions" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
@@ -543,13 +556,13 @@ const AdminAnalyticsDashboardPage = () => {
         {/* Agent Performance */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Top Agents by Properties */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
-                  <Award className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Award className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   Top Agents by Properties
                 </h3>
               </div>
@@ -557,25 +570,25 @@ const AdminAnalyticsDashboardPage = () => {
                 {analytics.agent_performance.by_properties.slice(0, 5).map((agent, index) => (
                   <div
                     key={agent.id}
-                    className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50 border border-gray-100 rounded-xl p-4 shadow-sm dark:shadow-black/20 hover:shadow-md dark:hover:shadow-black/30 transition-all duration-200"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 text-white rounded-full flex items-center justify-center font-bold shadow-md dark:shadow-black/30">
+                        <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white rounded-full flex items-center justify-center font-bold shadow-md shadow-primary-500/30 group-hover:scale-110 transition-transform duration-200">
                           {index + 1}
                         </div>
                         <div>
-                          <p className="text-gray-900 dark:text-white font-semibold">
+                          <p className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm">
                             {agent.name}
                           </p>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm">{agent.email}</p>
+                          <p className="text-neutral-600 dark:text-neutral-400 text-xs">{agent.email}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-lg font-bold text-blue-600 dark:text-blue-400">
+                        <p className="text-lg font-bold text-primary-600 dark:text-primary-400">
                           {agent.properties_count}
                         </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">Properties</p>
+                        <p className="text-xs text-neutral-500 dark:text-neutral-500 font-semibold">Properties</p>
                       </div>
                     </div>
                   </div>
@@ -585,13 +598,13 @@ const AdminAnalyticsDashboardPage = () => {
           </Card>
 
           {/* Top Agents by Inquiries */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-emerald-500 to-green-500 rounded-lg">
-                  <MessageCircle className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <MessageCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   Top Agents by Inquiries
                 </h3>
               </div>
@@ -599,25 +612,25 @@ const AdminAnalyticsDashboardPage = () => {
                 {analytics.agent_performance.by_inquiries.slice(0, 5).map((agent, index) => (
                   <div
                     key={agent.id}
-                    className="bg-gradient-to-br from-emerald-50 to-green-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50 border border-gray-100 rounded-xl p-4 shadow-sm dark:shadow-black/20 hover:shadow-md dark:hover:shadow-black/30 transition-all duration-200"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-500 text-white rounded-full flex items-center justify-center font-bold shadow-md dark:shadow-black/30">
+                        <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white rounded-full flex items-center justify-center font-bold shadow-md shadow-primary-500/30 group-hover:scale-110 transition-transform duration-200">
                           {index + 1}
                         </div>
                         <div>
-                          <p className="text-gray-900 dark:text-white font-semibold">
+                          <p className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm">
                             {agent.name}
                           </p>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm">{agent.email}</p>
+                          <p className="text-neutral-600 dark:text-neutral-400 text-xs">{agent.email}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
+                        <p className="text-lg font-bold text-primary-600 dark:text-primary-400">
                           {agent.inquiries_count}
                         </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">Inquiries</p>
+                        <p className="text-xs text-neutral-500 dark:text-neutral-500 font-semibold">Inquiries</p>
                       </div>
                     </div>
                   </div>
@@ -627,13 +640,13 @@ const AdminAnalyticsDashboardPage = () => {
           </Card>
 
           {/* Top Rated Agents */}
-          <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+          <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
             <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg">
-                  <Award className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                  <Award className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+                <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                   Top Rated Agents
                 </h3>
               </div>
@@ -641,27 +654,27 @@ const AdminAnalyticsDashboardPage = () => {
                 {analytics.agent_performance.top_rated.slice(0, 5).map((agent, index) => (
                   <div
                     key={agent.id}
-                    className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50 border border-gray-100 rounded-xl p-4 shadow-sm dark:shadow-black/20 hover:shadow-md dark:hover:shadow-black/30 transition-all duration-200"
+                    className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 text-white rounded-full flex items-center justify-center font-bold shadow-md dark:shadow-black/30">
+                        <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white rounded-full flex items-center justify-center font-bold shadow-md shadow-primary-500/30 group-hover:scale-110 transition-transform duration-200">
                           {index + 1}
                         </div>
                         <div>
-                          <p className="text-gray-900 dark:text-white font-semibold">
+                          <p className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm">
                             {agent.name}
                           </p>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
                             {agent.review_count} reviews
                           </p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-lg font-bold text-amber-600 dark:text-amber-400">
+                        <p className="text-lg font-bold text-primary-600 dark:text-primary-400">
                           {Number(agent.avg_rating).toFixed(1)} ★
                         </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">Rating</p>
+                        <p className="text-xs text-neutral-500 dark:text-neutral-500 font-semibold">Rating</p>
                       </div>
                     </div>
                   </div>
@@ -672,44 +685,49 @@ const AdminAnalyticsDashboardPage = () => {
         </div>
 
         {/* Property Type Distribution */}
-        <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+        <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
           <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-500 rounded-lg">
-                <Building2 className="w-5 h-5 text-white" />
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                <Building2 className="w-6 h-6 text-white" />
               </div>
-              <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+              <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                 Properties by Type
               </h3>
             </div>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={analytics.property_trends.type_distribution} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" />
-                <XAxis type="number" className="dark:text-gray-400 text-gray-600" />
+                <CartesianGrid strokeDasharray="3 3" className="dark:opacity-30" stroke="hsl(var(--neutral-300))" />
+                <XAxis type="number" className="dark:text-neutral-400 text-neutral-600" />
                 <YAxis
                   dataKey="type"
                   type="category"
                   width={100}
-                  className="dark:text-gray-400 text-gray-600"
+                  className="dark:text-neutral-400 text-neutral-600"
                 />
                 <Tooltip
-                  contentStyle={{ backgroundColor: "#1f2937", border: "none", borderRadius: "8px" }}
+                  contentStyle={{
+                    backgroundColor: "hsl(var(--neutral-900))",
+                    border: "none",
+                    borderRadius: "8px",
+                    color: "hsl(var(--neutral-100))",
+                  }}
                 />
                 <Legend />
-                <Bar dataKey="count" fill="#3b82f6" name="Count" />
+                <Bar dataKey="count" fill="hsl(var(--primary-600))" name="Count" />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
 
         {/* Top Viewed Properties */}
-        <Card className="dark:bg-gray-800/50 bg-white border border-gray-100 dark:border-gray-700/50 shadow-xl dark:shadow-black/30">
+        <Card className="bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 rounded-2xl hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-300">
           <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg">
-                <Eye className="w-5 h-5 text-white" />
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
+                <Eye className="w-6 h-6 text-white" />
               </div>
-              <h3 className="dark:text-white text-gray-900 text-xl font-bold">
+              <h3 className="text-neutral-900 dark:text-neutral-100 text-lg font-bold">
                 Most Viewed Properties
               </h3>
             </div>
@@ -717,24 +735,24 @@ const AdminAnalyticsDashboardPage = () => {
               {analytics.view_trends.top_properties.slice(0, 10).map((item, index) => (
                 <div
                   key={item.property_id}
-                  className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:bg-gradient-to-br dark:from-gray-800/70 dark:to-gray-800/50 dark:border-gray-700/50 border border-gray-100 rounded-xl p-4 shadow-sm dark:shadow-black/20 hover:shadow-md dark:hover:shadow-black/30 transition-all duration-200"
+                  className="group bg-gradient-to-r from-neutral-50 to-white dark:from-neutral-800/30 dark:to-neutral-800/10 border border-neutral-200/60 dark:border-neutral-700/50 rounded-xl p-4 hover:from-primary-50/30 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-neutral-800/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 hover:shadow-lg hover:shadow-primary-200/10 dark:hover:shadow-primary-900/10 hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-full flex items-center justify-center font-bold shadow-md dark:shadow-black/30">
+                      <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white rounded-full flex items-center justify-center font-bold shadow-md shadow-primary-500/30 group-hover:scale-110 transition-transform duration-200">
                         {index + 1}
                       </div>
                       <div>
-                        <p className="text-gray-900 dark:text-white font-semibold">
+                        <p className="text-neutral-900 dark:text-neutral-100 font-semibold text-sm">
                           {item.property?.title || `Property #${item.property_id}`}
                         </p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400">
+                      <p className="text-lg font-bold text-primary-600 dark:text-primary-400">
                         {item.view_count.toLocaleString()}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">Views</p>
+                      <p className="text-xs text-neutral-500 dark:text-neutral-500 font-semibold">Views</p>
                     </div>
                   </div>
                 </div>

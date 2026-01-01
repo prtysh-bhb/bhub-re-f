@@ -62,11 +62,11 @@ const InboxPage = () => {
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary-500 rounded-xl shadow-lg shadow-primary-500/30">
                 <MailOpen className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-primary-600 dark:text-primary-400">
                   Inbox
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -76,7 +76,7 @@ const InboxPage = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-500 hover:shadow-md transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -96,8 +96,8 @@ const InboxPage = () => {
             onClick={() => setSelectedFilter("all")}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               selectedFilter === "all"
-                ? "bg-gradient-to-r from-blue-600 to-emerald-600 text-white shadow-md"
-                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-emerald-600"
+                ? "bg-primary-500 text-white shadow-lg shadow-primary-500/20"
+                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-primary-500 hover:shadow-md"
             }`}
           >
             All Messages
@@ -106,8 +106,8 @@ const InboxPage = () => {
             onClick={() => setSelectedFilter("unread")}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               selectedFilter === "unread"
-                ? "bg-gradient-to-r from-blue-600 to-emerald-600 text-white shadow-md"
-                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-emerald-600"
+                ? "bg-primary-500 text-white shadow-lg shadow-primary-500/20"
+                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-primary-500 hover:shadow-md"
             }`}
           >
             Unread
@@ -116,8 +116,8 @@ const InboxPage = () => {
             onClick={() => setSelectedFilter("starred")}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               selectedFilter === "starred"
-                ? "bg-gradient-to-r from-blue-600 to-emerald-600 text-white shadow-md"
-                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-emerald-600"
+                ? "bg-primary-500 text-white shadow-lg shadow-primary-500/20"
+                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-primary-500 hover:shadow-md"
             }`}
           >
             Starred
@@ -130,8 +130,8 @@ const InboxPage = () => {
             {filteredMessages.map((message) => (
               <div
                 key={message.id}
-                className={`p-4 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all cursor-pointer group ${
-                  !message.read ? "bg-blue-50/30 dark:bg-blue-950/20" : ""
+                className={`p-4 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all cursor-pointer group ${
+                  !message.read ? "bg-primary-50/30 dark:bg-primary-950/20" : ""
                 }`}
               >
                 <div className="flex items-start gap-4">
@@ -139,7 +139,7 @@ const InboxPage = () => {
                     {message.read ? (
                       <Mail className="text-gray-400" size={20} />
                     ) : (
-                      <MailOpen className="text-blue-600 dark:text-emerald-400" size={20} />
+                      <MailOpen className="text-primary-600 dark:text-primary-400" size={20} />
                     )}
                   </div>
 

@@ -94,11 +94,11 @@ const PropertyList = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "approved":
-        return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 border-emerald-300 dark:border-emerald-700";
+        return "bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 border-primary-300 dark:border-primary-700 shadow-sm shadow-primary-100 dark:shadow-primary-900/20";
       case "pending":
-        return "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-300 dark:border-amber-700";
+        return "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-300 dark:border-amber-700 shadow-sm shadow-amber-100 dark:shadow-amber-900/20";
       case "rejected":
-        return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-300 dark:border-red-700";
+        return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-300 dark:border-red-700 shadow-sm shadow-red-100 dark:shadow-red-900/20";
       default:
         return "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-600";
     }
@@ -116,10 +116,10 @@ const PropertyList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-primary-500/5 dark:shadow-primary-500/10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="flex items-center gap-3 mr-auto">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30 dark:shadow-primary-500/40">
                 <List className="text-white" size={20} />
               </div>
               <div>
@@ -134,7 +134,7 @@ const PropertyList = () => {
 
             <div className="flex items-center gap-2 flex-wrap">
               {/* Search */}
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all duration-300">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -147,7 +147,7 @@ const PropertyList = () => {
 
               {/* Filter Dropdown */}
               <select
-                className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2 rounded-lg text-sm shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all text-gray-900 dark:text-white"
+                className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2 rounded-lg text-sm shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md hover:shadow-primary-500/10 transition-all duration-300 text-gray-900 dark:text-white"
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
               >
@@ -161,9 +161,9 @@ const PropertyList = () => {
               <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <button
                   onClick={() => setViewMode("grid")}
-                  className={`p-2 rounded-lg transition-all ${
+                  className={`p-2 rounded-lg transition-all duration-300 ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-lg shadow-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                   }`}
                 >
@@ -171,9 +171,9 @@ const PropertyList = () => {
                 </button>
                 <button
                   onClick={() => setViewMode("table")}
-                  className={`p-2 rounded-lg transition-all ${
+                  className={`p-2 rounded-lg transition-all duration-300 ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-lg shadow-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                   }`}
                 >
@@ -188,7 +188,7 @@ const PropertyList = () => {
         {loading ? (
           <div className="flex justify-center items-center py-20">
             <div className="text-center space-y-4">
-              <Loader2 className="w-16 h-16 text-blue-600 dark:text-emerald-400 animate-spin mx-auto" />
+              <Loader2 className="w-16 h-16 text-primary-600 dark:text-primary-400 animate-spin mx-auto drop-shadow-lg" />
               <p className="text-gray-500 dark:text-gray-400">Loading properties...</p>
             </div>
           </div>
@@ -212,7 +212,7 @@ const PropertyList = () => {
                   return (
                     <div
                       key={p.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-all group overflow-hidden"
+                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-500/20 transition-all duration-500 group overflow-hidden hover:border-primary-200 dark:hover:border-primary-800"
                     >
                       {/* Image */}
                       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -270,24 +270,24 @@ const PropertyList = () => {
                         {/* Features */}
                         <div className="grid grid-cols-3 gap-3 mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
                           <div className="flex flex-col items-center">
-                            <div className="w-8 h-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mb-1">
-                              <Bed className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                            <div className="w-8 h-8 bg-primary-50 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mb-1 shadow-sm shadow-primary-100 dark:shadow-primary-900/20">
+                              <Bed className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                             </div>
                             <span className="text-xs text-gray-600 dark:text-gray-400">
                               {p.bedrooms} Beds
                             </span>
                           </div>
                           <div className="flex flex-col items-center">
-                            <div className="w-8 h-8 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg flex items-center justify-center mb-1">
-                              <Bath className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                            <div className="w-8 h-8 bg-primary-50 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mb-1 shadow-sm shadow-primary-100 dark:shadow-primary-900/20">
+                              <Bath className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                             </div>
                             <span className="text-xs text-gray-600 dark:text-gray-400">
                               {p.bathrooms} Baths
                             </span>
                           </div>
                           <div className="flex flex-col items-center">
-                            <div className="w-8 h-8 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center mb-1">
-                              <Maximize2 className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                            <div className="w-8 h-8 bg-primary-50 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mb-1 shadow-sm shadow-primary-100 dark:shadow-primary-900/20">
+                              <Maximize2 className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                             </div>
                             <span className="text-xs text-gray-600 dark:text-gray-400">
                               {p.area} sqft
@@ -312,7 +312,7 @@ const PropertyList = () => {
                           {showApprove && (
                             <Button
                               size="sm"
-                              className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer"
+                              className="flex-1 bg-primary-600 hover:bg-primary-700 text-white cursor-pointer shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/40 transition-all duration-300"
                               onClick={() => handleApprove(p.id)}
                             >
                               <Check className="w-4 h-4 mr-1" /> Approve
@@ -322,7 +322,7 @@ const PropertyList = () => {
                           {showReject && (
                             <Button
                               size="sm"
-                              className="flex-1 bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+                              className="flex-1 bg-red-600 hover:bg-red-700 text-white cursor-pointer shadow-md shadow-red-500/30 hover:shadow-lg hover:shadow-red-500/40 transition-all duration-300"
                               onClick={() => openRejectPopup(p.id)}
                             >
                               <X className="w-4 h-4 mr-1" /> Reject
@@ -374,7 +374,7 @@ const PropertyList = () => {
                         return (
                           <tr
                             key={p.id}
-                            className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+                            className="hover:bg-primary-50/30 dark:hover:bg-primary-900/10 transition-all duration-300"
                           >
                             <td className="px-6 py-4">
                               <div className="flex items-center gap-3">
@@ -408,7 +408,7 @@ const PropertyList = () => {
                               <div className="flex items-center gap-1 text-gray-900 dark:text-white font-semibold">
                                 <DollarSign
                                   size={16}
-                                  className="text-emerald-600 dark:text-emerald-400"
+                                  className="text-primary-600 dark:text-primary-400"
                                 />
                                 {p.price?.toLocaleString()}
                               </div>
@@ -446,7 +446,7 @@ const PropertyList = () => {
                                 {showApprove && (
                                   <Button
                                     size="sm"
-                                    className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                                    className="bg-primary-600 hover:bg-primary-700 text-white shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/40 transition-all duration-300"
                                     onClick={() => handleApprove(p.id)}
                                   >
                                     <Check className="w-4 h-4" />
@@ -455,7 +455,7 @@ const PropertyList = () => {
                                 {showReject && (
                                   <Button
                                     size="sm"
-                                    className="bg-red-600 hover:bg-red-700 text-white"
+                                    className="bg-red-600 hover:bg-red-700 text-white shadow-md shadow-red-500/30 hover:shadow-lg hover:shadow-red-500/40 transition-all duration-300"
                                     onClick={() => openRejectPopup(p.id)}
                                   >
                                     <X className="w-4 h-4" />
@@ -476,8 +476,8 @@ const PropertyList = () => {
 
         {/* ✅ Popup Modal for Rejection */}
         {showRejectPopup && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-gray-800">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-in fade-in duration-300">
+            <div className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl p-6 w-[90%] max-w-md border border-gray-200 dark:border-gray-800 animate-in zoom-in-95 duration-300">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-900 dark:text-white">
                   <AlertTriangle className="text-red-600" size={20} />
@@ -507,13 +507,13 @@ const PropertyList = () => {
                 <Button
                   variant="outline"
                   onClick={() => setShowRejectPopup(false)}
-                  className="border-gray-300 dark:border-gray-600"
+                  className="border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300"
                 >
                   Cancel
                 </Button>
                 <Button
                   onClick={handleConfirmReject}
-                  className="bg-red-600 hover:bg-red-700 text-white"
+                  className="bg-red-600 hover:bg-red-700 text-white shadow-md shadow-red-500/30 hover:shadow-lg hover:shadow-red-500/40 transition-all duration-300"
                 >
                   Reject Property
                 </Button>

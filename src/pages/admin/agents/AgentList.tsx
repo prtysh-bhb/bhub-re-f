@@ -44,7 +44,7 @@ const AgentList = () => {
 
   const badge = (isActive: boolean) =>
     isActive
-      ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400"
+      ? "bg-primary-100 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400"
       : "bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400";
 
   return (
@@ -52,10 +52,10 @@ const AgentList = () => {
       {/* Make sure parent allows children to control height and scrolling */}
       <div className="space-y-6 min-h-0 pb-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg shadow-primary-500/30">
                 <Users className="text-white" size={20} />
               </div>
               <div>
@@ -69,7 +69,7 @@ const AgentList = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all w-full sm:w-auto">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all w-full sm:w-auto">
                 <Search size={16} className="text-gray-400 mr-2 flex-shrink-0" />
                 <input
                   type="text"
@@ -94,7 +94,7 @@ const AgentList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -105,7 +105,7 @@ const AgentList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -116,7 +116,7 @@ const AgentList = () => {
 
               <Button
                 onClick={() => navigate("/admin/agents/new")}
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg w-full sm:w-auto"
+                className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-md hover:shadow-lg w-full sm:w-auto"
               >
                 <UserPlus size={18} />
                 <span>Add Agent</span>
@@ -128,37 +128,37 @@ const AgentList = () => {
         {/* Stats Summary */}
         {!loading && !error && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-5 rounded-xl border border-primary-200 dark:border-primary-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                  <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
                     Total Agents
                   </p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">
+                  <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                     {agents.length}
                   </p>
                 </div>
-                <div className="p-3 bg-blue-500/10 rounded-lg">
-                  <Users className="text-blue-600 dark:text-blue-400" size={20} />
+                <div className="p-3 bg-primary-500/10 rounded-lg">
+                  <Users className="text-primary-600 dark:text-primary-400" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-5 rounded-xl border border-primary-200 dark:border-primary-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                  <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
                     Active Agents
                   </p>
-                  <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                  <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                     {agents.filter((a) => a.status).length}
                   </p>
                 </div>
-                <div className="p-3 bg-emerald-500/10 rounded-lg">
-                  <UserCheck className="text-emerald-600 dark:text-emerald-400" size={20} />
+                <div className="p-3 bg-primary-500/10 rounded-lg">
+                  <UserCheck className="text-primary-600 dark:text-primary-400" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-5 rounded-xl border border-red-200 dark:border-red-800">
+            <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-5 rounded-xl border border-red-200 dark:border-red-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-red-700 dark:text-red-300">
@@ -180,7 +180,7 @@ const AgentList = () => {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
               <p className="text-gray-500 dark:text-gray-400">Loading agents...</p>
             </div>
           </div>
@@ -196,7 +196,7 @@ const AgentList = () => {
           <>
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden min-h-0">
+              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 overflow-hidden min-h-0">
                 {/* ensure table container can scroll horizontally on small screens */}
                 <div className="overflow-x-auto w-full">
                   <table className="min-w-full w-full border-collapse text-sm">
@@ -236,7 +236,7 @@ const AgentList = () => {
                         agents.map((agent, index) => (
                           <tr
                             key={agent.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all group ${
+                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
                               index % 2 === 0
                                 ? "bg-white dark:bg-gray-900"
                                 : "bg-gray-50/50 dark:bg-gray-800/50"
@@ -244,7 +244,7 @@ const AgentList = () => {
                           >
                             <td className="py-4 px-4 sm:px-6">
                               <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-sm shadow-md flex-shrink-0">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-sm shadow-md flex-shrink-0">
                                   <img src={agent?.avatar ?? ""} alt={agent.name} className="w-full h-full object-cover rounded-full" onError={(e) => {
                                     e.currentTarget.src = "/assets/user.jpg";
                                   }} />
@@ -307,7 +307,7 @@ const AgentList = () => {
                             <td className="py-4 px-4 sm:px-6">
                               <div className="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                 <button
-                                  className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all hover:scale-110 cursor-pointer"
+                                  className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110 cursor-pointer"
                                   onClick={() => navigate(`/admin/agents/${agent.id}`)}
                                   title="View Details"
                                 >
@@ -356,11 +356,11 @@ const AgentList = () => {
                     agents.map((agent) => (
                       <div
                         key={agent.id}
-                        className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all hover:-translate-y-1 group min-h-0"
+                        className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300 hover:-translate-y-1 group min-h-0"
                       >
                         <div className="flex justify-between items-start mb-4">
                           <div className="flex items-center gap-3">
-                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-md flex-shrink-0">
+                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-lg shadow-md flex-shrink-0">
                               <img src={agent.avatar ?? "/assets/user.jpg"} alt={agent.name} className="w-full h-full object-cover rounded-xl" />
                             </div>
                             <div className="min-w-0">
@@ -404,7 +404,7 @@ const AgentList = () => {
                         <div className="flex gap-2 pt-3 border-t border-gray-100 dark:border-gray-700">
                           <button
                             onClick={() => navigate(`/admin/agents/${agent.id}`)}
-                            className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all font-medium text-sm cursor-pointer"
+                            className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm cursor-pointer"
                           >
                             <Eye size={16} />
                             <span>View</span>
@@ -428,25 +428,25 @@ const AgentList = () => {
 
         {/* Pagination */}
         {!loading && totalPages > 1 && (
-          <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
                 Showing page{" "}
-                <span className="text-blue-600 dark:text-emerald-400 font-bold">{page}</span> of{" "}
+                <span className="text-primary-600 dark:text-primary-400 font-bold">{page}</span> of{" "}
                 <span className="font-bold">{totalPages}</span>
               </p>
               <div className="flex gap-2 w-full sm:w-auto">
                 <button
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={page === 1}
-                  className="flex-1 sm:flex-none px-5 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-500 dark:hover:border-emerald-500 text-gray-700 dark:text-gray-300 transition-all"
+                  className="flex-1 sm:flex-none px-5 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-500 text-gray-700 dark:text-gray-300 transition-all"
                 >
                   Previous
                 </button>
                 <button
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={page === totalPages}
-                  className="flex-1 sm:flex-none px-5 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed text-white transition-all shadow-md hover:shadow-lg"
+                  className="flex-1 sm:flex-none px-5 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 disabled:opacity-40 disabled:cursor-not-allowed text-white transition-all shadow-md hover:shadow-lg"
                 >
                   Next
                 </button>

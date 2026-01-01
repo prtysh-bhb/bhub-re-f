@@ -72,11 +72,11 @@ const OrdersPage = () => {
         <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary-500 rounded-xl shadow-lg shadow-primary-500/30">
                 <HousePlus className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-primary-600 dark:text-primary-400">
                   Orders
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -86,7 +86,7 @@ const OrdersPage = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-500 hover:shadow-md transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -134,7 +134,7 @@ const OrdersPage = () => {
                 {filteredOrders.map((order, index) => (
                   <tr
                     key={order.id}
-                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all group ${
+                    className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group ${
                       index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                     }`}
                   >
@@ -142,19 +142,19 @@ const OrdersPage = () => {
                     <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">{order.customerName}</td>
                     <td className="py-4 px-6 text-gray-600 dark:text-gray-400">{order.propertyTitle}</td>
                     <td className="py-4 px-6">
-                      <span className="px-3 py-1 rounded-lg text-xs font-semibold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
+                      <span className="px-3 py-1 rounded-lg text-xs font-semibold bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 shadow-sm">
                         {order.orderType}
                       </span>
                     </td>
-                    <td className="py-4 px-6 font-bold text-blue-600 dark:text-emerald-400">{order.amount}</td>
+                    <td className="py-4 px-6 font-bold text-primary-600 dark:text-primary-400">{order.amount}</td>
                     <td className="py-4 px-6 text-gray-600 dark:text-gray-400">{new Date(order.date).toLocaleDateString()}</td>
                     <td className="py-4 px-6">
-                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${getStatusColor(order.status)}`}>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-sm ${getStatusColor(order.status)}`}>
                         {order.status.toUpperCase()}
                       </span>
                     </td>
                     <td className="py-4 px-6 text-center">
-                      <button className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all opacity-0 group-hover:opacity-100">
+                      <button className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all opacity-0 group-hover:opacity-100 hover:shadow-md">
                         <Eye size={16} />
                       </button>
                     </td>
@@ -167,21 +167,21 @@ const OrdersPage = () => {
 
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-gradient-to-br from-blue-50 to-emerald-50 dark:from-blue-950/20 dark:to-emerald-950/20 p-6 rounded-xl border border-blue-100 dark:border-blue-900/50">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-primary-200 dark:border-primary-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Total Orders</p>
-            <p className="text-3xl font-bold text-gray-900 dark:text-white">{orders.length}</p>
+            <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">{orders.length}</p>
           </div>
-          <div className="bg-gradient-to-br from-emerald-50 to-blue-50 dark:from-emerald-950/20 dark:to-blue-950/20 p-6 rounded-xl border border-emerald-100 dark:border-emerald-900/50">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-emerald-200 dark:border-emerald-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Confirmed</p>
-            <p className="text-3xl font-bold text-gray-900 dark:text-white">{orders.filter(o => o.status === "confirmed").length}</p>
+            <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{orders.filter(o => o.status === "confirmed").length}</p>
           </div>
-          <div className="bg-gradient-to-br from-amber-50 to-emerald-50 dark:from-amber-950/20 dark:to-emerald-950/20 p-6 rounded-xl border border-amber-100 dark:border-amber-900/50">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-amber-200 dark:border-amber-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Pending</p>
-            <p className="text-3xl font-bold text-gray-900 dark:text-white">{orders.filter(o => o.status === "pending").length}</p>
+            <p className="text-3xl font-bold text-amber-600 dark:text-amber-400">{orders.filter(o => o.status === "pending").length}</p>
           </div>
-          <div className="bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-950/20 dark:to-pink-950/20 p-6 rounded-xl border border-red-100 dark:border-red-900/50">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-red-200 dark:border-red-900/30 shadow-lg hover:shadow-xl transition-shadow">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Cancelled</p>
-            <p className="text-3xl font-bold text-gray-900 dark:text-white">{orders.filter(o => o.status === "cancelled").length}</p>
+            <p className="text-3xl font-bold text-red-600 dark:text-red-400">{orders.filter(o => o.status === "cancelled").length}</p>
           </div>
         </div>
       </div>

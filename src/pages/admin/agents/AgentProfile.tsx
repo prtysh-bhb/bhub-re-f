@@ -36,7 +36,7 @@ const AgentProfilePage = () => {
     <>
         <div className="flex items-center justify-center py-20">
           <div className="text-center space-y-4">
-            <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="text-gray-500 dark:text-gray-400">Loading profile...</p>
           </div>
         </div>
@@ -57,9 +57,9 @@ const AgentProfilePage = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
+      <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)] overflow-hidden border border-gray-200 dark:border-gray-700">
         {/* Cover Banner with Gradient Overlay */}
-        <div className="relative h-52 sm:h-60 md:h-72 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 overflow-hidden">
+        <div className="relative h-52 sm:h-60 md:h-72 bg-primary overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-32 -translate-x-32"></div>
@@ -79,7 +79,7 @@ const AgentProfilePage = () => {
                 <img
                   src={agent?.avatar || "/assets/user.jpg"}
                   alt={agent?.name || "Agent"}
-                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl border-4 border-white dark:border-gray-900 shadow-2xl object-cover ring-4 ring-blue-500/20"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl border-4 border-white dark:border-gray-900 shadow-[0_8px_24px_rgba(0,0,0,0.12)] object-cover ring-4 ring-primary/20"
                 />
                 {agent?.status && (
                   <div className="absolute -bottom-2 -right-2 bg-green-500 text-white px-3 py-1.5 rounded-xl text-xs font-bold shadow-lg flex items-center gap-1">
@@ -91,7 +91,7 @@ const AgentProfilePage = () => {
             </div>
 
             {/* Agent Info Card */}
-            <div className="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-5 sm:p-6 border border-gray-200 dark:border-gray-700">
+            <div className="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)] p-5 sm:p-6 border border-gray-200 dark:border-gray-700">
               <div className="flex flex-col lg:flex-row lg:justify-between gap-4">
                 {/* Left - Name & Email */}
                 <div className="flex-1">
@@ -129,15 +129,15 @@ const AgentProfilePage = () => {
                 {/* Right - Meta Info Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 lg:gap-3 gap-4 text-sm">
                   <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg">
-                    <Phone size={16} className="text-blue-500" />
+                    <Phone size={16} className="text-primary" />
                     <span>{agent?.phone || undefined}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg">
-                    <MapPin size={16} className="text-red-500" />
+                    <MapPin size={16} className="text-primary" />
                     <span>{agent?.city || "Unknown"}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg col-span-2 sm:col-span-1">
-                    <Calendar size={16} className="text-green-500" />
+                    <Calendar size={16} className="text-primary" />
                     <span>
                       {agent?.joined
                         ? new Date(agent.joined).toLocaleDateString("en-US", {
@@ -147,7 +147,7 @@ const AgentProfilePage = () => {
                           })
                         : "N/A"}
                     </span>
-                  </div>  
+                  </div>
                 </div>
               </div>
             </div>
@@ -194,19 +194,19 @@ const AgentProfilePage = () => {
             <TabsList className="flex flex-wrap justify-start gap-2 sm:gap-4 bg-gray-100 dark:bg-gray-800 p-2 rounded-xl mb-6">
               <TabsTrigger
                 value="details"
-                className="px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700 data-[state=active]:text-blue-600 dark:data-[state=active]:text-blue-400 data-[state=active]:shadow-md text-gray-600 dark:text-gray-400 cursor-pointer"
+                className="px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700 data-[state=active]:text-primary data-[state=active]:shadow-lg text-gray-600 dark:text-gray-400 cursor-pointer"
               >
                 Details
               </TabsTrigger>
               <TabsTrigger
                 value="activity"
-                className="px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700 data-[state=active]:text-blue-600 dark:data-[state=active]:text-blue-400 data-[state=active]:shadow-md text-gray-600 dark:text-gray-400 cursor-pointer"
+                className="px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700 data-[state=active]:text-primary data-[state=active]:shadow-lg text-gray-600 dark:text-gray-400 cursor-pointer"
               >
                 Activity Logs
               </TabsTrigger>
               <TabsTrigger
                 value="performance"
-                className="px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700 data-[state=active]:text-blue-600 dark:data-[state=active]:text-blue-400 data-[state=active]:shadow-md text-gray-600 dark:text-gray-400 cursor-pointer"
+                className="px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700 data-[state=active]:text-primary data-[state=active]:shadow-lg text-gray-600 dark:text-gray-400 cursor-pointer"
               >
                 Performance
               </TabsTrigger>

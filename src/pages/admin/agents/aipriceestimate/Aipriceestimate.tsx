@@ -405,7 +405,7 @@ const AIPriceEstimator = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-emerald-600 rounded-2xl p-6 text-white">
+        <div className="bg-primary rounded-2xl p-6 text-white shadow-lg shadow-primary/20">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-white/20 rounded-xl backdrop-blur-sm">
@@ -413,7 +413,7 @@ const AIPriceEstimator = () => {
               </div>
               <div>
                 <h1 className="text-2xl font-bold">AI Price Estimator</h1>
-                <p className="text-blue-100">Get intelligent property price estimates using AI</p>
+                <p className="text-white/90">Get intelligent property price estimates using AI</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -445,17 +445,17 @@ const AIPriceEstimator = () => {
           {/* Left Column - Input Form */}
           {!showHistory && (
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-6">
+              <div className="bg-white rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-gray-200 p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                    <Calculator className="w-5 h-5 text-blue-600" />
+                    <Calculator className="w-5 h-5 text-primary" />
                     Property Details
                   </h2>
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
                       onClick={useSampleData}
-                      className="flex items-center gap-2 px-3 py-1.5 text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
+                      className="flex items-center gap-2 px-3 py-1.5 text-sm text-primary hover:text-primary/80 hover:bg-primary/5 rounded-lg transition-colors"
                     >
                       <Zap className="w-4 h-4" />
                       Use Sample
@@ -486,7 +486,7 @@ const AIPriceEstimator = () => {
                       value={formData.location}
                       onChange={handleInputChange}
                       placeholder="Enter property address or area"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       required
                     />
                   </div>
@@ -507,7 +507,7 @@ const AIPriceEstimator = () => {
                         onChange={handleInputChange}
                         min="1"
                         max="20"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                         required
                       />
                     </div>
@@ -526,7 +526,7 @@ const AIPriceEstimator = () => {
                         onChange={handleInputChange}
                         min="1"
                         max="20"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                         required
                       />
                     </div>
@@ -545,7 +545,7 @@ const AIPriceEstimator = () => {
                         onChange={handleInputChange}
                         min="100"
                         max="100000"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                         required
                       />
                     </div>
@@ -564,7 +564,7 @@ const AIPriceEstimator = () => {
                         name="property_type"
                         value={formData.property_type}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       >
                         {propertyTypes.map((type) => (
                           <option key={type.value} value={type.value}>
@@ -582,7 +582,7 @@ const AIPriceEstimator = () => {
                         name="condition"
                         value={formData.condition}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       >
                         {conditions.map((condition) => (
                           <option key={condition.value} value={condition.value}>
@@ -604,7 +604,7 @@ const AIPriceEstimator = () => {
                       onChange={handleInputChange}
                       placeholder="garage, garden, pool, fireplace, etc."
                       rows={2}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none"
                     />
                     <p className="mt-1 text-xs text-gray-500">Enter amenities separated by commas</p>
                   </div>
@@ -620,7 +620,7 @@ const AIPriceEstimator = () => {
                       value={formData.property_id || ""}
                       onChange={handleInputChange}
                       placeholder="Link to existing property"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                     />
                   </div>
 
@@ -628,7 +628,7 @@ const AIPriceEstimator = () => {
                   <button
                     type="submit"
                     disabled={estimating}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 text-white rounded-xl hover:from-blue-700 hover:to-emerald-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed font-bold"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 disabled:opacity-70 disabled:cursor-not-allowed font-bold"
                   >
                     {estimating ? (
                       <>
@@ -651,11 +651,11 @@ const AIPriceEstimator = () => {
           <div className={`${showHistory ? "lg:col-span-3" : "lg:col-span-1"}`}>
             {showHistory ? (
               /* History View - Updated to match your model structure */
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-gray-200">
                 <div className="p-6 border-b border-gray-200">
                   <div className="flex items-center justify-between">
                     <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                      <Calendar className="w-5 h-5 text-blue-600" />
+                      <Calendar className="w-5 h-5 text-primary" />
                       Estimate History
                     </h2>
                     <div className="flex items-center gap-2">
@@ -667,7 +667,7 @@ const AIPriceEstimator = () => {
                 {loadingHistory ? (
                   <div className="flex items-center justify-center py-12">
                     <div className="text-center">
-                      <Loader2 className="w-8 h-8 animate-spin text-blue-600 mx-auto mb-4" />
+                      <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto mb-4" />
                       <p className="text-gray-600">Loading history...</p>
                     </div>
                   </div>
@@ -679,7 +679,7 @@ const AIPriceEstimator = () => {
                     <button
                       type="button"
                       onClick={() => setShowHistory(false)}
-                      className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      className="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
                     >
                       Create Estimate
                     </button>
@@ -693,7 +693,7 @@ const AIPriceEstimator = () => {
                           return (
                             <div
                               key={estimate.id}
-                              className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 hover:bg-blue-50/50 transition-all cursor-pointer"
+                              className="border border-gray-200 rounded-xl p-4 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer shadow-sm hover:shadow-md"
                               onClick={() => loadEstimateById(estimate.id)}
                             >
                               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -774,9 +774,9 @@ const AIPriceEstimator = () => {
               </div>
             ) : (
               /* Results Panel - Updated to match your model structure */
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-6 sticky top-6">
+              <div className="bg-white rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-gray-200 p-6 sticky top-6">
                 <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                  <Target className="w-5 h-5 text-blue-600" />
+                  <Target className="w-5 h-5 text-primary" />
                   AI Estimate Results
                 </h2>
 
@@ -809,7 +809,7 @@ const AIPriceEstimator = () => {
                   /* Success Result */
                   <div className="space-y-6">
                     {/* Estimated Price */}
-                    <div className="text-center p-4 bg-gradient-to-r from-blue-50 to-emerald-50 rounded-xl border border-blue-100">
+                    <div className="text-center p-4 bg-primary/5 rounded-xl border border-primary/20 shadow-sm">
                       <p className="text-sm text-gray-600 mb-2">AI Estimated Price</p>
                       <div className="text-3xl font-bold text-gray-900">
                         {formatCurrency(Number(estimateResult.estimated_price))}
@@ -921,8 +921,8 @@ const AIPriceEstimator = () => {
                 ) : (
                   /* Empty State */
                   <div className="text-center py-8">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-100 to-emerald-100 flex items-center justify-center">
-                      <Brain className="w-8 h-8 text-blue-600" />
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Brain className="w-8 h-8 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       No Estimate Yet
@@ -940,7 +940,7 @@ const AIPriceEstimator = () => {
         {/* Selected Estimate Modal */}
         {selectedEstimate && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div className="bg-white rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.16)] w-full max-w-2xl max-h-[90vh] overflow-y-auto">
               <div className="p-6 border-b border-gray-200">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-bold text-gray-900">Estimate Details</h3>

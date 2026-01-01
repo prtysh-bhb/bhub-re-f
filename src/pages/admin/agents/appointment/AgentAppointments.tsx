@@ -386,13 +386,13 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
   const getStatusColor = (status: string) => {
     switch (status) {
       case "scheduled":
-        return "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 dark:border dark:border-emerald-800/50";
+        return "bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 dark:border dark:border-amber-800/50";
       case "cancelled":
         return "bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400 dark:border dark:border-rose-800/50";
       case "completed":
-        return "bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 dark:border dark:border-blue-800/50";
-      case "approved":
         return "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 dark:border dark:border-emerald-800/50";
+      case "approved":
+        return "bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 dark:border dark:border-primary-800/50";
       case "declined":
         return "bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400 dark:border dark:border-rose-800/50";
       default:
@@ -521,7 +521,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
           {/* Header Section */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
             <div className="flex items-center gap-3 mr-auto">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 dark:from-blue-600 dark:to-emerald-600 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-xl shadow-lg shadow-primary-500/30">
                 <ClipboardClock className="text-white" size={24} />
               </div>
               <div className="flex flex-col">
@@ -535,7 +535,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
               <Button
                 onClick={handleOpenCreate}
                 disabled={false}
-                className="bg-blue-600 hover:bg-blue-700 dark:bg-gradient-to-r dark:from-blue-600 dark:to-blue-700 dark:hover:from-blue-700 dark:hover:to-blue-800 text-white px-4 py-2.5 rounded-xl font-medium shadow-lg dark:shadow-blue-900/20"
+                className="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 hover:from-primary-600 hover:to-primary-700 dark:hover:from-primary-700 dark:hover:to-primary-800 text-white px-4 py-2.5 rounded-xl font-medium shadow-lg shadow-primary-500/30 hover:shadow-xl transition-all duration-200"
               >
                 Create Appointment
               </Button>
@@ -544,23 +544,23 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800">
+            <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-xl transition-shadow duration-200">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Appointments</p>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{appointments.length}</p>
                 </div>
-                <div className="p-3 bg-blue-50 dark:bg-blue-900/30 dark:border dark:border-blue-800/30 rounded-xl">
-                  <Calendar className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-xl shadow-md shadow-primary-500/30">
+                  <Calendar className="w-6 h-6 text-white" />
                 </div>
               </div>
               <div className="flex items-center gap-1 mt-3">
-                <span className="text-sm text-green-600 dark:text-emerald-400 font-medium">+12.5%</span>
+                <span className="text-sm text-emerald-600 dark:text-emerald-400 font-medium">+12.5%</span>
                 <span className="text-sm text-gray-500 dark:text-gray-500">from last month</span>
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800">
+            <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-xl transition-shadow duration-200">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Scheduled</p>
@@ -568,13 +568,13 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                     {appointments.filter((a) => a.status === "scheduled").length}
                   </p>
                 </div>
-                <div className="p-3 bg-green-50 dark:bg-emerald-900/30 dark:border dark:border-emerald-800/30 rounded-xl">
-                  <Clock className="w-6 h-6 text-green-600 dark:text-emerald-400" />
+                <div className="p-3 bg-gradient-to-br from-amber-500 to-amber-600 dark:from-amber-600 dark:to-amber-700 rounded-xl shadow-md shadow-amber-500/30">
+                  <Clock className="w-6 h-6 text-white" />
                 </div>
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800">
+            <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-xl transition-shadow duration-200">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Completed</p>
@@ -582,13 +582,13 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                     {appointments.filter((a) => a.status === "completed").length}
                   </p>
                 </div>
-                <div className="p-3 bg-emerald-50 dark:bg-blue-900/30 dark:border dark:border-blue-800/30 rounded-xl">
-                  <Home className="w-6 h-6 text-emerald-600 dark:text-blue-400" />
+                <div className="p-3 bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 rounded-xl shadow-md shadow-emerald-500/30">
+                  <Home className="w-6 h-6 text-white" />
                 </div>
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800">
+            <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-xl transition-shadow duration-200">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Cancelled</p>
@@ -596,8 +596,8 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                     {appointments.filter((a) => a.status === "cancelled").length}
                   </p>
                 </div>
-                <div className="p-3 bg-red-50 dark:bg-rose-900/30 dark:border dark:border-rose-800/30 rounded-xl">
-                  <X className="w-6 h-6 text-red-600 dark:text-rose-400" />
+                <div className="p-3 bg-gradient-to-br from-rose-500 to-rose-600 dark:from-rose-600 dark:to-rose-700 rounded-xl shadow-md shadow-rose-500/30">
+                  <X className="w-6 h-6 text-white" />
                 </div>
               </div>
             </div>
@@ -618,13 +618,13 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                           placeholder="Search appointments..."
                           value={searchTerm}
                           onChange={(e) => setSearchTerm(e.target.value)}
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                         />
                       </div>
                       <select
                         value={statusFilter}
                         onChange={(e) => setStatusFilter(e.target.value)}
-                        className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                        className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                       >
                         <option value="all">All Status (hide cancelled)</option>
                         <option value="scheduled">Scheduled</option>
@@ -649,7 +649,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                 <div className="p-6">
                   {loading ? (
                     <div className="flex justify-center items-center py-12">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
                     </div>
                   ) : filteredAppointments.length === 0 ? (
                     <div className="text-center py-12">
@@ -670,13 +670,13 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         return (
                           <div
                             key={appointment.id}
-                            className="flex-1 md:flex items-center gap-5 p-5 rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:bg-gray-800/50 transition-all duration-200 bg-white dark:bg-gray-900/30"
+                            className="flex-1 md:flex items-center gap-5 p-5 rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-800/50 dark:hover:bg-gray-800/50 transition-all duration-200 bg-white dark:bg-gray-900/30"
                           >
-                            <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 dark:border dark:border-blue-800/30 flex items-center justify-center">
+                            <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 shadow-md shadow-primary-500/30 flex items-center justify-center">
                               {appointment.type === "visit" ? (
-                                <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                                <MapPin className="w-6 h-6 text-white" />
                               ) : (
-                                <Phone className="w-6 h-6 text-green-600 dark:text-emerald-400" />
+                                <Phone className="w-6 h-6 text-white" />
                               )}
                             </div>
 
@@ -719,14 +719,14 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                                             ? "Only scheduled appointments can be approved"
                                             : "Approve appointment"
                                         }
-                                        className={`ml-2 inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                                        className={`ml-2 inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
                                           !canAction
                                             ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
-                                            : "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-800/30 dark:border dark:border-emerald-800/50"
+                                            : "bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-800/30 dark:border dark:border-primary-800/50 hover:shadow-md hover:shadow-primary-500/20"
                                         }`}
                                       >
                                         {isActionLoading === "approving" ? (
-                                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-emerald-600 dark:border-emerald-400"></div>
+                                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-600 dark:border-primary-400"></div>
                                         ) : (
                                           <Check className="w-4 h-4" />
                                         )}
@@ -743,10 +743,10 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                                             ? "Only scheduled appointments can be declined"
                                             : "Decline appointment"
                                         }
-                                        className={`ml-2 inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                                        className={`ml-2 inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
                                           !canAction
                                             ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
-                                            : "bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-800/30 dark:border dark:border-rose-800/50"
+                                            : "bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-800/30 dark:border dark:border-rose-800/50 hover:shadow-md hover:shadow-rose-500/20"
                                         }`}
                                       >
                                         <Slash className="w-4 h-4" />
@@ -809,9 +809,9 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
               <div className="bg-white dark:bg-gray-900/50 dark:backdrop-blur-sm rounded-2xl p-6 shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                 <div className="space-y-3">
-                  <button className="w-full flex items-center gap-3 p-4 rounded-xl border border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-                    <div className="p-2 bg-green-100 dark:bg-emerald-900/30 dark:border dark:border-emerald-800/30 rounded-lg">
-                      <Calendar className="w-4 h-4 text-green-600 dark:text-emerald-400" />
+                  <button className="w-full flex items-center gap-3 p-4 rounded-xl border border-gray-100 dark:border-gray-800 hover:bg-primary-50/30 dark:hover:bg-primary-900/10 hover:border-primary-200 dark:hover:border-primary-800/50 transition-all duration-200">
+                    <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-lg shadow-md shadow-primary-500/30">
+                      <Calendar className="w-4 h-4 text-white" />
                     </div>
                     <div className="text-left">
                       <div className="font-medium text-gray-900 dark:text-white">View Calendar</div>
@@ -908,8 +908,8 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         className={`px-4 py-2.5 rounded-xl ${
                           !canTakeAction(selected)
                             ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
-                            : "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-800/30 dark:border dark:border-emerald-800/50"
-                        } font-medium transition-colors`}
+                            : "bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-800/30 dark:border dark:border-primary-800/50 hover:shadow-md hover:shadow-primary-500/20"
+                        } font-medium transition-all duration-200`}
                       >
                         {actionLoading[selected.id] === "approving" ? "Approving..." : "Approve"}
                       </button>
@@ -920,8 +920,8 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         className={`px-4 py-2.5 rounded-xl ${
                           !canTakeAction(selected)
                             ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
-                            : "bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-800/30 dark:border dark:border-rose-800/50"
-                        } font-medium transition-colors`}
+                            : "bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-800/30 dark:border dark:border-rose-800/50 hover:shadow-md hover:shadow-rose-500/20"
+                        } font-medium transition-all duration-200`}
                       >
                         Decline
                       </button>
@@ -932,8 +932,8 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         className={`px-4 py-2.5 rounded-xl ${
                           selected.status !== "scheduled"
                             ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
-                            : "bg-red-50 dark:bg-rose-900/30 text-red-600 dark:text-rose-400 hover:bg-red-100 dark:hover:bg-rose-800/30 dark:border dark:border-rose-800/50"
-                        } font-medium transition-colors`}
+                            : "bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-800/30 dark:border dark:border-rose-800/50 hover:shadow-md hover:shadow-rose-500/20"
+                        } font-medium transition-all duration-200`}
                       >
                         Cancel
                       </button>
@@ -980,7 +980,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         onChange={(e) =>
                           setForm((s: any) => ({ ...s, property_id: e.target.value }))
                         }
-                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                       >
                         <option value="">Select property</option>
                         {properties.map((p) => (
@@ -1000,7 +1000,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         onChange={(e) =>
                           setForm((s: any) => ({ ...s, customer_id: e.target.value }))
                         }
-                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                       >
                         <option value="">Select customer</option>
                         {customers.map((c) => (
@@ -1018,7 +1018,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                       <select
                         value={form.type}
                         onChange={(e) => setForm((s: any) => ({ ...s, type: e.target.value }))}
-                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                       >
                         <option value="visit">Property Visit</option>
                         <option value="call">Phone Call</option>
@@ -1033,7 +1033,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         onChange={(e) =>
                           setForm((s: any) => ({ ...s, date: e.target.value, slot: "" }))
                         }
-                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                       />
                     </div>
 
@@ -1049,7 +1049,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         onChange={(e) =>
                           setForm((s: any) => ({ ...s, duration_minutes: Number(e.target.value) }))
                         }
-                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                       />
                     </div>
                   </div>
@@ -1071,7 +1071,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                             ? setForm((s: any) => ({ ...s, phone_number: e.target.value }))
                             : setForm((s: any) => ({ ...s, location: e.target.value }))
                         }
-                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                         placeholder={
                           form.type === "call"
                             ? "Enter phone number"
@@ -1089,7 +1089,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         onChange={(e) =>
                           setForm((s: any) => ({ ...s, inquiry_id: e.target.value }))
                         }
-                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow"
                         placeholder="Link an inquiry ID"
                       />
                     </div>
@@ -1099,7 +1099,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                         <button
                           onClick={() => handleCheckAvailability(form.date)}
                           disabled={!form.date}
-                          className="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-gradient-to-r dark:from-blue-600 dark:to-blue-700 dark:hover:from-blue-700 dark:hover:to-blue-800 text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 hover:from-primary-600 hover:to-primary-700 dark:hover:from-primary-700 dark:hover:to-primary-800 text-white font-medium shadow-md shadow-primary-500/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                         >
                           Check Availability
                         </button>
@@ -1126,9 +1126,9 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                                 disabled={!isAvailable}
                                 className={`px-4 py-2 rounded-xl border-2 transition-all ${
                                   form.slot === hhmm
-                                    ? "border-blue-600 bg-blue-600 text-white"
+                                    ? "border-primary-600 bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-md shadow-primary-500/30"
                                     : isAvailable
-                                    ? "border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-blue-300 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                                    ? "border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20"
                                     : "border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-400 dark:text-gray-600 line-through cursor-not-allowed"
                                 }`}
                               >
@@ -1145,7 +1145,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                       <textarea
                         value={form.notes}
                         onChange={(e) => setForm((s: any) => ({ ...s, notes: e.target.value }))}
-                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent h-24"
+                        className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:border-transparent transition-shadow h-24"
                         placeholder="Additional notes about the appointment..."
                       />
                     </div>
@@ -1162,10 +1162,10 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                   <button
                     onClick={handleSubmit}
                     disabled={creating || !canCreate()}
-                    className={`px-6 py-3 rounded-xl font-medium transition-colors ${
+                    className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
                       creating || !canCreate()
                         ? "bg-gray-300 dark:bg-gray-800 text-gray-500 dark:text-gray-500 cursor-not-allowed"
-                        : "bg-green-600 hover:bg-green-700 dark:bg-gradient-to-r dark:from-emerald-600 dark:to-emerald-700 dark:hover:from-emerald-700 dark:hover:to-emerald-800 text-white"
+                        : "bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 hover:from-primary-600 hover:to-primary-700 dark:hover:from-primary-700 dark:hover:to-primary-800 text-white shadow-lg shadow-primary-500/30 hover:shadow-xl"
                     }`}
                   >
                     {creating ? (
@@ -1209,7 +1209,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                   <textarea
                     value={cancelReason}
                     onChange={(e) => setCancelReason(e.target.value)}
-                    className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-red-500 dark:focus:ring-rose-600 focus:border-transparent h-28"
+                    className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-rose-500 dark:focus:ring-rose-600 focus:border-transparent transition-shadow h-28"
                     placeholder="Please provide a reason for cancellation..."
                   />
                 </div>
@@ -1224,10 +1224,10 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                   <button
                     onClick={handleConfirmCancel}
                     disabled={!cancelReason.trim()}
-                    className={`px-6 py-3 rounded-xl font-medium transition-colors ${
+                    className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
                       !cancelReason.trim()
                         ? "bg-gray-300 dark:bg-gray-800 text-gray-500 dark:text-gray-500 cursor-not-allowed"
-                        : "bg-red-600 hover:bg-red-700 dark:bg-gradient-to-r dark:from-rose-600 dark:to-rose-700 dark:hover:from-rose-700 dark:hover:to-rose-800 text-white"
+                        : "bg-gradient-to-r from-rose-600 to-rose-700 dark:from-rose-600 dark:to-rose-700 hover:from-rose-700 hover:to-rose-800 dark:hover:from-rose-700 dark:hover:to-rose-800 text-white shadow-lg shadow-rose-500/30 hover:shadow-xl"
                     }`}
                   >
                     Confirm Cancellation
@@ -1264,7 +1264,7 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                   <textarea
                     value={declineReason}
                     onChange={(e) => setDeclineReason(e.target.value)}
-                    className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-rose-500 dark:focus:ring-rose-600 focus:border-transparent h-28"
+                    className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-rose-500 dark:focus:ring-rose-600 focus:border-transparent transition-shadow h-28"
                     placeholder="Please provide a reason for declining..."
                   />
                 </div>
@@ -1279,10 +1279,10 @@ export default function AgentAppointments({ token }: { token?: string | null }) 
                   <button
                     onClick={confirmDecline}
                     disabled={!declineReason.trim()}
-                    className={`px-6 py-3 rounded-xl font-medium transition-colors ${
+                    className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
                       !declineReason.trim()
                         ? "bg-gray-300 dark:bg-gray-800 text-gray-500 dark:text-gray-500 cursor-not-allowed"
-                        : "bg-rose-600 hover:bg-rose-700 dark:bg-gradient-to-r dark:from-rose-600 dark:to-rose-700 dark:hover:from-rose-700 dark:hover:to-rose-800 text-white"
+                        : "bg-gradient-to-r from-rose-600 to-rose-700 dark:from-rose-600 dark:to-rose-700 hover:from-rose-700 hover:to-rose-800 dark:hover:from-rose-700 dark:hover:to-rose-800 text-white shadow-lg shadow-rose-500/30 hover:shadow-xl"
                     }`}
                   >
                     Confirm Decline

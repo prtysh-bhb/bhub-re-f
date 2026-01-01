@@ -120,17 +120,17 @@ const CustomerList = () => {
 
   const badge = (isActive: boolean) =>
     isActive
-      ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400"
+      ? "bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20 text-primary-700 dark:text-primary-300 border border-primary-200/60 dark:border-primary-800/40"
       : "bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400";
 
   return (
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 transition-all duration-300">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-xl shadow-md shadow-primary-500/30">
                 <Contact className="text-white" size={20} />
               </div>
               <div>
@@ -144,7 +144,7 @@ const CustomerList = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 hover:shadow-md hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -160,7 +160,7 @@ const CustomerList = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 shadow-md shadow-primary-500/30 text-white"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -171,7 +171,7 @@ const CustomerList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 shadow-md shadow-primary-500/30 text-white"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -180,7 +180,7 @@ const CustomerList = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-600 hover:shadow-md hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 transition-all">
                 <Filter size={16} className="text-gray-400 mr-2" />
                 <select
                   value={filter}
@@ -210,7 +210,7 @@ const CustomerList = () => {
                     toast.error("Failed to export users");
                   }
                 }}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-md hover:shadow-lg cursor-pointer"
+                className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/40 cursor-pointer"
               >
                 <FileDown size={18} />
                 <span>Export</span>
@@ -218,7 +218,7 @@ const CustomerList = () => {
 
               <Button
                 onClick={() => navigate("/admin/customers/new")}
-                className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg"
+                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/40"
               >
                 <UserPlus size={18} />
                 <span>Add Customer</span>
@@ -230,48 +230,48 @@ const CustomerList = () => {
         {/* Stats Summary */}
         {!loading && !error && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div className="group bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Total Customers
                   </p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                     {customers.length}
                   </p>
                 </div>
-                <div className="p-3 bg-blue-500/10 rounded-lg">
-                  <Contact className="text-blue-600 dark:text-blue-400" size={20} />
+                <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-lg shadow-md shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <Contact className="text-white" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <div className="group bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:-translate-y-1 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Active Customers
                   </p>
-                  <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                     {customers.filter((c) => c.status).length}
                   </p>
                 </div>
-                <div className="p-3 bg-emerald-500/10 rounded-lg">
-                  <UserCheck className="text-emerald-600 dark:text-emerald-400" size={20} />
+                <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-lg shadow-md shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <UserCheck className="text-white" size={20} />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-5 rounded-xl border border-red-200 dark:border-red-800">
+            <div className="group bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-md shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-red-200/30 dark:hover:shadow-red-900/20 hover:-translate-y-1 hover:border-red-300/60 dark:hover:border-red-700/60 transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-red-700 dark:text-red-300">
+                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Inactive Customers
                   </p>
-                  <p className="text-2xl font-bold text-red-900 dark:text-red-100 mt-1">
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                     {customers.filter((c) => !c.status).length}
                   </p>
                 </div>
-                <div className="p-3 bg-red-500/10 rounded-lg">
-                  <UserX className="text-red-600 dark:text-red-400" size={20} />
+                <div className="p-3 bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-700 rounded-lg shadow-md shadow-red-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <UserX className="text-white" size={20} />
                 </div>
               </div>
             </div>
@@ -282,7 +282,7 @@ const CustomerList = () => {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-16 h-16 border-4 border-primary-500 dark:border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
               <p className="text-gray-500 dark:text-gray-400">Loading customers...</p>
             </div>
           </div>
@@ -298,7 +298,7 @@ const CustomerList = () => {
           <>
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 transition-all duration-300 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -331,13 +331,13 @@ const CustomerList = () => {
                         customers.map((c, index) => (
                           <tr
                             key={c.id}
-                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all group ${
+                            className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/30 dark:hover:bg-primary-900/10 transition-all group ${
                               index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                             }`}
                           >
                             <td className="py-4 px-6">
                               <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-sm shadow-md">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-primary-500/30">
                                   <img src={c.avatar || undefined} alt={c.name} className="w-full h-full object-cover rounded-full" />
                                 </div>
                                 <div>
@@ -365,7 +365,7 @@ const CustomerList = () => {
                                 )}`}
                               >
                                 <span className={`w-1.5 h-1.5 rounded-full mr-1.5 ${
-                                  c.status ? "bg-emerald-600 dark:bg-emerald-400" : "bg-red-600 dark:bg-red-400"
+                                  c.status ? "bg-primary-600 dark:bg-primary-400" : "bg-red-600 dark:bg-red-400"
                                 }`}></span>
                                 {c.status ? "Active" : "Inactive"}
                               </span>
@@ -374,7 +374,7 @@ const CustomerList = () => {
                               <span
                                 className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
                                   c.two_factor_enabled
-                                    ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                                    ? "bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20 text-primary-700 dark:text-primary-400 border border-primary-200/60 dark:border-primary-800/40"
                                     : "bg-red-100 dark:bg-gray-800 text-red-700 dark:text-gray-400"
                                 }`}
                               >
@@ -388,7 +388,7 @@ const CustomerList = () => {
                                   onClick={() =>
                                     navigate(`/admin/customers/${c.id}`)
                                   }
-                                  className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all hover:scale-110"
+                                  className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110"
                                   title="View Details"
                                 >
                                   <Eye size={18} />
@@ -404,7 +404,7 @@ const CustomerList = () => {
                                 ) : (
                                   <button
                                     onClick={() => handleActivate(c.id)}
-                                    className="px-3 py-1 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 text-xs font-semibold transition-all"
+                                    className="px-3 py-1 rounded-lg bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20 text-primary-700 dark:text-primary-400 hover:from-primary-200 hover:to-primary-100 dark:hover:from-primary-900/50 dark:hover:to-primary-900/30 text-xs font-semibold transition-all border border-primary-200/60 dark:border-primary-800/40"
                                     title="Activate Customer"
                                   >
                                     Activate
@@ -445,11 +445,11 @@ const CustomerList = () => {
                   customers.map((c) => (
                     <div
                       key={c.id}
-                      className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all hover:-translate-y-1 group"
+                      className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/30 dark:hover:shadow-primary-900/20 hover:border-primary-300/60 dark:hover:border-primary-700/60 transition-all hover:-translate-y-1 group"
                     >
                       <div className="flex justify-between items-start mb-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
                            <img src={c.avatar || "/assets/user.jpg"} alt={c.name} className="w-full h-full object-cover rounded-xl" />
                           </div>
                           <div>
@@ -460,7 +460,7 @@ const CustomerList = () => {
                             <span
                               className={`inline-flex items-center mt-1 px-2 py-0.5 rounded-full text-xs font-semibold ${
                                 c.two_factor_enabled
-                                  ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                                  ? "bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20 text-primary-700 dark:text-primary-400 border border-primary-200/60 dark:border-primary-800/40"
                                   : "bg-red-100 dark:bg-gray-700 text-red-700 dark:text-gray-400"
                               }`}
                             >
@@ -490,7 +490,7 @@ const CustomerList = () => {
                       <div className="flex gap-2 pt-3 border-t border-gray-100 dark:border-gray-700">
                         <button
                           onClick={() => navigate(`/admin/customers/${c.id}`)}
-                          className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all font-medium text-sm cursor-pointer"
+                          className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm cursor-pointer"
                         >
                           <Eye size={16} />
                           <span>View</span>
@@ -505,7 +505,7 @@ const CustomerList = () => {
                         ) : (
                           <button
                             onClick={() => handleActivate(c.id)}
-                            className="flex-1 px-3 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-semibold rounded-xl hover:bg-emerald-200 dark:hover:bg-emerald-900/50 transition-all cursor-pointer"
+                            className="flex-1 px-3 py-2 bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/30 dark:to-primary-900/20 text-primary-700 dark:text-primary-400 text-xs font-semibold rounded-xl hover:from-primary-200 hover:to-primary-100 dark:hover:from-primary-900/50 dark:hover:to-primary-900/30 transition-all cursor-pointer border border-primary-200/60 dark:border-primary-800/40"
                           >
                             Activate
                           </button>
@@ -527,23 +527,23 @@ const CustomerList = () => {
 
         {/* Pagination */}
         {!loading && totalPages > 1 && (
-          <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg shadow-neutral-200/50 dark:shadow-black/20 hover:shadow-xl hover:shadow-primary-200/20 dark:hover:shadow-primary-900/10 transition-all duration-300">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                Showing page <span className="text-blue-600 dark:text-emerald-400 font-bold">{page}</span> of <span className="font-bold">{totalPages}</span>
+                Showing page <span className="text-primary-600 dark:text-primary-400 font-bold">{page}</span> of <span className="font-bold">{totalPages}</span>
               </p>
               <div className="flex gap-2">
                 <button
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={page === 1}
-                  className="px-5 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-500 dark:hover:border-emerald-500 text-gray-700 dark:text-gray-300 transition-all"
+                  className="px-5 py-2.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-500 dark:hover:border-primary-500 text-gray-700 dark:text-gray-300 transition-all"
                 >
                   Previous
                 </button>
                 <button
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={page === totalPages}
-                  className="px-5 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed text-white transition-all shadow-md hover:shadow-lg"
+                  className="px-5 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 disabled:opacity-40 disabled:cursor-not-allowed text-white transition-all shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/40"
                 >
                   Next
                 </button>

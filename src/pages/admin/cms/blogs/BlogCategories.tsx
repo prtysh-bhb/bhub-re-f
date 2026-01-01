@@ -280,14 +280,14 @@ const BlogCategories = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary rounded-xl shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.2)]">
                 <FolderOpen className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-br from-blue-500 to-emerald-500 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-primary">
                   Blog Categories
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -297,7 +297,7 @@ const BlogCategories = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-purple-400 dark:hover:border-blue-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary/50 transition-all">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -313,7 +313,7 @@ const BlogCategories = () => {
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-blue-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -324,7 +324,7 @@ const BlogCategories = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-blue-400"
+                      ? "bg-white dark:bg-gray-700 shadow-sm text-primary"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -333,7 +333,7 @@ const BlogCategories = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary/50 transition-all">
                 <Filter size={16} className="text-gray-400 mr-2" />
                 <select
                   value={filter}
@@ -348,7 +348,7 @@ const BlogCategories = () => {
 
               <button
                 onClick={openAddModal}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 hover:from-blue-500 hover:to-emerald-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-white transition-all text-sm shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.3)] hover:shadow-[0_6px_16px_rgba(var(--color-primary-rgb),0.4)] font-medium"
               >
                 <Plus size={16} />
                 <span>Add Category</span>
@@ -361,7 +361,7 @@ const BlogCategories = () => {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-blue-500 dark:border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
               <p className="text-gray-500 dark:text-gray-400">Loading categories...</p>
             </div>
           </div>
@@ -377,18 +377,18 @@ const BlogCategories = () => {
           <>
             {/* Stats Summary */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-5 rounded-xl border border-purple-200 dark:border-purple-800">
+              <div className="bg-gradient-to-r from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 p-5 rounded-xl border border-primary/20 dark:border-primary/30 shadow-[0_2px_8px_rgba(var(--color-primary-rgb),0.1)]">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-purple-700 dark:text-purple-300">Total Categories</p>
-                    <p className="text-2xl font-bold text-purple-900 dark:text-purple-100 mt-1">{categories.length}</p>
+                    <p className="text-sm font-medium text-primary/80 dark:text-primary/90">Total Categories</p>
+                    <p className="text-2xl font-bold text-primary mt-1">{categories.length}</p>
                   </div>
-                  <div className="p-3 bg-purple-500/10 rounded-lg">
-                    <FolderOpen className="text-purple-600 dark:text-purple-400" size={24} />
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <FolderOpen className="text-primary" size={24} />
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800">
+              <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800 shadow-[0_2px_8px_rgba(16,185,129,0.1)]">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">Active Categories</p>
@@ -401,7 +401,7 @@ const BlogCategories = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-5 rounded-xl border border-red-200 dark:border-red-800">
+              <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-5 rounded-xl border border-red-200 dark:border-red-800 shadow-[0_2px_8px_rgba(239,68,68,0.1)]">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-red-700 dark:text-red-300">Inactive Categories</p>
@@ -414,16 +414,16 @@ const BlogCategories = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-800/20 p-5 rounded-xl border border-blue-200 dark:border-blue-800">
+              <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-700/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-blue-700 dark:text-blue-300">Total Blogs</p>
-                    <p className="text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Total Blogs</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1">
                       {categories.reduce((sum, cat) => sum + (cat.blogs_count || 0), 0)}
                     </p>
                   </div>
-                  <div className="p-3 bg-blue-500/10 rounded-lg">
-                    <FileText className="text-blue-600 dark:text-blue-400" size={24} />
+                  <div className="p-3 bg-gray-500/10 rounded-lg">
+                    <FileText className="text-gray-600 dark:text-gray-400" size={24} />
                   </div>
                 </div>
               </div>
@@ -431,7 +431,7 @@ const BlogCategories = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -458,7 +458,7 @@ const BlogCategories = () => {
                               <p className="text-sm">Try adjusting your search criteria</p>
                               <button
                                 onClick={openAddModal}
-                                className="mt-2 px-4 py-2 text-sm bg-gradient-to-br from-blue-500 to-emerald-500 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg transition-all"
+                                className="mt-2 px-4 py-2 text-sm bg-primary hover:bg-primary/90 text-white rounded-lg transition-all shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.3)]"
                               >
                                 <Plus size={16} className="inline mr-2" />
                                 Add Your First Category
@@ -473,7 +473,7 @@ const BlogCategories = () => {
                             <>
                               <tr
                                 key={category.id}
-                                className={`border-b border-gray-100 dark:border-gray-800 hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition-all group cursor-pointer ${
+                                className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all group cursor-pointer ${
                                   index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                                 }`}
                                 onClick={() => toggleCategory(category.id)}
@@ -519,7 +519,7 @@ const BlogCategories = () => {
                                         e.stopPropagation();
                                         openEditModal(category);
                                       }}
-                                      className="p-2 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 text-purple-600 dark:text-purple-400 transition-all hover:scale-110"
+                                      className="p-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-primary transition-all hover:scale-110"
                                       title="Edit Category"
                                     >
                                       <Edit size={18} />
@@ -553,7 +553,7 @@ const BlogCategories = () => {
                                 </td>
                               </tr>
                               {expandedCategory === category.id && (
-                                <tr className="bg-purple-50/30 dark:bg-purple-900/5 border-b border-gray-100 dark:border-gray-800">
+                                <tr className="bg-primary/5 dark:bg-primary/10 border-b border-gray-100 dark:border-gray-800">
                                   <td colSpan={5} className="px-6 py-4">
                                     <div className="pl-12 pr-4">
                                       <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
@@ -619,7 +619,7 @@ const BlogCategories = () => {
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
                       <button
                         onClick={openAddModal}
-                        className="mt-4 px-4 py-2 text-sm bg-gradient-to-br from-blue-500 to-emerald-500 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg transition-all"
+                        className="mt-4 px-4 py-2 text-sm bg-primary hover:bg-primary/90 text-white rounded-lg transition-all shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.3)]"
                       >
                         <Plus size={16} className="inline mr-2" />
                         Add Your First Category
@@ -632,7 +632,7 @@ const BlogCategories = () => {
                     return (
                       <div
                         key={category.id}
-                        className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-purple-200 dark:hover:border-purple-800 transition-all group overflow-hidden"
+                        className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_16px_rgba(0,0,0,0.4)] hover:border-primary/30 dark:hover:border-primary/50 transition-all group overflow-hidden"
                       >
                         {/* Category Header with Gradient */}
                         <div 
@@ -692,7 +692,7 @@ const BlogCategories = () => {
                           <div className="flex gap-2 justify-between">
                             <button
                               onClick={() => openEditModal(category)}
-                              className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 text-purple-600 dark:text-purple-400 transition-all font-medium text-sm"
+                              className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-primary transition-all font-medium text-sm"
                             >
                               <Edit size={16} />
                               <span>Edit</span>
@@ -812,7 +812,7 @@ const CategoryModal = ({
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-200 dark:border-gray-700">
           <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
             <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
-              <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
+              <div className="p-2 bg-primary rounded-lg shadow-[0_4px_12px_rgba(var(--color-primary-rgb),0.2)]">
                 <FolderOpen className="text-white" size={20} />
               </div>
               {title}
@@ -839,9 +839,9 @@ const CategoryModal = ({
                   value={formData.name}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 rounded-lg border ${
-                    formErrors.name 
-                      ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500' 
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-emerald-500 focus:border-emerald-500 dark:focus:border-blue-500'
+                    formErrors.name
+                      ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500'
+                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary/50 focus:border-primary'
                   } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
                   placeholder="Enter category name (e.g., Technology, Lifestyle)"
                   disabled={submitting}

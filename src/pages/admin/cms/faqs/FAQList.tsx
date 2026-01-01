@@ -238,12 +238,12 @@ const FAQList = () => {
     }
   };
 
-  const badge = (status: number) => {     
+  const badge = (status: number) => {
     const baseClasses = "inline-flex items-center px-3 py-1 rounded-full text-xs font-bold";
-    
+
     switch(status) {
       case 1:
-        return `${baseClasses} bg-emerald-100 text-emerald-700 dark:bg-emerald-700/20 dark:text-emerald-400`;
+        return `${baseClasses} bg-primary-100 text-primary-700 dark:bg-primary-700/20 dark:text-primary-400`;
       case 0:
         return `${baseClasses} bg-red-100 text-red-700 dark:bg-red-700/20 dark:text-red-400`;
       default:
@@ -263,14 +263,14 @@ const FAQList = () => {
     <>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl">
+              <div className="p-3 bg-primary-500 rounded-xl shadow-elegant-sm">
                 <HelpCircle className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   Frequently Asked Questions
                 </h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -280,7 +280,7 @@ const FAQList = () => {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 transition-all focus-within:border-primary-500 focus-within:ring-2 focus-within:ring-primary-500/20">
                 <Search size={16} className="text-gray-400 mr-2" />
                 <input
                   type="text"
@@ -291,12 +291,12 @@ const FAQList = () => {
                 />
               </div>
 
-              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm">
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-elegant-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Grid View"
@@ -307,7 +307,7 @@ const FAQList = () => {
                   onClick={() => setViewMode("table")}
                   className={`p-2 rounded-md transition-all ${
                     viewMode === "table"
-                      ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-emerald-400"
+                      ? "bg-white dark:bg-gray-700 shadow-elegant-sm text-primary-600 dark:text-primary-400"
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                   title="Table View"
@@ -316,7 +316,7 @@ const FAQList = () => {
                 </button>
               </div>
 
-              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-blue-400 dark:hover:border-emerald-600 transition-all">
+              <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 bg-white dark:bg-gray-900 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 transition-all focus-within:border-primary-500 focus-within:ring-2 focus-within:ring-primary-500/20">
                 <Filter size={16} className="text-gray-400 mr-2" />
                 <select
                   value={filter}
@@ -331,7 +331,7 @@ const FAQList = () => {
 
               <button
                 onClick={openAddModal}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white transition-all text-sm shadow-md hover:shadow-lg font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-all text-sm shadow-elegant-md hover:shadow-elegant-lg font-medium"
               >
                 <Plus size={16} />
                 <span>Add FAQ</span>
@@ -344,7 +344,7 @@ const FAQList = () => {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-blue-500 dark:border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
               <p className="text-gray-500 dark:text-gray-400">Loading FAQs...</p>
             </div>
           </div>
@@ -360,35 +360,35 @@ const FAQList = () => {
           <>
             {/* Stats Summary */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 rounded-xl border border-blue-200 dark:border-blue-800">
+              <div className="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm hover:shadow-elegant-md transition-all">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-blue-700 dark:text-blue-300">Total FAQs</p>
-                    <p className="text-2xl font-bold text-blue-900 dark:text-blue-100 mt-1">{faqs.length}</p>
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total FAQs</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{faqs.length}</p>
                   </div>
-                  <div className="p-3 bg-blue-500/10 rounded-lg">
-                    <HelpCircle className="text-blue-600 dark:text-blue-400" size={24} />
+                  <div className="p-3 bg-primary-500/10 rounded-lg">
+                    <HelpCircle className="text-primary-600 dark:text-primary-400" size={24} />
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800">
+              <div className="bg-white dark:bg-gray-900 p-5 rounded-xl border border-primary-200 dark:border-primary-800/50 shadow-elegant-sm hover:shadow-elegant-md transition-all">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">Active FAQs</p>
-                    <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mt-1">
+                    <p className="text-sm font-medium text-primary-700 dark:text-primary-300">Active FAQs</p>
+                    <p className="text-2xl font-bold text-primary-900 dark:text-primary-100 mt-1">
                       {faqs.filter(f => f.status).length}
                     </p>
                   </div>
-                  <div className="p-3 bg-emerald-500/10 rounded-lg">
-                    <CheckCircle className="text-emerald-600 dark:text-emerald-400" size={24} />
+                  <div className="p-3 bg-primary-500/10 rounded-lg">
+                    <CheckCircle className="text-primary-600 dark:text-primary-400" size={24} />
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-5 rounded-xl border border-red-200 dark:border-red-800">
+              <div className="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm hover:shadow-elegant-md transition-all">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-red-700 dark:text-red-300">Inactive FAQs</p>
-                    <p className="text-2xl font-bold text-red-900 dark:text-red-100 mt-1">
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Inactive FAQs</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                       {faqs.filter(f => !f.status).length}
                     </p>
                   </div>
@@ -401,7 +401,7 @@ const FAQList = () => {
 
             {/* Table View */}
             {viewMode === "table" && (
-              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="min-w-full w-full border-collapse text-sm">
                     <thead>
@@ -427,7 +427,7 @@ const FAQList = () => {
                               <p className="text-sm">Try adjusting your search criteria</p>
                               <button
                                 onClick={openAddModal}
-                                className="mt-2 px-4 py-2 text-sm bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg transition-all"
+                                className="mt-2 px-4 py-2 text-sm bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all shadow-elegant-md hover:shadow-elegant-lg"
                               >
                                 <Plus size={16} className="inline mr-2" />
                                 Add Your First FAQ
@@ -440,15 +440,15 @@ const FAQList = () => {
                           <>
                             <tr
                               key={faq.id}
-                              className={`border-b border-gray-100 dark:border-gray-800 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all group cursor-pointer ${
+                              className={`border-b border-gray-100 dark:border-gray-800 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all group cursor-pointer ${
                                 index % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-gray-50/50 dark:bg-gray-800/50"
                               }`}
                               onClick={() => toggleFAQ(faq.id)}
                             >
                               <td className="py-4 px-6">
                                 <div className="flex items-center gap-3">
-                                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-100 to-emerald-100 dark:from-blue-900/20 dark:to-emerald-900/20 flex items-center justify-center">
-                                    <HelpCircle className="text-blue-600 dark:text-blue-400" size={20} />
+                                  <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/20 flex items-center justify-center shadow-sm">
+                                    <HelpCircle className="text-primary-600 dark:text-primary-400" size={20} />
                                   </div>
                                   <div className="flex-1">
                                     <p className="font-semibold text-gray-900 dark:text-white">
@@ -466,7 +466,7 @@ const FAQList = () => {
                               <td className="py-4 px-6">
                                 <span className={badge(faq.status)}>
                                   <span className={`w-1.5 h-1.5 rounded-full mr-1.5 ${
-                                    faq.status ? "bg-emerald-600 dark:bg-emerald-400" : "bg-red-600 dark:bg-red-400"
+                                    faq.status ? "bg-primary-600 dark:bg-primary-400" : "bg-red-600 dark:bg-red-400"
                                   }`}></span>
                                   {faq.status ? "Active" : "Inactive"}
                                 </span>
@@ -478,7 +478,7 @@ const FAQList = () => {
                                       e.stopPropagation();
                                       openEditModal(faq);
                                     }}
-                                    className="p-2 rounded-lg hover:bg-emerald-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all hover:scale-110"
+                                    className="p-2 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all hover:scale-110 shadow-sm hover:shadow-md"
                                     title="Edit FAQ"
                                   >
                                     <Edit size={18} />
@@ -489,10 +489,10 @@ const FAQList = () => {
                                       setSelectedFAQ(faq);
                                       setShowStatusUpdatePopup(true)
                                     }}
-                                    className={`p-2 rounded-lg transition-all hover:scale-110 ${
+                                    className={`p-2 rounded-lg transition-all hover:scale-110 shadow-sm hover:shadow-md ${
                                       faq.status
                                         ? "hover:bg-amber-100 dark:hover:bg-amber-900/30 text-amber-600 dark:text-amber-400"
-                                        : "hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400"
+                                        : "hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400"
                                     }`}
                                     title={faq.status ? "Deactivate FAQ" : "Activate FAQ"}
                                   >
@@ -503,7 +503,7 @@ const FAQList = () => {
                                       e.stopPropagation();
                                       openDeletePopup(faq);
                                     }}
-                                    className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all hover:scale-110"
+                                    className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all hover:scale-110 shadow-sm hover:shadow-md"
                                     title="Delete FAQ"
                                   >
                                     <Trash2 size={18} />
@@ -512,7 +512,7 @@ const FAQList = () => {
                               </td>
                             </tr>
                             {expandedFAQ === faq.id && (
-                              <tr className="bg-blue-50/30 dark:bg-blue-900/5 border-b border-gray-100 dark:border-gray-800">
+                              <tr className="bg-primary-50/30 dark:bg-primary-900/5 border-b border-gray-100 dark:border-gray-800">
                                 <td colSpan={4} className="px-6 py-4">
                                   <div className="pl-12 pr-4">
                                     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
@@ -556,7 +556,7 @@ const FAQList = () => {
                       <p className="text-sm text-gray-400">Try adjusting your search criteria</p>
                       <button
                         onClick={openAddModal}
-                        className="mt-4 px-4 py-2 text-sm bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-lg transition-all"
+                        className="mt-4 px-4 py-2 text-sm bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all shadow-elegant-md hover:shadow-elegant-lg"
                       >
                         <Plus size={16} className="inline mr-2" />
                         Add Your First FAQ
@@ -567,16 +567,16 @@ const FAQList = () => {
                   faqs.map((faq) => (
                     <div
                       key={faq.id}
-                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group"
+                      className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-elegant-sm hover:shadow-elegant-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all group"
                     >
-                      <div 
+                      <div
                         className="p-6 cursor-pointer"
                         onClick={() => toggleFAQ(faq.id)}
                       >
                         <div className="flex justify-between items-start mb-4">
                           <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-100 to-emerald-100 dark:from-blue-900/20 dark:to-emerald-900/20 flex items-center justify-center">
-                              <HelpCircle className="text-blue-600 dark:text-blue-400" size={24} />
+                            <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/20 flex items-center justify-center shadow-sm">
+                              <HelpCircle className="text-primary-600 dark:text-primary-400" size={24} />
                             </div>
                             <div className="flex-1">
                               <h3 className="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
@@ -613,7 +613,7 @@ const FAQList = () => {
                       <div className="flex gap-2 p-4 justify-between border-t border-gray-100 dark:border-gray-700">
                         <button
                           onClick={() => openEditModal(faq)}
-                          className="flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 transition-all font-medium text-sm cursor-pointer"
+                          className="flex items-center justify-center gap-2 p-2.5 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 transition-all font-medium text-sm cursor-pointer shadow-sm hover:shadow-md"
                         >
                           <Edit size={16} />
                           <span>Edit</span>
@@ -623,10 +623,10 @@ const FAQList = () => {
                             setSelectedFAQ(faq);
                             setShowStatusUpdatePopup(true)
                           }}
-                          className={`flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                          className={`flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer shadow-sm hover:shadow-md ${
                             faq.status
                               ? "hover:bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 dark:hover:bg-amber-900/50"
-                              : "hover:bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-900/50"
+                              : "hover:bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 dark:hover:bg-primary-900/50"
                           }`}
                         >
                           {faq.status ? <XCircle size={16} /> : <CheckCircle size={16} />}
@@ -634,7 +634,7 @@ const FAQList = () => {
                         </button>
                         <button
                           onClick={() => openDeletePopup(faq)}
-                          className="p-2.5 rounded-xl hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all cursor-pointer"
+                          className="p-2.5 rounded-xl hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-all cursor-pointer shadow-sm hover:shadow-md"
                         >
                           <Trash2 size={16} />
                         </button>
@@ -727,10 +727,10 @@ const FAQList = () => {
 
     return (
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-200 dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-elegant-lg w-full max-w-2xl border border-gray-200 dark:border-gray-700">
           <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
             <h4 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-100">
-              <div className="p-2 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg">
+              <div className="p-2 bg-primary-500 rounded-lg shadow-sm">
                 <HelpCircle className="text-white" size={20} />
               </div>
               {title}
@@ -757,9 +757,9 @@ const FAQList = () => {
                   value={formData.question}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 rounded-lg border ${
-                    formErrors.question 
-                      ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500' 
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                    formErrors.question
+                      ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500'
+                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500'
                   } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all`}
                   placeholder="Enter the question"
                   disabled={submitting}
@@ -780,9 +780,9 @@ const FAQList = () => {
                   onChange={handleInputChange}
                   rows={6}
                   className={`w-full px-4 py-3 rounded-lg border ${
-                    formErrors.answer 
-                      ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500' 
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500 dark:focus:border-emerald-500'
+                    formErrors.answer
+                      ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500'
+                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary-500 focus:border-primary-500'
                   } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all resize-none`}
                   placeholder="Enter the detailed answer"
                   disabled={submitting}
@@ -811,7 +811,7 @@ const FAQList = () => {
                     className="sr-only peer"
                     disabled={submitting}
                   />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-emerald-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-emerald-600"></div>
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600"></div>
                   <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
                     {formData.status ? "Active" : "Inactive"}
                   </span>
@@ -832,7 +832,7 @@ const FAQList = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white transition-all shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-all shadow-elegant-md hover:shadow-elegant-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {submitting ? (
                   <>
