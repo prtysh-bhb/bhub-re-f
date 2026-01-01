@@ -68,12 +68,12 @@
    Only applies to main content cards, not global elements
    ============================================ */
 
-/* Default Mode: Cards have shadows with transparent borders */
+/* Default Mode: Standard color border (in shade of div color) WITH shadow */
 body:not(.skin-bordered) [data-card] {
-  border-color: transparent !important;
+  /* Keep the border style from component - don't override */
 }
 
-/* Bordered Mode: Replace shadows with 1px primary borders (only on cards) */
+/* Bordered Mode: Primary border, NO shadow */
 .skin-bordered [data-card] {
   border: 1px solid rgb(var(--color-primary-200)) !important;
   box-shadow: none !important;

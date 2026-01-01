@@ -455,7 +455,7 @@ const menuItems =
                           to={child.path}
                           end={!!child.exact}
                           className={({ isActive }) =>
-                            `flex items-center gap-2 px-3 py-2.5 text-sm rounded-lg transition-all hover:bg-white/10 text-gray-400 hover:text-gray-200 ${
+                            `flex items-center gap-2 px-3 py-2.5 text-sm rounded-lg transition-all hover:bg-white/10 text-gray-300 hover:text-white ${
                               isActive ? "bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg font-medium" : ""
                             }`
                           }
