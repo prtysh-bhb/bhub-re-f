@@ -11,8 +11,7 @@ import TwoFactorSetup from "@/pages/auth/TwoFactorSetupPage";
 import SocialCallback from "@/pages/auth/SocialCallback";
 
 // Layouts
-import { AdminLayout } from "@/components/layout/AdminLayout";
-import { AgentLayout } from "@/components/layout/AgentLayout";
+import AdminLayout from "@/components/layout/admin/AdminLayout";
 
 // Dashboards
 import DashboardPage from "@/pages/dashboard/DashboardPage";
@@ -279,7 +278,7 @@ function App() {
             path="/agent"
             element={
               <ProtectedRoute allowedRoles={["agent", "admin"]}>
-                <AgentLayout />
+                <AdminLayout />
               </ProtectedRoute>
             }
           >
