@@ -35,12 +35,21 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
     <header
       className={cn(
         "h-16 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md border-b border-neutral-200/80 dark:border-neutral-800/80",
-        "flex items-center justify-between px-6 transition-all z-40 shadow-sm",
+        "transition-all z-40 shadow-sm",
         config.layout.navbarType === "sticky" && "sticky top-0"
       )}
+      style={{
+        marginLeft: config.layout.menuCollapsed ? "80px" : "260px",
+      }}
     >
-      {/* Left Section - Logo + Search */}
-      <div className="flex items-center gap-6 flex-1">
+      <div
+        className="flex items-center justify-between px-6 h-full mx-auto"
+        style={{
+          maxWidth: config.layout.contentWidth === "compact" ? "1280px" : "100%",
+        }}
+      >
+        {/* Left Section - Logo + Search */}
+        <div className="flex items-center gap-6 flex-1">
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -183,6 +192,7 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
             </div>
           )}
         </div>
+      </div>
       </div>
     </header>
   );

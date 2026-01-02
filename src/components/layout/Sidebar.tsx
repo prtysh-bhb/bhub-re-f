@@ -323,9 +323,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ role }) => {
     <aside
       className={cn(
         "fixed left-0 top-16 h-[calc(100vh-64px)] transition-all duration-300 z-30",
-        "bg-white dark:bg-neutral-900 border-r border-neutral-200/80 dark:border-neutral-800/80",
         "overflow-y-auto custom-scrollbar",
-        config.theming.semiDark && "bg-neutral-900 text-neutral-100 border-neutral-800",
+        // Semi-dark mode (dark sidebar regardless of theme)
+        config.theming.semiDark && "bg-gradient-to-br from-slate-900 via-primary-900/40 to-slate-900 text-neutral-100 border-r border-primary-500/20",
+        // Light mode (subtle gradient)
+        !config.theming.semiDark && "bg-gradient-to-br from-white via-neutral-50 to-neutral-100/50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-950 border-r border-neutral-200/80 dark:border-neutral-800/80",
         collapsed ? "w-20" : "w-[260px]"
       )}
       style={{ width: `var(--sidebar-width)` }}
