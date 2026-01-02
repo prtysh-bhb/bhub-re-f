@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Search, Bell, User, LogOut, Settings as SettingsIcon, Menu, X } from "lucide-react";
 import { useThemeCustomizer } from "@/context/ThemeCustomizerContext";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/context/AuthContext";
+import { logout as apiLogout } from "@/api/auth";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,10 +14,17 @@ interface TopbarProps {
 
 export const Topbar: React.FC<TopbarProps> = ({ role }) => {
   const { config } = useThemeCustomizer();
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const [showProfileMenu, setShowProfileMenu] = React.useState(false);
   const [showNotifications, setShowNotifications] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+  const handleLogout = async () => {
+    await apiLogout();
+    localStorage.clear();
+    navigate("/");
+  };
 
   // Close dropdowns when clicking outside
   React.useEffect(() => {
@@ -183,7 +191,7 @@ export const Topbar: React.FC<TopbarProps> = ({ role }) => {
               <div className="border-t border-neutral-200 dark:border-neutral-800 my-2"></div>
 
               <button
-                onClick={logout}
+                onClick={handleLogout}
                 className="w-full flex items-center gap-3 px-4 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors text-error-600"
               >
                 <LogOut className="w-4 h-4" />

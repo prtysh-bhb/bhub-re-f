@@ -480,8 +480,12 @@ const menuItems =
                             }`
                           }
                         >
-                          <child.icon size={16} className={isActive ? "text-white" : "text-gray-400"} />
-                          <span>{child.name}</span>
+                          {({ isActive }) => (
+                            <>
+                              <child.icon size={16} className={isActive ? "text-white" : "text-gray-400"} />
+                              <span>{child.name}</span>
+                            </>
+                          )}
                         </NavLink>
                       ))}
                     </div>

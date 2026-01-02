@@ -176,6 +176,8 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
           </Button>
         </>
       }
-    />
+    >
+      {null}
+    </Dialog>
   );
 };

@@ -121,7 +121,7 @@ const ShowSubscriptionPlan = () => {
                         <p className="text-white/80 text-sm mt-1">/{plan.slug}</p>
                       </div>
                       <Badge 
-                        variant={plan.is_active ? "default" : "secondary"}
+                        variant={plan.is_active ? "default" : "outline"}
                         className={`${
                           plan.is_active 
                             ? 'bg-white/20 backdrop-blur-sm text-white border-white/30' 
@@ -324,7 +324,7 @@ const ShowSubscriptionPlan = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Status</span>
                     <Badge
-                      variant={plan.is_active ? "default" : "secondary"}
+                      variant={plan.is_active ? "default" : "outline"}
                       className={plan.is_active ? "bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-400" : "bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-gray-300"}
                     >
                       {plan.is_active ? 'Active' : 'Inactive'}
