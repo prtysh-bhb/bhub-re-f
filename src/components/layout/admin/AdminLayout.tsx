@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import AdminSidebar from "./AdminSidebar";
 import Header from "./Header";
+import { ThemeCustomizer } from "../ThemeCustomizer";
 
 const AdminLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -31,6 +32,9 @@ const AdminLayout = () => {
           <Outlet />
         </main>
       </div>
+
+      {/* Theme Customizer */}
+      <ThemeCustomizer />
     </div>
   );
 };

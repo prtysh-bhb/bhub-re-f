@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
   Home,
@@ -53,6 +53,7 @@ const AdminSidebar = ({
   onMobileToggle,
 }: AdminSidebarProps) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
   const toggleDropdown = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
