@@ -3,33 +3,49 @@ import { Outlet } from "react-router-dom";
 import AdminSidebar from "./AdminSidebar";
 import Header from "./Header";
 import { ThemeCustomizer } from "../ThemeCustomizer";
+import { useThemeCustomizer } from "@/context/ThemeCustomizerContext";
+import { cn } from "@/lib/utils";
 
 const AdminLayout = () => {
-  const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { config } = useThemeCustomizer();
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:bg-gradient-to-br dark:from-neutral-900 dark:to-neutral-950 overflow-hidden">
+    <div
+      className={cn(
+        "flex min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:bg-gradient-to-br dark:from-neutral-900 dark:to-neutral-950 overflow-hidden",
+        config.theming.semiDark && "semi-dark"
+      )}
+    >
       {/* Sidebar */}
       <AdminSidebar
-        collapsed={collapsed}
+        collapsed={config.layout.menuCollapsed}
         mobileOpen={mobileOpen}
-        onCollapseChange={setCollapsed}
+        onCollapseChange={(val) => {}} // Controlled by theme customizer
         onMobileToggle={setMobileOpen}
       />
 
       {/* Main Content Area */}
       <div
         className={`flex flex-col flex-1 transition-all duration-200 ${
-          collapsed ? "lg:pl-20" : "lg:pl-64"
+          config.layout.menuCollapsed ? "lg:pl-20" : "lg:pl-64"
         }`}
       >
         {/* Header */}
-        <Header onMenuClick={() => setMobileOpen(true)} />
+        {config.layout.navbarType !== "hidden" && (
+          <Header onMenuClick={() => setMobileOpen(true)} />
+        )}
 
         {/* Scrollable Page Content */}
         <main className="flex-1 overflow-y-auto p-3 lg:px-6 py-5">
-          <Outlet />
+          <div
+            className="mx-auto"
+            style={{
+              maxWidth: config.layout.contentWidth === "compact" ? "1280px" : "100%",
+            }}
+          >
+            <Outlet />
+          </div>
         </main>
       </div>
 

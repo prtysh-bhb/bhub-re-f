@@ -54,6 +54,7 @@ const AdminSidebar = ({
 }: AdminSidebarProps) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const { config, updateLayout } = useThemeCustomizer();
 
   const toggleDropdown = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
@@ -383,9 +384,15 @@ const menuItems =
   return (
     <>
       <aside
-        className={`fixed top-0 left-0 h-screen flex flex-col bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 shadow-2xl border-r border-primary-500/20 z-50 transition-all duration-200
-        ${collapsed ? "w-20" : "w-64"}
-        ${mobileOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
+        className={cn(
+          "fixed top-0 left-0 h-screen flex flex-col shadow-2xl z-50 transition-all duration-200",
+          // Semi-dark mode (always dark sidebar)
+          config.theming.semiDark && "bg-gradient-to-br from-slate-900 via-primary-900/40 to-slate-900 border-r border-primary-500/20",
+          // Light mode (subtle gradient)
+          !config.theming.semiDark && "bg-gradient-to-br from-white via-neutral-50 to-neutral-100/50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-950 border-r border-neutral-200/80 dark:border-neutral-800/80",
+          collapsed ? "w-20" : "w-64",
+          mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        )}
       >
         {/* Header Section with Logo */}
         <div className="relative px-4 py-6 border-b border-primary-500/20">
@@ -409,14 +416,20 @@ const menuItems =
             )}
             <div className="grid gap-1">
               <button
-                onClick={() => onCollapseChange?.(!collapsed)}
-                className="text-gray-400 dark:text-gray-500 hover:text-primary-400 transition-all cursor-pointer p-2 rounded-lg hover:bg-white/10 backdrop-blur-sm"
+                onClick={() => updateLayout({ menuCollapsed: !collapsed })}
+                className={cn(
+                  "hover:text-primary-400 transition-all cursor-pointer p-2 rounded-lg hover:bg-white/10 backdrop-blur-sm",
+                  config.theming.semiDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"
+                )}
               >
                 <Menu size={18} />
               </button>
               <button
                 onClick={() => onMobileToggle?.(false)}
-                className="lg:hidden text-gray-400 hover:text-primary-400 transition-all p-2 rounded-lg hover:bg-white/10 backdrop-blur-sm"
+                className={cn(
+                  "lg:hidden hover:text-primary-400 transition-all p-2 rounded-lg hover:bg-white/10 backdrop-blur-sm",
+                  config.theming.semiDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"
+                )}
               >
                 <X size={18} />
               </button>
@@ -432,9 +445,11 @@ const menuItems =
                 <>
                   <button
                     onClick={() => toggleDropdown(item.name)}
-                    className={`group flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-white/10 backdrop-blur-sm transition-all text-gray-300 cursor-pointer text-sm ${
-                      collapsed ? "justify-center" : ""
-                    } ${openDropdown === item.name ? "bg-white/10 text-white border border-primary-500/30" : ""}`}
+                    className={cn(
+                      "group flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-white/10 backdrop-blur-sm transition-all cursor-pointer text-sm",
+                      collapsed && "justify-center",
+                      openDropdown === item.name ? "bg-white/10 text-white border border-primary-500/30" : config.theming.semiDark ? "text-gray-300" : "text-gray-700 dark:text-gray-300"
+                    )}
                   >
                     <div className="flex items-center gap-3">
                       <item.icon size={18} className={openDropdown === item.name ? "text-primary-400" : "text-gray-400"} />
@@ -475,9 +490,11 @@ const menuItems =
                   to={item.path}
                   end={!!item.exact}
                   className={({ isActive }) =>
-                    `group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 backdrop-blur-sm text-gray-300 transition-all text-sm ${
-                      collapsed ? "justify-center" : ""
-                    } ${isActive ? "bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg font-medium border border-primary-500/30" : ""}`
+                    cn(
+                      "group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 backdrop-blur-sm transition-all text-sm",
+                      collapsed && "justify-center",
+                      isActive ? "bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg font-medium border border-primary-500/30" : config.theming.semiDark ? "text-gray-300" : "text-gray-700 dark:text-gray-300"
+                    )
                   }
                 >
                   <item.icon size={18} className={`${!collapsed ? '' : ''}`} />

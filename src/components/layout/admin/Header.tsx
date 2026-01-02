@@ -7,6 +7,8 @@ import Notifications from "./Notifications";
 import { deleteNotification, getNotifications, getUnreadNotificationsCount, markAllAsReadNotification, markAsReadNotification, NotificationItem } from "@/api/public/notifications";
 import echo from "@/lib/echo";
 import { useTheme } from "@/context/ThemeContext";
+import { useThemeCustomizer } from "@/context/ThemeCustomizerContext";
+import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   onMenuClick?: () => void;
@@ -15,6 +17,7 @@ interface HeaderProps {
 const Header = ({ onMenuClick }: HeaderProps) => {
   const { user } = useAuth();
   const { theme, toggleTheme } = useTheme();
+  const { config } = useThemeCustomizer();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [notifications, setNotifications] = useState<NotificationItem[]>([]);
   const [unreadCount, setUnreadCount] = useState(0);
@@ -122,10 +125,17 @@ const Header = ({ onMenuClick }: HeaderProps) => {
     <>
       {/* Header */}
       <header
-        // safe area + avoid clipping in rounded parents
-        className="w-full overflow-visible sticky top-0 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 dark:border-neutral-800 shadow-sm"
+        className={cn(
+          "w-full overflow-visible z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 dark:border-neutral-800 shadow-sm",
+          config.layout.navbarType === "sticky" && "sticky top-0"
+        )}
       >
-        <div className="max-w-[100%] mx-auto flex items-center justify-between gap-3">
+        <div
+          className="mx-auto flex items-center justify-between gap-3"
+          style={{
+            maxWidth: config.layout.contentWidth === "compact" ? "1280px" : "100%",
+          }}
+        >
           {/* Left side */}
           <div className="flex items-center gap-2 sm:gap-4 min-w-0">
             <button
