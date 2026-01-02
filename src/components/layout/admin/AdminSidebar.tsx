@@ -38,6 +38,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
+import { useThemeCustomizer } from "@/context/ThemeCustomizerContext";
+import { cn } from "@/lib/utils";
 
 interface AdminSidebarProps {
   collapsed?: boolean;
